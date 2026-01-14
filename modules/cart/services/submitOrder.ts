@@ -24,10 +24,22 @@ export const submitOrder: SubmitHandler<OrderFields> = async (data): Promise<voi
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(data),
 		});
+		
+		const responseData = await res.json();
+		
 		if (!res.ok) {
-			throw new Error('Something went wrong ...');
+			const errorMessage =
+				responseData.errors && typeof responseData.errors === 'object'
+					? Object.values(responseData.errors).join(', ')
+					: responseData.error || 'Something went wrong...';
+			throw new Error(errorMessage);
 		}
-	} catch (err) {
+
+		return responseData;
+	} catch (err) {		
+		if (err instanceof Error) {
+			throw err;
+		}
 		throw new Error((err as Error).message);
 	}
 };

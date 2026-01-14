@@ -38,7 +38,9 @@ const appReducer = combineReducers({
 const rootReducer = (state: ReturnType<typeof appReducer>, action: Action) => {
 	switch (action.type) {
 		case 'store/clear':
-			localStorage.removeItem('persist:wholeStore');
+			if (typeof window !== 'undefined') {
+				localStorage.removeItem('persist:wholeStore');
+			}
 			return undefined;
 		default:
 			return appReducer(state, action);
@@ -59,12 +61,4 @@ export const store = configureStore({
 
 export const persistor = persistStore(store);
 
-export const makeStore = () => {
-	const isServer = typeof window === 'undefined';
-
-	if (isServer) {
-		return store;
-	}
-
-	return store;
-};
+export const makeStore = () => store;
