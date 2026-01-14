@@ -12,13 +12,13 @@ import { productsStore } from '@/store/types';
 
 export const ContentProducts = memo(() => {
 	const { fetchedItems, fetching, error } = productsSelectorMemoized(useAppSelector(productsStore));
-	useGetProductsQuery(null, { skip: fetchedItems.length > 1 });
+	useGetProductsQuery(null, { skip: fetchedItems.length > 0 });
 
 	return (
 		<Container>
 			<Filter isLoading={fetching} />
 			<Categories isLoading={fetching} />
-			{error ? <LayerBlock>{error}</LayerBlock> : null}
+			{error && <LayerBlock>{error}</LayerBlock>}
 			<ProductsGrid items={fetchedItems} isLoading={fetching} pagination keyPage="products" />
 		</Container>
 	);

@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { IProduct, ProductsState, SortTypes, TypePages } from '@/services';
+import { PRODUCTS_COUNT_PER_PAGE } from '@/services/constants';
 import { api, ResponseProducts } from '@/store/api';
 import {
 	anyTogglesInProduct,
@@ -20,7 +21,7 @@ const initialState: ProductsState = {
 	productsPage: 1,
 	favoritesPage: 1,
 	typePage: 'products',
-	countPerPage: 12,
+	countPerPage: PRODUCTS_COUNT_PER_PAGE,
 	countFavorites: 0,
 	categories: [],
 	error: '',
@@ -52,7 +53,9 @@ const productsReducer = createSlice({
 			state.fetchedItems.forEach((item) => {
 				item.checked = false;
 			});
-			state.reservedItems = state.fetchedItems;
+			state.reservedItems.forEach((item) => {
+				item.checked = false;
+			});
 		},
 		sortProducts: (state, { payload }: PayloadAction<SortTypes>) => {
 			const { name, toggle } = payload;
@@ -64,14 +67,16 @@ const productsReducer = createSlice({
 			if (name === 'default') {
 				resetItems(state);
 			} else {
-				state.fetchedItems.sort((a, b) => {
+				const sortedItems = [...state.fetchedItems].sort((a, b) => {
 					if (name !== undefined && a[name] && b[name]) {
-						return Number(a[name]) > Number(b[name]) ? -1 : 1;
+						const aValue = Number(a[name]);
+						const bValue = Number(b[name]);
+						return aValue > bValue ? -1 : 1;
 					}
 					return 0;
 				});
 
-				if (toggle) state.fetchedItems = state.fetchedItems.reverse();
+				state.fetchedItems = toggle ? sortedItems.reverse() : sortedItems;
 			}
 		},
 		searchValue: (state, { payload }: PayloadAction<string>) => {
@@ -86,11 +91,11 @@ const productsReducer = createSlice({
 			anyTogglesInProduct(state, payload, 'favorite');
 
 			state.countFavorites = state.reservedItems.filter((item) => item.favorite).length;
-			if (
-				state.countFavorites === state.countPerPage * state.page - state.countPerPage &&
-				state.typePage === 'favorites'
-			)
+			
+			const isLastItemOnPage = state.countFavorites === state.countPerPage * state.page - state.countPerPage;
+			if (isLastItemOnPage && state.typePage === 'favorites') {
 				state.page -= 1;
+			}
 		},
 		removeAllFavorites: (state) => {
 			state.reservedItems.forEach((item) => {
@@ -105,8 +110,12 @@ const productsReducer = createSlice({
 			changeCurrentPage(state);
 		},
 		changePage: (state, { payload }: PayloadAction<number>) => {
-			if (state.typePage === 'favorites') state.favoritesPage = payload;
-			if (state.typePage === 'products') state.productsPage = payload;
+			if (state.typePage === 'favorites') {
+				state.favoritesPage = payload;
+			}
+			if (state.typePage === 'products') {
+				state.productsPage = payload;
+			}
 			changeCurrentPage(state);
 		},
 		changeCategory: (state, { payload: name }: PayloadAction<string>) => {

@@ -4,11 +4,12 @@ import { StyledLoader, Wrapper } from './styled';
 
 interface LoaderTypes {
 	loading: boolean;
+	className?: string;
 }
 
-export const Loader: FC<LoaderTypes> = ({ loading }) =>
+export const Loader: FC<LoaderTypes> = ({ loading, className }) =>
 	loading ? (
-		<Wrapper>
+		<Wrapper {...{className}}>
 			<StyledLoader>
 				<span />
 				<span />

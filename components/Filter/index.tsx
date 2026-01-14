@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 
 import { Flexbox } from '@/components/Layout';
@@ -16,20 +16,22 @@ export const Filter: FC<{ isLoading: boolean }> = ({ isLoading }) => {
 	const [value, setValue] = useState('');
 	const dispatch = useAppDispatch();
 
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const searchText = e.target.value;
+	const handleChange = useCallback(
+		(e: React.ChangeEvent<HTMLInputElement>) => {
+			const searchText = e.target.value;
 
-		setValue(searchText);
+			setValue(searchText);
 
-		debounceFunction(() => {
-			dispatch(searchProducts(searchText));
-			dispatch(searchValue(searchText));
-		});
-	};
+			debounceFunction(() => {
+				dispatch(searchProducts(searchText));
+				dispatch(searchValue(searchText));
+			});
+		}, [dispatch],
+	);
 
-	const resetInput = () => {
+	const resetInput = useCallback(() => {
 		setValue('');
-	};
+	}, []);
 
 	return (
 		<StyledFilter>

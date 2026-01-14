@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { Fragment, SyntheticEvent, useState } from 'react';
+import { Fragment, SyntheticEvent, useEffect, useState } from 'react';
 
-import { Loader } from '@/components/ui';
+import { Icon, Loader } from '@/components/ui';
 import { IProduct, useAppSelector } from '@/services';
 import { productsStore } from '@/store/types';
 
@@ -14,8 +14,21 @@ type PropsType = {
 
 export const WrapperImages = ({ product, size }: PropsType) => {
 	const [isLoad, setIsLoad] = useState(true);
+	const [hasError, setHasError] = useState(false);
 	const { fetching } = useAppSelector(productsStore);
 	const { id, title, images } = product;
+
+	// Таймер на 2 секунд для прерывания загрузки
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			if (isLoad) {
+				setIsLoad(false);
+				setHasError(true);
+			}
+		}, 2000);
+
+		return () => clearTimeout(timer);
+	}, [isLoad]);
 
 	const handleOnLoad = (e: SyntheticEvent<HTMLImageElement>, idx: number) => {
 		e.currentTarget.classList.add('fetched');
@@ -25,11 +38,19 @@ export const WrapperImages = ({ product, size }: PropsType) => {
 		}
 	};
 
-	return (
-		<WrapperImagesStyled id={`wrapper-${id}`}>
-			<Loader loading={isLoad} />
+	const handleOnError = () => {
+		setIsLoad(false);
+		setHasError(true);
+	};
 
-			{!fetching &&
+	return (
+		<WrapperImagesStyled id={`wrapper-${id}`} className={hasError ? 'has-error' : ''}>
+			<Loader loading={isLoad && !hasError} />
+
+			{hasError ? (
+				<Icon icon="nophoto" />
+			) : (
+				!fetching &&
 				images?.map((image, idx) => (
 					<Fragment key={image}>
 						<BlockImgItem />
@@ -41,9 +62,11 @@ export const WrapperImages = ({ product, size }: PropsType) => {
 							quality={60}
 							priority
 							onLoad={(e) => handleOnLoad(e, idx)}
+							onError={handleOnError}
 						/>
 					</Fragment>
-				))}
+				))
+			)}
 		</WrapperImagesStyled>
 	);
 };

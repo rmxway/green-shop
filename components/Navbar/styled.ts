@@ -9,7 +9,7 @@ import { CountStyled } from './Count/styled';
 const logoColor = theme.colors.success;
 
 export const StyledNavbar = styled(motion.div)`
-	position: relative;
+	position: fixed;
 	top: 0;
 	z-index: 100;
 	width: 100%;
@@ -19,10 +19,6 @@ export const StyledNavbar = styled(motion.div)`
 	display: flex;
 	align-items: center;
 	border-bottom: 1px solid ${theme.colors.gray.$8};
-
-	${media.lessThan('mdD')`
-        position: fixed;
-    `}
 `;
 
 export const Logo = styled.div`

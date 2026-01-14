@@ -4,6 +4,7 @@ import { darken } from 'polished';
 import styled, { css } from 'styled-components';
 
 import { media } from '@/theme';
+import { fadeIn } from '@/theme/styles/animations';
 
 export const fadeVariant = (i: number = 1): Variants => ({
 	hidden: {
@@ -79,6 +80,11 @@ export const Content = styled(motion.div)`
 	& > a {
 		align-self: center;
 		flex-shrink: 0;
+		text-decoration: none;
+	}
+
+	.loader {
+		margin-top: -15px;		
 	}
 
 	${media.lessThan('mdD')`
@@ -225,5 +231,31 @@ export const Delete = styled.button`
             top: auto;
             right: auto;
         `}
+	`}
+`;
+
+export const ThumbnailContainer = styled(motion.div)`
+	${({theme}) => css`
+		position: relative;
+		width: 70px;
+		height: 70px;
+		margin: 10px 0 10px 10px;
+		flex-shrink: 0;		
+
+		i.icofont-nophoto {
+			color: ${theme.colors.gray.$4};
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			font-size: 24px;
+			z-index: 1;
+			position: relative;
+			text-decoration: none;
+			opacity: 0;
+			border-radius: ${theme.radius.borderRadius};
+			${fadeIn}
+		}		
 	`}
 `;

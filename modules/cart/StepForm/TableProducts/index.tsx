@@ -24,9 +24,7 @@ export const TableProducts: FC<{ fGrow?: boolean }> = ({ fGrow }) => {
 								{currency}&nbsp;{price}&nbsp;
 							</div>
 							{count && count > 1 && (
-								<>
-									<span>({(count * price).toFixed(2)})</span>
-								</>
+								<span>({(count * price).toFixed(2)})</span>
 							)}
 						</Flexbox>
 					</Product>

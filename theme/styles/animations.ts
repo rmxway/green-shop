@@ -10,7 +10,7 @@ export const fadeIn = css`
 		}
 	}
 
-	animation: fadeIn 0.5s;
+	animation: fadeIn ease-in-out forwards 0.5s;
 `;
 
 export default fadeIn;

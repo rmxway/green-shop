@@ -1,6 +1,5 @@
 import { css } from 'styled-components';
 
-import { media } from '@/theme/media';
 
 export const base = css`
 	*,
@@ -19,10 +18,7 @@ export const base = css`
 		line-height: 1.25;
 		min-width: 320px;
 		min-height: 100vh;
-
-		${media.lessThan('mdD')`
-            padding-top: 70px;
-        `}
+        padding-top: 70px;
 	}
 	code {
 		font-family: 'source-code-pro', 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;

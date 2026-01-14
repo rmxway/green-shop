@@ -1,15 +1,19 @@
 'use client';
 
-export * from './StepCart';
-export * from './StepFinal';
-export * from './StepForm';
+import { useEffect } from 'react';
 
 import { Container } from '@/components/Layout';
-import { StepCart, StepFinal, StepForm } from '@/modules/cart';
 import { useAppDispatch, useAppSelector } from '@/services';
 import { changeStep } from '@/store/reducers/cart';
 import { cartStore } from '@/store/types';
-import { useEffect } from 'react';
+
+import { StepCart } from './StepCart';
+import { StepFinal } from './StepFinal';
+import { StepForm } from './StepForm';
+
+export * from './StepCart';
+export * from './StepFinal';
+export * from './StepForm';
 
 export const ContentCart = () => {
 	const { step } = useAppSelector(cartStore);

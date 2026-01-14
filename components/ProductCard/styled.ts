@@ -6,6 +6,7 @@ import { WrapperFavorite } from '@/components/ui/Favorite/styled';
 import { WrapperSticker } from '@/components/ui/Sticker/styled';
 import { defaultTheme as theme } from '@/theme';
 import { media } from '@/theme/media';
+import { fadeIn } from '@/theme/styles/animations';
 
 export const BlockImgItem = styled.div`
 	position: relative;
@@ -80,6 +81,34 @@ export const WrapperImagesStyled = styled(motion.div)`
 		animation: fetched 0.4s;
 		animation-fill-mode: forwards;
 	}
+
+	/* Стили для иконки отсутствия картинки */
+	i.icofont-nophoto {
+		color: ${theme.colors.gray.$4};
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		font-size: 34px;
+		z-index: 1;
+		position: relative;
+		text-decoration: none;
+		${fadeIn}
+	}
+
+	/* Отключаем hover эффекты при ошибке загрузки */
+	&.has-error {
+		&:hover:after {
+			z-index: -1;
+		}
+
+		&:hover {
+			${BlockImgItem} + img {
+				z-index: -10 !important;
+			}
+		}
+	}
 `;
 
 export const ProductWrapper = styled(motion.div)`
@@ -94,6 +123,7 @@ export const ProductWrapper = styled(motion.div)`
 
 	a {
 		width: 100%;
+		text-decoration: none;
 	}
 
 	${WrapperFavorite} {

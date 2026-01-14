@@ -6,6 +6,12 @@ import { store } from '@/store';
 
 import { OrderFields } from './schemaOrder';
 
+interface ApiErrorResponse {
+	success: false;
+	errors?: Record<string, string>;
+	error?: string;
+}
+
 export const submitOrder: SubmitHandler<OrderFields> = async (data): Promise<void> => {
 	const { items: cartItems, totalPrice } = store.getState().cart;
 	const items = cartItems.map(({ id, title, price, count, category }) => ({
@@ -24,10 +30,23 @@ export const submitOrder: SubmitHandler<OrderFields> = async (data): Promise<voi
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(data),
 		});
+
+		const rawResponseData: unknown = await res.json();
+
 		if (!res.ok) {
-			throw new Error('Something went wrong ...');
+			const errorResponse = rawResponseData as ApiErrorResponse;
+			const errorMessage =
+				errorResponse.errors && typeof errorResponse.errors === 'object'
+					? Object.values(errorResponse.errors).join(', ')
+					: errorResponse.error || 'Something went wrong...';
+			throw new Error(errorMessage);
 		}
+
+		// Success - no need to return data for SubmitHandler
 	} catch (err) {
-		throw new Error((err as Error).message);
+		if (err instanceof Error) {
+			throw err;
+		}
+		throw new Error('Unknown error occurred');
 	}
 };
