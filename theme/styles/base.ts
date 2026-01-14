@@ -19,10 +19,7 @@ export const base = css`
 		line-height: 1.25;
 		min-width: 320px;
 		min-height: 100vh;
-
-		${media.lessThan('mdD')`
-            padding-top: 70px;
-        `}
+        padding-top: 70px;
 	}
 	code {
 		font-family: 'source-code-pro', 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
