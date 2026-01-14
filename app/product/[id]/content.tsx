@@ -2,23 +2,49 @@
 
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
 
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { TextToggle } from '@/components';
 import { Flexbox, Grid, LayerBlock, MobileWhiteBackground, RatingStars } from '@/components/Layout';
-import { Button, Favorite, Sticker } from '@/components/ui';
+import { Button, Favorite, Icon, Loader, Sticker } from '@/components/ui';
 import { Info, PriceBlock, SideBlock, Wrapper } from '@/modules/product/styled';
+import { defaultTheme as theme } from '@/theme';
+import { fadeIn } from '@/theme/styles/animations';
 import { currency, IProduct, useAppDispatch, useAppSelector } from '@/services';
 import { useGetProductQuery } from '@/store/api';
 import { moveToCart } from '@/store/reducers/combineActions';
 import { productMemoized } from '@/store/reducers/commonSelectors';
 import { setTitle, toggleFavorite } from '@/store/reducers/products';
 import { productsStore } from '@/store/types';
+
+const NoPhotoContainer = styled(motion.div)`
+	position: relative;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	i.icofont-nophoto {
+		color: ${theme.colors.gray.$4};
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		font-size: 100px;
+		z-index: 1;
+		position: relative;
+		text-decoration: none;
+		${fadeIn}
+	}
+`;
 
 export const ContentProduct = () => {
 	const { id } = useParams<{ id: string }>();
@@ -27,6 +53,8 @@ export const ContentProduct = () => {
 	const product: IProduct = productMemoized(useAppSelector(productsStore), id)!;
 
 	const dispatch = useAppDispatch();
+	const [isLoad, setIsLoad] = useState(true);
+	const [hasError, setHasError] = useState(false);
 
 	useEffect(() => {
 		dispatch(setTitle(product?.title || 'Error'));
@@ -34,6 +62,34 @@ export const ContentProduct = () => {
 			dispatch(setTitle(''));
 		};
 	}, [dispatch, product]);
+
+	// Таймер на 5 секунд для прерывания загрузки изображений
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			if (isLoad) {
+				setIsLoad(false);
+				setHasError(true);
+			}
+		}, 5000);
+
+		return () => clearTimeout(timer);
+	}, [isLoad]);
+
+	// Сброс состояний при изменении продукта
+	useEffect(() => {
+		setIsLoad(true);
+		setHasError(false);
+	}, [product?.id]);
+
+	const handleImageLoad = () => {
+		setIsLoad(false);
+	};
+
+	const handleImageError = () => {
+		setIsLoad(false);
+		setHasError(true);
+	};
+	
 
 	return (
 		<MobileWhiteBackground>
@@ -43,21 +99,44 @@ export const ContentProduct = () => {
 					<>
 						<Info>
 							<LayerBlock>
-								<Swiper
-									pagination={{
-										dynamicBullets: true,
-										clickable: true,
-									}}
-									modules={[Pagination]}
-									slidesPerView={1}
-									spaceBetween={50}
-								>
-									{product.images?.map((image) => (
-										<SwiperSlide key={image}>
-											<Image src={image} width={500} height={500} alt={image} priority />
-										</SwiperSlide>
-									))}
-								</Swiper>
+								{product.images && product.images.length > 0 && !hasError ? (
+									<div style={{ position: 'relative', height: '300px' }}>
+										<Swiper
+											pagination={{
+												dynamicBullets: true,
+												clickable: true,
+											}}
+											modules={[Pagination]}
+											slidesPerView={1}
+											spaceBetween={50}
+											style={{ height: '300px' }}
+										>
+											{product.images.map((image) => (
+												<SwiperSlide key={image} style={{ height: '300px' }}>
+													<Image
+														src={image}
+														width={500}
+														height={500}
+														alt={image}
+														priority
+														onLoad={handleImageLoad}
+														onError={handleImageError}
+														style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+													/>
+												</SwiperSlide>
+											))}
+										</Swiper>
+										<Loader loading={isLoad} />
+									</div>
+								) : (
+									<NoPhotoContainer
+										initial={{ opacity: 0 }}
+										animate={{ opacity: 1 }}
+										transition={{ duration: 0.2, ease: 'easeInOut' }}
+									>
+										<Icon icon="nophoto" />
+									</NoPhotoContainer>
+								)}
 								<RatingStars rating={Number(product.rating)} />
 								<br />
 								<span>
