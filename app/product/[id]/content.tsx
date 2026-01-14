@@ -2,12 +2,12 @@
 
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { motion } from 'framer-motion';
-import styled from 'styled-components';
 
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -15,14 +15,14 @@ import { TextToggle } from '@/components';
 import { Flexbox, Grid, LayerBlock, MobileWhiteBackground, RatingStars } from '@/components/Layout';
 import { Button, Favorite, Icon, Loader, Sticker } from '@/components/ui';
 import { Info, PriceBlock, SideBlock, Wrapper } from '@/modules/product/styled';
-import { defaultTheme as theme } from '@/theme';
-import { fadeIn } from '@/theme/styles/animations';
 import { currency, IProduct, useAppDispatch, useAppSelector } from '@/services';
 import { useGetProductQuery } from '@/store/api';
 import { moveToCart } from '@/store/reducers/combineActions';
 import { productMemoized } from '@/store/reducers/commonSelectors';
 import { setTitle, toggleFavorite } from '@/store/reducers/products';
 import { productsStore } from '@/store/types';
+import { defaultTheme as theme } from '@/theme';
+import { fadeIn } from '@/theme/styles/animations';
 
 const NoPhotoContainer = styled(motion.div)`
 	position: relative;

@@ -1,6 +1,5 @@
 import { css } from 'styled-components';
 
-import { media } from '@/theme/media';
 
 export const base = css`
 	*,

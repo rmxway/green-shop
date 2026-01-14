@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { PRODUCTS_COUNT_PER_PAGE } from '@/services/constants';
 import { IProduct, ProductsState, SortTypes, TypePages } from '@/services';
+import { PRODUCTS_COUNT_PER_PAGE } from '@/services/constants';
 import { api, ResponseProducts } from '@/store/api';
 import {
 	anyTogglesInProduct,

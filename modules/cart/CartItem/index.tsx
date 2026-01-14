@@ -3,13 +3,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { forwardRef, useEffect, useState } from 'react';
 
-
 import { Icon, Loader } from '@/components/ui';
 import { currency, IProduct, useAppDispatch } from '@/services';
 import { decreaseCount, increaseCount } from '@/store/reducers/cart';
 import { removeFromCart } from '@/store/reducers/combineActions';
 
-import { Content, Count, CountWrapper, Delete, elementsVars, Item, Price, Title, WrapperText, ThumbnailContainer } from './styled';
+import { Content, Count, CountWrapper, Delete, elementsVars, Item, Price, ThumbnailContainer,Title, WrapperText } from './styled';
 
 interface Props extends MotionProps {
 	product: IProduct;
