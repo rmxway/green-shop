@@ -10,11 +10,11 @@ export const initialItems = (state: ProductsState, response: ResponseProducts) =
 
 	// Сохраняем пользовательские состояния (избранное, выбранные товары)
 	const userStates = new Map<number, { favorite?: boolean; checked?: boolean }>();
-	state.fetchedItems.forEach(item => {
+	state.fetchedItems.forEach((item) => {
 		if (item.favorite || item.checked) {
 			userStates.set(item.id, {
 				favorite: item.favorite,
-				checked: item.checked
+				checked: item.checked,
 			});
 		}
 	});
@@ -43,7 +43,7 @@ export const initialItems = (state: ProductsState, response: ResponseProducts) =
 	state.reservedItems = [...state.fetchedItems];
 
 	// Восстанавливаем пользовательские состояния
-	state.fetchedItems.forEach(item => {
+	state.fetchedItems.forEach((item) => {
 		const preserved = userStates.get(item.id);
 		if (preserved) {
 			item.favorite = preserved.favorite;

@@ -36,10 +36,25 @@ export const ImageLogos = styled.div`
 export const HeroSection = styled.section`
 	padding: 120px 0 100px;
 	text-align: center;
-	background: ${({ theme }) => theme.colors.gray.$1};
 	color: ${({ theme }) => theme.colors.gray.$9};
-	max-width: 1200px;
-	margin: 0 auto;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url('/assets/img/nature/mountains.jpg');
+		background-size: cover;
+		background-position: center 30%;
+		background-repeat: no-repeat;
+		opacity: 0.14;
+		z-index: -1;
+	}
 
 	${media.lessThan('md')`
 		padding: 80px 0 60px;
@@ -281,13 +296,14 @@ export const NatureBlockImage = styled.div`
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-		filter: brightness(1.05) contrast(1.05);
+		pointer-events: none;
+		transition: all 1s cubic-bezier(0.25, 0.42, 0.45, 1);
+		filter: brightness(1) contrast(1);
 	}
 
 	&:hover img {
-		transform: scale(1.05);
-		filter: brightness(1.1) contrast(1.1) saturate(1.1);
+		transform: scale(1.07);
+		filter: brightness(1.1) contrast(1.1);
 	}
 
 	${media.lessThan('md')`
@@ -323,8 +339,8 @@ export const PrimaryButton = styled.button`
 	${({ theme }) => {
 		const { colors, layout } = theme;
 		return css`
-			background: ${colors.success};
-			color: ${darken(0.3, colors.success)};
+			background: ${colors.primary};
+			color: ${darken(0.3, colors.primary)};
 			border: none;
 			border-radius: 24px;
 			padding: 12px 24px;
@@ -337,7 +353,7 @@ export const PrimaryButton = styled.button`
 			margin-top: 2rem;
 
 			&:hover {
-				background: ${colors.success}DD;
+				background: ${colors.primary}DD;
 				transform: translateY(-1px);
 				box-shadow: ${layout.shadow};
 			}

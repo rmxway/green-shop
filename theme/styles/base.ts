@@ -25,6 +25,7 @@ export const base = css`
 
 	a {
 		text-decoration: none;
+		display: inline-block;
 	}
 
 	h1 {

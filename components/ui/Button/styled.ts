@@ -82,7 +82,7 @@ export const ButtonStyle = styled.button<Props>`
 			if ($success) return mixinButton(theme.colors.success, theme.colors.dark);
 			if ($danger) return mixinButton(theme.colors.danger);
 			if ($primary) return mixinButton(theme.colors.primary, '#6d410a');
-			if ($white) return mixinButton('#fff', theme.colors.success);
+			if ($white) return mixinButton('#fff', theme.colors.dark);
 			if ($dark) return mixinButton(theme.colors.dark, theme.colors.success);
 			if ($w100)
 				return css`
