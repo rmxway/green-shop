@@ -296,13 +296,14 @@ export const NatureBlockImage = styled.div`
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-		filter: brightness(1.05) contrast(1.05);
+		pointer-events: none;
+		transition: all 1s cubic-bezier(0.25, 0.42, 0.45, 1);
+		filter: brightness(1) contrast(1);
 	}
 
 	&:hover img {
-		transform: scale(1.05);
-		filter: brightness(1.1) contrast(1.1) saturate(1.1);
+		transform: scale(1.07);
+		filter: brightness(1.1) contrast(1.1);
 	}
 
 	${media.lessThan('md')`
