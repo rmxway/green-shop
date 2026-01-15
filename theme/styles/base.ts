@@ -1,6 +1,5 @@
 import { css } from 'styled-components';
 
-
 export const base = css`
 	*,
 	*::after,
@@ -18,10 +17,14 @@ export const base = css`
 		line-height: 1.25;
 		min-width: 320px;
 		min-height: 100vh;
-        padding-top: 70px;
+		padding-top: 70px;
 	}
 	code {
 		font-family: 'source-code-pro', 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
+	}
+
+	a {
+		text-decoration: none;
 	}
 
 	h1 {
