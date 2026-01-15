@@ -6,11 +6,18 @@ import { ResponseProducts } from '@/store/api';
 export const initialItems = (state: ProductsState, response: ResponseProducts) => {
 	const { data, categories } = response;
 	state.fetching = false;
+	state.lastUpdated = Date.now();
 
-	// Skip update if data length matches (optimization to avoid unnecessary updates)
-	if (state.reservedItems.length === data.length && state.reservedItems.length > 0) {
-		return;
-	}
+	// Сохраняем пользовательские состояния (избранное, выбранные товары)
+	const userStates = new Map<number, { favorite?: boolean; checked?: boolean }>();
+	state.fetchedItems.forEach(item => {
+		if (item.favorite || item.checked) {
+			userStates.set(item.id, {
+				favorite: item.favorite,
+				checked: item.checked
+			});
+		}
+	});
 
 	// there is some product on the first page
 	if (state.fetchedItems.length === 1) {
@@ -22,12 +29,11 @@ export const initialItems = (state: ProductsState, response: ResponseProducts) =
 
 	state.total = data.length;
 
-	state.categories.push(
-		...categories.map((item) => ({
-			name: item,
-			active: false,
-		})),
-	);
+	// Always update categories to prevent any duplication issues
+	state.categories = categories.map((item) => ({
+		name: item,
+		active: false,
+	}));
 
 	if (state.categories.length > 0) {
 		state.categories[0].active = true;
@@ -35,6 +41,16 @@ export const initialItems = (state: ProductsState, response: ResponseProducts) =
 
 	state.fetchedItems = [...data];
 	state.reservedItems = [...state.fetchedItems];
+
+	// Восстанавливаем пользовательские состояния
+	state.fetchedItems.forEach(item => {
+		const preserved = userStates.get(item.id);
+		if (preserved) {
+			item.favorite = preserved.favorite;
+			item.checked = preserved.checked;
+		}
+	});
+
 	state.error = '';
 };
 
@@ -88,11 +104,11 @@ export const resetItems = (state: ProductsState, category = true, page = false) 
 	state.search = '';
 	state.fetchedItems = [...state.reservedItems];
 	state.fetching = false;
-	
+
 	if (category) {
 		calcCategory(state, 'all', true);
 	}
-	
+
 	if (page) {
 		state.page = 1;
 		state.productsPage = 1;

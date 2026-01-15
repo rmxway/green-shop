@@ -10,9 +10,9 @@ export const TableProducts: FC<{ fGrow?: boolean }> = ({ fGrow }) => {
 	return (
 		<WrapperProducts $fGrow={fGrow}>
 			<Product>
-				<div>Title</div>
-				<div>Count</div>
-				<div>Price</div>
+				<div>Название</div>
+				<div>Количество</div>
+				<div>Цена</div>
 			</Product>
 			{items.length &&
 				items.map(({ id, title, price, count }) => (

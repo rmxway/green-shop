@@ -50,11 +50,11 @@ export const RenderNavbar: FC = () => {
 
 					// NavCountItem добавляется в пропсы к компоненту NavLinkMotion.component
 
-					if (title === 'Favorites') {
+					if (title === 'Избранное') {
 						props.component = <NavCountItem title="favorite-fill" count={countFavorites} />;
 					}
 
-					if (title === 'Cart') {
+					if (title === 'Корзина') {
 						props.component = <NavCountItem title="cart" count={cartItemsCount} />;
 					}
 

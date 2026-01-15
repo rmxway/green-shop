@@ -11,3 +11,4 @@ export * from './Modal';
 export * from './Sticker';
 export * from './Switcher';
 export * from './TopBlock';
+export * from './WarningMessage';

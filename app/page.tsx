@@ -64,8 +64,6 @@ export default function MainPage() {
 					</FirstBlock>
 				</Container>
 			</Section>
-
-			{/* Nature Gallery */}
 			<Section>
 				<Container>
 					<SectionTitle>Вдохновлено природой</SectionTitle>
@@ -73,6 +71,12 @@ export default function MainPage() {
 						Мы тщательно отбираем натуральные продукты, которые помогают вам жить в гармонии с природой.
 						Каждый товар создан с заботой об окружающей среде и вашем благополучии, предлагая только лучшее из природы для вашего здоровья и красоты.
 					</SectionSubtitle>
+				</Container>
+			</Section>
+
+			{/* Nature Gallery */}
+			<Section $background='#fff'>
+				<Container>
 					<NatureGallery>
 						<NatureBlock $reverse>
 							<NatureBlockContent>
@@ -132,7 +136,7 @@ export default function MainPage() {
 			</Section>
 
 			{/* Features Section */}
-			<Section $background='#fff'>
+			<Section>
 				<Container>
 					<SectionTitle>Возможности платформы</SectionTitle>
 					<FeaturesGrid>

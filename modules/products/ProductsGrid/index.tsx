@@ -22,9 +22,10 @@ interface ProductsGridProps {
 	isLoading?: boolean;
 	pagination?: boolean;
 	keyPage: TypePages;
+	hasError?: boolean;
 }
 
-export const ProductsGrid = memo(({ items, isLoading = false, pagination, keyPage }: ProductsGridProps) => {
+export const ProductsGrid = memo(({ items, isLoading = false, pagination, keyPage, hasError = false }: ProductsGridProps) => {
 	const { reservedItems, error, page, countPerPage } = useAppSelector(productsStore);
 	const dispatch = useAppDispatch();
 	const currentItems = currentItemsMemoized(useAppSelector(productsStore), items);
@@ -62,16 +63,14 @@ export const ProductsGrid = memo(({ items, isLoading = false, pagination, keyPag
 
 			{pagination && <Pagination {...{ changePage, items, isLoading, countPerPage, page }} />}
 
-			{!currentItems.length && (
+			{!currentItems.length && !isLoading && !hasError && (
 				<motion.div variants={containerVars} initial="hidden" animate="visible" exit="hidden">
 					<LayerBlock $fixedPadding>
-						{reservedItems.length !== 0 && keyPage === 'products' && `The search did't take a result`}
-						{reservedItems.length === 0 &&
-							keyPage === 'products' &&
-							`Elements not found. Please contact with the website administrator.`}
+						{keyPage === 'products' && reservedItems.length > 0 && 'По вашему запросу ничего не найдено'}
+						{keyPage === 'products' && reservedItems.length === 0 && 'Товары не найдены. Пожалуйста, свяжитесь с администратором сайта.'}
 						{keyPage === 'favorites' && (
 							<>
-								{`Nothing was't add to favorites, go to`} <Link href="/products">Products</Link>
+								Ничего не добавлено в избранное, перейдите в <Link href="/products">Каталог товаров</Link>
 							</>
 						)}
 					</LayerBlock>

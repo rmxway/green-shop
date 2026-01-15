@@ -67,7 +67,7 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
 								onClick={() => debounceChangePage(1)}
 								disabled={fetching || !items.length}
 							>
-								<Icon icon="arrow-down" /> To begin
+								<Icon icon="arrow-down" /> В начало
 							</ArrowButton>
 						)}
 
@@ -79,7 +79,7 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
 								onClick={() => debounceChangePage(countPages)}
 								disabled={fetching || !items.length}
 							>
-								To end <Icon icon="arrow-down" />
+								В конец <Icon icon="arrow-down" />
 							</ArrowButton>
 						)}
 					</Flexbox>

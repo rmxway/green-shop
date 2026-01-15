@@ -1,6 +1,6 @@
 import { isDev } from '@/services';
 
-type TitleType = 'Main' | 'Products' | 'Favorites' | 'Cart' | 'UI';
+type TitleType = 'Главная' | 'Товары' | 'Избранное' | 'Корзина' | 'UI';
 interface NavbarItemType {
 	title: TitleType;
 	url: string;
@@ -8,19 +8,19 @@ interface NavbarItemType {
 
 export const navbarItems: NavbarItemType[] = [
 	{
-		title: 'Main',
+		title: 'Главная',
 		url: '/',
 	},
 	{
-		title: 'Products',
+		title: 'Товары',
 		url: '/products',
 	},
 	{
-		title: 'Favorites',
+		title: 'Избранное',
 		url: '/favorites',
 	},
 	{
-		title: 'Cart',
+		title: 'Корзина',
 		url: '/cart',
 	},
 ];

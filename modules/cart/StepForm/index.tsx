@@ -40,16 +40,16 @@ export const StepForm = () => {
 	return (
 		<>
 			<Button $margins icon="cart" onClick={prevStep} style={{ width: 'fit-content' }}>
-				Back
+				Назад
 			</Button>
-			<h4>Check your products and fill required fields.</h4>
+			<h4>Проверьте свои товары и заполните обязательные поля.</h4>
 			<br />
 			<WrapperStepForm $gap={40} $templateColumns="1fr 1fr">
 				<WrapperForm>
 					<form onSubmit={handleSubmit(onSubmit)}>
 						<Flexbox $gap={10}>
-							<InputOrder label="Name *" placeholder="Mary" name="name" {...inputCommonProps} />
-							<InputOrder label="Surname *" placeholder="Climber" name="surname" {...inputCommonProps} />
+							<InputOrder label="Имя *" placeholder="Мария" name="name" {...inputCommonProps} />
+							<InputOrder label="Фамилия *" placeholder="Клаймбер" name="surname" {...inputCommonProps} />
 							<InputOrder
 								label="Email *"
 								placeholder="mary-climber@gmail.com"
@@ -57,21 +57,21 @@ export const StepForm = () => {
 								{...inputCommonProps}
 							/>
 							<InputOrder
-								label="Mobile phone *"
+								label="Мобильный телефон *"
 								placeholder="+7 (999) 999-99-99"
 								name="phone"
 								mask="+7 (000) 000-00-00"
 								{...inputCommonProps}
 							/>
 							<InputOrder
-								label="Delivery address *"
-								placeholder="Main street, 32"
+								label="Адрес доставки *"
+								placeholder="Главная улица, 32"
 								name="deliveryAddress"
 								{...inputCommonProps}
 							/>
-							<SwitchOrder label="To apartment" name="toApartment" {...inputCommonProps} />
+							<SwitchOrder label="До квартиры" name="toApartment" {...inputCommonProps} />
 							<Button type="submit" $success disabled={!isValid}>
-								Submit
+								Отправить
 							</Button>
 						</Flexbox>
 					</form>

@@ -27,13 +27,13 @@ export const StepFinal = () => {
 			<Icon icon="favorite" size={75} as="i" />
 			<div>
 				<GradientText size={40} style={{ marginBottom: 20 }} gradient="dark">
-					<strong>Congratulations :)</strong>
+					<strong>Поздравляем! :)</strong>
 				</GradientText>
-				<p>You have been made an order and our manager will contact you shortly</p>
+				<p>Ваш заказ оформлен, наш менеджер свяжется с вами в ближайшее время</p>
 			</div>
 
 			<Button animate $dark onClick={handleBackToProducts}>
-				Go to products
+				Перейти к товарам
 			</Button>
 		</WrapperFinal>
 	);

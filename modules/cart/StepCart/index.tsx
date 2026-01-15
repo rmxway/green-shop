@@ -38,11 +38,11 @@ export const StepCart: FC = () => {
 
 	return (
 		<>
-			<Modal open={modalShow} onClose={() => setModalShow(false)} title="Delete all">
-				<div>Sure you want to delete all products from cart ?</div>
+			<Modal open={modalShow} onClose={() => setModalShow(false)} title="Удалить все">
+				<div>Вы уверены, что хотите удалить все товары из корзины?</div>
 				<br />
 				<Button $danger onClick={handleTrashAllProducts}>
-					Delete
+					Удалить
 				</Button>
 			</Modal>
 			<Cart>
@@ -50,7 +50,7 @@ export const StepCart: FC = () => {
 					<Wrapper layoutRoot variants={contentVariant} initial="hidden" animate="visible" key="wrapper">
 						{isItems && (
 							<LinkIcon icon="trash" onClick={() => setModalShow(true)}>
-								Delete All
+								Удалить все
 							</LinkIcon>
 						)}
 
@@ -78,7 +78,7 @@ export const StepCart: FC = () => {
 								animate="visible"
 								exit="hidden"
 							>
-								No items, please go to&nbsp;<Link href="/products">products page</Link>
+								Нет товаров, перейдите на&nbsp;<Link href="/products">страницу товаров</Link>
 								<br />
 							</LayerBlock>
 						)}
@@ -86,16 +86,16 @@ export const StepCart: FC = () => {
 					</Wrapper>
 
 					<Sidebar layoutId="sidebar">
-						<Title>Your order</Title>
+						<Title>Ваш заказ</Title>
 						<Total>
-							Total:
+							Всего:
 							<span>
 								<CountUp startVal={0} end={totalPrice} duration={0.5} decimals={2} preserveValue />{' '}
 								{currency}
 							</span>
 						</Total>
 						<Button $success disabled={totalPrice === 0} onClick={nextStep}>
-							Checkout
+							Оформить заказ
 						</Button>
 					</Sidebar>
 				</LayoutGroup>

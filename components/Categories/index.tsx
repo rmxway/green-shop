@@ -15,24 +15,24 @@ export const Categories: FC<{ isLoading: boolean }> = ({ isLoading }) => {
 
 	return (
 		<>
-			<h5>Categories</h5>
+			<h5>Категории</h5>
 			<WrapperCategory>
 				<Flexbox $justify="flex-start" $gap={4}>
 					{isLoading
 						? skeletonArray.map((el) => (
-								<Skeleton key={el} inline borderRadius={8} height={31} width={el} />
-							))
+							<Skeleton key={el} inline borderRadius={8} height={31} width={el} />
+						))
 						: categories.map((category) => (
-								<Category
-									$active={category.active}
-									type="button"
-									key={category.name}
-									disabled={search.length !== 0}
-									onClick={() => changeCategoryWithSort(category.name)}
-								>
-									{category.name}
-								</Category>
-							))}
+							<Category
+								$active={category.active}
+								type="button"
+								key={category.name}
+								disabled={search.length !== 0}
+								onClick={() => changeCategoryWithSort(category.name)}
+							>
+								{category.name}
+							</Category>
+						))}
 				</Flexbox>
 			</WrapperCategory>
 		</>

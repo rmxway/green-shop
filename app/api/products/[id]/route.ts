@@ -12,7 +12,7 @@ export function GET(req: Request) {
 		if (Number.isNaN(id)) {
 			return NextResponse.json({ error: 'Invalid product ID' }, { status: 400 });
 		}
-		
+
 		const product = products.find((item) => item.id === id);
 
 		if (!product) {

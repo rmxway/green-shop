@@ -27,7 +27,7 @@ const cartReducer = createSlice({
 		deleteFromCart: (state, { payload }: PayloadAction<number>) => {
 			state.items = state.items.filter((item) => item.id !== payload);
 			calculateTotalPrice(state);
-			
+
 			const isLastItemOnPage = state.items.length === state.countPerPage * state.page - state.countPerPage;
 			if (isLastItemOnPage && state.page !== 1) {
 				state.page -= 1;
