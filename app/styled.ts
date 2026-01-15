@@ -154,20 +154,137 @@ export const HeroSubtitle = styled.p`
 	`}
 `;
 
+export const AboutTitle = styled.h3`
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 1.5rem;
+	color: ${({ theme }) => theme.colors.gray.$9};
+`;
+
+export const AboutText = styled.p`
+	font-size: 1.25rem;
+	line-height: 1.6;
+	color: ${({ theme }) => theme.colors.gray.$7};
+	margin-bottom: 2rem;
+`;
+
+export const AboutTechText = styled.p`
+	font-size: 1rem;
+	color: ${({ theme }) => theme.colors.gray.$7};
+	line-height: 1.5;
+`;
+
+export const CodeSnippet = styled.code`
+	background: #f5f5f7;
+	padding: 2px 6px;
+	border-radius: 4px;
+	font-size: 0.9rem;
+`;
+
 export const NatureGallery = styled.div`
-	display: grid;
-	grid-template-columns: 2fr 1fr 1fr;
-	gap: 24px;
-	margin: 60px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 120px;
+	margin: 80px 0;
 	padding: 0;
 
-	${media.greaterThan('md')`
-		grid-template-columns: 2fr 1fr 1fr;
+	${media.lessThan('md')`
+		gap: 80px;
+		margin: 60px 0;
+	`}
+`;
+
+export const NatureBlock = styled.div<{ $reverse?: boolean }>`
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 80px;
+	align-items: center;
+	min-height: 500px;
+
+	${({ $reverse }) =>
+		$reverse &&
+		`
+		direction: rtl;
+
+		> * {
+			direction: ltr;
+		}
 	`}
 
 	${media.lessThan('md')`
 		grid-template-columns: 1fr;
-		gap: 16px;
+		gap: 40px;
+		min-height: auto;
+		direction: ltr !important;
+
+		> * {
+			direction: ltr !important;
+		}
+	`}
+`;
+
+export const NatureBlockContent = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 40px 0;
+
+	${media.lessThan('md')`
+		padding: 0;
+		text-align: center;
+	`}
+`;
+
+export const NatureBlockTitle = styled.h3`
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-bottom: 1.5rem;
+	color: ${({ theme }) => theme.colors.gray.$9};
+	letter-spacing: -0.02em;
+
+	${media.lessThan('md')`
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	`}
+`;
+
+export const NatureBlockText = styled.p`
+	font-size: 1.25rem;
+	line-height: 1.6;
+	color: ${({ theme }) => theme.colors.gray.$7};
+	margin-bottom: 2rem;
+	max-width: 500px;
+
+	${media.lessThan('md')`
+		font-size: 1.125rem;
+		margin-bottom: 1.5rem;
+	`}
+`;
+
+export const NatureBlockImage = styled.div`
+	position: relative;
+	width: 100%;
+	height: 500px;
+	border-radius: 24px;
+	overflow: hidden;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		filter: brightness(1.05) contrast(1.05);
+	}
+
+	&:hover img {
+		transform: scale(1.05);
+		filter: brightness(1.1) contrast(1.1) saturate(1.1);
+	}
+
+	${media.lessThan('md')`
+		height: 300px;
+		border-radius: 16px;
 	`}
 `;
 

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Container } from '@/components/Layout';
 import logos from '@/public/assets/img/logos.jpg';
 
-import { FeatureCardClean, FeatureIcon, FeatureItem, FeatureList, FeaturesGrid, FeatureTitle, FirstBlock, HeroSection, HeroSubtitle, HeroTitle, ImageLogos, NatureGallery, NatureImage, PrimaryButton, Section, SectionSubtitle, SectionTitle } from './styled';
+import { AboutTechText, AboutText, AboutTitle, CodeSnippet, FeatureCardClean, FeatureIcon, FeatureItem, FeatureList, FeaturesGrid, FeatureTitle, FirstBlock, HeroSection, HeroSubtitle, HeroTitle, ImageLogos, NatureBlock, NatureBlockContent, NatureBlockImage, NatureBlockText, NatureBlockTitle, NatureGallery, PrimaryButton, Section, SectionSubtitle, SectionTitle } from './styled';
 
 export default function MainPage() {
 	return (
@@ -31,26 +31,25 @@ export default function MainPage() {
 				<Container>
 					<FirstBlock>
 						<div>
-							<h3 style={{ fontSize: '2rem', fontWeight: '700', marginBottom: '1.5rem', color: '#1d1d1f' }}>
+							<AboutTitle>
 								Современная платформа
-							</h3>
-							<p style={{ fontSize: '1.25rem', lineHeight: '1.6', color: '#86868b', marginBottom: '2rem' }}>
+							</AboutTitle>
+							<AboutText>
 								Создано с использованием Next.js и современных технологий для обеспечения лучшего пользовательского опыта. Интеграция с dummyjson.com для демонстрации функциональности.
-							</p>
-							<p style={{ fontSize: '1rem', color: '#86868b', lineHeight: '1.5' }}>
-								<code style={{ background: '#f5f5f7', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9rem' }}>
+							</AboutText>
+							<AboutTechText>
+								<CodeSnippet>
 									create-next-app
-								</code>{' '}
+								</CodeSnippet>{' '}
 								+{' '}
 								<a
 									href="https://dummyjson.com"
 									target="_blank"
 									rel="noreferrer"
-									style={{ color: '#007aff', textDecoration: 'none' }}
 								>
 									dummyjson.com API
 								</a>
-							</p>
+							</AboutTechText>
 						</div>
 						<ImageLogos>
 							<Image
@@ -75,30 +74,59 @@ export default function MainPage() {
 						Каждый товар создан с заботой об окружающей среде и вашем благополучии, предлагая только лучшее из природы для вашего здоровья и красоты.
 					</SectionSubtitle>
 					<NatureGallery>
-						<NatureImage data-title="Лесная природа">
-							<Image
-								src="/assets/img/nature/forest.jpg"
-								width={800}
-								height={600}
-								alt="Лесная природа"
-							/>
-						</NatureImage>
-						<NatureImage data-title="Горные пейзажи">
-							<Image
-								src="/assets/img/nature/mountains.jpg"
-								width={600}
-								height={400}
-								alt="Горные пейзажи"
-							/>
-						</NatureImage>
-						<NatureImage data-title="Цветущий луг">
-							<Image
-								src="/assets/img/nature/meadow.jpg"
-								width={600}
-								height={400}
-								alt="Цветущий луг"
-							/>
-						</NatureImage>
+						<NatureBlock $reverse>
+							<NatureBlockContent>
+								<NatureBlockTitle>Лесная гармония</NatureBlockTitle>
+								<NatureBlockText>
+									Вдохновляясь величественными лесами, мы создаем продукты, которые несут в себе силу и спокойствие природы.
+									Наши натуральные ингредиенты собираются бережно, сохраняя баланс экосистемы и предлагая вам чистоту первозданной природы.
+								</NatureBlockText>
+							</NatureBlockContent>
+							<NatureBlockImage>
+								<Image
+									src="/assets/img/nature/forest.jpg"
+									width={800}
+									height={600}
+									alt="Лесная природа"
+								/>
+							</NatureBlockImage>
+						</NatureBlock>
+
+						<NatureBlock>
+							<NatureBlockContent>
+								<NatureBlockTitle>Горная чистота</NatureBlockTitle>
+								<NatureBlockText>
+									Высокогорные растения, растущие в чистейшем воздухе, становятся основой наших премиальных продуктов.
+									Мы заботимся о сохранении горных экосистем, выбирая только те ингредиенты, которые не нарушают природный баланс.
+								</NatureBlockText>
+							</NatureBlockContent>
+							<NatureBlockImage>
+								<Image
+									src="/assets/img/nature/mountains.jpg"
+									width={600}
+									height={400}
+									alt="Горные пейзажи"
+								/>
+							</NatureBlockImage>
+						</NatureBlock>
+
+						<NatureBlock $reverse>
+							<NatureBlockContent>
+								<NatureBlockTitle>Цветущие луга</NatureBlockTitle>
+								<NatureBlockText>
+									Богатство цветущих лугов отражается в наших продуктах. Мы поддерживаем местных производителей,
+									которые выращивают растения традиционными методами, сохраняя биоразнообразие и природную красоту наших полей.
+								</NatureBlockText>
+							</NatureBlockContent>
+							<NatureBlockImage>
+								<Image
+									src="/assets/img/nature/meadow.jpg"
+									width={600}
+									height={400}
+									alt="Цветущий луг"
+								/>
+							</NatureBlockImage>
+						</NatureBlock>
 					</NatureGallery>
 				</Container>
 			</Section>
