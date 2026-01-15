@@ -4,9 +4,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Container } from '@/components/Layout';
+import { Button } from '@/components/ui';
 import logos from '@/public/assets/img/logos.jpg';
 
-import { AboutTechText, AboutText, AboutTitle, CodeSnippet, FeatureCardClean, FeatureIcon, FeatureItem, FeatureList, FeaturesGrid, FeatureTitle, FirstBlock, HeroSection, HeroSubtitle, HeroTitle, ImageLogos, NatureBlock, NatureBlockContent, NatureBlockImage, NatureBlockText, NatureBlockTitle, NatureGallery, PrimaryButton, Section, SectionSubtitle, SectionTitle } from './styled';
+import { AboutTechText, AboutText, AboutTitle, CodeSnippet, FeatureCardClean, FeatureIcon, FeatureItem, FeatureList, FeaturesGrid, FeatureTitle, FirstBlock, HeroSection, HeroSubtitle, HeroTitle, ImageLogos, NatureBlock, NatureBlockContent, NatureBlockImage, NatureBlockText, NatureBlockTitle, NatureGallery, Section, SectionSubtitle, SectionTitle } from './styled';
 
 export default function MainPage() {
 	return (
@@ -19,10 +20,11 @@ export default function MainPage() {
 				<HeroSubtitle>
 					Современный интернет-магазин натуральной продукции с широким ассортиментом органических товаров для здорового образа жизни
 				</HeroSubtitle>
+				<br />
 				<Link href="/products">
-					<PrimaryButton>
+					<Button $white>
 						Посмотреть товары
-					</PrimaryButton>
+					</Button>
 				</Link>
 			</HeroSection>
 
