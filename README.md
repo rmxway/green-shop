@@ -1,31 +1,58 @@
-## Getting Started
+# 🌿 SPA Интернет-магазин Натуральной Продукции
 
-First, run the development server:
+Современный интернет-магазин натуральной продукции на Next.js 15 с React 19.
+
+## ✨ Ключевые возможности
+
+- **Каталог товаров** с поиском, фильтрами и пагинацией
+- **Корзина покупок** с сохранением в localStorage
+- **Избранные товары** с отдельной страницей
+- **Адаптивный дизайн** для всех устройств
+- **Современный стек**: Next.js, React, TypeScript, Redux, Styled Components
+
+## 🛠️ Технологии
+
+**Frontend**: Next.js 15, React 19, TypeScript, Styled Components, Framer Motion
+**State**: Redux Toolkit, Redux Persist, RTK Query
+**Формы**: React Hook Form, Yup
+**UI**: Swiper, React Loading Skeleton
+**Инструменты**: ESLint, Prettier, Jest, React Testing Library
+
+## 🚀 Быстрый старт
+
+### Установка
 
 ```bash
-npm run dev
-# or
+git clone https://github.com/rmxway/SPA-1
+cd spa-1
+yarn install
 yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Основные команды
 
-[API routes](https://nextjs.org/docs/app/building-your-application/routing) can be accessed on [http://localhost:3000/api/products](http://localhost:3000/api/products). This endpoint can be edited in `app/api/products/route.ts`.
+```bash
+yarn dev      # Запуск разработки
+yarn build    # Сборка для продакшена
+yarn start    # Запуск продакшен версии
+yarn test     # Запуск тестов
+yarn lint     # Проверка кода
+yarn icofont  # Генерация иконок
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🎯 Функции
 
-## Learn More
+- 🔍 **Поиск** и фильтрация товаров
+- 🛒 **Корзина** с формой заказа
+- ❤️ **Избранное** с сохранением
+- 📱 **Адаптивность** для мобильных устройств
 
-To learn more about Next.js, take a look at the following resources:
+## 🔧 API
 
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+Использует **RTK Query** для работы с [dummyjson API](https://dummyjson.com/). Данные о товарах загружаются через RTK Query endpoints в `store/api.ts`.
 
-#### <a href="https://spa-1-red.vercel.app/" target="_blank">Demo page</a>
+## 📦 Развертывание
 
-### `yarn icofont`
-
-If you want some icon, add svg file to **./fantasticon/icons/** and this command will generate new font with icons. New fonts available in **./public/assets/fonts/icofont**, it's already imported into the project.
+Проект развернут на Vercel: [🌐 Демо](https://spa-1-red.vercel.app/)
