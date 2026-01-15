@@ -89,7 +89,7 @@ export const ContentProduct = () => {
 		setIsLoad(false);
 		setHasError(true);
 	};
-	
+
 
 	return (
 		<MobileWhiteBackground>
@@ -195,7 +195,7 @@ export const ContentProduct = () => {
 											disabled={product.checked}
 											icon="cart"
 										>
-											{product.checked ? 'Added' : 'Add to cart'}
+											{product.checked ? 'Добавлено' : 'В корзину'}
 										</Button>
 										<Favorite
 											active={product.favorite}

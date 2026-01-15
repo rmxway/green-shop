@@ -1,11 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { PRODUCTS_LIMIT } from '@/services/constants';
+import { PRODUCTS_LIMIT, protocol } from '@/services/constants';
+import { getHost } from '@/services/domainData';
 import { IProduct } from '@/services/interfaces';
 
-export interface ProductsApiResponse {
-	products: IProduct[];
-}
+export type ProductsApiResponse = IProduct[];
 
 export interface ResponseProducts {
 	data: IProduct[];
@@ -15,7 +14,7 @@ export interface ResponseProducts {
 export const api = createApi({
 	reducerPath: 'productsApi',
 	baseQuery: fetchBaseQuery({
-		baseUrl: 'https://dummyjson.com/',
+		baseUrl: `${protocol}://${getHost}/api/`,
 	}),
 	tagTypes: ['Products', 'Product'],
 	endpoints: (builder) => ({
@@ -28,11 +27,11 @@ export const api = createApi({
 			}),
 			providesTags: ['Products'],
 			transformResponse: (data: ProductsApiResponse): ResponseProducts => {
-				const categories = [...new Set(data.products.map((item) => item.category || ''))];
+				const categories = [...new Set(data.map((item) => item.category || ''))];
 				categories.unshift('all');
 
 				return {
-					data: data.products,
+					data,
 					categories,
 				};
 			},

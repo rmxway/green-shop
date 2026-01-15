@@ -220,6 +220,15 @@ export const NatureBlock = styled.div<{ $reverse?: boolean }>`
 		> * {
 			direction: ltr !important;
 		}
+
+		/* Исправление порядка элементов в мобильной версии */
+		&:nth-child(even) {
+			direction: ltr !important;
+
+			> * {
+				direction: ltr !important;
+			}
+		}
 	`}
 `;
 
@@ -230,7 +239,7 @@ export const NatureBlockContent = styled.div`
 	padding: 40px 0;
 
 	${media.lessThan('md')`
-		padding: 0;
+		padding: 0 20px;
 		text-align: center;
 	`}
 `;
@@ -253,7 +262,6 @@ export const NatureBlockText = styled.p`
 	line-height: 1.6;
 	color: ${({ theme }) => theme.colors.gray.$7};
 	margin-bottom: 2rem;
-	max-width: 500px;
 
 	${media.lessThan('md')`
 		font-size: 1.125rem;
@@ -303,6 +311,7 @@ export const FeatureItem = styled.li`
 	margin-bottom: 0.5rem;
 	display: flex;
 	align-items: center;
+	text-align: left;
 `;
 
 export const FeatureIcon = styled.span`
@@ -375,12 +384,13 @@ export const SectionSubtitle = styled.p`
 		font-size: 1.125rem;
 		padding: 0 20px;
 		margin-bottom: 2rem;
+		max-width: none;
 	`}
 `;
 
 export const FeaturesGrid = styled.div`
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 	gap: 2rem;
 	margin-top: 3rem;
 `;

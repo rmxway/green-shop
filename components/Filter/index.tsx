@@ -40,7 +40,7 @@ export const Filter: FC<{ isLoading: boolean }> = ({ isLoading }) => {
 			) : (
 				<Input
 					name="search"
-					placeholder="Search"
+					placeholder="Поиск"
 					value={value}
 					onChange={handleChange}
 					noPadding
@@ -57,9 +57,9 @@ export const Filter: FC<{ isLoading: boolean }> = ({ isLoading }) => {
 					</>
 				) : (
 					<>
-						<ToggleSort sort="rating" value="Popular" disabled={!fetchedItems.length} />
-						<ToggleSort sort="price" value="Price" disabled={!fetchedItems.length} />
-						<ToggleSort sort="default" value="Reset" onClick={resetInput} />
+						<ToggleSort sort="rating" value="Популярные" disabled={!fetchedItems.length} />
+						<ToggleSort sort="price" value="Цена" disabled={!fetchedItems.length} />
+						<ToggleSort sort="default" value="Сброс" onClick={resetInput} />
 					</>
 				)}
 			</Flexbox>

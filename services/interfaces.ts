@@ -78,6 +78,7 @@ export interface ProductsState {
 	fetching: boolean;
 	sort: SortTypes;
 	search: string;
+	lastUpdated?: number;
 }
 
 export interface CartState {

@@ -24,18 +24,18 @@ export const ContentFavorites = () => {
 		<Container $pt>
 			{items.length > 0 && (
 				<LinkIcon icon="trash" onClick={() => setModalShow(true)} style={{ top: '-30px' }}>
-					Delete favorites
+					Удалить избранное
 				</LinkIcon>
 			)}
-			<Modal open={modalShow} onClose={() => setModalShow(false)} title="Delete favorites">
-				<div>Sure you want to delete all favorites ?</div>
+			<Modal open={modalShow} onClose={() => setModalShow(false)} title="Удалить избранное">
+				<div>Вы уверены, что хотите удалить все избранные товары?</div>
 				<br />
 				<Button $danger onClick={handleRemoveAllFavorites}>
-					Delete
+					Удалить
 				</Button>
 			</Modal>
 
-			<ProductsGrid {...{ items }} pagination keyPage="favorites" />
+			<ProductsGrid {...{ items }} pagination keyPage="favorites" hasError={false} />
 		</Container>
 	);
 };

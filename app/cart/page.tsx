@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { ContentCart } from '@/modules/cart';
 
 export const metadata: Metadata = {
-	title: 'Cart',
+	title: 'Корзина',
 };
 
 export default function CartPage() {

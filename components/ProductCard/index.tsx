@@ -42,7 +42,7 @@ export const ProductCard: FC<ProductType> = ({ product, ...props }) => {
 				</Price>
 			</Tools>
 			<Button $primary icon='cart' onClick={handleChecked} disabled={product.checked}>
-				{product.checked ? 'Added' : 'Add to cart'}
+				{product.checked ? 'Добавлено' : 'В корзину'}
 			</Button>
 		</ProductWrapper>
 	);

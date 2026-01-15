@@ -91,7 +91,7 @@ const productsReducer = createSlice({
 			anyTogglesInProduct(state, payload, 'favorite');
 
 			state.countFavorites = state.reservedItems.filter((item) => item.favorite).length;
-			
+
 			const isLastItemOnPage = state.countFavorites === state.countPerPage * state.page - state.countPerPage;
 			if (isLastItemOnPage && state.typePage === 'favorites') {
 				state.page -= 1;
@@ -138,9 +138,16 @@ const productsReducer = createSlice({
 				},
 			)
 			.addMatcher(api.endpoints.getProducts.matchRejected, (state) => {
-				state.error = 'Something went wrong';
-				state.fetching = false;
-				state.fetchedItems = [];
+				if (state.fetchedItems.length === 0) {
+					// Нет данных вообще - показываем ошибку
+					state.error = 'Не удалось загрузить товары. Проверьте подключение к интернету.';
+					state.fetching = false;
+				} else {
+					// Данные есть в кэше - показываем предупреждение
+					state.error = 'Не удалось обновить данные. Показаны сохраненные данные.';
+					state.fetching = false;
+					// НЕ очищаем fetchedItems!
+				}
 			})
 			// Product
 			.addMatcher(api.endpoints.getProduct.matchPending, (state) => {

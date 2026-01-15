@@ -38,7 +38,7 @@ export const submitOrder: SubmitHandler<OrderFields> = async (data): Promise<voi
 			const errorMessage =
 				errorResponse.errors && typeof errorResponse.errors === 'object'
 					? Object.values(errorResponse.errors).join(', ')
-					: errorResponse.error || 'Something went wrong...';
+					: errorResponse.error || 'Что-то пошло не так...';
 			throw new Error(errorMessage);
 		}
 
@@ -47,6 +47,6 @@ export const submitOrder: SubmitHandler<OrderFields> = async (data): Promise<voi
 		if (err instanceof Error) {
 			throw err;
 		}
-		throw new Error('Unknown error occurred');
+		throw new Error('Произошла неизвестная ошибка');
 	}
 };
