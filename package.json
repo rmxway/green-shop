@@ -14,7 +14,8 @@
 		"pretty": "npx prettier --write .",
 		"icofont": "fantasticon -n icofont -p icofont --normalize",
 		"test": "jest",
-		"test:watch": "jest --watch"
+		"test:watch": "jest --watch",
+		"postinstall": "echo 'Installation completed'"
 	},
 	"dependencies": {
 		"@hookform/resolvers": "^5.2.2",
