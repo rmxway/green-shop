@@ -188,7 +188,7 @@ export const ContentProduct = () => {
 										{product.stock && <Sticker $success>In Stock: {product.stock}</Sticker>}
 										{product.tags && product.tags.map((tag) => <Sticker key={tag}>{tag}</Sticker>)}
 									</Flexbox>
-									<Grid $direction="column" $templateColumns="1fr 30px" $gap={5}>
+									<Grid $direction="column" $templateColumns="1fr 30px" $gap={5} $align='center'>
 										<Button
 											$primary
 											onClick={() => moveToCart(Number(product?.id))}

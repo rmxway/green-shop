@@ -4,8 +4,6 @@ import { PRODUCTS_LIMIT, protocol } from '@/services/constants';
 import { getHost } from '@/services/domainData';
 import { IProduct } from '@/services/interfaces';
 
-export type ProductsApiResponse = IProduct[];
-
 export interface ResponseProducts {
 	data: IProduct[];
 	categories: string[];
@@ -26,7 +24,7 @@ export const api = createApi({
 				},
 			}),
 			providesTags: ['Products'],
-			transformResponse: (data: ProductsApiResponse): ResponseProducts => {
+			transformResponse: (data: IProduct[]): ResponseProducts => {
 				const categories = [...new Set(data.map((item) => item.category || ''))];
 				categories.unshift('all');
 

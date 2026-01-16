@@ -45,15 +45,18 @@ export const StepCart: FC = () => {
 					Удалить
 				</Button>
 			</Modal>
+			<div>
+				{isItems && (
+					<LinkIcon icon="trash" onClick={() => setModalShow(true)} style={{ top: '-30px' }}>
+						Удалить все
+					</LinkIcon>
+				)}
+			</div >
 			<Cart>
-				<LayoutGroup>
-					<Wrapper layoutRoot variants={contentVariant} initial="hidden" animate="visible" key="wrapper">
-						{isItems && (
-							<LinkIcon icon="trash" onClick={() => setModalShow(true)}>
-								Удалить все
-							</LinkIcon>
-						)}
 
+				<LayoutGroup>
+
+					<Wrapper layoutRoot variants={contentVariant} initial="hidden" animate="visible" key="wrapper">
 						<AnimatePresence mode="popLayout" presenceAffectsLayout>
 							{currentItems?.length !== 0 &&
 								currentItems?.map((item, i) => (
@@ -94,7 +97,7 @@ export const StepCart: FC = () => {
 								{currency}
 							</span>
 						</Total>
-						<Button $success disabled={totalPrice === 0} onClick={nextStep}>
+						<Button $primary disabled={totalPrice === 0} onClick={nextStep}>
 							Оформить заказ
 						</Button>
 					</Sidebar>
