@@ -10,12 +10,12 @@ export const CurrencySwitcherWrapper = styled.div`
 export const CurrencyLabel = styled.div<{ $isRUB: boolean }>`
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	gap: 14px;
 	font-size: 16px;
 	font-weight: 500;
 
 	button {
-		padding: 4px 8px;
+		padding: 4px 0;
 		cursor: pointer;
 		border: none;
 		background: none;
