@@ -33,7 +33,7 @@ export const TableProducts: FC<{ fGrow?: boolean }> = ({ fGrow }) => {
 				))}
 			<p>
 				<span>
-					{Number(formatPrice(totalPrice)).toFixed(2)} {getCurrencySymbol()}
+					{formatPrice(totalPrice)} {getCurrencySymbol()}
 				</span>
 			</p>
 		</WrapperProducts>
