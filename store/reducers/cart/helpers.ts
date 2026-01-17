@@ -1,4 +1,4 @@
-import { CartState } from '@/services/interfaces';
+import { CartState } from '@/types';
 
 interface StateAndProps {
 	state: CartState;

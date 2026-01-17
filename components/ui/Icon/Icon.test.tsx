@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 
 import { Icon } from '@/components/ui';
 import { StyledComponentsRegistry } from '@/lib/registry';
-import { Icofont } from '@/services';
+import { Icofont } from '@/types';
 
 describe('Icon/UI', () => {
 	it('Render is fine', () => {

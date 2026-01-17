@@ -1,9 +1,10 @@
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styled from 'styled-components';
 
 import { Container, Grid, LayerBlock } from '@/components/Layout';
 import { WrapperSticker } from '@/components/ui/Sticker/styled';
-import { defaultTheme as theme, media } from '@/theme';
+import { defaultTheme as theme, fadeIn,media } from '@/theme';
 
 export const Wrapper = styled(Container)`
 	position: relative;
@@ -167,4 +168,24 @@ export const PriceBlock = styled(Grid)`
     `}
 `;
 
-export default Wrapper;
+export const NoPhotoContainer = styled(motion.div)`
+	position: relative;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	i.icofont-nophoto {
+		color: ${theme.colors.gray.$4};
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		font-size: 100px;
+		z-index: 1;
+		position: relative;
+		text-decoration: none;
+		${fadeIn}
+	}
+`;

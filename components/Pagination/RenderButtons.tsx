@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react';
 
-import { IProduct } from '@/services';
+import { IProduct } from '@/types';
 
 import { ButtonPagination } from './styled';
 

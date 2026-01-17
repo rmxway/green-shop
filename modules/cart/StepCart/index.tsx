@@ -3,14 +3,13 @@
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import Link from 'next/link';
 import { FC, useState } from 'react';
-import CountUp from 'react-countup';
 
 import { Pagination } from '@/components';
 import { LayerBlock } from '@/components/Layout';
 import { Button, LinkIcon, Modal } from '@/components/ui';
 import { CartItem } from '@/modules/cart/CartItem';
 import { fadeVariant } from '@/modules/cart/CartItem/styled';
-import { currency, useAppDispatch, useAppSelector } from '@/services';
+import { useAppDispatch, useAppSelector, useCurrency } from '@/services';
 import { changePage, changeStep } from '@/store/reducers/cart';
 import { removeAllProducts } from '@/store/reducers/combineActions';
 import { currentItemsMemoized } from '@/store/reducers/commonSelectors';
@@ -21,6 +20,7 @@ import { Cart, contentVariant, Sidebar, Title, Total, Wrapper } from './styled';
 export const StepCart: FC = () => {
 	const [modalShow, setModalShow] = useState(false);
 	const { items, totalPrice, page, countPerPage } = useAppSelector(cartStore);
+	const { formatPrice, getCurrencySymbol } = useCurrency();
 	const isItems = !!items.length;
 
 	const dispatch = useAppDispatch();
@@ -45,15 +45,18 @@ export const StepCart: FC = () => {
 					Удалить
 				</Button>
 			</Modal>
+			<div>
+				{isItems && (
+					<LinkIcon icon="trash" onClick={() => setModalShow(true)} style={{ top: '-30px' }}>
+						Удалить все
+					</LinkIcon>
+				)}
+			</div >
 			<Cart>
-				<LayoutGroup>
-					<Wrapper layoutRoot variants={contentVariant} initial="hidden" animate="visible" key="wrapper">
-						{isItems && (
-							<LinkIcon icon="trash" onClick={() => setModalShow(true)}>
-								Удалить все
-							</LinkIcon>
-						)}
 
+				<LayoutGroup>
+
+					<Wrapper layoutRoot variants={contentVariant} initial="hidden" animate="visible" key="wrapper">
 						<AnimatePresence mode="popLayout" presenceAffectsLayout>
 							{currentItems?.length !== 0 &&
 								currentItems?.map((item, i) => (
@@ -90,11 +93,11 @@ export const StepCart: FC = () => {
 						<Total>
 							Всего:
 							<span>
-								<CountUp startVal={0} end={totalPrice} duration={0.5} decimals={2} preserveValue />{' '}
-								{currency}
+								{formatPrice(totalPrice)}{' '}
+								{getCurrencySymbol()}
 							</span>
 						</Total>
-						<Button $success disabled={totalPrice === 0} onClick={nextStep}>
+						<Button $primary disabled={totalPrice === 0} onClick={nextStep}>
 							Оформить заказ
 						</Button>
 					</Sidebar>

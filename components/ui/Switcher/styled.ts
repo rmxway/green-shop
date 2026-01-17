@@ -1,3 +1,4 @@
+import { darken } from 'polished';
 import styled, { css } from 'styled-components';
 
 export const WrapperSwitcher = styled.div`
@@ -35,7 +36,7 @@ export const WrapperSwitcher = styled.div`
 		}
 
 		& > input:checked + label {
-			background-color: ${theme.colors.success};
+			background-color: ${darken(0, theme.colors.dark)};
 
 			&:after {
 				transform: translate(100%, 0);

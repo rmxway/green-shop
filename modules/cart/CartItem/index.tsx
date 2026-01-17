@@ -4,11 +4,12 @@ import Link from 'next/link';
 import { forwardRef, useEffect, useState } from 'react';
 
 import { Icon, Loader } from '@/components/ui';
-import { currency, IProduct, useAppDispatch } from '@/services';
+import { useAppDispatch, useCurrency } from '@/services';
 import { decreaseCount, increaseCount } from '@/store/reducers/cart';
 import { removeFromCart } from '@/store/reducers/combineActions';
+import { IProduct } from '@/types';
 
-import { Content, Count, CountWrapper, Delete, elementsVars, Item, Price, ThumbnailContainer,Title, WrapperText } from './styled';
+import { Content, Count, CountWrapper, Delete, elementsVars, Item, Price, ThumbnailContainer, Title, WrapperText } from './styled';
 
 interface Props extends MotionProps {
 	product: IProduct;
@@ -16,6 +17,7 @@ interface Props extends MotionProps {
 
 export const CartItem = forwardRef<HTMLDivElement, Props>(({ product, ...props }, ref) => {
 	const dispatch = useAppDispatch();
+	const { formatPrice, getCurrencySymbol } = useCurrency();
 	const { id, price, title, description, thumbnail, count } = product;
 	const [isLoad, setIsLoad] = useState(true);
 	const [hasError, setHasError] = useState(false);
@@ -102,7 +104,7 @@ export const CartItem = forwardRef<HTMLDivElement, Props>(({ product, ...props }
 					)}
 					{count && price && (
 						<Price>
-							{(count * price).toFixed(2)} {currency}
+							{formatPrice(count * price)} {getCurrencySymbol()}
 						</Price>
 					)}
 				</WrapperText>

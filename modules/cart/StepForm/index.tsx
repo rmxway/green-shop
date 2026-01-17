@@ -70,7 +70,7 @@ export const StepForm = () => {
 								{...inputCommonProps}
 							/>
 							<SwitchOrder label="До квартиры" name="toApartment" {...inputCommonProps} />
-							<Button type="submit" $success disabled={!isValid}>
+							<Button type="submit" $primary disabled={!isValid}>
 								Отправить
 							</Button>
 						</Flexbox>

@@ -3,54 +3,31 @@
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { TextToggle } from '@/components';
 import { Flexbox, Grid, LayerBlock, MobileWhiteBackground, RatingStars } from '@/components/Layout';
 import { Button, Favorite, Icon, Loader, Sticker } from '@/components/ui';
-import { Info, PriceBlock, SideBlock, Wrapper } from '@/modules/product/styled';
-import { currency, IProduct, useAppDispatch, useAppSelector } from '@/services';
+import { Info, NoPhotoContainer, PriceBlock, SideBlock, Wrapper } from '@/modules/product/styled';
+import { useAppDispatch, useAppSelector, useCurrency } from '@/services';
 import { useGetProductQuery } from '@/store/api';
 import { moveToCart } from '@/store/reducers/combineActions';
 import { productMemoized } from '@/store/reducers/commonSelectors';
 import { setTitle, toggleFavorite } from '@/store/reducers/products';
 import { productsStore } from '@/store/types';
-import { defaultTheme as theme } from '@/theme';
-import { fadeIn } from '@/theme/styles/animations';
+import { IProduct } from '@/types';
 
-const NoPhotoContainer = styled(motion.div)`
-	position: relative;
-	height: 300px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	i.icofont-nophoto {
-		color: ${theme.colors.gray.$4};
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
-		font-size: 100px;
-		z-index: 1;
-		position: relative;
-		text-decoration: none;
-		${fadeIn}
-	}
-`;
 
 export const ContentProduct = () => {
 	const { id } = useParams<{ id: string }>();
 	const { fetchedItems, error } = useAppSelector(productsStore);
 	useGetProductQuery(id, { skip: fetchedItems.length > 1 });
 	const product: IProduct = productMemoized(useAppSelector(productsStore), id)!;
+	const { formatPriceWithSymbol } = useCurrency();
 
 	const dispatch = useAppDispatch();
 	const [isLoad, setIsLoad] = useState(true);
@@ -178,7 +155,7 @@ export const ContentProduct = () => {
 								<PriceBlock>
 									<Grid className="side-price" $direction="column">
 										<span>
-											{product.price} {currency}{' '}
+											{formatPriceWithSymbol(product.price)}{' '}
 											<Sticker $danger>
 												-{Math.round(Number(product.discountPercentage))} %
 											</Sticker>
@@ -188,7 +165,7 @@ export const ContentProduct = () => {
 										{product.stock && <Sticker $success>In Stock: {product.stock}</Sticker>}
 										{product.tags && product.tags.map((tag) => <Sticker key={tag}>{tag}</Sticker>)}
 									</Flexbox>
-									<Grid $direction="column" $templateColumns="1fr 30px" $gap={5}>
+									<Grid $direction="column" $templateColumns="1fr 30px" $gap={5} $align='center'>
 										<Button
 											$primary
 											onClick={() => moveToCart(Number(product?.id))}

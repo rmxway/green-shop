@@ -1,4 +1,5 @@
 export * from './Button';
+export * from './CurrencySwitcher';
 export * from './ErrorMessage';
 export * from './Favorite';
 export * from './GradientText';

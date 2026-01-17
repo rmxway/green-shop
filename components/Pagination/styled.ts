@@ -37,63 +37,13 @@ export const Wrapper = styled(motion.div)<{ $isItems: boolean }>`
     `}
 `;
 
-export const ArrowButton = styled.button<{ $left?: boolean; $right?: boolean }>`
-	text-transform: uppercase;
-	display: inline-flex;
-	align-items: center;
-	cursor: pointer;
-	font-size: 0.6rem;
-	line-height: 1;
-	height: 26px;
-	padding: 0;
-	border: 1px solid ${theme.colors.gray.$4};
-	border-radius: calc(${theme.radius.borderRadius} * 1.1);
-	margin-right: 2px;
-	color: ${theme.colors.gray.$6};
-
-	&:hover {
-		color: ${theme.colors.gray.$7};
-	}
-
-	${media.greaterThan('xs')`
-        font-size: 0.8rem;
-        height: 30px;
-        margin-right: 3px;
-    `}
-
-	${fadeIn}
-
-	.icofont {
-		position: relative;
-		display: flex;
-		align-items: center;
-		font-size: 1.2rem;
-	}
-
-	${({ $left, $right }) => {
-		if ($left)
-			return css`
-				padding-right: 10px;
-				.icofont {
-					transform: rotate(90deg);
-				}
-			`;
-		if ($right)
-			return css`
-				padding-left: 10px;
-				.icofont {
-					transform: rotate(90deg) scale(1, -1);
-				}
-			`;
-		return null;
-	}}
-`;
-
 export const ButtonPagination = styled(ButtonStyle)`
 	margin-right: 2px;
 	width: 25px;
 	padding: 6px 0;
 	line-height: 1;
+
+	${fadeIn}
 
 	&,
 	&:focus,
@@ -111,4 +61,37 @@ export const ButtonPagination = styled(ButtonStyle)`
         padding: 8px 0;
         margin-right: 3px;
     `}
+
+	&:last-child {
+		margin-right: 0;
+	}
+`;
+
+export const ArrowButton = styled(ButtonPagination)<{ $left?: boolean; $right?: boolean }>`
+	text-transform: uppercase;
+	width: auto;
+
+	.icofont {
+		margin-top: 3px;
+	}
+
+	${({ $left, $right }) => {
+		if ($left)
+			return css`
+				padding-right: 10px;
+				.icofont {
+					transform: rotate(90deg);
+				}
+			`;
+		if ($right)
+			return css`
+				padding-left: 10px;
+				.icofont {
+					transform: rotate(90deg) scale(1, -1);
+					margin-left: 0px;
+					margin-right: 3px;
+				}
+			`;
+		return null;
+	}}
 `;

@@ -1,5 +1,3 @@
-import icofont from '@/public/assets/fonts/icofont/icofont.json';
-
 export interface IProduct {
 	id: number;
 	title: string;
@@ -43,13 +41,6 @@ export interface IProduct {
 	count?: number;
 }
 
-export interface DataFetch {
-	limit: number;
-	products: IProduct[];
-	skip: number;
-	total: number;
-}
-
 export interface SortTypes {
 	name: 'rating' | 'price' | 'default';
 	toggle?: boolean;
@@ -60,6 +51,14 @@ export type TypePages = 'products' | 'favorites';
 export interface Category {
 	name: 'all' | string;
 	active: boolean;
+}
+
+export interface CartState {
+	items: IProduct[];
+	totalPrice: number;
+	countPerPage: number;
+	page: number;
+	step: number;
 }
 
 export interface ProductsState {
@@ -78,15 +77,13 @@ export interface ProductsState {
 	fetching: boolean;
 	sort: SortTypes;
 	search: string;
+	currency: 'USD' | 'RUB';
 	lastUpdated?: number;
 }
 
-export interface CartState {
-	items: IProduct[];
-	totalPrice: number;
-	countPerPage: number;
-	page: number;
-	step: number;
+export interface DataFetch {
+	limit: number;
+	products: IProduct[];
+	skip: number;
+	total: number;
 }
-
-export type Icofont = keyof typeof icofont;

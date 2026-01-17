@@ -34,6 +34,12 @@ module.exports = {
 			files: ['*.js'],
 			extends: ['plugin:@typescript-eslint/disable-type-checked'],
 		},
+		{
+			files: ['next-env.d.ts'],
+			rules: {
+				'@typescript-eslint/triple-slash-reference': 'off',
+			},
+		},
 	],
 	rules: {
 		'class-methods-use-this': 'off',

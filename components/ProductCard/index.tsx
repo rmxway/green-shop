@@ -4,9 +4,10 @@ import { FC } from 'react';
 
 import { RatingStars, Space } from '@/components/Layout';
 import { Button, Favorite, Sticker } from '@/components/ui';
-import { currency, IProduct, useAppDispatch } from '@/services';
+import { useAppDispatch, useCurrency } from '@/services';
 import { moveToCart } from '@/store/reducers/combineActions';
 import { toggleFavorite } from '@/store/reducers/products';
+import { IProduct } from '@/types';
 
 import { Price, ProductWrapper, Title, Tools } from './styled';
 import { WrapperImages } from './WrapperImage';
@@ -18,6 +19,7 @@ interface ProductType extends MotionProps {
 export const ProductCard: FC<ProductType> = ({ product, ...props }) => {
 	const link = `/product/${product.id}`;
 	const dispatch = useAppDispatch();
+	const { formatPriceWithSymbol } = useCurrency();
 
 	const handleChecked = () => {
 		moveToCart(Number(product.id));
@@ -38,7 +40,7 @@ export const ProductCard: FC<ProductType> = ({ product, ...props }) => {
 			<Tools>
 				<RatingStars rating={Number(product.rating)} />
 				<Price>
-					{product.price} {currency}
+					{formatPriceWithSymbol(product.price)}
 				</Price>
 			</Tools>
 			<Button $primary icon='cart' onClick={handleChecked} disabled={product.checked}>

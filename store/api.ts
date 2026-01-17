@@ -2,9 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 import { PRODUCTS_LIMIT, protocol } from '@/services/constants';
 import { getHost } from '@/services/domainData';
-import { IProduct } from '@/services/interfaces';
-
-export type ProductsApiResponse = IProduct[];
+import { IProduct } from '@/types';
 
 export interface ResponseProducts {
 	data: IProduct[];
@@ -26,7 +24,7 @@ export const api = createApi({
 				},
 			}),
 			providesTags: ['Products'],
-			transformResponse: (data: ProductsApiResponse): ResponseProducts => {
+			transformResponse: (data: IProduct[]): ResponseProducts => {
 				const categories = [...new Set(data.map((item) => item.category || ''))];
 				categories.unshift('all');
 

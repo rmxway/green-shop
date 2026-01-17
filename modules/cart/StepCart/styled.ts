@@ -2,7 +2,6 @@ import { motion, Variants } from 'framer-motion';
 import styled from 'styled-components';
 
 import { Wrapper as WrapperPagination } from '@/components/Pagination/styled';
-import { LinkIconStyle } from '@/components/ui/LinkIcon/styled';
 import { defaultTheme as theme, media } from '@/theme';
 
 export const contentVariant: Variants = {
@@ -37,12 +36,6 @@ export const Wrapper = styled(motion.div)`
 	position: relative;
 	display: flex;
 	flex-direction: column;
-
-	& > ${LinkIconStyle} {
-		position: absolute;
-		left: 0;
-		top: -30px;
-	}
 
 	${media.greaterThan('sm')`
 		flex-grow: 1;

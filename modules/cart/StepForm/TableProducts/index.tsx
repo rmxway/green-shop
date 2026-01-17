@@ -2,11 +2,13 @@ import { FC } from 'react';
 
 import { Flexbox } from '@/components/Layout';
 import { Product, WrapperProducts } from '@/modules/cart/StepForm/styled';
-import { currency, useAppSelector } from '@/services';
+import { useAppSelector, useCurrency } from '@/services';
 import { cartStore } from '@/store/types';
 
 export const TableProducts: FC<{ fGrow?: boolean }> = ({ fGrow }) => {
 	const { items, totalPrice } = useAppSelector(cartStore);
+	const { formatPriceWithSymbol, formatPrice, getCurrencySymbol } = useCurrency();
+
 	return (
 		<WrapperProducts $fGrow={fGrow}>
 			<Product>
@@ -21,17 +23,17 @@ export const TableProducts: FC<{ fGrow?: boolean }> = ({ fGrow }) => {
 						<div>{count || 1}</div>
 						<Flexbox $nowrap $align="center" $direction="column">
 							<div>
-								{currency}&nbsp;{price}&nbsp;
+								{formatPriceWithSymbol(price)}
 							</div>
 							{count && count > 1 && (
-								<span>({(count * price).toFixed(2)})</span>
+								<span>({formatPriceWithSymbol(Number(count) * Number(price))})</span>
 							)}
 						</Flexbox>
 					</Product>
 				))}
 			<p>
 				<span>
-					{currency} {totalPrice.toFixed(2)}
+					{formatPrice(totalPrice)} {getCurrencySymbol()}
 				</span>
 			</p>
 		</WrapperProducts>
