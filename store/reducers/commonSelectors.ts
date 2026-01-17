@@ -1,28 +1,37 @@
 import { createDraftSafeSelector } from '@reduxjs/toolkit';
 
-import { IProduct } from '@/services';
-import { CartState, ProductsState } from '@/services/interfaces';
+import { CartState, IProduct, ProductsState } from '@/types';
 
-type stateType = CartState | ProductsState;
-
-const typedCommonCreateSelector = createDraftSafeSelector.withTypes<stateType>();
 const typedProductsCreateSelector = createDraftSafeSelector.withTypes<ProductsState>();
 
-export const currentItemsMemoized = typedCommonCreateSelector(
-	[(state) => state.page, (state) => state.countPerPage, (_, items: IProduct[]) => items],
+export const currentItemsMemoized = createDraftSafeSelector(
+	[
+		(state: CartState | ProductsState) => state.page,
+		(state: CartState | ProductsState) => state.countPerPage,
+		(_: CartState | ProductsState, items: IProduct[]) => items,
+	],
 	(page, countPerPage, items) => {
 		if (!Array.isArray(items) || items.length === 0) return [];
-		return items.filter((_, idx) => idx >= (page - 1) * countPerPage && idx < countPerPage * page);
+		const startIndex = (page - 1) * countPerPage;
+		const endIndex = page * countPerPage;
+		return items.slice(startIndex, endIndex);
 	},
 );
 
 export const productMemoized = typedProductsCreateSelector(
 	[(state) => state.reservedItems, (_, id: string) => id],
-	(reservedItems, id) => reservedItems.find((item) => item.id === Number(id)),
+	(reservedItems, id) => {
+		if (!Array.isArray(reservedItems) || !id) return null;
+		return reservedItems.find((item) => item.id === Number(id)) || null;
+	},
 );
 
-export const favoritesItemsMemoized = typedProductsCreateSelector([(state) => state.fetchedItems], (fetchedItems) =>
-	fetchedItems.filter((item) => item.favorite),
+export const favoritesItemsMemoized = typedProductsCreateSelector(
+	[(state) => state.fetchedItems],
+	(fetchedItems) => {
+		if (!Array.isArray(fetchedItems)) return [];
+		return fetchedItems.filter((item) => item?.favorite);
+	},
 );
 
 export const productsSelectorMemoized = typedProductsCreateSelector(

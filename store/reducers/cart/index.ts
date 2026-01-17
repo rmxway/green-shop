@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { CartState, IProduct } from '@/services';
 import { CART_COUNT_PER_PAGE } from '@/services/constants';
+import { CartState, IProduct } from '@/types';
 
 import { calculateTotalPrice, changeCount } from './helpers';
 

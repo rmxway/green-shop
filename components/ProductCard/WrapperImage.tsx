@@ -2,8 +2,9 @@ import Image from 'next/image';
 import { Fragment, SyntheticEvent, useEffect, useState } from 'react';
 
 import { Icon, Loader } from '@/components/ui';
-import { IProduct, useAppSelector } from '@/services';
+import { useAppSelector } from '@/services';
 import { productsStore } from '@/store/types';
+import { IProduct } from '@/types';
 
 import { BlockImgItem, WrapperImagesStyled } from './styled';
 

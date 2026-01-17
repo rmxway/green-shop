@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { Count } from '@/components/Navbar/Count';
 import { Icon } from '@/components/ui';
-import { Icofont } from '@/services';
+import { Icofont } from '@/types';
 
 import { NavCountItemStyled } from './styled';
 

@@ -4,6 +4,9 @@ import { useEffect, useMemo, useState } from 'react';
 import { TypedUseSelectorHook, useDispatch, useSelector, useStore } from 'react-redux';
 
 import type { AppDispatch, RootState, RootStore } from '@/store/types';
+import { currencyStore } from '@/store/types';
+
+import { currencyUtils } from './currencyService';
 
 export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
@@ -30,6 +33,22 @@ export const useMediaQuery = (query: string) => {
 	}, [mediaQuery]);
 
 	return match;
+};
+
+/**
+ * Хук для работы с текущей валютой
+ */
+export const useCurrency = () => {
+	const currency = useAppSelector(currencyStore);
+
+	return {
+		currency,
+		convertPrice: (price: number) => currencyUtils.convertPrice(price, currency),
+		formatPrice: (price: number) => currencyUtils.formatPrice(price, currency),
+		formatPriceWithSymbol: (price: number) => currencyUtils.formatPriceWithSymbol(price, currency),
+		getCurrencySymbol: () => currencyUtils.getCurrencySymbol(currency),
+		getCurrencyName: () => currencyUtils.getCurrencyName(currency),
+	};
 };
 
 export default useMediaQuery;

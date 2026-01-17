@@ -1,6 +1,6 @@
 import { ElementType, FC } from 'react';
 
-import { Icofont } from '@/services';
+import { Icofont } from '@/types';
 
 export interface IconProps {
 	as?: ElementType;

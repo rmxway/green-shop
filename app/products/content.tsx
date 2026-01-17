@@ -4,7 +4,7 @@ import { memo, useEffect, useState } from 'react';
 
 import { Categories, Filter } from '@/components';
 import { Container, LayerBlock } from '@/components/Layout';
-import { WarningMessage } from '@/components/ui';
+import { CurrencySwitcher, WarningMessage } from '@/components/ui';
 import { ProductsGrid } from '@/modules/products';
 import { useAppSelector } from '@/services';
 import { useGetProductsQuery } from '@/store/api';
@@ -44,6 +44,7 @@ export const ContentProducts = memo(() => {
 		<Container>
 			<Filter isLoading={isReallyLoading} />
 			<Categories isLoading={isReallyLoading} />
+			<CurrencySwitcher />
 
 			{/* Критическая ошибка - нет данных */}
 			{isCriticalError && (

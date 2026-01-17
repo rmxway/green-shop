@@ -2,7 +2,7 @@ import { HTMLMotionProps } from 'framer-motion';
 import { forwardRef, HTMLAttributes } from 'react';
 
 import { Icon } from '@/components/ui/Icon';
-import { Icofont } from '@/services';
+import { Icofont } from '@/types';
 
 import { LinkIconStyle, linkIconVariant } from './styled';
 

@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 import { PRODUCTS_LIMIT, protocol } from '@/services/constants';
 import { getHost } from '@/services/domainData';
-import { IProduct } from '@/services/interfaces';
+import { IProduct } from '@/types';
 
 export interface ResponseProducts {
 	data: IProduct[];

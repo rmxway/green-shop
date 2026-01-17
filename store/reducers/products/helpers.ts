@@ -1,7 +1,7 @@
 import { current } from '@reduxjs/toolkit';
 
-import { IProduct, ProductsState } from '@/services';
 import { ResponseProducts } from '@/store/api';
+import { IProduct, ProductsState } from '@/types';
 
 export const initialItems = (state: ProductsState, response: ResponseProducts) => {
 	const { data, categories } = response;

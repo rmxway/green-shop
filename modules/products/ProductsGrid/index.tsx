@@ -10,10 +10,11 @@ import { Pagination } from '@/components';
 import { LayerBlock } from '@/components/Layout';
 import { ProductCard } from '@/components/ProductCard';
 import { SkeletonCard } from '@/components/ProductCard/SkeletonCard';
-import { IProduct, TypePages, useAppDispatch, useAppSelector } from '@/services';
+import { useAppDispatch, useAppSelector } from '@/services';
 import { currentItemsMemoized } from '@/store/reducers/commonSelectors';
 import { changePage, changeTypePage } from '@/store/reducers/products';
 import { productsStore } from '@/store/types';
+import { IProduct, TypePages } from '@/types';
 
 import { containerVars, FetchingBlock, WrapperComponent } from './styled';
 

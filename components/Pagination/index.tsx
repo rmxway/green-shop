@@ -7,8 +7,9 @@ import Skeleton from 'react-loading-skeleton';
 import { Flexbox, Space } from '@/components/Layout';
 import { Icon } from '@/components/ui';
 import { containerVars } from '@/modules/products/ProductsGrid/styled';
-import { IProduct, useAppDispatch, useAppSelector } from '@/services';
+import { useAppDispatch, useAppSelector } from '@/services';
 import { productsStore } from '@/store/types';
+import { IProduct } from '@/types';
 
 import { RenderButtons } from './RenderButtons';
 import { ArrowButton, Info, Wrapper } from './styled';

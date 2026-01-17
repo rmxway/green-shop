@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { IProduct, ProductsState, SortTypes, TypePages } from '@/services';
 import { PRODUCTS_COUNT_PER_PAGE } from '@/services/constants';
 import { api, ResponseProducts } from '@/store/api';
 import {
@@ -11,6 +10,7 @@ import {
 	initialOneProduct,
 	resetItems,
 } from '@/store/reducers/products/helpers';
+import { IProduct, ProductsState, SortTypes, TypePages } from '@/types';
 
 const initialState: ProductsState = {
 	title: '',
@@ -31,6 +31,7 @@ const initialState: ProductsState = {
 		toggle: false,
 	},
 	search: '',
+	currency: 'USD',
 };
 
 const productsReducer = createSlice({
@@ -124,6 +125,9 @@ const productsReducer = createSlice({
 		resetItemsAction: (state) => {
 			resetItems(state);
 		},
+		toggleCurrency: (state) => {
+			state.currency = state.currency === 'USD' ? 'RUB' : 'USD';
+		},
 	},
 	extraReducers: (builder) => {
 		builder
@@ -185,6 +189,7 @@ export const {
 	changePage,
 	changeTypePage,
 	changeCategory,
+	toggleCurrency,
 } = actions;
 
 export default reducer;
