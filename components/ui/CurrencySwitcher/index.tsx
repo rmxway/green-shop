@@ -1,7 +1,7 @@
 import { FC, useEffect, useRef } from 'react';
 
 import { Switcher } from '@/components/ui/Switcher';
-import { useAppDispatch, useAppSelector, useCurrency } from '@/services';
+import { useAppDispatch, useAppSelector, useExchangeRate } from '@/services';
 import { toggleCurrency } from '@/store/reducers/products';
 import { currencyStore } from '@/store/types';
 
@@ -10,7 +10,7 @@ import { CurrencyLabel, CurrencySwitcherWrapper, RateText } from './styled';
 export const CurrencySwitcher: FC = () => {
     const dispatch = useAppDispatch();
     const currency = useAppSelector(currencyStore);
-    const { exchangeRate } = useCurrency();
+    const { exchangeRate } = useExchangeRate();
     const isRUB = currency === 'RUB';
     const switcherRef = useRef<HTMLInputElement>(null);
 
@@ -45,7 +45,7 @@ export const CurrencySwitcher: FC = () => {
                     <Switcher name="currency" ref={switcherRef} />
                     <button type="button" onClick={() => handleTextClick('RUB')}>рубль</button>
                 </CurrencyLabel>
-                <RateText>1$ = {(exchangeRate).toFixed(2)} ₽</RateText>
+                <RateText>1$ = {exchangeRate.toFixed(2)} ₽</RateText>
             </CurrencySwitcherWrapper>
         </>
     );

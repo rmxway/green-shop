@@ -8,6 +8,44 @@ import { currencyStore } from '@/store/types';
 
 import { currencyUtils, DEFAULT_EXCHANGE_RATE_USD_TO_RUB, getExchangeRate } from './currencyService';
 
+// Глобальное состояние для курса валюты
+let globalExchangeRate = DEFAULT_EXCHANGE_RATE_USD_TO_RUB;
+let globalIsLoading = true;
+let globalErrorMessage: string | null = null;
+const subscribers: Set<(rate: number, loading: boolean, errorMsg: string | null) => void> = new Set();
+let isInitialized = false;
+
+/**
+ * Уведомляет всех подписчиков об изменении состояния
+ */
+const notifySubscribers = () => {
+	subscribers.forEach(callback => callback(globalExchangeRate, globalIsLoading, globalErrorMessage));
+};
+
+/**
+ * Инициализирует загрузку курса валюты один раз на все приложение
+ */
+const initializeExchangeRate = async () => {
+	if (isInitialized) return;
+
+	isInitialized = true;
+	globalIsLoading = true;
+	notifySubscribers();
+
+	try {
+		const rate = await getExchangeRate();
+		globalExchangeRate = rate;
+		globalErrorMessage = null;
+	} catch (error) {
+		globalErrorMessage = 'Ошибка загрузки курса валюты';
+		// eslint-disable-next-line no-console
+		console.error('Ошибка загрузки курса валюты:', error);
+	} finally {
+		globalIsLoading = false;
+		notifySubscribers();
+	}
+};
+
 export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 export const useAppStore: () => RootStore = useStore;
@@ -36,32 +74,43 @@ export const useMediaQuery = (query: string) => {
 };
 
 /**
+ * Хук для получения курса валюты (глобальный для всего приложения)
+ */
+export const useExchangeRate = (): { exchangeRate: number; isLoading: boolean } => {
+	const [exchangeRate, setExchangeRate] = useState(globalExchangeRate);
+	const [isLoading, setIsLoading] = useState(globalIsLoading);
+
+	useEffect(() => {
+		// Инициализируем загрузку при первом использовании
+		// eslint-disable-next-line @typescript-eslint/no-floating-promises
+		initializeExchangeRate();
+
+		// Подписываемся на изменения
+		const callback = (rate: number, loading: boolean) => {
+			setExchangeRate(rate);
+			setIsLoading(loading);
+			// Игнорируем ошибки в CurrencySwitcher
+		};
+
+		subscribers.add(callback);
+
+		// Отписываемся при размонтировании
+		return () => {
+			subscribers.delete(callback);
+		};
+	}, []);
+
+	return { exchangeRate, isLoading };
+};
+
+/**
  * Хук для работы с текущей валютой
  */
 export const useCurrency = () => {
 	const currency = useAppSelector(currencyStore);
-	const [exchangeRate, setExchangeRate] = useState<number>(DEFAULT_EXCHANGE_RATE_USD_TO_RUB);
-	const [isLoading, setIsLoading] = useState(false);
+	const { exchangeRate, isLoading } = useExchangeRate();
 
-	useEffect(() => {
-		// eslint-disable-next-line @typescript-eslint/no-floating-promises
-		(async () => {
-			if (currency === 'RUB') {
-				setIsLoading(true);
-				try {
-					const rate = await getExchangeRate();
-					setExchangeRate(rate);
-				} catch (error) {
-					// eslint-disable-next-line no-console
-					console.error('Ошибка загрузки курса валюты:', error);
-				} finally {
-					setIsLoading(false);
-				}
-			}
-		})();
-	}, [currency]);
-
-	// Создаем синхронные функции с использованием загруженного курса
+	// Создаем синхронные функции с использованием глобального курса
 	const convertPriceSync = (price: number): number =>
 		currencyUtils.convertPrice(price, currency, exchangeRate);
 
