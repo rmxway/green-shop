@@ -25,8 +25,8 @@
 ### Установка
 
 ```bash
-git clone https://github.com/rmxway/SPA-1
-cd spa-1
+git clone https://github.com/rmxway/green-shop
+cd green-shop
 yarn install
 yarn dev
 ```
