@@ -128,6 +128,9 @@ const productsReducer = createSlice({
 		toggleCurrency: (state) => {
 			state.currency = state.currency === 'USD' ? 'RUB' : 'USD';
 		},
+		resetCurrencyToUSD: (state) => {
+			state.currency = 'USD';
+		},
 	},
 	extraReducers: (builder) => {
 		builder
@@ -190,6 +193,7 @@ export const {
 	changeTypePage,
 	changeCategory,
 	toggleCurrency,
+	resetCurrencyToUSD,
 } = actions;
 
 export default reducer;

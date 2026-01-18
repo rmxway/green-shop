@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { TypedUseSelectorHook, useDispatch, useSelector, useStore } from 'react-redux';
 
 import type { AppDispatch, RootState, RootStore } from '@/store/types';
@@ -11,15 +11,14 @@ import { currencyUtils, DEFAULT_EXCHANGE_RATE_USD_TO_RUB, getExchangeRate } from
 // Глобальное состояние для курса валюты
 let globalExchangeRate = DEFAULT_EXCHANGE_RATE_USD_TO_RUB;
 let globalIsLoading = true;
-let globalErrorMessage: string | null = null;
-const subscribers: Set<(rate: number, loading: boolean, errorMsg: string | null) => void> = new Set();
+const subscribers: Set<(rate: number, loading: boolean) => void> = new Set();
 let isInitialized = false;
 
 /**
  * Уведомляет всех подписчиков об изменении состояния
  */
 const notifySubscribers = () => {
-	subscribers.forEach(callback => callback(globalExchangeRate, globalIsLoading, globalErrorMessage));
+	subscribers.forEach(callback => callback(globalExchangeRate, globalIsLoading));
 };
 
 /**
@@ -35,9 +34,7 @@ const initializeExchangeRate = async () => {
 	try {
 		const rate = await getExchangeRate();
 		globalExchangeRate = rate;
-		globalErrorMessage = null;
 	} catch (error) {
-		globalErrorMessage = 'Ошибка загрузки курса валюты';
 		// eslint-disable-next-line no-console
 		console.error('Ошибка загрузки курса валюты:', error);
 	} finally {
@@ -80,27 +77,26 @@ export const useExchangeRate = (): { exchangeRate: number; isLoading: boolean } 
 	const [exchangeRate, setExchangeRate] = useState(globalExchangeRate);
 	const [isLoading, setIsLoading] = useState(globalIsLoading);
 
+	const callback = useCallback((rate: number, loading: boolean) => {
+		setExchangeRate(rate);
+		setIsLoading(loading);
+	}, []);
+
 	useEffect(() => {
 		// Инициализируем загрузку при первом использовании
 		// eslint-disable-next-line @typescript-eslint/no-floating-promises
 		initializeExchangeRate();
 
 		// Подписываемся на изменения
-		const callback = (rate: number, loading: boolean) => {
-			setExchangeRate(rate);
-			setIsLoading(loading);
-			// Игнорируем ошибки в CurrencySwitcher
-		};
-
 		subscribers.add(callback);
 
 		// Отписываемся при размонтировании
 		return () => {
 			subscribers.delete(callback);
 		};
-	}, []);
+	}, [callback]);
 
-	return { exchangeRate, isLoading };
+	return useMemo(() => ({ exchangeRate, isLoading }), [exchangeRate, isLoading]);
 };
 
 /**
