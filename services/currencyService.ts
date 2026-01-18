@@ -22,12 +22,23 @@ let exchangeRateCache: {
 const CACHE_LIFETIME = 60 * 60 * 1000 * 24;
 
 /**
+ * Очищает кеш если он устарел
+ */
+export const clearExpiredCache = (): void => {
+	if (exchangeRateCache && Date.now() - exchangeRateCache.timestamp >= CACHE_LIFETIME) {
+		exchangeRateCache = null;
+	}
+};
+
+/**
  * Получает актуальный курс USD к RUB из API Центрального Банка РФ
  */
 export const fetchExchangeRate = async (): Promise<number> => {
 	try {
-		// Проверяем кеш
-		if (exchangeRateCache && Date.now() - exchangeRateCache.timestamp < CACHE_LIFETIME) {
+		// Очищаем устаревший кеш и проверяем актуальный
+		clearExpiredCache();
+
+		if (exchangeRateCache) {
 			return exchangeRateCache.value;
 		}
 
@@ -59,7 +70,10 @@ export const fetchExchangeRate = async (): Promise<number> => {
  * Получает текущий курс валюты (из кеша или API)
  */
 export const getExchangeRate = async (): Promise<number> => {
-	if (exchangeRateCache && Date.now() - exchangeRateCache.timestamp < CACHE_LIFETIME) {
+	// Очищаем устаревший кеш
+	clearExpiredCache();
+
+	if (exchangeRateCache) {
 		return exchangeRateCache.value;
 	}
 
