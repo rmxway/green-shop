@@ -13,7 +13,7 @@ exports[`Favorite page test: Render text 1`] = `
         style="opacity: 0;"
       />
       <div
-        class="sc-59cb1f7b-1 bNgzPu"
+        class="sc-3cc7901f-1 jwElBb"
         style="opacity: 0;"
       >
         <span
@@ -26,12 +26,11 @@ exports[`Favorite page test: Render text 1`] = `
         <div
           class="sc-9bb5e335-0 fBsTCf"
         >
-          Nothing was't add to favorites, go to
-           
+          Ничего не добавлено в избранное, перейдите в 
           <a
             href="/products"
           >
-            Products
+            Каталог товаров
           </a>
         </div>
       </div>

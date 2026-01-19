@@ -12,7 +12,7 @@ describe('Favorite page test:', () => {
 			</StyledComponentsRegistry>,
 		);
 
-		const text = getByText(/Delete favorites|Nothing was't add to favorites, go to/i);
+		const text = getByText(/Ничего не добавлено в избранное, перейдите в/i);
 		expect(text).toBeInTheDocument();
 		expect(container).toMatchSnapshot();
 	});

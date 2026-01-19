@@ -38,7 +38,7 @@ export const ProductCard: FC<ProductType> = ({ product, ...props }) => {
 			</Title>
 			<Space />
 			<Tools>
-				<RatingStars rating={Number(product.rating)} />
+				<RatingStars rating={product.rating ? Number(product.rating) : 0} />
 				<Price>
 					{formatPriceWithSymbol(product.price)}
 				</Price>
