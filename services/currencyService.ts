@@ -43,7 +43,7 @@ export const fetchExchangeRate = async (): Promise<number> => {
 		}
 
 		const response = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
-		const data = await response.json() as CBRResponse;
+		const data = (await response.json()) as CBRResponse;
 
 		// Получаем курс доллара США (USD)
 		const usdRate: number = data.Valute.USD.Value;

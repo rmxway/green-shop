@@ -9,7 +9,18 @@ import { decreaseCount, increaseCount } from '@/store/reducers/cart';
 import { removeFromCart } from '@/store/reducers/combineActions';
 import { IProduct } from '@/types';
 
-import { Content, Count, CountWrapper, Delete, elementsVars, Item, Price, ThumbnailContainer, Title, WrapperText } from './styled';
+import {
+	Content,
+	Count,
+	CountWrapper,
+	Delete,
+	elementsVars,
+	Item,
+	Price,
+	ThumbnailContainer,
+	Title,
+	WrapperText,
+} from './styled';
 
 interface Props extends MotionProps {
 	product: IProduct;
@@ -54,7 +65,9 @@ export const CartItem = forwardRef<HTMLDivElement, Props>(({ product, ...props }
 			<Content layout variants={elementsVars}>
 				<Link href={`/product/${id}`}>
 					{thumbnail && !hasError ? (
-						<div style={{ position: 'relative', width: '70px', height: '70px', margin: '10px 0 10px 10px' }}>
+						<div
+							style={{ position: 'relative', width: '70px', height: '70px', margin: '10px 0 10px 10px' }}
+						>
 							<Image
 								src={thumbnail}
 								alt={title}
@@ -67,7 +80,7 @@ export const CartItem = forwardRef<HTMLDivElement, Props>(({ product, ...props }
 									borderRadius: 'var(--radius-borderRadius)',
 									objectFit: 'cover',
 									width: '100%',
-									height: '100%'
+									height: '100%',
 								}}
 							/>
 							<Loader className="loader" loading={isLoad} />

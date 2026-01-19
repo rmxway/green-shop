@@ -1,49 +1,51 @@
 @font-face {
-    font-family: 'icofont';
-    src: url(".//icofont.ttf?27c48101dccfae6dff11c1e8472e2b6e") format("truetype"),
-url(".//icofont.woff?27c48101dccfae6dff11c1e8472e2b6e") format("woff"),
-url(".//icofont.woff2?27c48101dccfae6dff11c1e8472e2b6e") format("woff2");
+	font-family: 'icofont';
+	src:
+		url('.//icofont.ttf?27c48101dccfae6dff11c1e8472e2b6e') format('truetype'),
+		url('.//icofont.woff?27c48101dccfae6dff11c1e8472e2b6e') format('woff'),
+		url('.//icofont.woff2?27c48101dccfae6dff11c1e8472e2b6e') format('woff2');
 }
 
-i[class^='icofont-']:before, i[class*=' icofont-']:before {
-    font-family: icofont !important;
-    font-style: normal;
-    font-size: 1.5rem;
-    font-weight: normal !important;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 4;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+i[class^='icofont-']:before,
+i[class*=' icofont-']:before {
+	font-family: icofont !important;
+	font-style: normal;
+	font-size: 1.5rem;
+	font-weight: normal !important;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 4;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .icofont-trash:before {
-    content: '\f101';
+	content: '\f101';
 }
 .icofont-times-small:before {
-    content: '\f102';
+	content: '\f102';
 }
 .icofont-star:before {
-    content: '\f103';
+	content: '\f103';
 }
 .icofont-star-filled:before {
-    content: '\f104';
+	content: '\f104';
 }
 .icofont-nophoto:before {
-    content: '\f105';
+	content: '\f105';
 }
 .icofont-favorite:before {
-    content: '\f106';
+	content: '\f106';
 }
 .icofont-favorite-fill:before {
-    content: '\f107';
+	content: '\f107';
 }
 .icofont-cart:before {
-    content: '\f108';
+	content: '\f108';
 }
 .icofont-arrow-up:before {
-    content: '\f109';
+	content: '\f109';
 }
 .icofont-arrow-down:before {
-    content: '\f10a';
+	content: '\f10a';
 }

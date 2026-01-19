@@ -16,8 +16,7 @@ const testStore = configureStore({
 		cart: CartReducer,
 		[api.reducerPath]: api.reducer,
 	},
-	middleware: (getDefaultMiddleware) =>
-		getDefaultMiddleware().concat(api.middleware),
+	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware),
 });
 
 export const JestTemplate = ({ children }: TemplateProps) => (

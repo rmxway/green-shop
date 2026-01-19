@@ -324,7 +324,7 @@ describe('ProductCard:', () => {
 		const links = screen.getAllByRole('link');
 		expect(links.length).toBe(2); // Изображение и заголовок
 
-		links.forEach(link => {
+		links.forEach((link) => {
 			expect(link).toHaveAttribute('href', '/product/6');
 		});
 	});

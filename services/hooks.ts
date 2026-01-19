@@ -18,7 +18,7 @@ let isInitialized = false;
  * Уведомляет всех подписчиков об изменении состояния
  */
 const notifySubscribers = () => {
-	subscribers.forEach(callback => callback(globalExchangeRate, globalIsLoading));
+	subscribers.forEach((callback) => callback(globalExchangeRate, globalIsLoading));
 };
 
 /**
@@ -107,11 +107,9 @@ export const useCurrency = () => {
 	const { exchangeRate, isLoading } = useExchangeRate();
 
 	// Создаем синхронные функции с использованием глобального курса
-	const convertPriceSync = (price: number): number =>
-		currencyUtils.convertPrice(price, currency, exchangeRate);
+	const convertPriceSync = (price: number): number => currencyUtils.convertPrice(price, currency, exchangeRate);
 
-	const formatPriceSync = (price: number): string =>
-		currencyUtils.formatPrice(price, currency, exchangeRate);
+	const formatPriceSync = (price: number): string => currencyUtils.formatPrice(price, currency, exchangeRate);
 
 	const formatPriceWithSymbolSync = (price: number): string =>
 		currencyUtils.formatPriceWithSymbol(price, currency, exchangeRate);

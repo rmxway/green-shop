@@ -7,24 +7,46 @@ import { Container } from '@/components/Layout';
 import { Button } from '@/components/ui';
 import logos from '@/public/assets/img/logos.jpg';
 
-import { AboutTechText, AboutText, AboutTitle, CodeSnippet, FeatureCardClean, FeatureIcon, FeatureItem, FeatureList, FeaturesGrid, FeatureTitle, FirstBlock, HeroSection, HeroSubtitle, HeroTitle, ImageLogos, NatureBlock, NatureBlockContent, NatureBlockImage, NatureBlockText, NatureBlockTitle, NatureGallery, Section, SectionSubtitle, SectionTitle } from './styled';
+import {
+	AboutTechText,
+	AboutText,
+	AboutTitle,
+	CodeSnippet,
+	FeatureCardClean,
+	FeatureIcon,
+	FeatureItem,
+	FeatureList,
+	FeaturesGrid,
+	FeatureTitle,
+	FirstBlock,
+	HeroSection,
+	HeroSubtitle,
+	HeroTitle,
+	ImageLogos,
+	NatureBlock,
+	NatureBlockContent,
+	NatureBlockImage,
+	NatureBlockText,
+	NatureBlockTitle,
+	NatureGallery,
+	Section,
+	SectionSubtitle,
+	SectionTitle,
+} from './styled';
 
 export default function MainPage() {
 	return (
 		<main>
 			{/* Hero Section */}
 			<HeroSection>
-				<HeroTitle>
-					Природа в каждом продукте
-				</HeroTitle>
+				<HeroTitle>Природа в каждом продукте</HeroTitle>
 				<HeroSubtitle>
-					Современный интернет-магазин натуральной продукции с широким ассортиментом органических товаров для здорового образа жизни
+					Современный интернет-магазин натуральной продукции с широким ассортиментом органических товаров для
+					здорового образа жизни
 				</HeroSubtitle>
 				<br />
 				<Link href="/products">
-					<Button $white>
-						Посмотреть товары
-					</Button>
+					<Button $white>Посмотреть товары</Button>
 				</Link>
 			</HeroSection>
 
@@ -33,22 +55,14 @@ export default function MainPage() {
 				<Container>
 					<FirstBlock>
 						<div>
-							<AboutTitle>
-								Современная платформа
-							</AboutTitle>
+							<AboutTitle>Современная платформа</AboutTitle>
 							<AboutText>
-								Создано с использованием Next.js и современных технологий для обеспечения лучшего пользовательского опыта. Интеграция с dummyjson.com для демонстрации функциональности.
+								Создано с использованием Next.js и современных технологий для обеспечения лучшего
+								пользовательского опыта. Интеграция с dummyjson.com для демонстрации функциональности.
 							</AboutText>
 							<AboutTechText>
-								<CodeSnippet>
-									create-next-app
-								</CodeSnippet>{' '}
-								+{' '}
-								<a
-									href="https://dummyjson.com"
-									target="_blank"
-									rel="noreferrer"
-								>
+								<CodeSnippet>create-next-app</CodeSnippet> +{' '}
+								<a href="https://dummyjson.com" target="_blank" rel="noreferrer">
 									dummyjson.com API
 								</a>
 							</AboutTechText>
@@ -71,21 +85,23 @@ export default function MainPage() {
 					<SectionTitle>Вдохновлено природой</SectionTitle>
 					<SectionSubtitle>
 						Мы тщательно отбираем натуральные продукты, которые помогают вам жить в гармонии с природой.
-						Каждый товар создан с заботой об окружающей среде и вашем благополучии, предлагая только лучшее из природы для вашего здоровья и красоты.
+						Каждый товар создан с заботой об окружающей среде и вашем благополучии, предлагая только лучшее
+						из природы для вашего здоровья и красоты.
 					</SectionSubtitle>
 				</Container>
 			</Section>
 
 			{/* Nature Gallery */}
-			<Section $background='#fff'>
+			<Section $background="#fff">
 				<Container>
 					<NatureGallery>
 						<NatureBlock $reverse>
 							<NatureBlockContent>
 								<NatureBlockTitle>Лесная гармония</NatureBlockTitle>
 								<NatureBlockText>
-									Вдохновляясь величественными лесами, мы создаем продукты, которые несут в себе силу и спокойствие природы.
-									Наши натуральные ингредиенты собираются бережно, сохраняя баланс экосистемы и предлагая вам чистоту первозданной природы.
+									Вдохновляясь величественными лесами, мы создаем продукты, которые несут в себе силу
+									и спокойствие природы. Наши натуральные ингредиенты собираются бережно, сохраняя
+									баланс экосистемы и предлагая вам чистоту первозданной природы.
 								</NatureBlockText>
 							</NatureBlockContent>
 							<NatureBlockImage>
@@ -102,8 +118,9 @@ export default function MainPage() {
 							<NatureBlockContent>
 								<NatureBlockTitle>Горная чистота</NatureBlockTitle>
 								<NatureBlockText>
-									Высокогорные растения, растущие в чистейшем воздухе, становятся основой наших премиальных продуктов.
-									Мы заботимся о сохранении горных экосистем, выбирая только те ингредиенты, которые не нарушают природный баланс.
+									Высокогорные растения, растущие в чистейшем воздухе, становятся основой наших
+									премиальных продуктов. Мы заботимся о сохранении горных экосистем, выбирая только те
+									ингредиенты, которые не нарушают природный баланс.
 								</NatureBlockText>
 							</NatureBlockContent>
 							<NatureBlockImage>
@@ -120,8 +137,9 @@ export default function MainPage() {
 							<NatureBlockContent>
 								<NatureBlockTitle>Цветущие луга</NatureBlockTitle>
 								<NatureBlockText>
-									Богатство цветущих лугов отражается в наших продуктах. Мы поддерживаем местных производителей,
-									которые выращивают растения традиционными методами, сохраняя биоразнообразие и природную красоту наших полей.
+									Богатство цветущих лугов отражается в наших продуктах. Мы поддерживаем местных
+									производителей, которые выращивают растения традиционными методами, сохраняя
+									биоразнообразие и природную красоту наших полей.
 								</NatureBlockText>
 							</NatureBlockContent>
 							<NatureBlockImage>
@@ -144,7 +162,9 @@ export default function MainPage() {
 					<FeaturesGrid>
 						<FeatureCardClean>
 							<h3>Поиск и фильтрация</h3>
-							<p>Поиск по товарам с множеством фильтров и сортировкой по цене, популярности и категориям</p>
+							<p>
+								Поиск по товарам с множеством фильтров и сортировкой по цене, популярности и категориям
+							</p>
 						</FeatureCardClean>
 						<FeatureCardClean>
 							<h3>Корзина и оформление</h3>

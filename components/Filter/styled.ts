@@ -37,7 +37,7 @@ export const StyledFilter = styled.div`
         }
     `}
 
-    ${media.greaterThan('md')`
+	${media.greaterThan('md')`
         margin: 30px 0;
     `}
 `;

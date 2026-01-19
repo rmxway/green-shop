@@ -22,9 +22,7 @@ export const TableProducts: FC<{ fGrow?: boolean }> = ({ fGrow }) => {
 						<div>{title}</div>
 						<div>{count || 1}</div>
 						<Flexbox $nowrap $align="center" $direction="column">
-							<div>
-								{formatPriceWithSymbol(price)}
-							</div>
+							<div>{formatPriceWithSymbol(price)}</div>
 							{count && count > 1 && (
 								<span>({formatPriceWithSymbol(Number(count) * Number(price))})</span>
 							)}

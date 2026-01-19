@@ -21,7 +21,6 @@ import { setTitle, toggleFavorite } from '@/store/reducers/products';
 import { productsStore } from '@/store/types';
 import { IProduct } from '@/types';
 
-
 export const ContentProduct = () => {
 	const { id } = useParams<{ id: string }>();
 	const { fetchedItems, error } = useAppSelector(productsStore);
@@ -66,7 +65,6 @@ export const ContentProduct = () => {
 		setIsLoad(false);
 		setHasError(true);
 	};
-
 
 	return (
 		<MobileWhiteBackground>
@@ -165,7 +163,7 @@ export const ContentProduct = () => {
 										{product.stock && <Sticker $success>In Stock: {product.stock}</Sticker>}
 										{product.tags && product.tags.map((tag) => <Sticker key={tag}>{tag}</Sticker>)}
 									</Flexbox>
-									<Grid $direction="column" $templateColumns="1fr 30px" $gap={5} $align='center'>
+									<Grid $direction="column" $templateColumns="1fr 30px" $gap={5} $align="center">
 										<Button
 											$primary
 											onClick={() => moveToCart(Number(product?.id))}

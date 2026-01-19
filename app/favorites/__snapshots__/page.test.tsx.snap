@@ -26,7 +26,8 @@ exports[`Favorite page test: Render text 1`] = `
         <div
           class="sc-9bb5e335-0 fBsTCf"
         >
-          Ничего не добавлено в избранное, перейдите в 
+          Ничего не добавлено в избранное, перейдите в
+           
           <a
             href="/products"
           >

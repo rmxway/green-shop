@@ -84,7 +84,7 @@ export const Content = styled(motion.div)`
 	}
 
 	.loader {
-		margin-top: -15px;		
+		margin-top: -15px;
 	}
 
 	${media.lessThan('mdD')`
@@ -235,12 +235,12 @@ export const Delete = styled.button`
 `;
 
 export const ThumbnailContainer = styled(motion.div)`
-	${({theme}) => css`
+	${({ theme }) => css`
 		position: relative;
 		width: 70px;
 		height: 70px;
 		margin: 10px 0 10px 10px;
-		flex-shrink: 0;		
+		flex-shrink: 0;
 
 		i.icofont-nophoto {
 			color: ${theme.colors.gray.$4};
@@ -256,6 +256,6 @@ export const ThumbnailContainer = styled(motion.div)`
 			opacity: 0;
 			border-radius: ${theme.radius.borderRadius};
 			${fadeIn}
-		}		
+		}
 	`}
 `;
