@@ -38,12 +38,10 @@ export const ProductCard: FC<ProductType> = ({ product, ...props }) => {
 			</Title>
 			<Space />
 			<Tools>
-				<RatingStars rating={Number(product.rating)} />
-				<Price>
-					{formatPriceWithSymbol(product.price)}
-				</Price>
+				<RatingStars rating={product.rating ? Number(product.rating) : 0} />
+				<Price>{formatPriceWithSymbol(product.price)}</Price>
 			</Tools>
-			<Button $primary icon='cart' onClick={handleChecked} disabled={product.checked}>
+			<Button $primary icon="cart" onClick={handleChecked} disabled={product.checked}>
 				{product.checked ? 'Добавлено' : 'В корзину'}
 			</Button>
 		</ProductWrapper>

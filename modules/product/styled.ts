@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { Container, Grid, LayerBlock } from '@/components/Layout';
 import { WrapperSticker } from '@/components/ui/Sticker/styled';
-import { defaultTheme as theme, fadeIn,media } from '@/theme';
+import { defaultTheme as theme, fadeIn, media } from '@/theme';
 
 export const Wrapper = styled(Container)`
 	position: relative;
@@ -140,9 +140,9 @@ export const PriceBlock = styled(Grid)`
 		&-info {
 			display: none;
 
-            ${WrapperSticker} {
-               margin: 0 8px 8px 0;
-            }
+			${WrapperSticker} {
+				margin: 0 8px 8px 0;
+			}
 		}
 	}
 

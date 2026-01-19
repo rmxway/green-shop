@@ -51,11 +51,9 @@ export const StepCart: FC = () => {
 						Удалить все
 					</LinkIcon>
 				)}
-			</div >
+			</div>
 			<Cart>
-
 				<LayoutGroup>
-
 					<Wrapper layoutRoot variants={contentVariant} initial="hidden" animate="visible" key="wrapper">
 						<AnimatePresence mode="popLayout" presenceAffectsLayout>
 							{currentItems?.length !== 0 &&
@@ -93,8 +91,7 @@ export const StepCart: FC = () => {
 						<Total>
 							Всего:
 							<span>
-								{formatPrice(totalPrice)}{' '}
-								{getCurrencySymbol()}
+								{formatPrice(totalPrice)} {getCurrencySymbol()}
 							</span>
 						</Total>
 						<Button $primary disabled={totalPrice === 0} onClick={nextStep}>

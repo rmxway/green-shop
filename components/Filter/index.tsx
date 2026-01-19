@@ -26,7 +26,8 @@ export const Filter: FC<{ isLoading: boolean }> = ({ isLoading }) => {
 				dispatch(searchProducts(searchText));
 				dispatch(searchValue(searchText));
 			});
-		}, [dispatch],
+		},
+		[dispatch],
 	);
 
 	const resetInput = useCallback(() => {

@@ -1,69 +1,70 @@
-@use "sass:map";
+@use 'sass:map';
 
 $icofont-font: 'icofont';
 
 @font-face {
-    font-family: $icofont-font;
-    src: url(".//icofont.ttf?27c48101dccfae6dff11c1e8472e2b6e") format("truetype"),
-url(".//icofont.woff?27c48101dccfae6dff11c1e8472e2b6e") format("woff"),
-url(".//icofont.woff2?27c48101dccfae6dff11c1e8472e2b6e") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
+	font-family: $icofont-font;
+	src:
+		url('.//icofont.ttf?27c48101dccfae6dff11c1e8472e2b6e') format('truetype'),
+		url('.//icofont.woff?27c48101dccfae6dff11c1e8472e2b6e') format('woff'),
+		url('.//icofont.woff2?27c48101dccfae6dff11c1e8472e2b6e') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
 }
 
 .icofont {
-    font-family: $icofont-font !important;
-    font-style: normal;
-    font-weight: normal !important;
-    font-variant: normal;
-    text-transform: none;
-    font-size: 1rem;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	font-family: $icofont-font !important;
+	font-style: normal;
+	font-weight: normal !important;
+	font-variant: normal;
+	text-transform: none;
+	font-size: 1rem;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 $icofont-map: (
-    'trash': '\f101',
-    'times-small': '\f102',
-    'star': '\f103',
-    'star-filled': '\f104',
-    'nophoto': '\f105',
-    'favorite': '\f106',
-    'favorite-fill': '\f107',
-    'cart': '\f108',
-    'arrow-up': '\f109',
-    'arrow-down': '\f10a',
+	'trash': '\f101',
+	'times-small': '\f102',
+	'star': '\f103',
+	'star-filled': '\f104',
+	'nophoto': '\f105',
+	'favorite': '\f106',
+	'favorite-fill': '\f107',
+	'cart': '\f108',
+	'arrow-up': '\f109',
+	'arrow-down': '\f10a',
 );
 
 .icofont-trash:before {
-    content: map.get($icofont-map, 'trash');
+	content: map.get($icofont-map, 'trash');
 }
 .icofont-times-small:before {
-    content: map.get($icofont-map, 'times-small');
+	content: map.get($icofont-map, 'times-small');
 }
 .icofont-star:before {
-    content: map.get($icofont-map, 'star');
+	content: map.get($icofont-map, 'star');
 }
 .icofont-star-filled:before {
-    content: map.get($icofont-map, 'star-filled');
+	content: map.get($icofont-map, 'star-filled');
 }
 .icofont-nophoto:before {
-    content: map.get($icofont-map, 'nophoto');
+	content: map.get($icofont-map, 'nophoto');
 }
 .icofont-favorite:before {
-    content: map.get($icofont-map, 'favorite');
+	content: map.get($icofont-map, 'favorite');
 }
 .icofont-favorite-fill:before {
-    content: map.get($icofont-map, 'favorite-fill');
+	content: map.get($icofont-map, 'favorite-fill');
 }
 .icofont-cart:before {
-    content: map.get($icofont-map, 'cart');
+	content: map.get($icofont-map, 'cart');
 }
 .icofont-arrow-up:before {
-    content: map.get($icofont-map, 'arrow-up');
+	content: map.get($icofont-map, 'arrow-up');
 }
 .icofont-arrow-down:before {
-    content: map.get($icofont-map, 'arrow-down');
+	content: map.get($icofont-map, 'arrow-down');
 }

@@ -3,7 +3,7 @@
 exports[`ProductCard: Render card 1`] = `
 <div>
   <div
-    class="sc-aa1a80d5-2 jpYUlY"
+    class="sc-8973b978-2 czROuN"
   >
     <div
       class="sc-7d6be7a8-0 hNnrTe"
@@ -23,25 +23,16 @@ exports[`ProductCard: Render card 1`] = `
       href="/product/6"
     >
       <div
-        class="sc-aa1a80d5-1 eoQhEx"
-        id="wrapper-6"
+        data-product-id="6"
+        data-testid="wrapper-images"
       >
-        <div
-          class="sc-83cf1764-0 flRvsd"
-        >
-          <div
-            class="sc-83cf1764-1 fACrBg"
-          >
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
+        <div>
+          Mocked image
         </div>
       </div>
     </a>
     <a
-      class="sc-aa1a80d5-3 dcqcWn"
+      class="sc-8973b978-3 dvnqmf"
       href="/product/6"
     >
       <div>
@@ -55,7 +46,7 @@ exports[`ProductCard: Render card 1`] = `
       class="sc-a1f6370b-0 eaxihD"
     />
     <div
-      class="sc-aa1a80d5-5 hnsjMU"
+      class="sc-8973b978-5 cRmfFs"
     >
       <div
         class="sc-be016b9b-0 jRatsa"
@@ -107,17 +98,15 @@ exports[`ProductCard: Render card 1`] = `
         </span>
       </div>
       <div
-        class="sc-aa1a80d5-4 bwgMlO"
+        class="sc-8973b978-4 hWmOLy"
       >
-        49.99
-         
-        $
+        $49.99
       </div>
     </div>
     <button
-      class="sc-6ffd862-0 hdBPUn"
+      class="sc-2f5681b9-0 klNElI"
     >
-      Add to cart
+      В корзину
       <i
         class="icofont icofont-cart "
       />

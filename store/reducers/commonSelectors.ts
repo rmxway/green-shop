@@ -26,13 +26,10 @@ export const productMemoized = typedProductsCreateSelector(
 	},
 );
 
-export const favoritesItemsMemoized = typedProductsCreateSelector(
-	[(state) => state.fetchedItems],
-	(fetchedItems) => {
-		if (!Array.isArray(fetchedItems)) return [];
-		return fetchedItems.filter((item) => item?.favorite);
-	},
-);
+export const favoritesItemsMemoized = typedProductsCreateSelector([(state) => state.fetchedItems], (fetchedItems) => {
+	if (!Array.isArray(fetchedItems)) return [];
+	return fetchedItems.filter((item) => item?.favorite);
+});
 
 export const productsSelectorMemoized = typedProductsCreateSelector(
 	[(state) => state.fetchedItems, (state) => state.fetching, (state) => state.error],
