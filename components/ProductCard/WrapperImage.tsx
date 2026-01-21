@@ -26,7 +26,7 @@ export const WrapperImages = ({ product, size }: PropsType) => {
 				setIsLoad(false);
 				setHasError(true);
 			}
-		}, 2000);
+		}, 20000);
 
 		return () => clearTimeout(timer);
 	}, [isLoad]);
@@ -54,14 +54,13 @@ export const WrapperImages = ({ product, size }: PropsType) => {
 				!fetching &&
 				images?.map((image, idx) => (
 					<Fragment key={image}>
-						<BlockImgItem />
+						{images.length > 1 && <BlockImgItem />}
 						<Image
 							src={image}
 							alt={title}
 							width={size}
 							height={size}
 							quality={60}
-							priority
 							onLoad={(e) => handleOnLoad(e, idx)}
 							onError={handleOnError}
 						/>

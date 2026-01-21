@@ -12,7 +12,20 @@ export const BlockImgItem = styled.div`
 	position: relative;
 	flex-grow: 1;
 	display: block;
-
+	
+	&:after {
+		content: '';
+		position: absolute;		
+		bottom: 0;
+		opacity: 0;
+		height: 2px;
+		width: 90%;
+		margin: 0 5px;
+		z-index: 10;
+		background-color: ${theme.colors.gray.$1};
+		transition: all .2s;
+	}	
+	
 	& + img {
 		position: absolute;
 		top: 0;
@@ -33,7 +46,10 @@ export const BlockImgItem = styled.div`
 		z-index: 0;
 	}
 
-	&:hover {
+	&:hover {		
+		&:after {
+			background-color: ${theme.colors.gray.$4};
+		}
 		& + img {
 			z-index: 1;
 		}
@@ -48,20 +64,12 @@ export const WrapperImagesStyled = styled(motion.div)`
 	text-decoration: none;
 	margin-bottom: 20px;
 
-	&:after {
-		position: absolute;
-		content: '';
-		background-color: white;
-		left: -1px;
-		top: -1px;
-		pointer-events: none;
-		z-index: -1;
-		height: 102%;
-		width: 102%;
-	}
-
-	&:hover:after {
-		z-index: 0;
+	&:hover {
+		${BlockImgItem} {
+			&:after {
+				opacity: 1;
+			}
+		}
 	}
 
 	@keyframes fetched {
@@ -148,6 +156,8 @@ export const ProductWrapper = styled(motion.div)`
 			object-fit: contain;
 			object-position: center;
 			margin: auto;
+			opacity: 0;
+			background-color: #fff;
 		}
 	}
 
