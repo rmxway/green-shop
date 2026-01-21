@@ -33,14 +33,14 @@ export const CartItem = forwardRef<HTMLDivElement, Props>(({ product, ...props }
 	const [isLoad, setIsLoad] = useState(true);
 	const [hasError, setHasError] = useState(false);
 
-	// Таймер на 2 секунды для прерывания загрузки изображения
+	// Таймер на 10 секунд для прерывания загрузки изображения
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			if (isLoad) {
 				setIsLoad(false);
 				setHasError(true);
 			}
-		}, 2000);
+		}, 10000);
 
 		return () => clearTimeout(timer);
 	}, [isLoad]);

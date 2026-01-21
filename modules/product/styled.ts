@@ -60,7 +60,7 @@ export const Title = styled.h1`
 export const ProductImage = styled(Image)`
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+	object-fit: contain;
 	object-position: top center;
 `;
 

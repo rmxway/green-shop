@@ -3,7 +3,7 @@
 exports[`ProductCard: Render card 1`] = `
 <div>
   <div
-    class="sc-8973b978-2 czROuN"
+    class="sc-c5916714-0 fvkdvF"
   >
     <div
       class="sc-7d6be7a8-0 hNnrTe"
@@ -23,16 +23,14 @@ exports[`ProductCard: Render card 1`] = `
       href="/product/6"
     >
       <div
-        data-product-id="6"
-        data-testid="wrapper-images"
+        data-alt="Calvin Klein CK One"
+        data-testid="product-image"
       >
-        <div>
-          Mocked image
-        </div>
+        Image loaded
       </div>
     </a>
     <a
-      class="sc-8973b978-3 dvnqmf"
+      class="sc-c5916714-1 bOFuBa"
       href="/product/6"
     >
       <div>
@@ -46,7 +44,7 @@ exports[`ProductCard: Render card 1`] = `
       class="sc-a1f6370b-0 eaxihD"
     />
     <div
-      class="sc-8973b978-5 cRmfFs"
+      class="sc-c5916714-3 cMNwTF"
     >
       <div
         class="sc-be016b9b-0 jRatsa"
@@ -98,7 +96,7 @@ exports[`ProductCard: Render card 1`] = `
         </span>
       </div>
       <div
-        class="sc-8973b978-4 hWmOLy"
+        class="sc-c5916714-2 fIMOVL"
       >
         $49.99
       </div>
