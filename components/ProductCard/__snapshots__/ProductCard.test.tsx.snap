@@ -3,7 +3,7 @@
 exports[`ProductCard: Render card 1`] = `
 <div>
   <div
-    class="sc-fd9460da-0 llvnVP"
+    class="sc-6e7224c4-0 isDecg"
   >
     <div
       class="sc-7d6be7a8-0 hNnrTe"
@@ -30,7 +30,7 @@ exports[`ProductCard: Render card 1`] = `
       </div>
     </a>
     <a
-      class="sc-fd9460da-1 ezGOk"
+      class="sc-6e7224c4-1 gohXeb"
       href="/product/6"
     >
       <div>
@@ -44,7 +44,7 @@ exports[`ProductCard: Render card 1`] = `
       class="sc-a1f6370b-0 eaxihD"
     />
     <div
-      class="sc-fd9460da-3 gIEZET"
+      class="sc-6e7224c4-3 dLryIw"
     >
       <div
         class="sc-be016b9b-0 jRatsa"
@@ -96,7 +96,7 @@ exports[`ProductCard: Render card 1`] = `
         </span>
       </div>
       <div
-        class="sc-fd9460da-2 bOsjxR"
+        class="sc-6e7224c4-2 iKMdCS"
       >
         $49.99
       </div>

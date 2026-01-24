@@ -7,7 +7,7 @@ import { WrapperSticker } from '@/components/ui/Sticker/styled';
 import { defaultTheme as theme, fadeIn, media } from '@/theme';
 
 export const Wrapper = styled(Container)`
-	position: relative;	
+	position: relative;
 
 	display: grid;
 	grid-template-columns: 1fr;

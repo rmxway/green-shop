@@ -8,7 +8,6 @@ import { WrapperSticker } from '@/components/ui/Sticker/styled';
 import { defaultTheme as theme, fadeIn } from '@/theme';
 import { media } from '@/theme/media';
 
-
 export const ProductWrapper = styled(motion.div)`
 	position: relative;
 	display: flex;
@@ -201,7 +200,7 @@ export const NoPhotoWrapper = styled.div<{ $isLoading: boolean }>`
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: 100%;	
+	height: 100%;
 	color: ${theme.colors.gray.$4};
 	${fadeIn}
 `;

@@ -79,7 +79,11 @@ export const ContentProduct = () => {
 				{product && (
 					<>
 						<Info>
-							<LinkIcon onClick={handleBack} icon="arrow-left" style={{ top: '10px', position: 'absolute' }}>
+							<LinkIcon
+								onClick={handleBack}
+								icon="arrow-left"
+								style={{ top: '10px', position: 'absolute' }}
+							>
 								Назад
 							</LinkIcon>
 							<LayerBlock>
