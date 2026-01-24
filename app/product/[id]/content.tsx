@@ -4,14 +4,14 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import Image from 'next/image';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { TextToggle } from '@/components';
 import { Flexbox, Grid, LayerBlock, MobileWhiteBackground, RatingStars } from '@/components/Layout';
-import { Button, Favorite, Icon, Loader, Sticker } from '@/components/ui';
+import { Button, Favorite, Icon, LinkIcon, Loader, Sticker } from '@/components/ui';
 import { Info, NoPhotoContainer, PriceBlock, SideBlock, Wrapper } from '@/modules/product/styled';
 import { useAppDispatch, useAppSelector, useCurrency } from '@/services';
 import { useGetProductQuery } from '@/store/api';
@@ -31,6 +31,8 @@ export const ContentProduct = () => {
 	const dispatch = useAppDispatch();
 	const [isLoad, setIsLoad] = useState(true);
 	const [hasError, setHasError] = useState(false);
+
+	const router = useRouter();
 
 	useEffect(() => {
 		dispatch(setTitle(product?.title || 'Error'));
@@ -66,13 +68,20 @@ export const ContentProduct = () => {
 		setHasError(true);
 	};
 
+	const handleBack = () => {
+		router.back();
+	};
+
 	return (
 		<MobileWhiteBackground>
-			<Wrapper $pt>
+			<Wrapper $pt $pb>
 				{error || ''}
 				{product && (
 					<>
 						<Info>
+							<LinkIcon onClick={handleBack} icon="arrow-left" style={{ top: '10px', position: 'absolute' }}>
+								Назад
+							</LinkIcon>
 							<LayerBlock>
 								{product.images && product.images.length > 0 && !hasError ? (
 									<div style={{ position: 'relative', height: '300px' }}>
@@ -109,7 +118,7 @@ export const ContentProduct = () => {
 										animate={{ opacity: 1 }}
 										transition={{ duration: 0.2, ease: 'easeInOut' }}
 									>
-										<Icon icon="nophoto" />
+										<Icon icon="nophoto" size={38} />
 									</NoPhotoContainer>
 								)}
 								<RatingStars rating={Number(product.rating)} />
