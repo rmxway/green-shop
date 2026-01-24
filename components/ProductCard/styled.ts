@@ -3,113 +3,10 @@ import Link from 'next/link';
 import styled, { css } from 'styled-components';
 
 import { WrapperFavorite } from '@/components/ui/Favorite/styled';
+import { Wrapper as WrapperLoader } from '@/components/ui/Loader/styled';
 import { WrapperSticker } from '@/components/ui/Sticker/styled';
-import { defaultTheme as theme } from '@/theme';
+import { defaultTheme as theme, fadeIn } from '@/theme';
 import { media } from '@/theme/media';
-import { fadeIn } from '@/theme/styles/animations';
-
-export const BlockImgItem = styled.div`
-	position: relative;
-	flex-grow: 1;
-	display: block;
-
-	& + img {
-		position: absolute;
-		top: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		pointer-events: none;
-		width: 100%;
-		height: 100%;
-		z-index: -10;
-		max-height: 500px;
-		opacity: 0;
-		object-fit: contain;
-		object-position: center;
-		margin: 20px auto;
-	}
-
-	& + img:first-of-type {
-		z-index: 0;
-	}
-
-	&:hover {
-		& + img {
-			z-index: 1;
-		}
-	}
-`;
-
-export const WrapperImagesStyled = styled(motion.div)`
-	position: relative;
-	display: flex;
-	justify-content: center;
-	height: 120px;
-	text-decoration: none;
-	margin-bottom: 20px;
-
-	&:after {
-		position: absolute;
-		content: '';
-		background-color: white;
-		left: -1px;
-		top: -1px;
-		pointer-events: none;
-		z-index: -1;
-		height: 102%;
-		width: 102%;
-	}
-
-	&:hover:after {
-		z-index: 0;
-	}
-
-	@keyframes fetched {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
-	${media.greaterThan('sm')`
-        height: 170px;
-    `}
-
-	.fetched {
-		animation: fetched 0.4s;
-		animation-fill-mode: forwards;
-	}
-
-	/* Стили для иконки отсутствия картинки */
-	i.icofont-nophoto {
-		color: ${theme.colors.gray.$4};
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
-		font-size: 34px;
-		z-index: 1;
-		position: relative;
-		text-decoration: none;
-		${fadeIn}
-	}
-
-	/* Отключаем hover эффекты при ошибке загрузки */
-	&.has-error {
-		&:hover:after {
-			z-index: -1;
-		}
-
-		&:hover {
-			${BlockImgItem} + img {
-				z-index: -10 !important;
-			}
-		}
-	}
-`;
 
 export const ProductWrapper = styled(motion.div)`
 	position: relative;
@@ -137,18 +34,6 @@ export const ProductWrapper = styled(motion.div)`
 		z-index: 10;
 		top: 10px;
 		left: 10px;
-	}
-
-	${WrapperImagesStyled} {
-		img {
-			min-width: 100px;
-			min-width: 100px;
-			width: 100%;
-			height: 100%;
-			object-fit: contain;
-			object-position: center;
-			margin: auto;
-		}
 	}
 
 	&:hover {
@@ -271,4 +156,51 @@ export const Description = styled.div<{ open: boolean }>`
 			max-height: 200px;
 			opacity: 1;
 		`}
+`;
+
+export const ImageWrapper = styled.div`
+	position: relative;
+	width: 100%;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: ${theme.radius.borderRadius};
+	overflow: hidden;
+
+	/* Стили для загрузчика */
+	${WrapperLoader} {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 2;
+	}
+`;
+
+export const StyledImage = styled.div<{ $isLoading: boolean; $hasError: boolean }>`
+	${({ $isLoading, $hasError }) => css`
+		position: relative;
+		width: 100%;
+		height: 100%;
+
+		img {
+			object-fit: contain;
+			width: 100%;
+			height: 100%;
+			transition: opacity 0.2s ease-in-out;
+			opacity: ${$isLoading ? 0 : 1};
+			display: ${$hasError ? 'none' : 'block'};
+		}
+	`}
+`;
+
+export const NoPhotoWrapper = styled.div<{ $isLoading: boolean }>`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	color: ${theme.colors.gray.$4};
+	${fadeIn}
 `;

@@ -47,7 +47,11 @@ export const StepCart: FC = () => {
 			</Modal>
 			<div>
 				{isItems && (
-					<LinkIcon icon="trash" onClick={() => setModalShow(true)} style={{ top: '-30px' }}>
+					<LinkIcon
+						icon="trash"
+						onClick={() => setModalShow(true)}
+						style={{ top: '10px', position: 'absolute' }}
+					>
 						Удалить все
 					</LinkIcon>
 				)}

@@ -23,7 +23,7 @@ export const ContentFavorites = () => {
 	return (
 		<Container $pt>
 			{items.length > 0 && (
-				<LinkIcon icon="trash" onClick={() => setModalShow(true)} style={{ top: '-30px' }}>
+				<LinkIcon icon="trash" onClick={() => setModalShow(true)} style={{ top: '10px', position: 'absolute' }}>
 					Удалить избранное
 				</LinkIcon>
 			)}

@@ -4,7 +4,6 @@ import userEvent from '@testing-library/user-event';
 import { StyledComponentsRegistry } from '@/lib/registry';
 import { useAppDispatch, useCurrency } from '@/services';
 import { moveToCart } from '@/store/reducers/combineActions';
-import { IProduct } from '@/types';
 
 import { ProductCard } from '.';
 import { mockProduct } from './mockProduct';
@@ -31,11 +30,11 @@ jest.mock('@/services/localStore', () => ({
 	checkVersion: jest.fn(),
 }));
 
-// Мокаем WrapperImages компонент чтобы избежать проблем с useAppSelector
-jest.mock('./WrapperImage', () => ({
-	WrapperImages: ({ product }: { product: IProduct }) => (
-		<div data-testid="wrapper-images" data-product-id={product.id}>
-			<div>Mocked image</div>
+// Мокаем ProductImage компонент чтобы избежать проблем с изображениями в тестах
+jest.mock('./ProductImage', () => ({
+	ProductImage: ({ images, alt }: { images: string[]; alt: string }) => (
+		<div data-testid="product-image" data-alt={alt}>
+			{images?.length ? 'Image loaded' : 'No photo icon'}
 		</div>
 	),
 }));

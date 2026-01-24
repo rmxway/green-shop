@@ -27,13 +27,13 @@ export const Container = styled.div<ContainerProps>`
 	${({ $pt }) =>
 		$pt &&
 		css`
-			padding-top: 40px;
+			padding-top: 60px;
 		`}
 
 	${({ $pb }) =>
 		$pb &&
 		css`
-			padding-bottom: 40px;
+			padding-bottom: 60px;
 		`}
 
 	${({ $flex }) =>

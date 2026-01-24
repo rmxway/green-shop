@@ -8,7 +8,6 @@ import { defaultTheme as theme, fadeIn, media } from '@/theme';
 
 export const Wrapper = styled(Container)`
 	position: relative;
-	padding-bottom: 60px;
 
 	display: grid;
 	grid-template-columns: 1fr;
@@ -60,7 +59,7 @@ export const Title = styled.h1`
 export const ProductImage = styled(Image)`
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+	object-fit: contain;
 	object-position: top center;
 `;
 

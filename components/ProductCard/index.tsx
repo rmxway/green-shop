@@ -9,8 +9,8 @@ import { moveToCart } from '@/store/reducers/combineActions';
 import { toggleFavorite } from '@/store/reducers/products';
 import { IProduct } from '@/types';
 
+import { ProductImage } from './ProductImage';
 import { Price, ProductWrapper, Title, Tools } from './styled';
-import { WrapperImages } from './WrapperImage';
 
 interface ProductType extends MotionProps {
 	product: IProduct;
@@ -30,7 +30,7 @@ export const ProductCard: FC<ProductType> = ({ product, ...props }) => {
 			{product.discountPercentage && <Sticker $danger>-{Math.round(product.discountPercentage)}%</Sticker>}
 			<Favorite onActive={() => dispatch(toggleFavorite(Number(product.id)))} active={product.favorite} />
 			<Link href={link}>
-				<WrapperImages product={product} size={300} />
+				<ProductImage images={product.images} alt={product.title} />
 			</Link>
 			<Title href={link}>
 				<div>{product.title}</div>
