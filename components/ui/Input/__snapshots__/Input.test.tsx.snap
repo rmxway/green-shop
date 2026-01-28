@@ -3,10 +3,10 @@
 exports[`Input/UI Render is fine 1`] = `
 <div>
   <div
-    class="sc-86fc186b-0 fhGxlv"
+    class="sc-86fc186b-0 kHunWJ"
   >
     <label
-      class="sc-f296cf62-0 jSwNpi"
+      class="sc-f296cf62-0 dApvPs"
       for="phone"
     >
       Phone
@@ -17,7 +17,7 @@ exports[`Input/UI Render is fine 1`] = `
       value=""
     />
     <div
-      class="sc-98140c93-0 hULrEg"
+      class="sc-98140c93-0 bFpgge"
     >
       <span>
         Your phone is not correct

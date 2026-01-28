@@ -84,7 +84,6 @@ export const useExchangeRate = (): { exchangeRate: number; isLoading: boolean } 
 
 	useEffect(() => {
 		// Инициализируем загрузку при первом использовании
-		// eslint-disable-next-line @typescript-eslint/no-floating-promises
 		initializeExchangeRate();
 
 		// Подписываемся на изменения

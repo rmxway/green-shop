@@ -13,13 +13,20 @@ export const TopBlockStyle = styled.div<TopBlockProps>`
 		align-items: center;
 		padding: ${$isFont ? '30px 0' : '0 0'};
 		color: ${theme.colors.success};
-
 		transition: 0.2s all;
 		z-index: 1;
 
 		h1 {
 			font-size: 24px;
 			margin: 0;
+
+			${!$isFont &&
+			css`
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				max-width: 100%;
+			`}
 		}
 
 		span {

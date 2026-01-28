@@ -32,7 +32,8 @@
 		"**/*.tsx",
 		"@types/declarations.d.ts",
 		".next/types/**/*.ts",
-		"jest.config.ts"
+		"jest.config.ts",
+		".fantasticonrc"
 	],
 	"exclude": ["node_modules", ".vscode"]
 }
