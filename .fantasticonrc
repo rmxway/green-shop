@@ -4,11 +4,12 @@ module.exports = {
 	fontTypes: ['ttf', 'woff', 'woff2'],
 	assetTypes: ['scss', 'json', 'html', 'css'],
 	fontsUrl: './',
+	normalize: true,
 	// Use a custom Handlebars template
 	templates: {
-		css: './fantasticon/css.hbs',
 		scss: './fantasticon/scss.hbs',
 		html: './fantasticon/html.hbs',
+		css: './fantasticon/css.hbs',
 	},
 	// Customize generated icon IDs (unavailable with `.json` config file)
 	getIconId: ({

@@ -149,6 +149,7 @@ export const HeroTitle = styled.h1`
 	margin-bottom: 1.5rem;
 	color: ${({ theme }) => theme.colors.gray.$9};
 	letter-spacing: -0.02em;
+	padding: 0 20px;
 
 	${media.lessThan('md')`
 		font-size: 2.5rem;
@@ -162,10 +163,10 @@ export const HeroSubtitle = styled.p`
 	font-weight: 400;
 	max-width: 600px;
 	margin: 0 auto;
+	padding: 0 20px;
 
 	${media.lessThan('md')`
 		font-size: 1.125rem;
-		padding: 0 20px;
 	`}
 `;
 
@@ -406,7 +407,7 @@ export const SectionSubtitle = styled.p`
 
 export const FeaturesGrid = styled.div`
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
 	gap: 2rem;
 	margin-top: 3rem;
 `;

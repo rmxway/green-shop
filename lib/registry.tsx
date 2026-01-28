@@ -21,7 +21,6 @@ export function StyledComponentsRegistry({ isJest, children }: StyledRegistryPro
 			const styles = sheet.getStyleElement();
 			sheet.instance.clearTag();
 
-			// eslint-disable-next-line react/jsx-no-useless-fragment
 			return <>{styles}</>;
 		});
 
