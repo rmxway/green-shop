@@ -20,12 +20,13 @@ export const TopBlockStyle = styled.div<TopBlockProps>`
 			font-size: 24px;
 			margin: 0;
 
-			${!$isFont && css`
+			${!$isFont &&
+			css`
 				white-space: nowrap;
 				overflow: hidden;
 				text-overflow: ellipsis;
 				max-width: 100%;
-			`}			
+			`}
 		}
 
 		span {
@@ -50,8 +51,9 @@ export const TopBlockStyle = styled.div<TopBlockProps>`
                 font-size: 30px;
             }
 
-            ${$isFont &&
-			css`
+            ${
+				$isFont &&
+				css`
 					& h1 {
 						font-size: 3rem;
 					}
