@@ -35,7 +35,7 @@ export const ContentFavorites = () => {
 				</Button>
 			</Modal>
 
-			<ProductsGrid {...{ items }} pagination keyPage="favorites" hasError={false} />
+			<ProductsGrid {...{ items }} pagination keyPage="favorites" />
 		</Container>
 	);
 };

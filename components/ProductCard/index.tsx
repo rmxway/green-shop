@@ -1,6 +1,6 @@
 import { MotionProps } from 'framer-motion';
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { RatingStars, Space } from '@/components/Layout';
 import { Button, Favorite, Sticker } from '@/components/ui';
@@ -12,11 +12,11 @@ import { IProduct } from '@/types';
 import { ProductImage } from './ProductImage';
 import { Price, ProductWrapper, Title, Tools } from './styled';
 
-interface ProductType extends MotionProps {
+interface ProductCardProps extends MotionProps {
 	product: IProduct;
 }
 
-export const ProductCard: FC<ProductType> = ({ product, ...props }) => {
+export const ProductCard: FC<ProductCardProps> = memo(({ product, ...props }) => {
 	const link = `/product/${product.id}`;
 	const dispatch = useAppDispatch();
 	const { formatPriceWithSymbol } = useCurrency();
@@ -46,6 +46,8 @@ export const ProductCard: FC<ProductType> = ({ product, ...props }) => {
 			</Button>
 		</ProductWrapper>
 	);
-};
+}, (prevProps, nextProps) => {
+	return prevProps.product === nextProps.product
+});
 
 export default ProductCard;

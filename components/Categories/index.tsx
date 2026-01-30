@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import Skeleton from 'react-loading-skeleton';
 
 import { Flexbox } from '@/components/Layout';
@@ -10,7 +10,7 @@ import { Category, WrapperCategory } from './styled';
 
 const skeletonArray = [...new Set(new Array(15).fill('').map(() => Math.round(Math.random() * (200 - 50 + 1) + 100)))];
 
-export const Categories: FC<{ isLoading: boolean }> = ({ isLoading }) => {
+export const Categories: FC<{ isLoading: boolean }> = memo(({ isLoading }) => {
 	const { categories, search } = useAppSelector(productsStore);
 
 	return (
@@ -37,5 +37,8 @@ export const Categories: FC<{ isLoading: boolean }> = ({ isLoading }) => {
 			</WrapperCategory>
 		</>
 	);
-};
+}, (prevProps, nextProps) => prevProps.isLoading === nextProps.isLoading);
+
+Categories.displayName = 'Categories';
+
 export default Categories;
