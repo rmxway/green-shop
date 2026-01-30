@@ -1,4 +1,4 @@
-import { FC, useCallback, useState } from 'react';
+import { FC, memo, useCallback, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 
 import { Flexbox } from '@/components/Layout';
@@ -11,7 +11,7 @@ import { productsStore } from '@/store/types';
 import { StyledFilter } from './styled';
 import { ToggleSort } from './ToggleSort';
 
-export const Filter: FC<{ isLoading: boolean }> = ({ isLoading }) => {
+export const Filter: FC<{ isLoading: boolean }> = memo(({ isLoading }) => {
 	const { fetchedItems, reservedItems } = useAppSelector(productsStore);
 	const [value, setValue] = useState('');
 	const dispatch = useAppDispatch();
@@ -66,6 +66,7 @@ export const Filter: FC<{ isLoading: boolean }> = ({ isLoading }) => {
 			</Flexbox>
 		</StyledFilter>
 	);
-};
+}, (prevProps, nextProps) => prevProps.isLoading === nextProps.isLoading);
+
 
 export default Filter;
