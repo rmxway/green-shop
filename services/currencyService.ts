@@ -116,6 +116,13 @@ export const currencyUtils = {
 	},
 
 	/**
+	 * Форматирует цену без Locale
+	 */
+	formatPriceWithoutLocale: (price: number, currency: Currency, exchangeRate?: number): number => {
+		return currencyUtils.convertPrice(price, currency, exchangeRate);
+	},
+
+	/**
 	 * Форматирует цену согласно Locale валюты (асинхронная версия)
 	 */
 	formatPriceAsync: async (price: number, currency: Currency): Promise<string> => {
