@@ -8,6 +8,33 @@ import { currencyStore } from '@/store/types';
 
 import { currencyUtils, DEFAULT_EXCHANGE_RATE_USD_TO_RUB, getExchangeRate } from './currencyService';
 
+export const useAppDispatch: () => AppDispatch = useDispatch;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+export const useAppStore: () => RootStore = useStore;
+
+/**
+ * Observable screen width breakpoints and if matched return a boolean value
+ * @param {string}query - string
+ * @returns boolean
+ * @example const match = useMediaQuery('1024px') // return true if screen width from 0 to 1024 px
+ */
+export const useMediaQuery = (query: string) => {
+	const mediaQuery = useMemo(
+		() => (typeof window !== 'undefined' ? window.matchMedia(`(max-width: ${query})`) : undefined),
+		[query],
+	);
+	const [match, setMatch] = useState(mediaQuery?.matches);
+
+	useEffect(() => {
+		const onChange = () => setMatch(mediaQuery?.matches);
+		mediaQuery?.addEventListener('change', onChange);
+
+		return () => mediaQuery?.removeEventListener('change', onChange);
+	}, [mediaQuery]);
+
+	return match;
+};
+
 // Глобальное состояние для курса валюты
 let globalExchangeRate = DEFAULT_EXCHANGE_RATE_USD_TO_RUB;
 let globalIsLoading = true;
@@ -41,33 +68,6 @@ const initializeExchangeRate = async () => {
 		globalIsLoading = false;
 		notifySubscribers();
 	}
-};
-
-export const useAppDispatch: () => AppDispatch = useDispatch;
-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
-export const useAppStore: () => RootStore = useStore;
-
-/**
- * Observable screen width breakpoints and if matched return a boolean value
- * @param {string}query - string
- * @returns boolean
- * @example const match = useMediaQuery('1024px') // return true if screen width from 0 to 1024 px
- */
-export const useMediaQuery = (query: string) => {
-	const mediaQuery = useMemo(
-		() => (typeof window !== 'undefined' ? window.matchMedia(`(max-width: ${query})`) : undefined),
-		[query],
-	);
-	const [match, setMatch] = useState(mediaQuery?.matches);
-
-	useEffect(() => {
-		const onChange = () => setMatch(mediaQuery?.matches);
-		mediaQuery?.addEventListener('change', onChange);
-
-		return () => mediaQuery?.removeEventListener('change', onChange);
-	}, [mediaQuery]);
-
-	return match;
 };
 
 /**
@@ -116,6 +116,11 @@ export const useCurrency = () => {
 		[currency, exchangeRate],
 	);
 
+	const formatPriceWithoutLocale = useCallback(
+		(price: number): number => currencyUtils.formatPriceWithoutLocale(price, currency, exchangeRate),
+		[currency, exchangeRate],
+	);
+
 	const formatPriceWithSymbol = useCallback(
 		(price: number): string => currencyUtils.formatPriceWithSymbol(price, currency, exchangeRate),
 		[currency, exchangeRate],
@@ -134,6 +139,7 @@ export const useCurrency = () => {
 			convertPrice,
 			formatPrice,
 			formatPriceWithSymbol,
+			formatPriceWithoutLocale,
 			getCurrencySymbol,
 			getCurrencyName,
 		}),
@@ -144,6 +150,7 @@ export const useCurrency = () => {
 			convertPrice,
 			formatPrice,
 			formatPriceWithSymbol,
+			formatPriceWithoutLocale,
 			getCurrencySymbol,
 			getCurrencyName,
 		],

@@ -211,7 +211,6 @@ export const Delete = styled.button`
 		top: 5px;
 		right: 5px;
 		flex-shrink: 0;
-		border: 2px solid ${theme.colors.gray.$3};
 		appearance: none;
 		display: flex;
 		justify-content: center;
@@ -227,7 +226,7 @@ export const Delete = styled.button`
 
 		i {
 			position: absolute;
-			font-size: 1.5rem;
+			font-size: 1.2rem;
 		}
 
 		&:hover {

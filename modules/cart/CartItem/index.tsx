@@ -133,7 +133,7 @@ export const CartItem: FC<Props> = memo(
 						)}
 					</WrapperText>
 					<Delete type="button" onClick={handleRemove}>
-						<Icon icon="times-small" />
+						<Icon icon="trash" />
 					</Delete>
 				</Content>
 			</Item>

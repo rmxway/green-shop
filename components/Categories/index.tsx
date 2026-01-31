@@ -21,19 +21,19 @@ export const Categories: FC<{ isLoading: boolean }> = memo(
 					<Flexbox $justify="flex-start" $gap={4}>
 						{isLoading
 							? skeletonArray.map((el) => (
-								<Skeleton key={el} inline borderRadius={8} height={31} width={el} />
-							))
+									<Skeleton key={el} inline borderRadius={8} height={31} width={el} />
+								))
 							: categories.map((category) => (
-								<Category
-									$active={category.active}
-									type="button"
-									key={category.name}
-									disabled={search.length !== 0}
-									onClick={() => changeCategoryWithSort(category.name)}
-								>
-									{category.name}
-								</Category>
-							))}
+									<Category
+										$active={category.active}
+										type="button"
+										key={category.name}
+										disabled={search.length !== 0}
+										onClick={() => changeCategoryWithSort(category.name)}
+									>
+										{category.name}
+									</Category>
+								))}
 					</Flexbox>
 				</WrapperCategory>
 			</>
