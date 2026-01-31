@@ -1,7 +1,6 @@
 import { MotionProps } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
-import { forwardRef, useEffect, useState } from 'react';
+import { FC, memo, useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Icon, Loader } from '@/components/ui';
 import { useAppDispatch, useCurrency } from '@/services';
@@ -26,107 +25,121 @@ interface Props extends MotionProps {
 	product: IProduct;
 }
 
-export const CartItem = forwardRef<HTMLDivElement, Props>(({ product, ...props }, ref) => {
-	const dispatch = useAppDispatch();
-	const { formatPrice, getCurrencySymbol } = useCurrency();
-	const { id, price, title, description, thumbnail, count } = product;
-	const [isLoad, setIsLoad] = useState(true);
-	const [hasError, setHasError] = useState(false);
+export const CartItem: FC<Props> = memo(
+	({ product, ...props }) => {
+		const dispatch = useAppDispatch();
+		const { formatPrice, getCurrencySymbol } = useCurrency();
+		const { id, price, title, description, thumbnail, count } = product;
+		const [isLoad, setIsLoad] = useState(true);
+		const [hasError, setHasError] = useState(false);
 
-	// Таймер на 10 секунд для прерывания загрузки изображения
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			if (isLoad) {
-				setIsLoad(false);
-				setHasError(true);
-			}
-		}, 10000);
+		// Мемоизируем форматированную цену и символ валюты
+		const formattedPrice = useMemo(() => {
+			if (!count || !price) return '';
+			return formatPrice(count * price);
+		}, [count, price, formatPrice]);
 
-		return () => clearTimeout(timer);
-	}, [isLoad]);
+		const currencySymbol = useMemo(() => getCurrencySymbol(), [getCurrencySymbol]);
 
-	// Сброс состояний при изменении продукта
-	useEffect(() => {
-		setIsLoad(true);
-		setHasError(false);
-	}, [thumbnail]);
+		// Таймер на 10 секунд для прерывания загрузки изображения
+		useEffect(() => {
+			const timer = setTimeout(() => {
+				if (isLoad) {
+					setIsLoad(false);
+					setHasError(true);
+				}
+			}, 10000);
 
-	const handleImageLoad = () => {
-		setIsLoad(false);
-	};
+			return () => clearTimeout(timer);
+		}, [isLoad]);
 
-	const handleImageError = () => {
-		setIsLoad(false);
-		setHasError(true);
-	};
+		// Сброс состояний при изменении продукта
+		useEffect(() => {
+			setIsLoad(true);
+			setHasError(false);
+		}, [thumbnail]);
 
-	return (
-		<Item {...props} {...{ ref }}>
-			<Content layout variants={elementsVars}>
-				<Link href={`/product/${id}`}>
-					{thumbnail && !hasError ? (
-						<div
-							style={{ position: 'relative', width: '70px', height: '70px', margin: '10px 0 10px 10px' }}
-						>
-							<Image
-								src={thumbnail}
-								alt={title}
-								width={70}
-								height={70}
-								quality={50}
-								onLoad={handleImageLoad}
-								onError={handleImageError}
-								style={{
-									borderRadius: 'var(--radius-borderRadius)',
-									objectFit: 'cover',
-									width: '100%',
-									height: '100%',
-								}}
-							/>
-							<Loader className="loader" loading={isLoad} />
-						</div>
-					) : (
-						<ThumbnailContainer
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							transition={{ duration: 0.2, ease: 'easeInOut' }}
-						>
-							<Icon icon="nophoto" />
-						</ThumbnailContainer>
-					)}
-				</Link>
-				<WrapperText>
-					<Title href={`/product/${id}`}>
-						<strong>{title}</strong>
-						<span>{description}</span>
-					</Title>
-					{count && (
-						<CountWrapper>
-							<button
-								type="button"
-								disabled={count === 1}
-								onClick={() => dispatch(decreaseCount(Number(id)))}
+		const handleImageLoad = () => {
+			setIsLoad(false);
+		};
+
+		const handleImageError = () => {
+			setIsLoad(false);
+			setHasError(true);
+		};
+
+		const handleDecrease = useCallback(() => {
+			dispatch(decreaseCount(Number(id)));
+		}, [dispatch, id]);
+
+		const handleIncrease = useCallback(() => {
+			dispatch(increaseCount(Number(id)));
+		}, [dispatch, id]);
+
+		const handleRemove = useCallback(() => {
+			removeFromCart(Number(id));
+		}, [id]);
+
+		return (
+			<Item {...props}>
+				<Content layout variants={elementsVars}>
+					<Link href={`/product/${id}`}>
+						{thumbnail && !hasError ? (
+							<div className="preload">
+								<img
+									src={thumbnail}
+									alt={title}
+									width={70}
+									height={70}
+									onLoad={handleImageLoad}
+									onError={handleImageError}
+								/>
+								<Loader className="loader" loading={isLoad} />
+							</div>
+						) : (
+							<ThumbnailContainer
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								transition={{ duration: 0.2, ease: 'easeInOut' }}
 							>
-								-
-							</button>{' '}
-							<Count>{count}</Count>
-							<button type="button" onClick={() => dispatch(increaseCount(Number(id)))}>
-								+
-							</button>
-						</CountWrapper>
-					)}
-					{count && price && (
-						<Price>
-							{formatPrice(count * price)} {getCurrencySymbol()}
-						</Price>
-					)}
-				</WrapperText>
-				<Delete type="button" onClick={() => removeFromCart(Number(id))}>
-					<Icon icon="times-small" />
-				</Delete>
-			</Content>
-		</Item>
-	);
-});
+								<Icon icon="nophoto" />
+							</ThumbnailContainer>
+						)}
+					</Link>
+					<WrapperText>
+						<Title href={`/product/${id}`}>
+							<strong>{title}</strong>
+							<span>{description}</span>
+						</Title>
+						{count && price && (
+							<Price>
+								<div>
+									{formattedPrice} {currencySymbol}
+								</div>
+								<div>
+									{count && (
+										<CountWrapper>
+											<button type="button" disabled={count === 1} onClick={handleDecrease}>
+												-
+											</button>{' '}
+											<Count>{count}</Count>
+											<button type="button" onClick={handleIncrease}>
+												+
+											</button>
+										</CountWrapper>
+									)}
+								</div>
+							</Price>
+						)}
+					</WrapperText>
+					<Delete type="button" onClick={handleRemove}>
+						<Icon icon="times-small" />
+					</Delete>
+				</Content>
+			</Item>
+		);
+	},
+	(prevProps, nextProps) => prevProps.product === nextProps.product,
+);
 
-export default CartItem;
+CartItem.displayName = 'CartItem';

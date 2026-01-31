@@ -22,6 +22,9 @@ export const fadeVariant = (i: number = 1): Variants => ({
 	},
 });
 
+// Предвычисленные варианты для оптимизации (до 20 элементов на страницу)
+export const precomputedFadeVariants = Array.from({ length: 20 }, (_, i) => fadeVariant(i));
+
 export const elementsVars: Variants = {
 	hidden: {
 		y: -5,
@@ -61,6 +64,13 @@ export const Item = styled(motion.div)`
 			object-fit: cover;
 			border-radius: ${theme.radius.borderRadius};
 			flex-shrink: 0;
+		}
+
+		.preload {
+			position: relative;
+			width: 70px;
+			height: 70px;
+			margin: 10px 0 10px 10px;
 		}
 
 		${media.greaterThan('xs')`
@@ -172,6 +182,7 @@ export const CountWrapper = styled.div`
 	flex-shrink: 0;
 	font-size: 14px;
 	font-family: sans-serif;
+	margin-top: 10px;
 `;
 
 export const Count = styled(motion.div)`
@@ -183,12 +194,13 @@ export const Price = styled.div`
 	font-size: 20px;
 	font-family: sans-serif;
 	min-width: auto;
-	text-align: left;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
 	flex-shrink: 0;
 
 	${media.greaterThan('xs')`
-        min-width: 70px;
-        text-align: right;
+        min-width: 70px;    
     `}
 `;
 

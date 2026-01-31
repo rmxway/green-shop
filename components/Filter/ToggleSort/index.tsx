@@ -1,11 +1,11 @@
 'use client';
 
-import React, { FC, useRef } from 'react';
+import React, { FC, memo, useRef } from 'react';
 
 import { Icon } from '@/components/ui';
 import { useAppDispatch, useAppSelector } from '@/services';
+import { toggleSortSelectorMemoized } from '@/store/reducers/commonSelectors';
 import { sortProducts } from '@/store/reducers/products';
-import { productsStore } from '@/store/types';
 
 import { Toggle } from './styled';
 
@@ -15,8 +15,12 @@ interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	onClick?: () => void;
 }
 
-const ToggleSort: FC<ToggleProps> = ({ sort, value, disabled, onClick, ...props }) => {
-	const { sort: productsSort, search, categories } = useAppSelector(productsStore);
+const ToggleSort: FC<ToggleProps> = memo(({ sort, value, disabled, onClick, ...props }) => {
+	const {
+		sort: productsSort,
+		search,
+		categories,
+	} = useAppSelector((state) => toggleSortSelectorMemoized(state.products));
 	const checked = useRef(false);
 	const idName = `sort-${sort}`;
 	const dispatch = useAppDispatch();
@@ -52,7 +56,7 @@ const ToggleSort: FC<ToggleProps> = ({ sort, value, disabled, onClick, ...props 
 			</label>
 		</Toggle>
 	);
-};
+});
 
 export { ToggleSort };
 export default ToggleSort;

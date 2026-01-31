@@ -105,24 +105,49 @@ export const useCurrency = () => {
 	const currency = useAppSelector(currencyStore);
 	const { exchangeRate, isLoading } = useExchangeRate();
 
-	// Создаем синхронные функции с использованием глобального курса
-	const convertPriceSync = (price: number): number => currencyUtils.convertPrice(price, currency, exchangeRate);
+	// Мемоизируем функции для предотвращения лишних ререндеров
+	const convertPrice = useCallback(
+		(price: number): number => currencyUtils.convertPrice(price, currency, exchangeRate),
+		[currency, exchangeRate],
+	);
 
-	const formatPriceSync = (price: number): string => currencyUtils.formatPrice(price, currency, exchangeRate);
+	const formatPrice = useCallback(
+		(price: number): string => currencyUtils.formatPrice(price, currency, exchangeRate),
+		[currency, exchangeRate],
+	);
 
-	const formatPriceWithSymbolSync = (price: number): string =>
-		currencyUtils.formatPriceWithSymbol(price, currency, exchangeRate);
+	const formatPriceWithSymbol = useCallback(
+		(price: number): string => currencyUtils.formatPriceWithSymbol(price, currency, exchangeRate),
+		[currency, exchangeRate],
+	);
 
-	return {
-		currency,
-		isLoading,
-		exchangeRate,
-		convertPrice: convertPriceSync,
-		formatPrice: formatPriceSync,
-		formatPriceWithSymbol: formatPriceWithSymbolSync,
-		getCurrencySymbol: () => currencyUtils.getCurrencySymbol(currency),
-		getCurrencyName: () => currencyUtils.getCurrencyName(currency),
-	};
+	const getCurrencySymbol = useCallback(() => currencyUtils.getCurrencySymbol(currency), [currency]);
+
+	const getCurrencyName = useCallback(() => currencyUtils.getCurrencyName(currency), [currency]);
+
+	// Возвращаем мемоизированный объект
+	return useMemo(
+		() => ({
+			currency,
+			isLoading,
+			exchangeRate,
+			convertPrice,
+			formatPrice,
+			formatPriceWithSymbol,
+			getCurrencySymbol,
+			getCurrencyName,
+		}),
+		[
+			currency,
+			isLoading,
+			exchangeRate,
+			convertPrice,
+			formatPrice,
+			formatPriceWithSymbol,
+			getCurrencySymbol,
+			getCurrencyName,
+		],
+	);
 };
 
 export default useMediaQuery;

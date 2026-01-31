@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { Count } from '@/components/Navbar/Count';
 import { Icon } from '@/components/ui';
@@ -11,11 +11,13 @@ interface NavCountItemProps {
 	count: number;
 }
 
-export const NavCountItem: FC<NavCountItemProps> = ({ title, count }) => (
+export const NavCountItem: FC<NavCountItemProps> = memo(({ title, count }) => (
 	<NavCountItemStyled>
 		{title && <Icon icon={title} />}
 		<Count {...{ count }} />
 	</NavCountItemStyled>
-);
+));
+
+NavCountItem.displayName = 'NavCountItem';
 
 export default NavCountItem;

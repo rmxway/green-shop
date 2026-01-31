@@ -1,19 +1,16 @@
 import { FC, useMemo, useState } from 'react';
 
 import { BurgerButton } from '@/components/Navbar/BurgerButton';
-import { NavCountItem } from '@/components/Navbar/NavCountItem';
-import { NavbarProps, NavLink } from '@/components/Navbar/NavLink';
+import { CartNavItem } from '@/components/Navbar/CartNavItem';
+import { FavoriteNavItem } from '@/components/Navbar/FavoriteNavItem';
+import { NavLink } from '@/components/Navbar/NavLink';
 import { Line, variantsWrapperNavbar, WrapperNavbarItems } from '@/components/Navbar/styled';
 import { navbarItems } from '@/mock/navbar';
-import { useAppSelector, useMediaQuery } from '@/services';
-import { cartStore, productsStore } from '@/store/types';
+import { useMediaQuery } from '@/services';
 import { breakpoints } from '@/theme';
 
 export const RenderNavbar: FC = () => {
 	const [open, setOpen] = useState(false);
-	const { countFavorites } = useAppSelector(productsStore);
-	const { items } = useAppSelector(cartStore);
-	const cartItemsCount = useMemo(() => items.reduce((acc, cur) => acc + (cur.count || 1), 0), [items]);
 
 	const match = useMediaQuery(breakpoints.md);
 
@@ -43,27 +40,33 @@ export const RenderNavbar: FC = () => {
 				transition={{ duration: 0.3, type: 'spring', stiffness: 250, damping: 20 }}
 			>
 				{navbarItems.map(({ title, url }) => {
-					const props: NavbarProps = {
-						title,
-						url,
-					};
+					const lineElement = (
+						<Line
+							layoutId="underline"
+							transition={{ duration: 0.2, type: 'spring', stiffness: 200, damping: 22 }}
+						/>
+					);
 
-					// NavCountItem добавляется в пропсы к компоненту NavLinkMotion.component
-
+					// Используем специализированные компоненты для элементов со счетчиками
 					if (title === 'Избранное') {
-						props.component = <NavCountItem title="favorite-fill" count={countFavorites} />;
+						return (
+							<FavoriteNavItem key={url} onClose={closeMenu}>
+								{lineElement}
+							</FavoriteNavItem>
+						);
 					}
 
 					if (title === 'Корзина') {
-						props.component = <NavCountItem title="cart" count={cartItemsCount} />;
+						return (
+							<CartNavItem key={url} onClose={closeMenu}>
+								{lineElement}
+							</CartNavItem>
+						);
 					}
 
 					return (
-						<NavLink key={url} onClick={closeMenu} {...props}>
-							<Line
-								layoutId="underline"
-								transition={{ duration: 0.2, type: 'spring', stiffness: 200, damping: 22 }}
-							/>
+						<NavLink key={url} title={title} url={url} onClick={closeMenu}>
+							{lineElement}
 						</NavLink>
 					);
 				})}
