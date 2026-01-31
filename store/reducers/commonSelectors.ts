@@ -3,6 +3,7 @@ import { createDraftSafeSelector } from '@reduxjs/toolkit';
 import { CartState, IProduct, ProductsState } from '@/types';
 
 const typedProductsCreateSelector = createDraftSafeSelector.withTypes<ProductsState>();
+const typedCartCreateSelector = createDraftSafeSelector.withTypes<CartState>();
 
 export const currentItemsMemoized = createDraftSafeSelector(
 	[
@@ -34,4 +35,22 @@ export const favoritesItemsMemoized = typedProductsCreateSelector([(state) => st
 export const productsSelectorMemoized = typedProductsCreateSelector(
 	[(state) => state.fetchedItems, (state) => state.fetching, (state) => state.error],
 	(fetchedItems, fetching, error) => ({ fetchedItems, fetching, error }),
+);
+
+export const cartItemsCountMemoized = typedCartCreateSelector([(state) => state.items], (items) => {
+	if (!Array.isArray(items) || items.length === 0) return 0;
+	return items.reduce((acc, cur) => acc + (cur.count || 1), 0);
+});
+
+export const filterRelevantSelectorMemoized = typedProductsCreateSelector(
+	[(state) => state.reservedItems.length, (state) => state.fetchedItems.length],
+	(reservedItemsLength, fetchedItemsLength) => ({
+		reservedItemsLength,
+		fetchedItemsLength,
+	}),
+);
+
+export const toggleSortSelectorMemoized = typedProductsCreateSelector(
+	[(state) => state.sort, (state) => state.search, (state) => state.categories],
+	(sort, search, categories) => ({ sort, search, categories }),
 );

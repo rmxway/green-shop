@@ -100,24 +100,26 @@ export const CartItem = forwardRef<HTMLDivElement, Props>(({ product, ...props }
 						<strong>{title}</strong>
 						<span>{description}</span>
 					</Title>
-					{count && (
-						<CountWrapper>
-							<button
-								type="button"
-								disabled={count === 1}
-								onClick={() => dispatch(decreaseCount(Number(id)))}
-							>
-								-
-							</button>{' '}
-							<Count>{count}</Count>
-							<button type="button" onClick={() => dispatch(increaseCount(Number(id)))}>
-								+
-							</button>
-						</CountWrapper>
-					)}
 					{count && price && (
 						<Price>
-							{formatPrice(count * price)} {getCurrencySymbol()}
+							<div>{formatPrice(count * price)} {getCurrencySymbol()}</div>
+							<div>
+								{count && (
+									<CountWrapper>
+										<button
+											type="button"
+											disabled={count === 1}
+											onClick={() => dispatch(decreaseCount(Number(id)))}
+										>
+											-
+										</button>{' '}
+										<Count>{count}</Count>
+										<button type="button" onClick={() => dispatch(increaseCount(Number(id)))}>
+											+
+										</button>
+									</CountWrapper>
+								)}
+							</div>
 						</Price>
 					)}
 				</WrapperText>

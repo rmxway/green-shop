@@ -5,14 +5,16 @@ import { Flexbox } from '@/components/Layout';
 import { Input } from '@/components/ui';
 import { useAppDispatch, useAppSelector } from '@/services';
 import { debounceFunction } from '@/services/helpers';
+import { filterRelevantSelectorMemoized } from '@/store/reducers/commonSelectors';
 import { searchProducts, searchValue } from '@/store/reducers/products';
-import { productsStore } from '@/store/types';
 
 import { StyledFilter } from './styled';
 import { ToggleSort } from './ToggleSort';
 
 export const Filter: FC<{ isLoading: boolean }> = memo(({ isLoading }) => {
-	const { fetchedItems, reservedItems } = useAppSelector(productsStore);
+	const { reservedItemsLength, fetchedItemsLength } = useAppSelector((state) =>
+		filterRelevantSelectorMemoized(state.products),
+	);
 	const [value, setValue] = useState('');
 	const dispatch = useAppDispatch();
 
@@ -45,7 +47,7 @@ export const Filter: FC<{ isLoading: boolean }> = memo(({ isLoading }) => {
 					value={value}
 					onChange={handleChange}
 					noPadding
-					disabled={!reservedItems.length && !fetchedItems.length}
+					disabled={reservedItemsLength === 0 && fetchedItemsLength === 0}
 				/>
 			)}
 
@@ -58,8 +60,8 @@ export const Filter: FC<{ isLoading: boolean }> = memo(({ isLoading }) => {
 					</>
 				) : (
 					<>
-						<ToggleSort sort="rating" value="Популярные" disabled={!fetchedItems.length} />
-						<ToggleSort sort="price" value="Цена" disabled={!fetchedItems.length} />
+						<ToggleSort sort="rating" value="Популярные" disabled={fetchedItemsLength === 0} />
+						<ToggleSort sort="price" value="Цена" disabled={fetchedItemsLength === 0} />
 						<ToggleSort sort="default" value="Сброс" onClick={resetInput} />
 					</>
 				)}

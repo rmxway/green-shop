@@ -172,6 +172,7 @@ export const CountWrapper = styled.div`
 	flex-shrink: 0;
 	font-size: 14px;
 	font-family: sans-serif;
+	margin-top: 10px;
 `;
 
 export const Count = styled(motion.div)`
@@ -183,12 +184,13 @@ export const Price = styled.div`
 	font-size: 20px;
 	font-family: sans-serif;
 	min-width: auto;
-	text-align: left;
-	flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	flex-shrink: 0;	
 
 	${media.greaterThan('xs')`
-        min-width: 70px;
-        text-align: right;
+        min-width: 70px;    
     `}
 `;
 

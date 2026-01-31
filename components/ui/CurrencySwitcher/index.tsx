@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef } from 'react';
+import { FC, memo, useEffect, useRef } from 'react';
 
 import { Switcher } from '@/components/ui/Switcher';
 import { useAppDispatch, useAppSelector, useExchangeRate } from '@/services';
@@ -7,7 +7,7 @@ import { currencyStore } from '@/store/types';
 
 import { CurrencyLabel, CurrencySwitcherWrapper, RateText } from './styled';
 
-export const CurrencySwitcher: FC = () => {
+export const CurrencySwitcher: FC = memo(() => {
 	const dispatch = useAppDispatch();
 	const currency = useAppSelector(currencyStore);
 	const { exchangeRate } = useExchangeRate();
@@ -52,6 +52,6 @@ export const CurrencySwitcher: FC = () => {
 			</CurrencySwitcherWrapper>
 		</>
 	);
-};
+});
 
 export default CurrencySwitcher;

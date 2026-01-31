@@ -1,7 +1,7 @@
 import { MotionProps } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { FC, HTMLAttributes, ReactNode, useCallback } from 'react';
+import { FC, HTMLAttributes, memo, ReactNode, useCallback } from 'react';
 
 import { NavbarItem } from '@/components/Navbar/styled';
 
@@ -17,7 +17,7 @@ type NavbarTypes = NavbarProps &
 		onClick?: (event: React.MouseEvent) => void;
 	};
 
-export const NavLink: FC<NavbarTypes> = ({ title, url, component, children, onClick, ...props }) => {
+export const NavLink: FC<NavbarTypes> = memo(({ title, url, component, children, onClick, ...props }) => {
 	const pathname = usePathname();
 	const router = useRouter();
 	const isActive = pathname === url;
@@ -57,6 +57,8 @@ export const NavLink: FC<NavbarTypes> = ({ title, url, component, children, onCl
 			{isActive && children}
 		</NavbarItem>
 	);
-};
+});
+
+NavLink.displayName = 'NavLink';
 
 export default NavLink;
