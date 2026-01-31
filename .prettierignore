@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Build output
+.next/
+.swc/
+out/
+build/
+coverage/
+public/
+
+# Lock files
+yarn.lock
+package-lock.json
+
+# Other
+*.hbs
+
+# Generated / assets (optional — remove if you want to format these)
+# public/assets/
