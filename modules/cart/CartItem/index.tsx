@@ -1,7 +1,6 @@
 import { MotionProps } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
-import { forwardRef, useEffect, useState } from 'react';
+import { FC, memo, useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Icon, Loader } from '@/components/ui';
 import { useAppDispatch, useCurrency } from '@/services';
@@ -26,12 +25,20 @@ interface Props extends MotionProps {
 	product: IProduct;
 }
 
-export const CartItem = forwardRef<HTMLDivElement, Props>(({ product, ...props }, ref) => {
+export const CartItem: FC<Props> = memo(({ product, ...props }) => {
 	const dispatch = useAppDispatch();
 	const { formatPrice, getCurrencySymbol } = useCurrency();
 	const { id, price, title, description, thumbnail, count } = product;
 	const [isLoad, setIsLoad] = useState(true);
 	const [hasError, setHasError] = useState(false);
+
+	// Мемоизируем форматированную цену и символ валюты
+	const formattedPrice = useMemo(() => {
+		if (!count || !price) return '';
+		return formatPrice(count * price);
+	}, [count, price, formatPrice]);
+
+	const currencySymbol = useMemo(() => getCurrencySymbol(), [getCurrencySymbol]);
 
 	// Таймер на 10 секунд для прерывания загрузки изображения
 	useEffect(() => {
@@ -60,28 +67,31 @@ export const CartItem = forwardRef<HTMLDivElement, Props>(({ product, ...props }
 		setHasError(true);
 	};
 
+	const handleDecrease = useCallback(() => {
+		dispatch(decreaseCount(Number(id)));
+	}, [dispatch, id]);
+
+	const handleIncrease = useCallback(() => {
+		dispatch(increaseCount(Number(id)));
+	}, [dispatch, id]);
+
+	const handleRemove = useCallback(() => {
+		removeFromCart(Number(id));
+	}, [id]);
+
 	return (
-		<Item {...props} {...{ ref }}>
+		<Item {...props}>
 			<Content layout variants={elementsVars}>
 				<Link href={`/product/${id}`}>
 					{thumbnail && !hasError ? (
-						<div
-							style={{ position: 'relative', width: '70px', height: '70px', margin: '10px 0 10px 10px' }}
-						>
-							<Image
+						<div className='preload'>
+							<img
 								src={thumbnail}
 								alt={title}
 								width={70}
 								height={70}
-								quality={50}
 								onLoad={handleImageLoad}
 								onError={handleImageError}
-								style={{
-									borderRadius: 'var(--radius-borderRadius)',
-									objectFit: 'cover',
-									width: '100%',
-									height: '100%',
-								}}
 							/>
 							<Loader className="loader" loading={isLoad} />
 						</div>
@@ -102,19 +112,19 @@ export const CartItem = forwardRef<HTMLDivElement, Props>(({ product, ...props }
 					</Title>
 					{count && price && (
 						<Price>
-							<div>{formatPrice(count * price)} {getCurrencySymbol()}</div>
+							<div>{formattedPrice} {currencySymbol}</div>
 							<div>
 								{count && (
 									<CountWrapper>
 										<button
 											type="button"
 											disabled={count === 1}
-											onClick={() => dispatch(decreaseCount(Number(id)))}
+											onClick={handleDecrease}
 										>
 											-
 										</button>{' '}
 										<Count>{count}</Count>
-										<button type="button" onClick={() => dispatch(increaseCount(Number(id)))}>
+										<button type="button" onClick={handleIncrease}>
 											+
 										</button>
 									</CountWrapper>
@@ -123,12 +133,13 @@ export const CartItem = forwardRef<HTMLDivElement, Props>(({ product, ...props }
 						</Price>
 					)}
 				</WrapperText>
-				<Delete type="button" onClick={() => removeFromCart(Number(id))}>
+				<Delete type="button" onClick={handleRemove}>
 					<Icon icon="times-small" />
 				</Delete>
 			</Content>
 		</Item>
 	);
-});
+}, (prevProps, nextProps) => prevProps.product === nextProps.product);
 
-export default CartItem;
+CartItem.displayName = 'CartItem';
+

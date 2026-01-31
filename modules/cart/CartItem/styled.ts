@@ -22,6 +22,9 @@ export const fadeVariant = (i: number = 1): Variants => ({
 	},
 });
 
+// Предвычисленные варианты для оптимизации (до 20 элементов на страницу)
+export const precomputedFadeVariants = Array.from({ length: 20 }, (_, i) => fadeVariant(i));
+
 export const elementsVars: Variants = {
 	hidden: {
 		y: -5,
@@ -61,6 +64,13 @@ export const Item = styled(motion.div)`
 			object-fit: cover;
 			border-radius: ${theme.radius.borderRadius};
 			flex-shrink: 0;
+		}
+
+		.preload {
+			position: relative;
+			width: 70px;
+			height: 70px;
+			margin: 10px 0 10px 10px;
 		}
 
 		${media.greaterThan('xs')`

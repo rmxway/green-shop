@@ -2,43 +2,49 @@
 
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import Link from 'next/link';
-import { FC, useState } from 'react';
+import { FC, memo, useCallback, useMemo, useState } from 'react';
 
 import { Pagination } from '@/components';
 import { LayerBlock } from '@/components/Layout';
 import { Button, LinkIcon, Modal } from '@/components/ui';
 import { CartItem } from '@/modules/cart/CartItem';
-import { fadeVariant } from '@/modules/cart/CartItem/styled';
-import { useAppDispatch, useAppSelector, useCurrency } from '@/services';
-import { changePage, changeStep } from '@/store/reducers/cart';
+import { fadeVariant, precomputedFadeVariants } from '@/modules/cart/CartItem/styled';
+import { useAppSelector } from '@/services';
+import { changePage } from '@/store/reducers/cart';
 import { removeAllProducts } from '@/store/reducers/combineActions';
 import { currentItemsMemoized } from '@/store/reducers/commonSelectors';
 import { cartStore } from '@/store/types';
 
-import { Cart, contentVariant, Sidebar, Title, Total, Wrapper } from './styled';
+import { CartSidebar } from './CartSidebar';
+import { Cart, contentVariant, Wrapper } from './styled';
 
-export const StepCart: FC = () => {
+export const StepCart: FC = memo(() => {
 	const [modalShow, setModalShow] = useState(false);
-	const { items, totalPrice, page, countPerPage } = useAppSelector(cartStore);
-	const { formatPrice, getCurrencySymbol } = useCurrency();
+
+	// Точечные селекторы вместо получения всего стейта
+	const items = useAppSelector((state) => cartStore(state).items);
+	const page = useAppSelector((state) => cartStore(state).page);
+	const countPerPage = useAppSelector((state) => cartStore(state).countPerPage);
+
 	const isItems = !!items.length;
 
-	const dispatch = useAppDispatch();
-
 	const currentItems = currentItemsMemoized(useAppSelector(cartStore), items);
+	const handleCloseModal = useCallback(() => setModalShow(false), []);
+	const handleOpenModal = useCallback(() => setModalShow(true), []);
 
-	const handleTrashAllProducts = () => {
+	const handleTrashAllProducts = useCallback(() => {
 		setModalShow(false);
 		removeAllProducts();
-	};
+	}, []);
 
-	const nextStep = () => {
-		dispatch(changeStep(2));
-	};
+	const exitAnimation = useMemo(
+		() => ({ opacity: 0, scale: isItems ? 0.9 : 1 }),
+		[isItems]
+	);
 
 	return (
 		<>
-			<Modal open={modalShow} onClose={() => setModalShow(false)} title="Удалить все">
+			<Modal open={modalShow} onClose={handleCloseModal} title="Удалить все">
 				<div>Вы уверены, что хотите удалить все товары из корзины?</div>
 				<br />
 				<Button $danger onClick={handleTrashAllProducts}>
@@ -49,7 +55,7 @@ export const StepCart: FC = () => {
 				{isItems && (
 					<LinkIcon
 						icon="trash"
-						onClick={() => setModalShow(true)}
+						onClick={handleOpenModal}
 						style={{ top: '10px', position: 'absolute' }}
 					>
 						Удалить все
@@ -66,10 +72,10 @@ export const StepCart: FC = () => {
 										layout
 										key={item.id}
 										product={item}
-										variants={fadeVariant(i)}
+										variants={precomputedFadeVariants[i] || fadeVariant(i)}
 										initial="hidden"
 										animate="visible"
-										exit={{ opacity: 0, scale: isItems ? 0.9 : 1 }}
+										exit={exitAnimation}
 									/>
 								))}
 						</AnimatePresence>
@@ -90,20 +96,9 @@ export const StepCart: FC = () => {
 						<Pagination layout {...{ changePage, items, countPerPage, page }} />
 					</Wrapper>
 
-					<Sidebar layoutId="sidebar">
-						<Title>Ваш заказ</Title>
-						<Total>
-							Всего:
-							<span>
-								{formatPrice(totalPrice)} {getCurrencySymbol()}
-							</span>
-						</Total>
-						<Button $primary disabled={totalPrice === 0} onClick={nextStep}>
-							Оформить заказ
-						</Button>
-					</Sidebar>
+					<CartSidebar />
 				</LayoutGroup>
 			</Cart>
 		</>
 	);
-};
+});
