@@ -16,9 +16,11 @@ interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 const ToggleSort: FC<ToggleProps> = memo(({ sort, value, disabled, onClick, ...props }) => {
-	const { sort: productsSort, search, categories } = useAppSelector((state) =>
-		toggleSortSelectorMemoized(state.products),
-	);
+	const {
+		sort: productsSort,
+		search,
+		categories,
+	} = useAppSelector((state) => toggleSortSelectorMemoized(state.products));
 	const checked = useRef(false);
 	const idName = `sort-${sort}`;
 	const dispatch = useAppDispatch();

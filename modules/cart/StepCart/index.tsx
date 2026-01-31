@@ -37,10 +37,7 @@ export const StepCart: FC = memo(() => {
 		removeAllProducts();
 	}, []);
 
-	const exitAnimation = useMemo(
-		() => ({ opacity: 0, scale: isItems ? 0.9 : 1 }),
-		[isItems]
-	);
+	const exitAnimation = useMemo(() => ({ opacity: 0, scale: isItems ? 0.9 : 1 }), [isItems]);
 
 	return (
 		<>
@@ -53,11 +50,7 @@ export const StepCart: FC = memo(() => {
 			</Modal>
 			<div>
 				{isItems && (
-					<LinkIcon
-						icon="trash"
-						onClick={handleOpenModal}
-						style={{ top: '10px', position: 'absolute' }}
-					>
+					<LinkIcon icon="trash" onClick={handleOpenModal} style={{ top: '10px', position: 'absolute' }}>
 						Удалить все
 					</LinkIcon>
 				)}

@@ -197,7 +197,7 @@ export const Price = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: end;
-	flex-shrink: 0;	
+	flex-shrink: 0;
 
 	${media.greaterThan('xs')`
         min-width: 70px;    

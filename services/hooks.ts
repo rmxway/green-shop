@@ -108,17 +108,17 @@ export const useCurrency = () => {
 	// Мемоизируем функции для предотвращения лишних ререндеров
 	const convertPrice = useCallback(
 		(price: number): number => currencyUtils.convertPrice(price, currency, exchangeRate),
-		[currency, exchangeRate]
+		[currency, exchangeRate],
 	);
 
 	const formatPrice = useCallback(
 		(price: number): string => currencyUtils.formatPrice(price, currency, exchangeRate),
-		[currency, exchangeRate]
+		[currency, exchangeRate],
 	);
 
 	const formatPriceWithSymbol = useCallback(
 		(price: number): string => currencyUtils.formatPriceWithSymbol(price, currency, exchangeRate),
-		[currency, exchangeRate]
+		[currency, exchangeRate],
 	);
 
 	const getCurrencySymbol = useCallback(() => currencyUtils.getCurrencySymbol(currency), [currency]);
@@ -137,7 +137,16 @@ export const useCurrency = () => {
 			getCurrencySymbol,
 			getCurrencyName,
 		}),
-		[currency, isLoading, exchangeRate, convertPrice, formatPrice, formatPriceWithSymbol, getCurrencySymbol, getCurrencyName]
+		[
+			currency,
+			isLoading,
+			exchangeRate,
+			convertPrice,
+			formatPrice,
+			formatPriceWithSymbol,
+			getCurrencySymbol,
+			getCurrencyName,
+		],
 	);
 };
 

@@ -14,7 +14,12 @@ export const FavoriteNavItem: FC<FavoriteNavItemProps> = memo(({ onClose, childr
 	const { countFavorites } = useAppSelector(productsStore);
 
 	return (
-		<NavLink url="/favorites" title="Избранное" onClick={onClose} component={<NavCountItem title="favorite-fill" count={countFavorites} />}>
+		<NavLink
+			url="/favorites"
+			title="Избранное"
+			onClick={onClose}
+			component={<NavCountItem title="favorite-fill" count={countFavorites} />}
+		>
 			{children}
 		</NavLink>
 	);

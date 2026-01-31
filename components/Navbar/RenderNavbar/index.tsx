@@ -49,11 +49,19 @@ export const RenderNavbar: FC = () => {
 
 					// Используем специализированные компоненты для элементов со счетчиками
 					if (title === 'Избранное') {
-						return <FavoriteNavItem key={url} onClose={closeMenu}>{lineElement}</FavoriteNavItem>;
+						return (
+							<FavoriteNavItem key={url} onClose={closeMenu}>
+								{lineElement}
+							</FavoriteNavItem>
+						);
 					}
 
 					if (title === 'Корзина') {
-						return <CartNavItem key={url} onClose={closeMenu}>{lineElement}</CartNavItem>;
+						return (
+							<CartNavItem key={url} onClose={closeMenu}>
+								{lineElement}
+							</CartNavItem>
+						);
 					}
 
 					return (

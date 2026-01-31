@@ -14,7 +14,12 @@ export const CartNavItem: FC<CartNavItemProps> = memo(({ onClose, children }) =>
 	const cartItemsCount = useAppSelector((state) => cartItemsCountMemoized(state.cart));
 
 	return (
-		<NavLink url="/cart" title="Корзина" onClick={onClose} component={<NavCountItem title="cart" count={cartItemsCount} />}>
+		<NavLink
+			url="/cart"
+			title="Корзина"
+			onClick={onClose}
+			component={<NavCountItem title="cart" count={cartItemsCount} />}
+		>
 			{children}
 		</NavLink>
 	);

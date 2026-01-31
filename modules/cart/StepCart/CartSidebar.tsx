@@ -1,12 +1,11 @@
-import { memo, useCallback } from "react";
+import { memo, useCallback } from 'react';
 
-import { Button } from "@/components/ui";
-import { useAppDispatch, useAppSelector, useCurrency } from "@/services";
-import { changeStep } from "@/store/reducers/cart";
-import { cartStore } from "@/store/types";
+import { Button } from '@/components/ui';
+import { useAppDispatch, useAppSelector, useCurrency } from '@/services';
+import { changeStep } from '@/store/reducers/cart';
+import { cartStore } from '@/store/types';
 
-import { Sidebar, Title, Total } from "./styled";
-
+import { Sidebar, Title, Total } from './styled';
 
 // Вынесенный сайдбар с точечной подпиской только на totalPrice
 export const CartSidebar = memo(() => {
