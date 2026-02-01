@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'icofont';
-    src: url(".//icofont.ttf?6c93db9264cfa1c260dec3b251bb01d5") format("truetype"),
-url(".//icofont.woff?6c93db9264cfa1c260dec3b251bb01d5") format("woff"),
-url(".//icofont.woff2?6c93db9264cfa1c260dec3b251bb01d5") format("woff2");
+    src: url(".//icofont.ttf?5b0dcc54f09527ca67a673cb1c1ee4ee") format("truetype"),
+url(".//icofont.woff?5b0dcc54f09527ca67a673cb1c1ee4ee") format("woff"),
+url(".//icofont.woff2?5b0dcc54f09527ca67a673cb1c1ee4ee") format("woff2");
 }
 
 i[class^='icofont-']:before, i[class*=' icofont-']:before {
@@ -38,18 +38,21 @@ i[class^='icofont-']:before, i[class*=' icofont-']:before {
 .icofont-favorite-fill:before {
     content: '\f107';
 }
-.icofont-cart:before {
+.icofont-compare:before {
     content: '\f108';
 }
-.icofont-arrow-up:before {
+.icofont-cart:before {
     content: '\f109';
 }
-.icofont-arrow-right:before {
+.icofont-arrow-up:before {
     content: '\f10a';
 }
-.icofont-arrow-left:before {
+.icofont-arrow-right:before {
     content: '\f10b';
 }
-.icofont-arrow-down:before {
+.icofont-arrow-left:before {
     content: '\f10c';
+}
+.icofont-arrow-down:before {
+    content: '\f10d';
 }

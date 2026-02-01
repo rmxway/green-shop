@@ -5,6 +5,7 @@ import createWebStorage from 'redux-persist/lib/storage/createWebStorage';
 import { VERSION } from '@/services/constants';
 import { api } from '@/store/api';
 import CartReducer from '@/store/reducers/cart';
+import CompareReducer from '@/store/reducers/compare';
 import ProductsReducer from '@/store/reducers/products';
 
 import { middlewares } from './thunks';
@@ -32,6 +33,7 @@ const persistConfig = {
 const appReducer = combineReducers({
 	products: ProductsReducer,
 	cart: CartReducer,
+	compare: CompareReducer,
 	[api.reducerPath]: api.reducer,
 });
 

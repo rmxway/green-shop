@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { StyledComponentsRegistry } from '@/lib/registry';
-import { useAppDispatch, useCurrency } from '@/services';
+import { useAppDispatch, useAppSelector, useCurrency } from '@/services';
 import { moveToCart } from '@/store/reducers/combineActions';
 
 import { ProductCard } from '.';
@@ -42,6 +42,7 @@ jest.mock('./ProductImage', () => ({
 // Моки для Redux и сервисов
 jest.mock('@/services', () => ({
 	useAppDispatch: jest.fn(),
+	useAppSelector: jest.fn(),
 	useCurrency: jest.fn(),
 }));
 
@@ -63,6 +64,7 @@ jest.mock('@/store/types', () => ({
 }));
 
 const mockUseAppDispatch = useAppDispatch as jest.MockedFunction<typeof useAppDispatch>;
+const mockUseAppSelector = useAppSelector as jest.MockedFunction<typeof useAppSelector>;
 const mockUseCurrency = useCurrency as jest.MockedFunction<typeof useCurrency>;
 const mockDispatch = jest.fn();
 
@@ -98,6 +100,7 @@ describe('ProductCard:', () => {
 	beforeEach(() => {
 		jest.clearAllMocks();
 		mockUseAppDispatch.mockReturnValue(mockDispatch);
+		mockUseAppSelector.mockReturnValue(false);
 		mockUseCurrency.mockReturnValue({
 			currency: 'USD',
 			isLoading: false,
@@ -105,6 +108,7 @@ describe('ProductCard:', () => {
 			convertPrice: jest.fn(),
 			formatPrice: jest.fn(),
 			formatPriceWithSymbol: mockFormatPriceWithSymbol,
+			formatPriceWithoutLocale: jest.fn((price: number) => price),
 			getCurrencySymbol: jest.fn(() => '$'),
 			getCurrencyName: jest.fn(() => 'US Dollar'),
 		});

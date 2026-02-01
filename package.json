@@ -12,7 +12,7 @@
 		"lint": "eslint --ext .ts,.tsx,.js,.jsx .",
 		"lint:fix": "eslint --fix --ext .ts,.tsx,.js,.jsx .",
 		"pretty": "npx prettier --write .",
-		"icofont": "fantasticon -n icofont -p icofont && printf '\\n' >> public/assets/fonts/icofont/icofont.json",
+		"icofont": "fantasticon && printf '\\n' >> public/assets/fonts/icofont/icofont.json",
 		"test": "jest",
 		"test:watch": "jest --watch",
 		"postinstall": "echo 'Installation completed'"

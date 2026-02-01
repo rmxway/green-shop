@@ -11,14 +11,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { TextToggle } from '@/components';
 import { Flexbox, Grid, LayerBlock, MobileWhiteBackground, RatingStars } from '@/components/Layout';
-import { Button, Favorite, Icon, LinkIcon, Loader, Sticker } from '@/components/ui';
+import { Button, Compare, Favorite, Icon, LinkIcon, Loader, Sticker } from '@/components/ui';
 import { Info, NoPhotoContainer, PriceBlock, SideBlock, Wrapper } from '@/modules/product/styled';
 import { useAppDispatch, useAppSelector, useCurrency } from '@/services';
 import { useGetProductQuery } from '@/store/api';
 import { moveToCart } from '@/store/reducers/combineActions';
-import { productMemoized } from '@/store/reducers/commonSelectors';
+import { isInCompareMemoized, productMemoized } from '@/store/reducers/commonSelectors';
+import { toggleCompare } from '@/store/reducers/compare';
 import { setTitle, toggleFavorite } from '@/store/reducers/products';
-import { productsStore } from '@/store/types';
+import { compareStore, productsStore } from '@/store/types';
 import { IProduct } from '@/types';
 
 export const ContentProduct = () => {
@@ -27,6 +28,7 @@ export const ContentProduct = () => {
 	useGetProductQuery(id, { skip: fetchedItems.length > 1 });
 	const product: IProduct = productMemoized(useAppSelector(productsStore), id)!;
 	const { formatPriceWithSymbol } = useCurrency();
+	const isInCompare = useAppSelector((state) => isInCompareMemoized(compareStore(state), product?.id));
 
 	const dispatch = useAppDispatch();
 	const [isLoad, setIsLoad] = useState(true);
@@ -176,7 +178,7 @@ export const ContentProduct = () => {
 										{product.stock && <Sticker $success>In Stock: {product.stock}</Sticker>}
 										{product.tags && product.tags.map((tag) => <Sticker key={tag}>{tag}</Sticker>)}
 									</Flexbox>
-									<Grid $direction="column" $templateColumns="1fr 30px" $gap={5} $align="center">
+									<Grid $direction="column" $templateColumns="1fr 30px 30px" $gap={5} $align="center">
 										<Button
 											$primary
 											onClick={() => moveToCart(Number(product?.id))}
@@ -185,6 +187,10 @@ export const ContentProduct = () => {
 										>
 											{product.checked ? 'Добавлено' : 'В корзину'}
 										</Button>
+										<Compare
+											active={isInCompare}
+											onActive={() => dispatch(toggleCompare(product))}
+										/>
 										<Favorite
 											active={product.favorite}
 											onActive={() => dispatch(toggleFavorite(Number(product.id)))}

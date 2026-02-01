@@ -32,10 +32,21 @@ const mockSearchValue = searchValue as jest.MockedFunction<typeof searchValue>;
 const mockSortProducts = sortProducts as jest.MockedFunction<typeof sortProducts>;
 
 const mockDispatch = jest.fn();
-const mockProductsStore = {
-	fetchedItems: [{ id: 1, title: 'Test Product' }],
-	reservedItems: [{ id: 1, title: 'Test Product' }],
-	sort: { name: 'default', toggle: false },
+// Результаты селекторов: Filter использует reservedItemsLength/fetchedItemsLength,
+// ToggleSort — sort/search/categories (один мок для обоих вызовов useAppSelector)
+const mockFilterSelectorWithItems = {
+	reservedItemsLength: 1,
+	fetchedItemsLength: 1,
+	sort: { name: 'default' as const, toggle: false },
+	search: '',
+	categories: [{ active: true }],
+};
+const mockFilterSelectorNoItems = {
+	reservedItemsLength: 0,
+	fetchedItemsLength: 0,
+	sort: { name: 'default' as const, toggle: false },
+	search: '',
+	categories: [{ active: true }],
 };
 
 // Настраиваем моки перед каждым тестом
@@ -67,7 +78,7 @@ describe('Filter:', () => {
 	});
 
 	it('Render search input and sort toggles', () => {
-		mockUseAppSelector.mockReturnValue(mockProductsStore);
+		mockUseAppSelector.mockReturnValue(mockFilterSelectorWithItems);
 
 		render(
 			<TestWrapper>
@@ -84,7 +95,7 @@ describe('Filter:', () => {
 	});
 
 	it('Show skeleton when loading', () => {
-		mockUseAppSelector.mockReturnValue(mockProductsStore);
+		mockUseAppSelector.mockReturnValue(mockFilterSelectorWithItems);
 
 		const { container } = render(
 			<TestWrapper>
@@ -98,11 +109,7 @@ describe('Filter:', () => {
 	});
 
 	it('Input is disabled when no items', () => {
-		mockUseAppSelector.mockReturnValue({
-			...mockProductsStore,
-			fetchedItems: [],
-			reservedItems: [],
-		});
+		mockUseAppSelector.mockReturnValue(mockFilterSelectorNoItems);
 
 		render(
 			<TestWrapper>
@@ -115,10 +122,7 @@ describe('Filter:', () => {
 	});
 
 	it('Sort toggles are disabled when no items', () => {
-		mockUseAppSelector.mockReturnValue({
-			...mockProductsStore,
-			fetchedItems: [],
-		});
+		mockUseAppSelector.mockReturnValue(mockFilterSelectorNoItems);
 
 		render(
 			<TestWrapper>
@@ -134,7 +138,7 @@ describe('Filter:', () => {
 	});
 
 	it('Sort toggles are enabled when items exist', () => {
-		mockUseAppSelector.mockReturnValue(mockProductsStore);
+		mockUseAppSelector.mockReturnValue(mockFilterSelectorWithItems);
 
 		render(
 			<TestWrapper>
@@ -151,7 +155,7 @@ describe('Filter:', () => {
 
 	it('Search input calls debounce function on change', async () => {
 		const user = userEvent.setup();
-		mockUseAppSelector.mockReturnValue(mockProductsStore);
+		mockUseAppSelector.mockReturnValue(mockFilterSelectorWithItems);
 
 		render(
 			<TestWrapper>
@@ -171,10 +175,7 @@ describe('Filter:', () => {
 
 	it('Reset button clears input and resets state', async () => {
 		const user = userEvent.setup();
-		mockUseAppSelector.mockReturnValue({
-			...mockProductsStore,
-			sort: { name: 'rating', toggle: false }, // Чтобы кнопка сброса была активна
-		});
+		mockUseAppSelector.mockReturnValue(mockFilterSelectorWithItems);
 
 		render(
 			<TestWrapper>
@@ -203,9 +204,10 @@ describe('Filter:', () => {
 
 	it('Reset button calls sortProducts with default', async () => {
 		const user = userEvent.setup();
+		// sort !== 'default', чтобы клик по «Сброс» вызвал dispatch(sortProducts({ name: 'default' }))
 		mockUseAppSelector.mockReturnValue({
-			...mockProductsStore,
-			sort: { name: 'rating', toggle: false }, // Чтобы кнопка сброса была активна
+			...mockFilterSelectorWithItems,
+			sort: { name: 'rating' as const, toggle: false },
 		});
 
 		render(
@@ -228,7 +230,7 @@ describe('Filter:', () => {
 	});
 
 	it('Input value is controlled', () => {
-		mockUseAppSelector.mockReturnValue(mockProductsStore);
+		mockUseAppSelector.mockReturnValue(mockFilterSelectorWithItems);
 
 		const { rerender } = render(
 			<TestWrapper>
@@ -248,7 +250,7 @@ describe('Filter:', () => {
 	});
 
 	it('No padding prop is passed to Input', () => {
-		mockUseAppSelector.mockReturnValue(mockProductsStore);
+		mockUseAppSelector.mockReturnValue(mockFilterSelectorWithItems);
 
 		render(
 			<TestWrapper>

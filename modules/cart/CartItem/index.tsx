@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { FC, memo, useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Icon, Loader } from '@/components/ui';
-import { useAppDispatch, useCurrency } from '@/services';
+import { useAppDispatch, useCurrency, useLoadTimeout } from '@/services';
 import { decreaseCount, increaseCount } from '@/store/reducers/cart';
 import { removeFromCart } from '@/store/reducers/combineActions';
 import { IProduct } from '@/types';
@@ -41,17 +41,12 @@ export const CartItem: FC<Props> = memo(
 
 		const currencySymbol = useMemo(() => getCurrencySymbol(), [getCurrencySymbol]);
 
-		// Таймер на 10 секунд для прерывания загрузки изображения
-		useEffect(() => {
-			const timer = setTimeout(() => {
-				if (isLoad) {
-					setIsLoad(false);
-					setHasError(true);
-				}
-			}, 10000);
+		const handleLoadTimeout = useCallback(() => {
+			setIsLoad(false);
+			setHasError(true);
+		}, []);
 
-			return () => clearTimeout(timer);
-		}, [isLoad]);
+		useLoadTimeout(isLoad, 10, handleLoadTimeout);
 
 		// Сброс состояний при изменении продукта
 		useEffect(() => {

@@ -29,7 +29,7 @@ export const CartSidebar = memo(() => {
 						end={formatPriceWithoutLocale(totalPrice)}
 						preserveValue
 						duration={1}
-						decimal='.'
+						decimal="."
 						decimals={currency === 'RUB' ? 0 : 2}
 						separator={currency === 'RUB' ? ' ' : ','}
 					/>{' '}

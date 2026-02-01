@@ -1,6 +1,8 @@
 module.exports = {
 	inputDir: './fantasticon/icons', // (required)
 	outputDir: './public/assets/fonts/icofont', // (required)
+	name: 'icofont',
+	prefix: 'icofont',
 	fontTypes: ['ttf', 'woff', 'woff2'],
 	assetTypes: ['scss', 'json', 'html', 'css'],
 	fontsUrl: './',
