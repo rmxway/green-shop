@@ -69,7 +69,7 @@ export const NavbarItem = styled.div`
 	position: relative;
 	display: flex;
 	margin-right: 10px;
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	color: ${theme.colors.dark};
 	text-decoration: none;
 	margin-bottom: 10px;
@@ -104,7 +104,7 @@ export const NavbarItem = styled.div`
 	${media.greaterThan('md')`
         margin-bottom: 0;
         margin-right: 20px;
-        font-size: 20px;
+        font-size: 1.1rem;
         color: ${logoColor};
 
         &:hover {

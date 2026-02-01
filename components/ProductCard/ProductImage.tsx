@@ -1,7 +1,8 @@
 import Image from 'next/image';
-import { FC, useEffect, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 
 import { Icon, Loader } from '@/components/ui';
+import { useLoadTimeout } from '@/services';
 
 import { ImageWrapper, NoPhotoWrapper, StyledImage } from './styled';
 
@@ -16,17 +17,12 @@ export const ProductImage: FC<ProductImageProps> = ({ images, alt }) => {
 
 	const imageSrc = images?.[0];
 
-	// Таймер на 10 секунд для прерывания загрузки изображения
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			if (isLoading) {
-				setIsLoading(false);
-				setHasError(true);
-			}
-		}, 10000);
+	const handleLoadTimeout = useCallback(() => {
+		setIsLoading(false);
+		setHasError(true);
+	}, []);
 
-		return () => clearTimeout(timer);
-	}, [isLoading]);
+	useLoadTimeout(isLoading, 10, handleLoadTimeout);
 
 	if (!imageSrc || hasError) {
 		return (

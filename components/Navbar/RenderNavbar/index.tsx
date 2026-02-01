@@ -2,6 +2,7 @@ import { FC, useMemo, useState } from 'react';
 
 import { BurgerButton } from '@/components/Navbar/BurgerButton';
 import { CartNavItem } from '@/components/Navbar/CartNavItem';
+import { CompareNavItem } from '@/components/Navbar/CompareNavItem';
 import { FavoriteNavItem } from '@/components/Navbar/FavoriteNavItem';
 import { NavLink } from '@/components/Navbar/NavLink';
 import { Line, variantsWrapperNavbar, WrapperNavbarItems } from '@/components/Navbar/styled';
@@ -53,6 +54,14 @@ export const RenderNavbar: FC = () => {
 							<FavoriteNavItem key={url} onClose={closeMenu}>
 								{lineElement}
 							</FavoriteNavItem>
+						);
+					}
+
+					if (title === 'Сравнение') {
+						return (
+							<CompareNavItem key={url} onClose={closeMenu}>
+								{lineElement}
+							</CompareNavItem>
 						);
 					}
 

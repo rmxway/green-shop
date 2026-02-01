@@ -1,9 +1,10 @@
 import { createDraftSafeSelector } from '@reduxjs/toolkit';
 
-import { CartState, IProduct, ProductsState } from '@/types';
+import { CartState, CompareState, IProduct, ProductsState } from '@/types';
 
 const typedProductsCreateSelector = createDraftSafeSelector.withTypes<ProductsState>();
 const typedCartCreateSelector = createDraftSafeSelector.withTypes<CartState>();
+const typedCompareCreateSelector = createDraftSafeSelector.withTypes<CompareState>();
 
 export const currentItemsMemoized = createDraftSafeSelector(
 	[
@@ -53,4 +54,22 @@ export const filterRelevantSelectorMemoized = typedProductsCreateSelector(
 export const toggleSortSelectorMemoized = typedProductsCreateSelector(
 	[(state) => state.sort, (state) => state.search, (state) => state.categories],
 	(sort, search, categories) => ({ sort, search, categories }),
+);
+
+export const compareItemsMemoized = typedCompareCreateSelector([(state) => state.items], (items) => {
+	if (!Array.isArray(items)) return [];
+	return items;
+});
+
+export const compareCountMemoized = typedCompareCreateSelector([(state) => state.items], (items) => {
+	if (!Array.isArray(items)) return 0;
+	return items.length;
+});
+
+export const isInCompareMemoized = typedCompareCreateSelector(
+	[(state) => state.items, (_, id: number) => id],
+	(items, id) => {
+		if (!Array.isArray(items) || !id) return false;
+		return items.some((item) => item.id === id);
+	},
 );

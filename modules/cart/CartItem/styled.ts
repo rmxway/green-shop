@@ -217,12 +217,9 @@ export const Delete = styled.button`
 		align-items: center;
 		width: 25px;
 		height: 25px;
-		border-radius: 25px;
 		cursor: pointer;
-		transition:
-			0.1s border-color,
-			color;
 		color: ${theme.colors.gray.$4};
+		transition: 0.2s all;
 
 		i {
 			position: absolute;
@@ -230,11 +227,7 @@ export const Delete = styled.button`
 		}
 
 		&:hover {
-			border-color: ${theme.colors.danger};
-
-			i:before {
-				color: ${theme.colors.danger};
-			}
+			color: ${theme.colors.danger};
 		}
 
 		${media.greaterThan('xs')`

@@ -4,9 +4,9 @@ $icofont-font: 'icofont';
 
 @font-face {
     font-family: $icofont-font;
-    src: url(".//icofont.ttf?6c93db9264cfa1c260dec3b251bb01d5") format("truetype"),
-url(".//icofont.woff?6c93db9264cfa1c260dec3b251bb01d5") format("woff"),
-url(".//icofont.woff2?6c93db9264cfa1c260dec3b251bb01d5") format("woff2");
+    src: url(".//icofont.ttf?5b0dcc54f09527ca67a673cb1c1ee4ee") format("truetype"),
+url(".//icofont.woff?5b0dcc54f09527ca67a673cb1c1ee4ee") format("woff"),
+url(".//icofont.woff2?5b0dcc54f09527ca67a673cb1c1ee4ee") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -32,11 +32,12 @@ $icofont-map: (
     'nophoto': '\f105',
     'favorite': '\f106',
     'favorite-fill': '\f107',
-    'cart': '\f108',
-    'arrow-up': '\f109',
-    'arrow-right': '\f10a',
-    'arrow-left': '\f10b',
-    'arrow-down': '\f10c',
+    'compare': '\f108',
+    'cart': '\f109',
+    'arrow-up': '\f10a',
+    'arrow-right': '\f10b',
+    'arrow-left': '\f10c',
+    'arrow-down': '\f10d',
 );
 
 .icofont-trash:before {
@@ -59,6 +60,9 @@ $icofont-map: (
 }
 .icofont-favorite-fill:before {
     content: map.get($icofont-map, 'favorite-fill');
+}
+.icofont-compare:before {
+    content: map.get($icofont-map, 'compare');
 }
 .icofont-cart:before {
     content: map.get($icofont-map, 'cart');

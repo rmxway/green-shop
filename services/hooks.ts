@@ -13,6 +13,23 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 export const useAppStore: () => RootStore = useStore;
 
 /**
+ * @param isLoading флаг загрузки
+ * @param seconds таймаут в секундах
+ * @param onTimeout колбэк при срабатывании таймаута (пока загрузка активна)
+ */
+export const useLoadTimeout = (isLoading: boolean, seconds: number, onTimeout: () => void) => {
+	useEffect(() => {
+		if (!isLoading) return;
+
+		const timer = setTimeout(() => {
+			onTimeout();
+		}, seconds * 1000);
+
+		return () => clearTimeout(timer);
+	}, [isLoading, seconds, onTimeout]);
+};
+
+/**
  * Observable screen width breakpoints and if matched return a boolean value
  * @param {string}query - string
  * @returns boolean

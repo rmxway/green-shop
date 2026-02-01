@@ -9,7 +9,7 @@ export const NavCountItemStyled = styled.div`
 	height: 20px;
 
 	.icofont {
-		margin-top: -2px;
+		margin-top: -3px;
 		margin-left: 3px;
 		font-size: 1.3rem;
 	}

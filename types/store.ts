@@ -61,6 +61,11 @@ export interface CartState {
 	step: number;
 }
 
+export interface CompareState {
+	items: IProduct[];
+	limit: number;
+}
+
 export interface ProductsState {
 	title: string;
 	fetchedItems: IProduct[];

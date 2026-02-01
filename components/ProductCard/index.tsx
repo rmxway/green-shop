@@ -3,10 +3,13 @@ import Link from 'next/link';
 import { FC, memo } from 'react';
 
 import { RatingStars, Space } from '@/components/Layout';
-import { Button, Favorite, Sticker } from '@/components/ui';
-import { useAppDispatch, useCurrency } from '@/services';
+import { Button, Compare, Favorite, Sticker } from '@/components/ui';
+import { useAppDispatch, useAppSelector, useCurrency } from '@/services';
 import { moveToCart } from '@/store/reducers/combineActions';
+import { isInCompareMemoized } from '@/store/reducers/commonSelectors';
+import { toggleCompare } from '@/store/reducers/compare';
 import { toggleFavorite } from '@/store/reducers/products';
+import { compareStore } from '@/store/types';
 import { IProduct } from '@/types';
 
 import { ProductImage } from './ProductImage';
@@ -21,14 +24,20 @@ export const ProductCard: FC<ProductCardProps> = memo(
 		const link = `/product/${product.id}`;
 		const dispatch = useAppDispatch();
 		const { formatPriceWithSymbol } = useCurrency();
+		const isInCompare = useAppSelector((state) => isInCompareMemoized(compareStore(state), product.id));
 
 		const handleChecked = () => {
 			moveToCart(Number(product.id));
 		};
 
+		const handleToggleCompare = () => {
+			dispatch(toggleCompare(product));
+		};
+
 		return (
 			<ProductWrapper {...props}>
 				{product.discountPercentage && <Sticker $danger>-{Math.round(product.discountPercentage)}%</Sticker>}
+				<Compare onActive={handleToggleCompare} active={isInCompare} />
 				<Favorite onActive={() => dispatch(toggleFavorite(Number(product.id)))} active={product.favorite} />
 				<Link href={link}>
 					<ProductImage images={product.images} alt={product.title} />

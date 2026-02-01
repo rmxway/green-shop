@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import styled, { css } from 'styled-components';
 
+import { WrapperCompare } from '@/components/ui/Compare/styled';
 import { WrapperFavorite } from '@/components/ui/Favorite/styled';
 import { Wrapper as WrapperLoader } from '@/components/ui/Loader/styled';
 import { WrapperSticker } from '@/components/ui/Sticker/styled';
@@ -21,6 +22,12 @@ export const ProductWrapper = styled(motion.div)`
 	a {
 		width: 100%;
 		text-decoration: none;
+	}
+
+	${WrapperCompare} {
+		position: absolute;
+		top: 0;
+		right: 40px;
 	}
 
 	${WrapperFavorite} {
