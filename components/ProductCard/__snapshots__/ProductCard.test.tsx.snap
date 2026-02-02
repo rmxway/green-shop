@@ -3,7 +3,7 @@
 exports[`ProductCard: Render card 1`] = `
 <div>
   <div
-    class="sc-23adcea0-0 fIslys"
+    class="sc-23adcea0-0 eRtlTj"
   >
     <div
       class="sc-7d6be7a8-0 cAcidU"
@@ -13,7 +13,7 @@ exports[`ProductCard: Render card 1`] = `
       %
     </div>
     <div
-      class="sc-c39062fa-0 kNYRri"
+      class="sc-36d40ead-0 ggNluZ"
       title="Сравнить"
     >
       <i
