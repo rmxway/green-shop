@@ -239,14 +239,9 @@ describe('ProductCard:', () => {
 			</StyledComponentsRegistry>,
 		);
 
-		// Найдем favorite div по классу или data-testid
-		const favoriteElement = document.querySelector('[class*="sc-d8b47b8e-0"]'); // Favorite wrapper class
-		expect(favoriteElement).toBeInTheDocument();
-
-		if (favoriteElement) {
-			await user.click(favoriteElement);
-			expect(mockDispatch).toHaveBeenCalled();
-		}
+		const favoriteElement = screen.getByTitle('В избранное');
+		await user.click(favoriteElement);
+		expect(mockDispatch).toHaveBeenCalled();
 	});
 
 	it('contains link to product page', () => {

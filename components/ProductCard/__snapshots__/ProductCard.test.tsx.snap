@@ -3,7 +3,7 @@
 exports[`ProductCard: Render card 1`] = `
 <div>
   <div
-    class="sc-23adcea0-0 eRtlTj"
+    class="sc-23adcea0-0 hmWBlq"
   >
     <div
       class="sc-7d6be7a8-0 cAcidU"
@@ -22,11 +22,12 @@ exports[`ProductCard: Render card 1`] = `
       />
     </div>
     <div
-      class="sc-d8b47b8e-0 QlBTl"
+      class="sc-c10cfecb-0 gMuWOS"
       title="В избранное"
     >
       <i
         class="icofont icofont-favorite-fill "
+        style="font-size: 22px;"
       />
     </div>
     <a
