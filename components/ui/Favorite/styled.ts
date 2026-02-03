@@ -11,10 +11,6 @@ export const WrapperFavorite = styled.div<{ $active?: boolean }>`
 	opacity: 0.5;
 	transition: 0.4s;
 
-	.icofont {
-		font-size: 1.3rem;
-	}
-
 	&:active {
 		transition: all 0.1s;
 		transform: scale(1.4);

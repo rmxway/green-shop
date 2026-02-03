@@ -30,6 +30,8 @@
 		"next-env.d.ts",
 		"**/*.ts",
 		"**/*.tsx",
+		".storybook/**/*.ts",
+		".storybook/**/*.tsx",
 		"@types/declarations.d.ts",
 		".next/types/**/*.ts",
 		"jest.config.ts",
