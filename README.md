@@ -15,11 +15,16 @@
 ## 🛠️ Технологии
 
 **Frontend**: Next.js 15, React 19, TypeScript, Styled Components, Framer Motion
+
 **State**: Redux Toolkit, Redux Persist, RTK Query
+
 **Формы**: React Hook Form, Yup
+
 **UI**: Swiper, React Loading Skeleton
+
 **Валюты**: Интеграция с API Центрального Банка РФ для актуальных курсов
-**Инструменты**: ESLint, Prettier, Jest, React Testing Library, Fantasticon
+
+**Инструменты**: ESLint, Prettier, Jest, React Testing Library, Fantasticon, Storybook
 
 ## 🚀 Быстрый старт
 
@@ -34,6 +39,18 @@ yarn dev
 
 Откройте [http://localhost:3000](http://localhost:3000)
 
+## 📚 Storybook
+
+В проекте настроен [Storybook](https://storybook.js.org/) для изолированной разработки и документации UI-компонентов.
+
+```bash
+yarn storybook
+```
+
+Откройте [http://localhost:6006](http://localhost:6006) — там доступны сторисы для UI-компонентов (кнопки, модалки, стикеры, карточки товаров и др.) с разными вариантами и интерактивными контролами.
+
+Сборка статической версии для деплоя: `yarn build-storybook`.
+
 ### Основные команды
 
 ```bash
@@ -43,6 +60,8 @@ yarn start    # Запуск продакшен версии
 yarn test     # Запуск тестов
 yarn lint     # Проверка кода
 yarn icofont  # Генерация иконок
+yarn storybook        # Запуск Storybook (http://localhost:6006)
+yarn build-storybook  # Сборка Storybook для деплоя
 ```
 
 ## 🎯 Функции
