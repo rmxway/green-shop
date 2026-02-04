@@ -317,6 +317,7 @@ export const FeatureTitle = styled.h4`
 	color: ${({ theme }) => theme.colors.gray.$9};
 	margin-bottom: 1rem;
 	font-weight: 600;
+	text-align: left;
 `;
 
 export const FeatureList = styled.ul`
