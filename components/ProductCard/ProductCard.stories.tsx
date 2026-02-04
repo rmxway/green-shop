@@ -32,8 +32,17 @@ export default meta;
 
 type Story = StoryObj<typeof ProductCard>;
 
-const product = { ...mockProduct, favorite: false, checked: false };
+function getProduct(overrides: { favorite?: boolean; checked?: boolean } = {}) {
+	return {
+		...mockProduct,
+		tags: [...mockProduct.tags],
+		images: [...mockProduct.images],
+		favorite: false,
+		checked: false,
+		...overrides,
+	};
+}
 
-export const Default: Story = { args: { product } };
-export const InCart: Story = { args: { product: { ...product, checked: true } } };
-export const Favorite: Story = { args: { product: { ...product, favorite: true } } };
+export const Default: Story = { args: { product: getProduct() } };
+export const InCart: Story = { args: { product: getProduct({ checked: true }) } };
+export const Favorite: Story = { args: { product: getProduct({ favorite: true }) } };
