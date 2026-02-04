@@ -1,17 +1,23 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { FC, PropsWithChildren } from 'react';
+import type { ComponentProps } from 'react';
+import { FC } from 'react';
 
 import { Icon } from '@/components/ui/Icon';
 import icons from '@/public/assets/fonts/icofont/icofont.json';
 
-import { ButtonStyle, Props } from './styled';
+import { ButtonStyle } from './styled';
 
 const textVar = {
 	hidden: { opacity: 0 },
 	visible: { opacity: 1 },
 };
 
-type ButtonProps = Props & PropsWithChildren & { animate?: boolean; icon?: keyof typeof icons };
+type ButtonProps = ComponentProps<typeof ButtonStyle> & {
+	animate?: boolean;
+	icon?: keyof typeof icons;
+	/** Полиморфный проп styled-components — рендер как другой тег или компонент (например as="span", as={Link}) */
+	as?: React.ElementType;
+};
 
 /**
  * Custom button with some properties.

@@ -3,17 +3,31 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { Container, LayerBlock } from '@/components/Layout';
+import {
+	NotFoundCode,
+	NotFoundPath,
+	NotFoundSection,
+	NotFoundText,
+	NotFoundTitle,
+} from '@/app/styled';
+import { Button } from '@/components/ui';
 
 export default function NotFound() {
 	const path = usePathname();
 
 	return (
-		<Container>
-			<LayerBlock $mt>
-				<h2>Not Found: {path}</h2>
-				<Link href="/">Return Home</Link>
-			</LayerBlock>
-		</Container>
+		<NotFoundSection>
+			<NotFoundCode>404</NotFoundCode>
+			<NotFoundTitle>Страница не найдена</NotFoundTitle>
+			<NotFoundText>
+				Похоже, вы забрели не туда. Эта страница не существует или была перемещена.
+			</NotFoundText>
+			{path && path !== '/' && <NotFoundPath>{path}</NotFoundPath>}
+			<Link href="/">
+				<Button as="span" $primary>
+					На главную
+				</Button>
+			</Link>
+		</NotFoundSection>
 	);
 }

@@ -171,8 +171,12 @@ export default function MainPage() {
 							<p>Удобная корзина покупок с формой заказа и поддержкой избранных товаров</p>
 						</FeatureCardClean>
 						<FeatureCardClean>
-							<h3>Современные технологии</h3>
-							<p>ESLint, Prettier, Framer Motion для обеспечения качества кода и плавных анимаций</p>
+							<h3>Сравнение товаров</h3>
+							<p>Сравнение характеристик товаров в одной таблице для удобного выбора</p>
+						</FeatureCardClean>
+						<FeatureCardClean>
+							<h3>Storybook и технологии</h3>
+							<p>Storybook для компонентов, Redux Toolkit для состояния, ESLint, Prettier, Framer Motion</p>
 						</FeatureCardClean>
 					</FeaturesGrid>
 
@@ -196,6 +200,9 @@ export default function MainPage() {
 									<FeatureIcon>❤️</FeatureIcon> Система избранных товаров
 								</FeatureItem>
 								<FeatureItem>
+									<FeatureIcon>⚖️</FeatureIcon> Сравнение товаров по характеристикам
+								</FeatureItem>
+								<FeatureItem>
 									<FeatureIcon>📄</FeatureIcon> Пагинация для удобной навигации
 								</FeatureItem>
 								<FeatureItem>
@@ -210,6 +217,9 @@ export default function MainPage() {
 									<FeatureIcon>⚛️</FeatureIcon> Next.js 14 с App Router
 								</FeatureItem>
 								<FeatureItem>
+									<FeatureIcon>📦</FeatureIcon> Redux Toolkit (RTK) для состояния
+								</FeatureItem>
+								<FeatureItem>
 									<FeatureIcon>📏</FeatureIcon> ESLint для качества кода
 								</FeatureItem>
 								<FeatureItem>
@@ -217,6 +227,9 @@ export default function MainPage() {
 								</FeatureItem>
 								<FeatureItem>
 									<FeatureIcon>🎭</FeatureIcon> Framer Motion для анимаций
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>📚</FeatureIcon> Storybook для разработки компонентов
 								</FeatureItem>
 								<FeatureItem>
 									<FeatureIcon>🔗</FeatureIcon> Интеграция с dummyjson.com API
