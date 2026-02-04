@@ -442,3 +442,72 @@ export const FeatureCardClean = styled.div`
 		`;
 	}}
 `;
+
+/* NotFound (404) page */
+export const NotFoundSection = styled.section`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 70vh;
+	padding: 3rem 1.5rem;
+	text-align: center;
+
+	${media.lessThan('md')`
+		min-height: 60vh;
+		padding: 2rem 1rem;
+	`}
+`;
+
+export const NotFoundCode = styled.span`
+	display: block;
+	font-size: clamp(6rem, 18vw, 10rem);
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: -0.04em;
+	background: ${({ theme }) => theme.gradients.main('180deg')};
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	margin-bottom: 0.5rem;
+
+	${media.lessThan('md')`
+		font-size: clamp(4rem, 22vw, 6rem);
+	`}
+`;
+
+export const NotFoundTitle = styled.h1`
+	font-size: 1.75rem;
+	font-weight: 700;
+	color: ${({ theme }) => theme.colors.gray.$9};
+	margin-bottom: 0.75rem;
+	letter-spacing: -0.02em;
+
+	${media.lessThan('md')`
+		font-size: 1.5rem;
+	`}
+`;
+
+export const NotFoundText = styled.p`
+	font-size: 1.125rem;
+	color: ${({ theme }) => theme.colors.gray.$7};
+	line-height: 1.6;
+	max-width: 420px;
+	margin: 0 auto 1.5rem;
+
+	${media.lessThan('md')`
+		font-size: 1rem;
+	`}
+`;
+
+export const NotFoundPath = styled.code`
+	display: inline-block;
+	font-size: 0.875rem;
+	color: ${({ theme }) => theme.colors.gray.$6};
+	background: ${({ theme }) => theme.colors.gray.$2};
+	padding: 0.35rem 0.75rem;
+	border-radius: 6px;
+	margin-bottom: 2rem;
+	word-break: break-all;
+	max-width: 90%;
+`;
