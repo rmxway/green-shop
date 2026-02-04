@@ -24,8 +24,9 @@ const config: StorybookConfig = {
 	webpackFinal: async (webpackConfig) => {
 		const path = require('path');
 		const basePath = process.env.BASE_PATH ?? '/';
+		const publicPath = basePath !== '/' ? './' : '/';
 		webpackConfig.output = webpackConfig.output ?? {};
-		webpackConfig.output.publicPath = basePath.endsWith('/') ? basePath : `${basePath}/`;
+		webpackConfig.output.publicPath = publicPath;
 		webpackConfig.resolve = webpackConfig.resolve ?? {};
 		const projectRoot = path.resolve(__dirname, '..');
 		webpackConfig.resolve.alias = {
