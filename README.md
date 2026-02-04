@@ -43,13 +43,18 @@ yarn dev
 
 В проекте настроен [Storybook](https://storybook.js.org/) для изолированной разработки и документации UI-компонентов.
 
+**Онлайн-документация** :  
+[Storybook на GitHub Pages](https://rmxway.github.io/green-shop/)
+
+Локальный запуск:
+
 ```bash
 yarn storybook
 ```
 
 Откройте [http://localhost:6006](http://localhost:6006) — там доступны сторисы для UI-компонентов (кнопки, модалки, стикеры, карточки товаров и др.) с разными вариантами и интерактивными контролами.
 
-Сборка статической версии для деплоя: `yarn build-storybook`.
+Сборка статической версии для деплоя: `yarn build-storybook`. Деплой на GitHub Pages выполняется автоматически через GitHub Actions при пуше в `main`/`master`.
 
 ### Основные команды
 
