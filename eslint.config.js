@@ -19,6 +19,7 @@ module.exports = [
 			'dist/**',
 			'build/**',
 			'node_modules/**',
+			'storybook-static/**',
 			'.vscode/**',
 			'.idea/**',
 			'.DS_Store',

@@ -1,4 +1,10 @@
-<base href="./" />
+<script>
+	(function () {
+		var base = document.createElement('base');
+		base.href = window.location.hostname === 'localhost' ? '/' : './';
+		document.head.appendChild(base);
+	})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link

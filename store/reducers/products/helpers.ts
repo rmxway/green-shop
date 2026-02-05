@@ -101,8 +101,13 @@ export const calcCategory = (state: ProductsState, name: string, reset?: boolean
 export const resetItems = (state: ProductsState, category = true, page = false) => {
 	state.sort.name = 'default';
 	state.sort.toggle = false;
-	state.search = '';
 	state.fetchedItems = [...state.reservedItems];
+	const searchTrimmed = state.search.trim().toLowerCase();
+	if (searchTrimmed) {
+		state.fetchedItems = state.fetchedItems.filter((item) =>
+			item.title.toLowerCase().includes(searchTrimmed),
+		);
+	}
 	state.fetching = false;
 
 	if (category) {
@@ -117,4 +122,17 @@ export const resetItems = (state: ProductsState, category = true, page = false) 
 
 export const changeCurrentPage = (state: ProductsState) => {
 	state.page = state.typePage === 'products' ? state.productsPage : state.favoritesPage;
+};
+
+export const applyCurrentSort = (state: ProductsState) => {
+	if (state.sort.name === 'default') return;
+	const { name, toggle } = state.sort;
+	const sortedItems = [...state.fetchedItems].sort((a, b) => {
+		const aValue = Number(a[name]) || 0;
+		const bValue = Number(b[name]) || 0;
+		if (aValue > bValue) return -1;
+		if (aValue < bValue) return 1;
+		return 0;
+	});
+	state.fetchedItems = toggle ? sortedItems.reverse() : sortedItems;
 };
