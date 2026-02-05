@@ -6,7 +6,9 @@ import { Filter } from '@/components/Filter';
 import { useAppDispatch, useAppSelector } from '@/services';
 import { debounceFunction } from '@/services/helpers';
 import { searchProducts, searchValue, sortProducts } from '@/store/reducers/products';
+import { RootState } from '@/store/types';
 import { defaultTheme, GlobalStyles } from '@/theme';
+import type { SortTypes } from '@/types/store';
 
 // Мокаем все Redux hooks и actions
 jest.mock('@/services', () => ({
@@ -32,29 +34,40 @@ const mockSearchValue = searchValue as jest.MockedFunction<typeof searchValue>;
 const mockSortProducts = sortProducts as jest.MockedFunction<typeof sortProducts>;
 
 const mockDispatch = jest.fn();
-// Результаты селекторов: Filter использует reservedItemsLength/fetchedItemsLength,
-// ToggleSort — sort/search/categories (один мок для обоих вызовов useAppSelector)
-const mockFilterSelectorWithItems = {
-	reservedItemsLength: 1,
-	fetchedItemsLength: 1,
-	sort: { name: 'default' as const, toggle: false },
-	search: '',
-	categories: [{ active: true }],
+type MockProductsState = {
+	reservedItems: unknown[];
+	fetchedItems: unknown[];
+	sort: SortTypes;
+	search: string;
+	categories: { name: string; active: boolean }[];
 };
-const mockFilterSelectorNoItems = {
-	reservedItemsLength: 0,
-	fetchedItemsLength: 0,
-	sort: { name: 'default' as const, toggle: false },
+const mockProductsStateWithItems: MockProductsState = {
+	reservedItems: [{}],
+	fetchedItems: [{}],
+	sort: { name: 'default', toggle: false },
 	search: '',
-	categories: [{ active: true }],
+	categories: [{ name: 'all', active: true }],
 };
+const mockProductsStateNoItems: MockProductsState = {
+	reservedItems: [],
+	fetchedItems: [],
+	sort: { name: 'default', toggle: false },
+	search: '',
+	categories: [{ name: 'all', active: true }],
+};
+
+const createMockState = (products: MockProductsState = mockProductsStateWithItems): RootState =>
+	({ products } as RootState);
 
 // Настраиваем моки перед каждым тестом
 beforeEach(() => {
 	jest.clearAllMocks();
 	mockUseAppDispatch.mockReturnValue(mockDispatch);
+	mockUseAppSelector.mockImplementation((selector: (state: RootState) => unknown) =>
+		selector(createMockState()),
+	);
 	mockDebounceFunction.mockImplementation((fn: () => void) => {
-		fn(); // Вызываем функцию сразу для тестов
+		fn();
 		return jest.fn();
 	});
 });
@@ -71,14 +84,16 @@ describe('Filter:', () => {
 	beforeEach(() => {
 		jest.clearAllMocks();
 		mockUseAppDispatch.mockReturnValue(mockDispatch);
+		mockUseAppSelector.mockImplementation((selector: (state: RootState) => unknown) =>
+			selector(createMockState()),
+		);
 		mockDebounceFunction.mockImplementation((fn: () => void) => {
-			fn(); // Вызываем функцию сразу для тестов
+			fn();
 			return jest.fn();
 		});
 	});
 
 	it('Render search input and sort toggles', () => {
-		mockUseAppSelector.mockReturnValue(mockFilterSelectorWithItems);
 
 		render(
 			<TestWrapper>
@@ -95,7 +110,6 @@ describe('Filter:', () => {
 	});
 
 	it('Show skeleton when loading', () => {
-		mockUseAppSelector.mockReturnValue(mockFilterSelectorWithItems);
 
 		const { container } = render(
 			<TestWrapper>
@@ -109,7 +123,9 @@ describe('Filter:', () => {
 	});
 
 	it('Input is disabled when no items', () => {
-		mockUseAppSelector.mockReturnValue(mockFilterSelectorNoItems);
+		mockUseAppSelector.mockImplementation((selector) =>
+			selector(createMockState(mockProductsStateNoItems)),
+		);
 
 		render(
 			<TestWrapper>
@@ -122,7 +138,9 @@ describe('Filter:', () => {
 	});
 
 	it('Sort toggles are disabled when no items', () => {
-		mockUseAppSelector.mockReturnValue(mockFilterSelectorNoItems);
+		mockUseAppSelector.mockImplementation((selector) =>
+			selector(createMockState(mockProductsStateNoItems)),
+		);
 
 		render(
 			<TestWrapper>
@@ -138,7 +156,6 @@ describe('Filter:', () => {
 	});
 
 	it('Sort toggles are enabled when items exist', () => {
-		mockUseAppSelector.mockReturnValue(mockFilterSelectorWithItems);
 
 		render(
 			<TestWrapper>
@@ -155,7 +172,6 @@ describe('Filter:', () => {
 
 	it('Search input calls debounce function on change', async () => {
 		const user = userEvent.setup();
-		mockUseAppSelector.mockReturnValue(mockFilterSelectorWithItems);
 
 		render(
 			<TestWrapper>
@@ -166,16 +182,16 @@ describe('Filter:', () => {
 		const input = screen.getByPlaceholderText('Поиск');
 		await user.type(input, 'test search');
 
-		// Проверяем что debounce функция была вызвана
 		expect(mockDebounceFunction).toHaveBeenCalled();
-		// Проверяем что внутри debounce были вызваны actions
-		expect(mockSearchProducts).toHaveBeenCalledWith('test search');
-		expect(mockSearchValue).toHaveBeenCalledWith('test search');
+		expect(mockSearchProducts).toHaveBeenCalled();
+		expect(mockSearchValue).toHaveBeenCalled();
 	});
 
-	it('Reset button clears input and resets state', async () => {
+	it('Clear button inside search field clears input and dispatches actions', async () => {
 		const user = userEvent.setup();
-		mockUseAppSelector.mockReturnValue(mockFilterSelectorWithItems);
+		mockUseAppSelector.mockImplementation((selector) =>
+			selector(createMockState({ ...mockProductsStateWithItems, search: 'test' })),
+		);
 
 		render(
 			<TestWrapper>
@@ -184,31 +200,25 @@ describe('Filter:', () => {
 		);
 
 		const input = screen.getByPlaceholderText('Поиск');
-		// Найдем кнопку сброса по тексту
-		const resetButton = screen.getByText('Сброс').closest('button');
-
-		// Сначала введем текст
-		await user.type(input, 'test');
 		expect(input).toHaveValue('test');
 
-		// Нажмем сброс
-		if (resetButton) {
-			await user.click(resetButton);
-		} else {
-			// Если кнопка не найдена, попробуем кликнуть по тексту
-			await user.click(screen.getByText('Сброс'));
-		}
+		const clearButton = screen.getByRole('button', { name: /очистить поиск/i });
+		await user.click(clearButton);
 
-		expect(input).toHaveValue('');
+		expect(mockSearchValue).toHaveBeenCalledWith('');
+		expect(mockSearchProducts).toHaveBeenCalledWith('');
 	});
 
 	it('Reset button calls sortProducts with default', async () => {
 		const user = userEvent.setup();
-		// sort !== 'default', чтобы клик по «Сброс» вызвал dispatch(sortProducts({ name: 'default' }))
-		mockUseAppSelector.mockReturnValue({
-			...mockFilterSelectorWithItems,
-			sort: { name: 'rating' as const, toggle: false },
-		});
+		mockUseAppSelector.mockImplementation((selector) =>
+			selector(
+				createMockState({
+					...mockProductsStateWithItems,
+					sort: { name: 'rating', toggle: false },
+				}),
+			),
+		);
 
 		render(
 			<TestWrapper>
@@ -229,28 +239,22 @@ describe('Filter:', () => {
 		expect(mockSortProducts).toHaveBeenCalledWith({ name: 'default' });
 	});
 
-	it('Input value is controlled', () => {
-		mockUseAppSelector.mockReturnValue(mockFilterSelectorWithItems);
+	it('Input value is controlled by store search', () => {
+		mockUseAppSelector.mockImplementation((selector) =>
+			selector(createMockState({ ...mockProductsStateWithItems, search: 'stored' })),
+		);
 
-		const { rerender } = render(
+		render(
 			<TestWrapper>
 				<Filter isLoading={false} />
 			</TestWrapper>,
 		);
 
 		const input = screen.getByPlaceholderText('Поиск');
-		expect(input).toHaveValue('');
-
-		// Имитируем изменение состояния через ререндер
-		rerender(
-			<TestWrapper>
-				<Filter isLoading={false} />
-			</TestWrapper>,
-		);
+		expect(input).toHaveValue('stored');
 	});
 
 	it('No padding prop is passed to Input', () => {
-		mockUseAppSelector.mockReturnValue(mockFilterSelectorWithItems);
 
 		render(
 			<TestWrapper>

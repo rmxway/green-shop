@@ -39,7 +39,7 @@ export const CurrencySwitcher: FC = memo(() => {
 		<>
 			<h5>Текущая валюта</h5>
 			<CurrencySwitcherWrapper>
-				<CurrencyLabel $isRUB={isRUB}>
+				<CurrencyLabel>
 					<button type="button" onClick={() => handleTextClick('USD')}>
 						доллар
 					</button>

@@ -4,6 +4,7 @@ import { PRODUCTS_COUNT_PER_PAGE } from '@/services/constants';
 import { api, ResponseProducts } from '@/store/api';
 import {
 	anyTogglesInProduct,
+	applyCurrentSort,
 	calcCategory,
 	changeCurrentPage,
 	initialItems,
@@ -68,16 +69,7 @@ const productsReducer = createSlice({
 			if (name === 'default') {
 				resetItems(state);
 			} else {
-				const sortedItems = [...state.fetchedItems].sort((a, b) => {
-					if (name !== undefined && a[name] && b[name]) {
-						const aValue = Number(a[name]);
-						const bValue = Number(b[name]);
-						return aValue > bValue ? -1 : 1;
-					}
-					return 0;
-				});
-
-				state.fetchedItems = toggle ? sortedItems.reverse() : sortedItems;
+				applyCurrentSort(state);
 			}
 		},
 		searchValue: (state, { payload }: PayloadAction<string>) => {
@@ -87,6 +79,7 @@ const productsReducer = createSlice({
 			const searchText = payload.toLowerCase().trim();
 			calcCategory(state, 'all');
 			state.fetchedItems = state.reservedItems.filter((item) => item.title.toLowerCase().includes(searchText));
+			applyCurrentSort(state);
 		},
 		toggleFavorite: (state, { payload }: PayloadAction<number>) => {
 			anyTogglesInProduct(state, payload, 'favorite');
@@ -94,15 +87,16 @@ const productsReducer = createSlice({
 			state.countFavorites = state.reservedItems.filter((item) => item.favorite).length;
 
 			const isLastItemOnPage = state.countFavorites === state.countPerPage * state.page - state.countPerPage;
-			if (isLastItemOnPage && state.typePage === 'favorites') {
+			if (isLastItemOnPage && state.typePage === 'favorites' && state.page > 1) {
 				state.page -= 1;
+				state.favoritesPage = state.page;
 			}
 		},
 		removeAllFavorites: (state) => {
 			state.reservedItems.forEach((item) => {
 				item.favorite = false;
 			});
-			state.fetchedItems = state.reservedItems;
+			state.fetchedItems = [...state.reservedItems];
 			state.countFavorites = 0;
 		},
 		changeTypePage: (state, { payload }: PayloadAction<TypePages>) => {
@@ -165,9 +159,11 @@ const productsReducer = createSlice({
 				},
 			)
 			.addMatcher(api.endpoints.getProduct.matchRejected, (state) => {
-				state.error = 'Something went wrong';
+				state.error = 'Не удалось загрузить товар.';
 				state.fetching = false;
-				state.fetchedItems = [];
+				if (state.reservedItems.length === 0) {
+					state.fetchedItems = [];
+				}
 			});
 	},
 });

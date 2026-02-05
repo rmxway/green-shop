@@ -1,6 +1,8 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
 import type { Options } from '@swc/core';
 
+import { isDev } from '@/services/constants';
+
 const config: StorybookConfig = {
 	stories: ['../components/**/*.stories.@(ts|tsx)'],
 	framework: {
@@ -24,9 +26,11 @@ const config: StorybookConfig = {
 	webpackFinal: async (webpackConfig) => {
 		const path = require('path');
 		const basePath = process.env.BASE_PATH ?? '/';
-		const publicPath = basePath !== '/' ? './' : '/';
+		const isDeployBuild = !isDev && basePath !== '/';
 		webpackConfig.output = webpackConfig.output ?? {};
-		webpackConfig.output.publicPath = publicPath;
+		if (isDeployBuild) {
+			webpackConfig.output.publicPath = './';
+		}
 		webpackConfig.resolve = webpackConfig.resolve ?? {};
 		const projectRoot = path.resolve(__dirname, '..');
 		webpackConfig.resolve.alias = {
