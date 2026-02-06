@@ -2,7 +2,7 @@ import { MotionProps } from 'framer-motion';
 import Link from 'next/link';
 import { FC, memo } from 'react';
 
-import { RatingStars, Space } from '@/components/Layout';
+import { Flexbox, RatingStars, Space } from '@/components/Layout';
 import { Button, Compare, Favorite, Sticker } from '@/components/ui';
 import { useAppDispatch, useAppSelector, useCurrency } from '@/services';
 import { moveToCart } from '@/store/reducers/combineActions';
@@ -13,7 +13,7 @@ import { compareStore } from '@/store/types';
 import { IProduct } from '@/types';
 
 import { ProductImage } from './ProductImage';
-import { Price, ProductWrapper, Title, Tools } from './styled';
+import { Price, ProductWrapper, Title, Tools, TopBlock } from './styled';
 
 interface ProductCardProps extends MotionProps {
 	product: IProduct;
@@ -36,9 +36,18 @@ export const ProductCard: FC<ProductCardProps> = memo(
 
 		return (
 			<ProductWrapper {...props}>
-				{product.discountPercentage && <Sticker $danger>-{Math.round(product.discountPercentage)}%</Sticker>}
-				<Compare onActive={handleToggleCompare} active={isInCompare} />
-				<Favorite onActive={() => dispatch(toggleFavorite(Number(product.id)))} active={product.favorite} />
+				<TopBlock>
+					{product.discountPercentage && (
+						<Sticker $danger>-{Math.round(product.discountPercentage)}%</Sticker>
+					)}
+					<Flexbox>
+						<Compare onActive={handleToggleCompare} active={isInCompare} />
+						<Favorite
+							onActive={() => dispatch(toggleFavorite(Number(product.id)))}
+							active={product.favorite}
+						/>
+					</Flexbox>
+				</TopBlock>
 				<Link href={link}>
 					<ProductImage images={product.images} alt={product.title} />
 				</Link>

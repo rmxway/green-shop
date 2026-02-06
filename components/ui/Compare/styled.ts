@@ -8,8 +8,10 @@ export const WrapperCompare = styled.div<{ $active?: boolean }>`
 	height: 40px;
 	cursor: pointer;
 	z-index: 2;
-	opacity: 0.4;
+	color: ${({ theme }) => theme.colors.gray.$6};
+	opacity: 0.7;
 	transition: 0.4s;
+	-webkit-tap-highlight-color: transparent;
 
 	.icofont {
 		margin-top: 4px;
@@ -21,7 +23,6 @@ export const WrapperCompare = styled.div<{ $active?: boolean }>`
 	}
 
 	&:hover {
-		opacity: 1;
 		color: ${({ theme }) => theme.colors.dark};
 	}
 

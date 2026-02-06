@@ -19,6 +19,9 @@ module.exports = {
 	compiler: {
 		styledComponents: true,
 	},
+	experimental: {
+		turbopackFileSystemCacheForDev: false,
+	},
 	turbopack: {},
 	webpack(config) {
 		config.resolve.fallback = {

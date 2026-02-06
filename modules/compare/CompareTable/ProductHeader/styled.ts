@@ -18,11 +18,17 @@ export const ProductHeaderWrapper = styled.div`
 
 export const IconsWrapper = styled.div`
 	position: absolute;
-	top: 0px;
-	right: 0px;
+	top: -16px;
+	right: -16px;
 	display: flex;
 	gap: 4px;
 	z-index: 2;
+	-webkit-tap-highlight-color: transparent;
+
+	${media.greaterThan('sm')`
+		top: -20px;
+		right: -20px;
+	`}
 `;
 
 export const IconButton = styled.div`
@@ -36,7 +42,7 @@ export const IconButton = styled.div`
 
 	.icofont {
 		font-size: 1.3rem;
-		color: ${theme.colors.gray.$4};
+		color: ${theme.colors.gray.$5};
 		transition: 0.2s;
 	}
 
