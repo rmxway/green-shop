@@ -2,10 +2,8 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import styled, { css } from 'styled-components';
 
-import { WrapperCompare } from '@/components/ui/Compare/styled';
-import { WrapperFavorite } from '@/components/ui/Favorite/styled';
+import { Flexbox } from '@/components/Layout';
 import { Wrapper as WrapperLoader } from '@/components/ui/Loader/styled';
-import { WrapperSticker } from '@/components/ui/Sticker/styled';
 import { defaultTheme as theme, fadeIn } from '@/theme';
 import { media } from '@/theme/media';
 
@@ -22,25 +20,6 @@ export const ProductWrapper = styled(motion.div)`
 	a {
 		width: 100%;
 		text-decoration: none;
-	}
-
-	${WrapperCompare} {
-		position: absolute;
-		top: 0;
-		right: 40px;
-	}
-
-	${WrapperFavorite} {
-		position: absolute;
-		top: 0;
-		right: 0;
-	}
-
-	${WrapperSticker} {
-		position: absolute;
-		z-index: 10;
-		top: 10px;
-		left: 10px;
 	}
 
 	&:hover {
@@ -90,6 +69,21 @@ export const Title = styled(Link)`
         font-size: 1rem;
         font-weight: 600;
     `}
+`;
+
+export const TopBlock = styled.div`
+	position: relative;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	width: 100%;
+	z-index: 10;
+
+	${Flexbox} {
+		position: relative;
+		right: -10px;
+		top: -10px;
+	}
 `;
 
 export const Price = styled.div`

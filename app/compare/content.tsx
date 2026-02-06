@@ -39,7 +39,7 @@ export const ContentCompare = () => {
 			</Modal>
 
 			{!isItems ? (
-				<LayerBlock>
+				<LayerBlock $fixedPadding>
 					Нет товаров для сравнения, перейдите на <Link href="/products">страницу товаров</Link>
 				</LayerBlock>
 			) : (

@@ -75,7 +75,7 @@ export const ProductHeader: FC<ProductHeaderProps> = memo(({ product }) => {
 			<IconsWrapper>
 				<Favorite active={actualProduct.favorite} onActive={handleToggleFavorite} />
 				<IconButton onClick={handleRemoveFromCompare}>
-					<Icon icon="trash" size={18} />
+					<Icon icon="trash" size={20} />
 				</IconButton>
 			</IconsWrapper>
 

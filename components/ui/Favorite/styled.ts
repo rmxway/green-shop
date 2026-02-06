@@ -10,6 +10,7 @@ export const WrapperFavorite = styled.div<{ $active?: boolean }>`
 	z-index: 2;
 	opacity: 0.5;
 	transition: 0.4s;
+	-webkit-tap-highlight-color: transparent;
 
 	&:active {
 		transition: all 0.1s;
