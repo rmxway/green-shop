@@ -20,7 +20,7 @@ const InputWrapper = styled.div<InputWrapperProps>`
 
 			color: ${theme.colors.gray.$9};
 
-			border: 1px solid #aaa;
+			border: 1px solid ${theme.colors.gray.$4};
 			background-color: ${theme.colors.light};
 
 			${$error &&
