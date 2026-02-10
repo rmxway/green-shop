@@ -168,17 +168,25 @@ export const ContentProduct = () => {
 						<SideBlock>
 							<LayerBlock $fixedPadding>
 								<PriceBlock>
-									<Grid className="side-price" $direction="column">
-										<span>
-											{formatPriceWithSymbol(product.price)}{' '}
-											<Sticker $danger>
-												-{Math.round(Number(product.discountPercentage))} %
-											</Sticker>
-										</span>
-									</Grid>
-									<Flexbox className="side-info">
-										{product.stock && <Sticker $success>In Stock: {product.stock}</Sticker>}
-										{product.tags && product.tags.map((tag) => <Sticker key={tag}>{tag}</Sticker>)}
+									<Flexbox
+										$gap={10}
+										$align="flex-start"
+										$direction="column"
+										className="price-stickers"
+									>
+										<Grid className="side-price" $direction="column" $align="flex-start">
+											<span>
+												{formatPriceWithSymbol(product.price)}{' '}
+												<Sticker $danger>
+													-{Math.round(Number(product.discountPercentage))} %
+												</Sticker>
+											</span>
+										</Grid>
+										<Flexbox className="side-info">
+											{product.stock && <Sticker $success>In Stock: {product.stock}</Sticker>}
+											{product.tags &&
+												product.tags.map((tag) => <Sticker key={tag}>{tag}</Sticker>)}
+										</Flexbox>
 									</Flexbox>
 									<Grid $direction="column" $templateColumns="1fr 30px 30px" $gap={5} $align="center">
 										<Button

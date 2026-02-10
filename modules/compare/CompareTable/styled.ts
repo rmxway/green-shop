@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { darken, opacify } from 'polished';
 import styled, { type DefaultTheme } from 'styled-components';
 
 import { media } from '@/theme/media';
@@ -33,7 +34,7 @@ export const HeaderRow = styled.tr`
 `;
 
 export const HeaderCell = styled.th`
-	padding: 16px;
+	padding: 10px;
 	vertical-align: middle;
 	position: sticky;
 	top: 0;
@@ -56,26 +57,6 @@ export const HeaderCell = styled.th`
 	&:last-child {
 		border-right: none;
 	}
-
-	${media.greaterThan('sm')`
-		min-width: 220px;
-		max-width: 280px;
-
-		&:first-child {
-			min-width: 180px;
-			max-width: 180px;
-		}
-	`}
-
-	${media.greaterThan('md')`
-		min-width: 250px;
-		max-width: 320px;
-
-		&:first-child {
-			min-width: 200px;
-			max-width: 200px;
-		}
-	`}
 `;
 
 export const CharacteristicRow = styled.tr<{ $index?: number }>`
@@ -106,7 +87,7 @@ export const CharacteristicRow = styled.tr<{ $index?: number }>`
 	}
 
 	&:hover:after {
-		background-color: ${({ theme }) => `${theme.colors.primary}33`};
+		background-color: ${({ theme }) => `${theme.colors.primary}22`};
 	}
 `;
 
@@ -115,10 +96,11 @@ export const CharacteristicLabel = styled.td<{ $index?: number }>`
 	font-weight: 600;
 	position: sticky;
 	left: 0;
-	min-width: 160px;
-	background-color: ${({ theme }) => theme.colors.light};
-	z-index: 1;
+	min-width: 120px;
+	background-color: ${({ theme, $index }) =>
+		$index !== undefined && $index % 2 === 0 ? theme.colors.gray.$1 : darken(0.01, theme.colors.gray.$1)};
 
+	z-index: 1;
 	border-right: 1px solid ${({ theme }) => theme.colors.gray.$2};
 	transition: all 0.1s;
 	text-align: center;
@@ -139,7 +121,7 @@ export const CharacteristicCell = styled(motion.td)<{ $highlight?: boolean; $ind
 	border-right: 1px solid ${({ theme }) => theme.colors.gray.$2};
 	vertical-align: middle;
 	background-color: ${({ theme, $index }) =>
-		$index !== undefined && $index % 2 === 0 ? theme.colors.light : theme.colors.gray.$1};
+		$index !== undefined && $index % 2 === 0 ? theme.colors.gray.$1 : darken(0.02, theme.colors.gray.$1)};
 
 	&:after {
 		content: '';
@@ -148,8 +130,8 @@ export const CharacteristicCell = styled(motion.td)<{ $highlight?: boolean; $ind
 		height: 100%;
 		left: 0;
 		top: 0;
-		background-color: ${({ theme, $highlight }) => ($highlight ? theme.colors.primary : 'none')};
-		opacity: 0.15;
+		background-color: ${({ theme, $highlight }) => ($highlight ? opacify(-0.85, theme.colors.label) : 'none')};
+		opacity: 1;
 	}
 
 	transition: all 0.1s;

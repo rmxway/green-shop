@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Container, Grid, LayerBlock } from '@/components/Layout';
 import { WrapperSticker } from '@/components/ui/Sticker/styled';
@@ -65,6 +65,7 @@ export const ProductImage = styled(Image)`
 
 export const Info = styled.div`
 	min-width: 1px;
+	padding-bottom: 30px;
 
 	span {
 		line-height: 1.5;
@@ -81,44 +82,50 @@ export const Info = styled.div`
 `;
 
 export const SideBlock = styled.div`
-	z-index: 1;
+	${({ theme }) => css`
+		z-index: 1;
 
-	${LayerBlock} {
-		background-color: ${({ theme }) => theme.colors.light};
-	}
+		${LayerBlock} {
+			background-color: ${theme.colors.light};
+		}
 
-	${media.lessThan('mdD')`
-        width: 100%;
+		${media.lessThan('mdD')`
+			width: 100%;
 
-        ${LayerBlock} {
-            position: fixed;
-            top: auto;
-            bottom: 0;
-            padding: 10px 20px;
-            left: 0;
-            right: 0;
-            border-top: 1px solid #eee;
-            border-radius: 0;
-            margin-bottom: 0;
-        }
-    `}
+			${LayerBlock} {
+				position: fixed;
+				top: auto;
+				bottom: 0;
+				padding: 10px 20px;
+				left: 0;
+				right: 0;
+				border-radius: 0;
+				margin-bottom: 0;
+				box-shadow: 0 0 8px rgba(0, 0, 0, .3)
+			}
+		`}
 
-	${media.greaterThan('md')`
-        position: relative;
+		${media.greaterThan('md')`
+			position: relative;
 
-        ${LayerBlock} {
-            position: sticky;
-            top: 20px;
-        }
-    `}
+			${LayerBlock} {
+				position: sticky;
+				top: 20px;
+			}
+		`}
+	`}
 `;
 
 export const PriceBlock = styled(Grid)`
 	position: relative;
 	align-items: center;
-	gap: 4px;
+	gap: 5px;
 	grid-auto-flow: dense;
-	grid-template-columns: 1fr 170px;
+	grid-template-columns: 1fr;
+
+	${media.greaterThan('xs')`
+		grid-template-columns: minmax(135px, 1fr) 220px;
+	`}
 
 	.side {
 		&-price {
@@ -137,23 +144,21 @@ export const PriceBlock = styled(Grid)`
 		}
 
 		&-info {
-			display: none;
-
 			${WrapperSticker} {
 				margin: 0 8px 8px 0;
 			}
 		}
 	}
 
+	.price-stickers {
+		flex-direction: row;
+		align-items: flex-end;
+	}
+
 	${media.greaterThan('md')`
         grid-template-columns: 1fr;
         align-items: start;
         grid-auto-flow: dense;
-        gap: 16px;
-
-        .side-info {
-            display: flex;
-        }
     `}
 
 	button {

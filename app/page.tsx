@@ -175,9 +175,10 @@ export default function MainPage() {
 							<p>Сравнение характеристик товаров в одной таблице для удобного выбора</p>
 						</FeatureCardClean>
 						<FeatureCardClean>
-							<h3>Storybook и технологии</h3>
+							<h3>Светлая и тёмная тема</h3>
 							<p>
-								Storybook для компонентов, Redux Toolkit для состояния, ESLint, Prettier, Framer Motion
+								Переключение темы интерфейса с сохранением выбора. Storybook, Redux Toolkit, ESLint,
+								Prettier, Framer Motion
 							</p>
 						</FeatureCardClean>
 					</FeaturesGrid>
@@ -203,6 +204,9 @@ export default function MainPage() {
 								</FeatureItem>
 								<FeatureItem>
 									<FeatureIcon>⚖️</FeatureIcon> Сравнение товаров по характеристикам
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>🌗</FeatureIcon> Светлая и тёмная тема
 								</FeatureItem>
 								<FeatureItem>
 									<FeatureIcon>📄</FeatureIcon> Пагинация для удобной навигации
