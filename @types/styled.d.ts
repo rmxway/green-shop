@@ -6,6 +6,8 @@ export interface Colors {
 	danger: string;
 	label: string;
 	dark: string;
+	light: string;
+	link: string;
 	gray: {
 		$1: string;
 		$2: string;

@@ -57,15 +57,13 @@ const mockProductsStateNoItems: MockProductsState = {
 };
 
 const createMockState = (products: MockProductsState = mockProductsStateWithItems): RootState =>
-	({ products } as RootState);
+	({ products }) as RootState;
 
 // Настраиваем моки перед каждым тестом
 beforeEach(() => {
 	jest.clearAllMocks();
 	mockUseAppDispatch.mockReturnValue(mockDispatch);
-	mockUseAppSelector.mockImplementation((selector: (state: RootState) => unknown) =>
-		selector(createMockState()),
-	);
+	mockUseAppSelector.mockImplementation((selector: (state: RootState) => unknown) => selector(createMockState()));
 	mockDebounceFunction.mockImplementation((fn: () => void) => {
 		fn();
 		return jest.fn();
@@ -84,9 +82,7 @@ describe('Filter:', () => {
 	beforeEach(() => {
 		jest.clearAllMocks();
 		mockUseAppDispatch.mockReturnValue(mockDispatch);
-		mockUseAppSelector.mockImplementation((selector: (state: RootState) => unknown) =>
-			selector(createMockState()),
-		);
+		mockUseAppSelector.mockImplementation((selector: (state: RootState) => unknown) => selector(createMockState()));
 		mockDebounceFunction.mockImplementation((fn: () => void) => {
 			fn();
 			return jest.fn();
@@ -94,7 +90,6 @@ describe('Filter:', () => {
 	});
 
 	it('Render search input and sort toggles', () => {
-
 		render(
 			<TestWrapper>
 				<Filter isLoading={false} />
@@ -110,7 +105,6 @@ describe('Filter:', () => {
 	});
 
 	it('Show skeleton when loading', () => {
-
 		const { container } = render(
 			<TestWrapper>
 				<Filter isLoading />
@@ -123,9 +117,7 @@ describe('Filter:', () => {
 	});
 
 	it('Input is disabled when no items', () => {
-		mockUseAppSelector.mockImplementation((selector) =>
-			selector(createMockState(mockProductsStateNoItems)),
-		);
+		mockUseAppSelector.mockImplementation((selector) => selector(createMockState(mockProductsStateNoItems)));
 
 		render(
 			<TestWrapper>
@@ -138,9 +130,7 @@ describe('Filter:', () => {
 	});
 
 	it('Sort toggles are disabled when no items', () => {
-		mockUseAppSelector.mockImplementation((selector) =>
-			selector(createMockState(mockProductsStateNoItems)),
-		);
+		mockUseAppSelector.mockImplementation((selector) => selector(createMockState(mockProductsStateNoItems)));
 
 		render(
 			<TestWrapper>
@@ -156,7 +146,6 @@ describe('Filter:', () => {
 	});
 
 	it('Sort toggles are enabled when items exist', () => {
-
 		render(
 			<TestWrapper>
 				<Filter isLoading={false} />
@@ -255,7 +244,6 @@ describe('Filter:', () => {
 	});
 
 	it('No padding prop is passed to Input', () => {
-
 		render(
 			<TestWrapper>
 				<Filter isLoading={false} />

@@ -30,7 +30,9 @@ function ModalWithoutTitle() {
 	return (
 		<>
 			<Button onClick={() => setOpen(true)}>Open</Button>
-			<Modal open={open} onClose={() => setOpen(false)}>Только контент</Modal>
+			<Modal open={open} onClose={() => setOpen(false)}>
+				Только контент
+			</Modal>
 		</>
 	);
 }

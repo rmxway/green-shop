@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
+import styled, { type DefaultTheme } from 'styled-components';
 
-import { defaultTheme as theme } from '@/theme';
 import { media } from '@/theme/media';
 
 export const TableWrapper = styled.div`
@@ -11,7 +10,7 @@ export const TableWrapper = styled.div`
 
 	${media.greaterThan('md')`
 		margin: 0 0 40px;
-		border-radius: ${theme.radius.borderRadius};
+		border-radius: ${(props: { theme: DefaultTheme }) => props.theme.radius.borderRadius};
 	`}
 `;
 
@@ -30,7 +29,7 @@ export const HeaderRow = styled.tr`
 	position: sticky;
 	top: 0;
 	z-index: 10;
-	background: #fff;
+	background-color: ${({ theme }) => theme.colors.light};
 `;
 
 export const HeaderCell = styled.th`
@@ -38,10 +37,10 @@ export const HeaderCell = styled.th`
 	vertical-align: middle;
 	position: sticky;
 	top: 0;
-	background: #fff;
+	background: ${({ theme }) => theme.colors.light};
 	min-width: 200px;
 	max-width: 250px;
-	border-right: 1px solid ${theme.colors.gray.$2};
+	border-right: 1px solid ${({ theme }) => theme.colors.gray.$2};
 
 	${media.greaterThan('sm')`
 		padding: 20px;
@@ -83,11 +82,11 @@ export const CharacteristicRow = styled.tr<{ $index?: number }>`
 	position: relative;
 
 	& td {
-		border-bottom: 1px solid ${theme.colors.gray.$2};
+		border-bottom: 1px solid ${({ theme }) => theme.colors.gray.$2};
 	}
 
 	&:first-child td {
-		border-top: 1px solid ${theme.colors.gray.$2};
+		border-top: 1px solid ${({ theme }) => theme.colors.gray.$2};
 	}
 
 	&:last-child td {
@@ -107,7 +106,7 @@ export const CharacteristicRow = styled.tr<{ $index?: number }>`
 	}
 
 	&:hover:after {
-		background-color: ${theme.colors.primary}33;
+		background-color: ${({ theme }) => `${theme.colors.primary}33`};
 	}
 `;
 
@@ -117,10 +116,10 @@ export const CharacteristicLabel = styled.td<{ $index?: number }>`
 	position: sticky;
 	left: 0;
 	min-width: 160px;
-	background-color: #fff;
+	background-color: ${({ theme }) => theme.colors.light};
 	z-index: 1;
 
-	border-right: 1px solid ${theme.colors.gray.$2};
+	border-right: 1px solid ${({ theme }) => theme.colors.gray.$2};
 	transition: all 0.1s;
 	text-align: center;
 	vertical-align: middle;
@@ -137,9 +136,10 @@ export const CharacteristicCell = styled(motion.td)<{ $highlight?: boolean; $ind
 	position: relative;
 	padding: 12px 16px;
 	text-align: center;
-	border-right: 1px solid ${theme.colors.gray.$2};
+	border-right: 1px solid ${({ theme }) => theme.colors.gray.$2};
 	vertical-align: middle;
-	background-color: ${({ $index }) => ($index !== undefined && $index % 2 === 0 ? '#fafafa' : theme.colors.gray.$1)};
+	background-color: ${({ theme, $index }) =>
+		$index !== undefined && $index % 2 === 0 ? theme.colors.light : theme.colors.gray.$1};
 
 	&:after {
 		content: '';
@@ -148,7 +148,7 @@ export const CharacteristicCell = styled(motion.td)<{ $highlight?: boolean; $ind
 		height: 100%;
 		left: 0;
 		top: 0;
-		background-color: ${({ $highlight }) => ($highlight ? theme.colors.primary : 'none')};
+		background-color: ${({ theme, $highlight }) => ($highlight ? theme.colors.primary : 'none')};
 		opacity: 0.15;
 	}
 

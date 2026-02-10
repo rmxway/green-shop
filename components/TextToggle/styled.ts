@@ -18,7 +18,7 @@ export const WrapperTextToggle = styled.div<{ $isOpen?: boolean }>`
 			bottom: 0;
 			left: 0;
 			right: 0;
-			${({ $isOpen }) => !$isOpen && hideGradientMixin('#fff', 'bottom')}
+			${({ $isOpen, theme }) => !$isOpen && hideGradientMixin(theme.colors.light, 'bottom')}
 		}
 	}
 

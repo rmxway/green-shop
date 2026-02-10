@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { ButtonStyle } from '@/components/ui/Button/styled';
-import { defaultTheme as theme, media } from '@/theme';
+import { media } from '@/theme';
 
 export const BurgerButtonStyled = styled(ButtonStyle)<{ $isOpen: boolean }>`
 	position: relative;
@@ -18,7 +18,7 @@ export const BurgerButtonStyled = styled(ButtonStyle)<{ $isOpen: boolean }>`
 		height: 2px;
 		border-radius: 50px;
 		min-width: 20px;
-		background-color: ${theme.colors.dark};
+		background-color: ${({ theme }) => theme.colors.dark};
 		transition: all 0.2s;
 
 		${({ $isOpen }) =>

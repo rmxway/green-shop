@@ -5,7 +5,7 @@ import 'swiper/css/pagination';
 
 import Image from 'next/image';
 import { useParams, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -13,7 +13,7 @@ import { TextToggle } from '@/components';
 import { Flexbox, Grid, LayerBlock, MobileWhiteBackground, RatingStars } from '@/components/Layout';
 import { Button, Compare, Favorite, Icon, LinkIcon, Loader, Sticker } from '@/components/ui';
 import { Info, NoPhotoContainer, PriceBlock, SideBlock, Wrapper } from '@/modules/product/styled';
-import { useAppDispatch, useAppSelector, useCurrency } from '@/services';
+import { useAppDispatch, useAppSelector, useCurrency, useLoadTimeout } from '@/services';
 import { useGetProductQuery } from '@/store/api';
 import { moveToCart } from '@/store/reducers/combineActions';
 import { isInCompareMemoized, productMemoized } from '@/store/reducers/commonSelectors';
@@ -44,16 +44,12 @@ export const ContentProduct = () => {
 	}, [dispatch, product]);
 
 	// Таймер на 5 секунд для прерывания загрузки изображений
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			if (isLoad) {
-				setIsLoad(false);
-				setHasError(true);
-			}
-		}, 5000);
+	const handleLoadTimeout = useCallback(() => {
+		setIsLoad(false);
+		setHasError(true);
+	}, []);
 
-		return () => clearTimeout(timer);
-	}, [isLoad]);
+	useLoadTimeout(isLoad, 10, handleLoadTimeout);
 
 	// Сброс состояний при изменении продукта
 	useEffect(() => {
@@ -91,31 +87,37 @@ export const ContentProduct = () => {
 							<LayerBlock>
 								{product.images && product.images.length > 0 && !hasError ? (
 									<div style={{ position: 'relative', height: '300px' }}>
-										<Swiper
-											pagination={{
-												dynamicBullets: true,
-												clickable: true,
-											}}
-											modules={[Pagination]}
-											slidesPerView={1}
-											spaceBetween={50}
-											style={{ height: '300px' }}
-										>
-											{product.images.map((image) => (
-												<SwiperSlide key={image} style={{ height: '300px' }}>
-													<Image
-														src={image}
-														width={500}
-														height={500}
-														alt={image}
-														priority
-														onLoad={handleImageLoad}
-														onError={handleImageError}
-														style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-													/>
-												</SwiperSlide>
-											))}
-										</Swiper>
+										{!isLoad && (
+											<Swiper
+												pagination={{
+													dynamicBullets: true,
+													clickable: true,
+												}}
+												modules={[Pagination]}
+												slidesPerView={1}
+												spaceBetween={50}
+												style={{ height: '300px' }}
+											>
+												{product.images.map((image) => (
+													<SwiperSlide key={image} style={{ height: '300px' }}>
+														<Image
+															src={image}
+															width={500}
+															height={500}
+															alt={image}
+															priority
+															onLoad={handleImageLoad}
+															onError={handleImageError}
+															style={{
+																objectFit: 'cover',
+																width: '100%',
+																height: '100%',
+															}}
+														/>
+													</SwiperSlide>
+												))}
+											</Swiper>
+										)}
 										<Loader loading={isLoad} />
 									</div>
 								) : (

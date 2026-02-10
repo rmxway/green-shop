@@ -3,32 +3,40 @@
 exports[`ProductCard: Render card 1`] = `
 <div>
   <div
-    class="sc-23adcea0-0 hmWBlq"
+    class="sc-6be2c059-0 fqHPwr"
   >
     <div
-      class="sc-7d6be7a8-0 cAcidU"
+      class="sc-6be2c059-2 dsyWpz"
     >
-      -
-      0
-      %
-    </div>
-    <div
-      class="sc-36d40ead-0 ggNluZ"
-      title="Сравнить"
-    >
-      <i
-        class="icofont icofont-compare "
-        style="font-size: 22px;"
-      />
-    </div>
-    <div
-      class="sc-c10cfecb-0 gMuWOS"
-      title="В избранное"
-    >
-      <i
-        class="icofont icofont-favorite-fill "
-        style="font-size: 22px;"
-      />
+      <div
+        class="sc-7d6be7a8-0 cAcidU"
+      >
+        -
+        0
+        %
+      </div>
+      <div
+        class="sc-4ce1df50-0 cBGBhv"
+      >
+        <div
+          class="sc-31c9585c-0 dGkCJJ"
+          title="Сравнить"
+        >
+          <i
+            class="icofont icofont-compare "
+            style="font-size: 22px;"
+          />
+        </div>
+        <div
+          class="sc-9441d6f7-0 ddZIKD"
+          title="В избранное"
+        >
+          <i
+            class="icofont icofont-favorite-fill "
+            style="font-size: 22px;"
+          />
+        </div>
+      </div>
     </div>
     <a
       href="/product/6"
@@ -41,7 +49,7 @@ exports[`ProductCard: Render card 1`] = `
       </div>
     </a>
     <a
-      class="sc-23adcea0-1 bwGJEF"
+      class="sc-6be2c059-1 kqmJsH"
       href="/product/6"
     >
       <div>
@@ -55,7 +63,7 @@ exports[`ProductCard: Render card 1`] = `
       class="sc-a1f6370b-0 iVxPvN"
     />
     <div
-      class="sc-23adcea0-3 ZwqPK"
+      class="sc-6be2c059-4 gidrZe"
     >
       <div
         class="sc-be016b9b-0 fChJE"
@@ -107,7 +115,7 @@ exports[`ProductCard: Render card 1`] = `
         </span>
       </div>
       <div
-        class="sc-23adcea0-2 eNKXkY"
+        class="sc-6be2c059-3 kMyHWW"
       >
         $49.99
       </div>

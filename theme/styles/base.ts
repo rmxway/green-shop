@@ -10,7 +10,8 @@ export const base = css`
 	}
 	body {
 		overflow-y: scroll;
-		background-color: ${(props) => props.theme.colors.gray.$1};
+		background-color: ${({ theme }) => theme.colors.gray.$2};
+		color: ${({ theme }) => theme.colors.gray.$9};
 		font-size: 1rem;
 		display: flex;
 		flex-direction: column;
@@ -18,6 +19,9 @@ export const base = css`
 		min-width: 320px;
 		min-height: 100vh;
 		padding-top: 70px;
+		transition:
+			background-color 0.3s ease,
+			color 0.3s ease;
 	}
 	code {
 		font-family: 'source-code-pro', 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
@@ -26,6 +30,7 @@ export const base = css`
 	a {
 		text-decoration: none;
 		display: inline-block;
+		color: ${({ theme }) => theme.colors.link};
 	}
 
 	h1 {

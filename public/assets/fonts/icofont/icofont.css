@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'icofont';
-    src: url(".//icofont.ttf?5b0dcc54f09527ca67a673cb1c1ee4ee") format("truetype"),
-url(".//icofont.woff?5b0dcc54f09527ca67a673cb1c1ee4ee") format("woff"),
-url(".//icofont.woff2?5b0dcc54f09527ca67a673cb1c1ee4ee") format("woff2");
+    src: url(".//icofont.ttf?e50d59240438c76eb637745eb4e65655") format("truetype"),
+url(".//icofont.woff?e50d59240438c76eb637745eb4e65655") format("woff"),
+url(".//icofont.woff2?e50d59240438c76eb637745eb4e65655") format("woff2");
 }
 
 i[class^='icofont-']:before, i[class*=' icofont-']:before {
@@ -23,36 +23,42 @@ i[class^='icofont-']:before, i[class*=' icofont-']:before {
 .icofont-times-small:before {
     content: '\f102';
 }
-.icofont-star:before {
+.icofont-sun:before {
     content: '\f103';
 }
-.icofont-star-filled:before {
+.icofont-star:before {
     content: '\f104';
 }
-.icofont-nophoto:before {
+.icofont-star-filled:before {
     content: '\f105';
 }
-.icofont-favorite:before {
+.icofont-nophoto:before {
     content: '\f106';
 }
-.icofont-favorite-fill:before {
+.icofont-moon:before {
     content: '\f107';
 }
-.icofont-compare:before {
+.icofont-favorite:before {
     content: '\f108';
 }
-.icofont-cart:before {
+.icofont-favorite-fill:before {
     content: '\f109';
 }
-.icofont-arrow-up:before {
+.icofont-compare:before {
     content: '\f10a';
 }
-.icofont-arrow-right:before {
+.icofont-cart:before {
     content: '\f10b';
 }
-.icofont-arrow-left:before {
+.icofont-arrow-up:before {
     content: '\f10c';
 }
-.icofont-arrow-down:before {
+.icofont-arrow-right:before {
     content: '\f10d';
+}
+.icofont-arrow-left:before {
+    content: '\f10e';
+}
+.icofont-arrow-down:before {
+    content: '\f10f';
 }

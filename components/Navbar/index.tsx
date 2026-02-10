@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { Container, Flexbox, Space } from '@/components/Layout';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 import { RenderNavbar } from './RenderNavbar';
 import { Logo, StyledNavbar } from './styled';
@@ -17,6 +18,7 @@ export const Navbar = () => (
 						Brand
 					</span>
 				</Logo>
+				<ThemeToggle />
 				<Space />
 				<RenderNavbar />
 			</Flexbox>

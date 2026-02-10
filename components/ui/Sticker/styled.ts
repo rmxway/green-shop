@@ -19,6 +19,7 @@ export const WrapperSticker = styled.div<WrapperStickerProps>`
 		font-weight: 600;
 		padding: 4px 8px;
 		border-radius: 4px;
+		color: #333;
 
 		${$primary &&
 		css`
@@ -48,6 +49,7 @@ export const WrapperSticker = styled.div<WrapperStickerProps>`
 		!$success &&
 		css`
 			background-color: ${theme.colors.gray.$3};
+			color: ${theme.colors.gray.$9};
 		`}
 	`}
 `;

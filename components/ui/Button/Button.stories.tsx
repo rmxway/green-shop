@@ -35,7 +35,7 @@ export const AllButtons: Story = {
 			<Button $danger>Danger</Button>
 			<Button $success>Success</Button>
 			<Button $dark>Dark</Button>
-			<Button $white>White</Button>			
+			<Button $white>White</Button>
 		</Flexbox>
 	),
 };

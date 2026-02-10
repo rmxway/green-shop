@@ -14,7 +14,7 @@ export const ModalWrapper = styled(motion.div)`
 		width: 100%;
 		height: 100%;
 		z-index: 999;
-		background-color: ${theme.colors.dark}aa;
+		background-color: ${theme.colors.gray.$1}cc;
 		backdrop-filter: blur(5px);
 		cursor: pointer;
 	`}
@@ -33,7 +33,7 @@ export const ModalWindow = styled(motion.div)`
 	${({ theme }) => css`
 		position: relative;
 		max-width: 800px;
-		background-color: #fff;
+		background-color: ${theme.colors.light};
 		padding: 20px;
 		border-radius: ${theme.radius.borderRadius};
 		box-shadow: ${theme.layout.shadow};

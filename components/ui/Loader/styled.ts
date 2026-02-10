@@ -1,8 +1,6 @@
 // import { darken } from 'polished';
 import styled from 'styled-components';
 
-import { defaultTheme as theme } from '@/theme';
-
 export const Wrapper = styled.div<{ background?: boolean }>`
 	position: absolute;
 	display: flex;
@@ -15,7 +13,7 @@ export const Wrapper = styled.div<{ background?: boolean }>`
 	bottom: 0;
 	z-index: 10;
 	pointer-events: none;
-	color: ${theme.colors.gray.$7};
+	color: ${({ theme }) => theme.colors.gray.$7};
 	mix-blend-mode: multiply;
 `;
 
@@ -37,7 +35,7 @@ export const StyledLoader = styled.div`
 		width: 5px;
 		height: 5px;
 		border-radius: 20px;
-		background-color: ${theme.colors.gray.$4};
+		background-color: ${({ theme }) => theme.colors.gray.$4};
 		margin-left: -20px;
 		transform-origin: 20px 0;
 		animation-name: rotateLoading;

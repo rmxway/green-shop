@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import { defaultTheme as theme } from '@/theme';
 import { media } from '@/theme/media';
 
 export const ProductHeaderWrapper = styled.div`
@@ -42,7 +41,7 @@ export const IconButton = styled.div`
 
 	.icofont {
 		font-size: 1.3rem;
-		color: ${theme.colors.gray.$5};
+		color: ${({ theme }) => theme.colors.gray.$6};
 		transition: 0.2s;
 	}
 
@@ -52,7 +51,7 @@ export const IconButton = styled.div`
 	}
 
 	&:hover .icofont {
-		color: ${theme.colors.danger};
+		color: ${({ theme }) => theme.colors.danger};
 	}
 `;
 
@@ -62,7 +61,7 @@ export const ImageWrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: ${theme.radius.borderRadius};
+	border-radius: ${({ theme }) => theme.radius.borderRadius};
 	overflow: hidden;
 	background: transparent;
 	position: relative;
@@ -88,16 +87,15 @@ export const NoPhotoContainer = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: ${theme.colors.gray.$3};
+	color: ${({ theme }) => theme.colors.gray.$3};
 	background: transparent;
 `;
 
 export const ProductTitle = styled.span`
 	font-size: 14px;
-	font-weight: 600;
 	line-height: 1.3;
 	text-decoration: none;
-	color: ${theme.colors.dark};
+	color: ${({ theme }) => theme.colors.gray.$9};
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
@@ -122,40 +120,19 @@ export const ProductTitle = styled.span`
 `;
 
 export const ProductPrice = styled.div`
-	font-size: 18px;
-	font-weight: 600;
-	color: ${theme.colors.dark};
+	font-size: 1.3rem;
+	font-weight: 200;
 	font-family: sans-serif;
+	color: ${({ theme }) => theme.colors.gray.$8};
 
-	${media.greaterThan('sm')`
-		font-size: 20px;
-	`}
-
-	${media.greaterThan('md')`
-		font-size: 22px;
+	${media.greaterThan('xs')`
+		font-size: 1.6rem;
 	`}
 `;
 
 export const ActionsWrapper = styled.div`
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	margin-top: auto;
-
-	button {
-		font-size: 12px;
-		padding: 8px 12px;
-	}
-
-	${media.greaterThan('sm')`
-		button {
-			font-size: 13px;
-			padding: 10px 16px;
-		}
-	`}
-
-	${media.greaterThan('md')`
-		button {
-			font-size: 14px;
-		}
-	`}
 `;

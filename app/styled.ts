@@ -30,6 +30,7 @@ export const ImageLogos = styled.div`
 		height: auto;
 		border-radius: 8px;
 		background: transparent;
+		mix-blend-mode: multiply;
 	}
 `;
 
@@ -191,7 +192,7 @@ export const AboutTechText = styled.p`
 `;
 
 export const CodeSnippet = styled.code`
-	background: #f5f5f7;
+	background: ${({ theme }) => theme.colors.gray.$1};
 	padding: 2px 6px;
 	border-radius: 4px;
 	font-size: 0.9rem;
@@ -367,9 +368,9 @@ export const PrimaryButton = styled.button`
 	}}
 `;
 
-export const Section = styled.section<{ $background?: string }>`
+export const Section = styled.section<{ $background?: boolean }>`
 	padding: 80px 0;
-	background: ${({ $background, theme }) => $background || theme.colors.gray.$1};
+	background: ${({ $background, theme }) => (!$background ? theme.colors.gray.$1 : theme.colors.light)};
 
 	${media.lessThan('md')`
 		padding: 60px 0;
@@ -408,9 +409,13 @@ export const SectionSubtitle = styled.p`
 
 export const FeaturesGrid = styled.div`
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+	grid-template-columns: repeat(2, minmax(300px, 1fr));
 	gap: 2rem;
 	margin-top: 3rem;
+
+	${media.greaterThan('lg')`
+		grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+	`}
 `;
 
 export const FeatureCardClean = styled.div`

@@ -64,11 +64,11 @@ export const ButtonStyle = styled.button<Props>`
 		transition: 0.1s all;
 
 		&:hover {
-			background-color: #f9f9f9;
+			background-color: ${theme.colors.gray.$3};
 		}
 
 		&:active {
-			background-color: #f1f1f1;
+			background-color: ${theme.colors.gray.$3};
 		}
 
 		&:disabled,

@@ -104,9 +104,7 @@ export const resetItems = (state: ProductsState, category = true, page = false) 
 	state.fetchedItems = [...state.reservedItems];
 	const searchTrimmed = state.search.trim().toLowerCase();
 	if (searchTrimmed) {
-		state.fetchedItems = state.fetchedItems.filter((item) =>
-			item.title.toLowerCase().includes(searchTrimmed),
-		);
+		state.fetchedItems = state.fetchedItems.filter((item) => item.title.toLowerCase().includes(searchTrimmed));
 	}
 	state.fetching = false;
 

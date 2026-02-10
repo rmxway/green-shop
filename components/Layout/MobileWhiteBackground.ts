@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { media } from '@/theme';
 
 export const MobileWhiteBackground = styled.div`
-	background-color: #fff;
+	background-color: ${({ theme }) => theme.colors.light};
 	flex-grow: 1;
 
 	${media.greaterThan('sm')`
