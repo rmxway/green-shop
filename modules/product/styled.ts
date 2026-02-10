@@ -65,7 +65,7 @@ export const ProductImage = styled(Image)`
 
 export const Info = styled.div`
 	min-width: 1px;
-	padding-bottom: 30px;
+	padding-bottom: 70px;
 
 	span {
 		line-height: 1.5;
@@ -84,6 +84,9 @@ export const Info = styled.div`
 export const SideBlock = styled.div`
 	${({ theme }) => css`
 		z-index: 1;
+		position: fixed;
+		left: 0;
+		bottom: 0;
 
 		${LayerBlock} {
 			background-color: ${theme.colors.light};
@@ -93,12 +96,7 @@ export const SideBlock = styled.div`
 			width: 100%;
 
 			${LayerBlock} {
-				position: fixed;
-				top: auto;
-				bottom: 0;
 				padding: 10px 20px;
-				left: 0;
-				right: 0;
 				border-radius: 0;
 				margin-bottom: 0;
 				box-shadow: 0 0 8px rgba(0, 0, 0, .3)
