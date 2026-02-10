@@ -409,9 +409,13 @@ export const SectionSubtitle = styled.p`
 
 export const FeaturesGrid = styled.div`
 	display: grid;
-	grid-template-columns: repeat(2, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
 	gap: 2rem;
-	margin-top: 3rem;
+	margin-top: 2rem;
+
+	${media.greaterThan('sm')`
+		grid-template-columns: repeat(2, minmax(270px, 1fr));
+	`}
 
 	${media.greaterThan('lg')`
 		grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -430,8 +434,7 @@ export const FeatureCardClean = styled.div`
 			border: 1px solid ${colors.gray.$3};
 
 			&:hover {
-				transform: translateY(-4px);
-				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+				box-shadow: ${theme.layout.shadow};
 			}
 
 			h3 {
