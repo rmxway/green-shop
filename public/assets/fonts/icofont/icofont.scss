@@ -4,9 +4,9 @@ $icofont-font: 'icofont';
 
 @font-face {
     font-family: $icofont-font;
-    src: url(".//icofont.ttf?5b0dcc54f09527ca67a673cb1c1ee4ee") format("truetype"),
-url(".//icofont.woff?5b0dcc54f09527ca67a673cb1c1ee4ee") format("woff"),
-url(".//icofont.woff2?5b0dcc54f09527ca67a673cb1c1ee4ee") format("woff2");
+    src: url(".//icofont.ttf?e50d59240438c76eb637745eb4e65655") format("truetype"),
+url(".//icofont.woff?e50d59240438c76eb637745eb4e65655") format("woff"),
+url(".//icofont.woff2?e50d59240438c76eb637745eb4e65655") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -27,17 +27,19 @@ url(".//icofont.woff2?5b0dcc54f09527ca67a673cb1c1ee4ee") format("woff2");
 $icofont-map: (
     'trash': '\f101',
     'times-small': '\f102',
-    'star': '\f103',
-    'star-filled': '\f104',
-    'nophoto': '\f105',
-    'favorite': '\f106',
-    'favorite-fill': '\f107',
-    'compare': '\f108',
-    'cart': '\f109',
-    'arrow-up': '\f10a',
-    'arrow-right': '\f10b',
-    'arrow-left': '\f10c',
-    'arrow-down': '\f10d',
+    'sun': '\f103',
+    'star': '\f104',
+    'star-filled': '\f105',
+    'nophoto': '\f106',
+    'moon': '\f107',
+    'favorite': '\f108',
+    'favorite-fill': '\f109',
+    'compare': '\f10a',
+    'cart': '\f10b',
+    'arrow-up': '\f10c',
+    'arrow-right': '\f10d',
+    'arrow-left': '\f10e',
+    'arrow-down': '\f10f',
 );
 
 .icofont-trash:before {
@@ -45,6 +47,9 @@ $icofont-map: (
 }
 .icofont-times-small:before {
     content: map.get($icofont-map, 'times-small');
+}
+.icofont-sun:before {
+    content: map.get($icofont-map, 'sun');
 }
 .icofont-star:before {
     content: map.get($icofont-map, 'star');
@@ -54,6 +59,9 @@ $icofont-map: (
 }
 .icofont-nophoto:before {
     content: map.get($icofont-map, 'nophoto');
+}
+.icofont-moon:before {
+    content: map.get($icofont-map, 'moon');
 }
 .icofont-favorite:before {
     content: map.get($icofont-map, 'favorite');

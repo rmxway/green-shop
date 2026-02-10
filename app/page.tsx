@@ -51,7 +51,7 @@ export default function MainPage() {
 			</HeroSection>
 
 			{/* About Section */}
-			<Section $background="#fff">
+			<Section $background>
 				<Container>
 					<FirstBlock>
 						<div>
@@ -92,7 +92,7 @@ export default function MainPage() {
 			</Section>
 
 			{/* Nature Gallery */}
-			<Section $background="#fff">
+			<Section $background>
 				<Container>
 					<NatureGallery>
 						<NatureBlock $reverse>
@@ -176,7 +176,9 @@ export default function MainPage() {
 						</FeatureCardClean>
 						<FeatureCardClean>
 							<h3>Storybook и технологии</h3>
-							<p>Storybook для компонентов, Redux Toolkit для состояния, ESLint, Prettier, Framer Motion</p>
+							<p>
+								Storybook для компонентов, Redux Toolkit для состояния, ESLint, Prettier, Framer Motion
+							</p>
 						</FeatureCardClean>
 					</FeaturesGrid>
 

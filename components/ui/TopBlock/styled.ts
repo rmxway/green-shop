@@ -1,3 +1,4 @@
+import { darken } from 'polished';
 import styled, { css } from 'styled-components';
 
 import { media } from '@/theme';
@@ -6,7 +7,7 @@ export type TopBlockProps = { $isFont?: boolean };
 
 export const TopBlockStyle = styled.div<TopBlockProps>`
 	${({ theme, $isFont }) => css`
-		background-image: linear-gradient(185deg, ${theme.colors.gray.$6} 30%, ${theme.colors.success} 100%);
+		background-image: linear-gradient(184deg, ${darken(0.1, theme.colors.dark)} 0%, ${theme.colors.success} 110%);
 		margin-top: 0;
 		min-height: 60px;
 		display: flex;

@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 
 import { Flexbox } from '@/components/Layout';
 import { Wrapper as WrapperLoader } from '@/components/ui/Loader/styled';
-import { defaultTheme as theme, fadeIn } from '@/theme';
+import { fadeIn } from '@/theme';
 import { media } from '@/theme/media';
 
 export const ProductWrapper = styled(motion.div)`
@@ -13,9 +13,9 @@ export const ProductWrapper = styled(motion.div)`
 	align-items: flex-start;
 	flex-direction: column;
 	padding: 12px;
-	border-radius: ${theme.radius.borderRadius};
+	border-radius: ${({ theme }) => theme.radius.borderRadius};
 	transition: 0.3s box-shadow;
-	background-color: #fff;
+	background-color: ${({ theme }) => theme.colors.light};
 
 	a {
 		width: 100%;
@@ -23,7 +23,7 @@ export const ProductWrapper = styled(motion.div)`
 	}
 
 	&:hover {
-		box-shadow: ${theme.layout.shadow};
+		box-shadow: ${({ theme }) => theme.layout.shadow};
 	}
 
 	button {
@@ -38,7 +38,7 @@ export const ProductWrapper = styled(motion.div)`
 
 export const Title = styled(Link)`
 	text-decoration: none;
-	color: initial;
+	color: ${({ theme }) => theme.colors.gray.$9};
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
@@ -56,7 +56,7 @@ export const Title = styled(Link)`
 
 	span {
 		display: block;
-		color: ${theme.colors.gray.$6};
+		color: ${({ theme }) => theme.colors.gray.$6};
 		font-size: 0.9rem;
 		font-weight: 400;
 	}
@@ -72,11 +72,16 @@ export const Title = styled(Link)`
 `;
 
 export const TopBlock = styled.div`
-	position: relative;
+	position: absolute;
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
-	width: 100%;
+
+	left: 0;
+	right: 0;
+	padding: 0 12px;
+	width: auto;
+
 	z-index: 10;
 
 	${Flexbox} {
@@ -84,6 +89,10 @@ export const TopBlock = styled.div`
 		right: -10px;
 		top: -10px;
 	}
+
+	${media.greaterThan('sm')`
+		padding: 0 16px;
+	`}
 `;
 
 export const Price = styled.div`
@@ -93,7 +102,6 @@ export const Price = styled.div`
 	${media.greaterThan('xs')`
         font-size: 1.6rem;
         font-weight: 100;
-        color: ${theme.colors.dark};
     `}
 `;
 
@@ -112,17 +120,6 @@ export const Tools = styled.div`
 	}
 `;
 
-export const RatingColor = styled.span`
-	color: ${({ children }) => {
-		if (children) {
-			if (Number(children) > 4) return theme.colors.success;
-			if (Number(children) < 4 && Number(children) > 3) return theme.colors.primary;
-			if (Number(children) < 3) return theme.colors.danger;
-		}
-		return theme.colors.dark;
-	}};
-`;
-
 export const Help = styled.button`
 	font-size: 12px;
 	font-weight: 600;
@@ -133,7 +130,7 @@ export const Help = styled.button`
 	cursor: pointer;
 	text-transform: uppercase;
 	margin-bottom: 10px;
-	color: ${theme.colors.gray.$5};
+	color: ${({ theme }) => theme.colors.gray.$5};
 `;
 
 export const Description = styled.div<{ open: boolean }>`
@@ -166,7 +163,7 @@ export const ImageWrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: ${theme.radius.borderRadius};
+	border-radius: ${({ theme }) => theme.radius.borderRadius};
 	overflow: hidden;
 
 	/* Стили для загрузчика */
@@ -202,6 +199,6 @@ export const NoPhotoWrapper = styled.div<{ $isLoading: boolean }>`
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-	color: ${theme.colors.gray.$4};
+	color: ${({ theme }) => theme.colors.gray.$3};
 	${fadeIn}
 `;

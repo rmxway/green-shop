@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { Container, Grid, LayerBlock } from '@/components/Layout';
 import { WrapperSticker } from '@/components/ui/Sticker/styled';
-import { defaultTheme as theme, fadeIn, media } from '@/theme';
+import { fadeIn, media } from '@/theme';
 
 export const Wrapper = styled(Container)`
 	position: relative;
@@ -21,7 +21,7 @@ export const Wrapper = styled(Container)`
 	.swiper {
 		margin-bottom: 20px;
 		border-radius: 10px;
-		border: 1px solid #ddd;
+		border: 1px solid ${({ theme }) => theme.colors.gray.$2};
 		min-width: 1%;
 
 		.swiper-slide {
@@ -29,7 +29,7 @@ export const Wrapper = styled(Container)`
 		}
 
 		.swiper-pagination-bullet-active {
-			background-color: ${theme.colors.dark};
+			background-color: ${({ theme }) => theme.colors.dark};
 		}
 
 		${media.greaterThan('sm')`
@@ -84,7 +84,7 @@ export const SideBlock = styled.div`
 	z-index: 1;
 
 	${LayerBlock} {
-		background-color: #fff;
+		background-color: ${({ theme }) => theme.colors.light};
 	}
 
 	${media.lessThan('mdD')`
@@ -175,7 +175,7 @@ export const NoPhotoContainer = styled(motion.div)`
 	align-items: center;
 
 	i.icofont-nophoto {
-		color: ${theme.colors.gray.$4};
+		color: ${({ theme }) => theme.colors.gray.$4};
 		display: flex;
 		align-items: center;
 		justify-content: center;

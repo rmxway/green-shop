@@ -18,8 +18,10 @@ const InputWrapper = styled.div<InputWrapperProps>`
 			width: 100%;
 			transition: 0.2s all;
 
+			color: ${theme.colors.gray.$9};
+
 			border: 1px solid #aaa;
-			background-color: #fff;
+			background-color: ${theme.colors.light};
 
 			${$error &&
 			css`
@@ -33,6 +35,9 @@ const InputWrapper = styled.div<InputWrapperProps>`
 				background-color: ${theme.colors.success}11;
 			`}
 
+			&::placeholder {
+				color: ${theme.colors.gray.$6};
+			}
 
 			&:active,
 			&:focus {

@@ -18,14 +18,14 @@ export const WrapperCategory = styled.div`
             margin-right: -10px;
 
             &:after {
-                ${hideGradientMixin(theme.colors.gray.$1, 'left')}
+                ${hideGradientMixin(theme.colors.gray.$2, 'left')}
                 left: 0;
                 height: 100%;
                 width: 30px;
             }
 
             &:before {
-                ${hideGradientMixin(theme.colors.gray.$1, 'right')}
+                ${hideGradientMixin(theme.colors.gray.$2, 'right')}
                 right: 0;
                 height: 100%;
                 width: 60px;
@@ -52,7 +52,7 @@ export const Category = styled.button<{ $active: boolean }>`
 		background-color: ${theme.colors.gray.$4};
 		font-weight: 600;
 		font-size: 0.8rem;
-		color: #333;
+		color: ${theme.colors.gray.$8};
 		white-space: nowrap;
 
 		&:hover {

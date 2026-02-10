@@ -7,6 +7,8 @@ const primary = '#fdd01a';
 const success = '#00ff9d';
 const danger = '#e54f5e';
 const label = '#5c323e';
+const light = '#fff';
+const link = '#2e2ee0';
 
 const colors: Colors = {
 	primary,
@@ -14,6 +16,8 @@ const colors: Colors = {
 	danger,
 	label,
 	dark: desaturate(0.9, darken(0.2, success)),
+	light,
+	link,
 	gray: {
 		$1: '#f3f3f3',
 		$2: '#e3e3e3',

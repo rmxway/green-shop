@@ -46,7 +46,7 @@ export const Item = styled(motion.div)`
 		display: flex;
 		align-items: stretch;
 		flex-direction: row;
-		background-color: #fff;
+		background-color: ${theme.colors.light};
 		width: 100%;
 		border-radius: ${theme.radius.borderRadius};
 		margin-bottom: 10px;
@@ -113,7 +113,7 @@ export const WrapperText = styled.div`
 	& button {
 		width: 20px;
 		height: 20px;
-		border: 1px solid ${({ theme }) => theme.colors.gray.$4};
+		border: 1px solid ${({ theme }) => theme.colors.gray.$6};
 		border-radius: 20px;
 		font-size: 1rem;
 
@@ -122,7 +122,7 @@ export const WrapperText = styled.div`
 		padding-bottom: 2px;
 		line-height: 1;
 		cursor: pointer;
-		color: ${({ theme }) => theme.colors.gray.$4};
+		color: ${({ theme }) => theme.colors.gray.$6};
 		transition: 0.2s;
 
 		&:disabled {
@@ -183,6 +183,7 @@ export const CountWrapper = styled.div`
 	font-size: 14px;
 	font-family: sans-serif;
 	margin-top: 10px;
+	color: ${({ theme }) => theme.colors.gray.$6};
 `;
 
 export const Count = styled(motion.div)`
@@ -218,7 +219,7 @@ export const Delete = styled.button`
 		width: 25px;
 		height: 25px;
 		cursor: pointer;
-		color: ${theme.colors.gray.$4};
+		color: ${theme.colors.gray.$6};
 		transition: 0.2s all;
 
 		i {

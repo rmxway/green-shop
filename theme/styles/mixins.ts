@@ -1,7 +1,7 @@
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 
-export const hideGradientMixin = (bg = '#fff', position = 'right') => css`
+export const hideGradientMixin = (bg: string, position = 'right') => css`
 	content: '';
 	position: absolute;
 	top: 0;

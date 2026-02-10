@@ -2,7 +2,7 @@ import { motion, Variants } from 'framer-motion';
 import styled from 'styled-components';
 
 import { Wrapper as WrapperPagination } from '@/components/Pagination/styled';
-import { defaultTheme as theme, media } from '@/theme';
+import { media } from '@/theme';
 
 export const contentVariant: Variants = {
 	hidden: {
@@ -47,8 +47,8 @@ export const Sidebar = styled(motion.div)`
 	margin-top: 30px;
 	flex-shrink: 0;
 	padding: 10px;
-	background-color: #fff;
-	border-radius: ${theme.radius.borderRadius};
+	background-color: ${({ theme }) => theme.colors.light};
+	border-radius: ${({ theme }) => theme.radius.borderRadius};
 
 	${media.greaterThan('sm')`
         position: sticky;
@@ -85,7 +85,7 @@ export const Total = styled.div`
 	span {
 		font-size: 1.6rem;
 		margin-left: 10px;
-		color: ${theme.colors.dark};
+		color: ${({ theme }) => theme.colors.gray.$8};
 	}
 
 	${media.lessThan('smD')`

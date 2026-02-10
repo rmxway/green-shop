@@ -1,12 +1,10 @@
 import { motion, Variants } from 'framer-motion';
 import { lighten } from 'polished';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import { defaultTheme as theme, media } from '@/theme';
+import { media } from '@/theme';
 
 import { CountStyled } from './Count/styled';
-
-const logoColor = theme.colors.success;
 
 export const StyledNavbar = styled(motion.div)`
 	position: fixed;
@@ -14,24 +12,26 @@ export const StyledNavbar = styled(motion.div)`
 	z-index: 100;
 	width: 100%;
 	height: 70px;
-	background-color: ${theme.colors.dark};
+	background-color: ${({ theme }) => theme.colors.dark};
 	text-align: center;
 	display: flex;
 	align-items: center;
-	border-bottom: 1px solid ${theme.colors.gray.$8};
+	transition:
+		background-color 0.3s ease,
+		border-color 0.3s ease;
 `;
 
 export const Logo = styled.div`
 	position: relative;
 	display: flex;
 	flex-shrink: 0;
-	border-radius: ${theme.radius.borderRadius};
+	border-radius: ${({ theme }) => theme.radius.borderRadius};
 	font-size: 2rem;
 	font-weight: 600;
-	color: ${logoColor};
+	color: ${({ theme }) => theme.colors.success};
 	line-height: 1;
 	padding: 0 0 0 10px;
-	border: 2px solid ${logoColor};
+	border: 2px solid ${({ theme }) => theme.colors.success};
 	overflow: hidden;
 
 	a {
@@ -46,11 +46,11 @@ export const Logo = styled.div`
 		text-transform: uppercase;
 		font-size: 12px;
 		text-align: left;
-		background-color: ${logoColor};
+		background-color: ${({ theme }) => theme.colors.success};
 		display: flex;
 		align-items: center;
 		padding: 2px 10px;
-		color: ${theme.colors.dark};
+		color: ${({ theme }) => theme.colors.dark};
 		margin-left: 10px;
 	}
 `;
@@ -62,59 +62,61 @@ export const Line = styled(motion.div)`
 	right: 0;
 	height: 2px;
 	border-radius: 3px;
-	background-color: ${theme.colors.dark};
+	background-color: ${({ theme }) => theme.colors.dark};
 `;
 
 export const NavbarItem = styled.div`
-	position: relative;
-	display: flex;
-	margin-right: 10px;
-	font-size: 1.3rem;
-	color: ${theme.colors.dark};
-	text-decoration: none;
-	margin-bottom: 10px;
-	border-bottom: 2px solid transparent;
-	transition: all 0.2s;
+	${({ theme }) => css`
+		position: relative;
+		display: flex;
+		margin-right: 10px;
+		font-size: 1.3rem;
+		color: ${theme.colors.dark};
+		text-decoration: none;
+		margin-bottom: 10px;
+		border-bottom: 2px solid transparent;
+		transition: all 0.2s;
 
-	a {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 1;
-	}
+		a {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+		}
 
-	&:hover {
-		color: ${lighten(0.2, theme.colors.dark)};
-	}
+		&:hover {
+			color: ${lighten(0.2, theme.colors.dark)};
+		}
 
-	&:last-child {
-		margin-right: 0;
-	}
+		&:last-child {
+			margin-right: 0;
+		}
 
-	${media.lessThan('mdD')`
-        ${CountStyled} {
-            background-color: ${theme.colors.dark};
-            border-color: ${lighten(0.28, theme.colors.success)};
-            color: #fff;
-        }
-    `}
+		${media.lessThan('mdD')`
+			${CountStyled} {
+				background-color: ${theme.colors.dark};
+				border-color: ${lighten(0.28, theme.colors.success)};
+				color: #fff;
+			}
+		`}
 
-	${media.greaterThan('md')`
-        margin-bottom: 0;
-        margin-right: 20px;
-        font-size: 1.1rem;
-        color: ${logoColor};
+		${media.greaterThan('md')`
+			margin-bottom: 0;
+			margin-right: 20px;
+			font-size: 1.1rem;
+			color: ${theme.colors.success};
 
-        &:hover {
-            color: ${lighten(0.3, theme.colors.success)};
-        }
+			&:hover {
+				color: ${lighten(0.3, theme.colors.success)};
+			}
 
-        ${Line} {
-            background-color: ${theme.colors.success};
-        }
-    `}
+			${Line} {
+				background-color: ${theme.colors.success};
+			}
+		`}
+	`}
 `;
 
 export const WrapperNavbarItems = styled(motion.div)`
@@ -127,7 +129,7 @@ export const WrapperNavbarItems = styled(motion.div)`
 	width: 100%;
 	height: 0;
 	overflow: hidden;
-	background-image: ${theme.gradients.softDark('210deg')};
+	background-image: ${({ theme }) => theme.gradients.softDark('210deg')};
 
 	${media.greaterThan('md')`
         position: relative;

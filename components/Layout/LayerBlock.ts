@@ -20,7 +20,7 @@ const LayerBlock = styled(motion.div)<LayerBlockProps>`
 	${({ theme, $mt, $shadow, $fixedPadding }) => css`
 		position: relative;
 		padding: ${$fixedPadding ? '20px' : 0};
-		background-color: #fffffff5;
+		background-color: ${theme.colors.light};
 		border-radius: ${theme.radius.borderRadius};
 		margin-top: ${$mt ? '30px' : 0};
 		margin-bottom: 20px;

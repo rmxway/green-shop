@@ -3,32 +3,40 @@
 exports[`ProductCard: Render card 1`] = `
 <div>
   <div
-    class="sc-23adcea0-0 hmWBlq"
+    class="sc-66a89e88-0 ihTQhj"
   >
     <div
-      class="sc-7d6be7a8-0 cAcidU"
+      class="sc-66a89e88-2 fmPrTi"
     >
-      -
-      0
-      %
-    </div>
-    <div
-      class="sc-36d40ead-0 ggNluZ"
-      title="Сравнить"
-    >
-      <i
-        class="icofont icofont-compare "
-        style="font-size: 22px;"
-      />
-    </div>
-    <div
-      class="sc-c10cfecb-0 gMuWOS"
-      title="В избранное"
-    >
-      <i
-        class="icofont icofont-favorite-fill "
-        style="font-size: 22px;"
-      />
+      <div
+        class="sc-8cdc8530-0 dRjqRC"
+      >
+        -
+        0
+        %
+      </div>
+      <div
+        class="sc-4ce1df50-0 cBGBhv"
+      >
+        <div
+          class="sc-7ffc078c-0 lgBlnU"
+          title="Сравнить"
+        >
+          <i
+            class="icofont icofont-compare "
+            style="font-size: 22px;"
+          />
+        </div>
+        <div
+          class="sc-9441d6f7-0 ddZIKD"
+          title="В избранное"
+        >
+          <i
+            class="icofont icofont-favorite-fill "
+            style="font-size: 22px;"
+          />
+        </div>
+      </div>
     </div>
     <a
       href="/product/6"
@@ -41,7 +49,7 @@ exports[`ProductCard: Render card 1`] = `
       </div>
     </a>
     <a
-      class="sc-23adcea0-1 bwGJEF"
+      class="sc-66a89e88-1 ixDzHQ"
       href="/product/6"
     >
       <div>
@@ -55,50 +63,50 @@ exports[`ProductCard: Render card 1`] = `
       class="sc-a1f6370b-0 iVxPvN"
     />
     <div
-      class="sc-23adcea0-3 ZwqPK"
+      class="sc-66a89e88-4 XuvAr"
     >
       <div
-        class="sc-be016b9b-0 fChJE"
+        class="sc-c92d385c-0 jcgrtG"
       >
         <div
-          class="sc-be016b9b-1 eUxXgn"
+          class="sc-c92d385c-1 eYhnmn"
         >
           <div
-            class="sc-be016b9b-2 fMeTbJ"
+            class="sc-c92d385c-2 eBrAFB"
           >
             <i
-              class="icofont icofont-star sc-be016b9b-3 ijouPp"
+              class="icofont icofont-star sc-c92d385c-3 kYpCjw"
             />
             <i
-              class="icofont icofont-star sc-be016b9b-3 ijouPp"
+              class="icofont icofont-star sc-c92d385c-3 kYpCjw"
             />
             <i
-              class="icofont icofont-star sc-be016b9b-3 ijouPp"
+              class="icofont icofont-star sc-c92d385c-3 kYpCjw"
             />
             <i
-              class="icofont icofont-star sc-be016b9b-3 ijouPp"
+              class="icofont icofont-star sc-c92d385c-3 kYpCjw"
             />
             <i
-              class="icofont icofont-star sc-be016b9b-3 ijouPp"
+              class="icofont icofont-star sc-c92d385c-3 kYpCjw"
             />
           </div>
           <div
-            class="sc-be016b9b-2 fQvyIM"
+            class="sc-c92d385c-2 fzPWHA"
           >
             <i
-              class="icofont icofont-star sc-be016b9b-3 dnUBbY"
+              class="icofont icofont-star sc-c92d385c-3 euxYsg"
             />
             <i
-              class="icofont icofont-star sc-be016b9b-3 dnUBbY"
+              class="icofont icofont-star sc-c92d385c-3 euxYsg"
             />
             <i
-              class="icofont icofont-star sc-be016b9b-3 dnUBbY"
+              class="icofont icofont-star sc-c92d385c-3 euxYsg"
             />
             <i
-              class="icofont icofont-star sc-be016b9b-3 dnUBbY"
+              class="icofont icofont-star sc-c92d385c-3 euxYsg"
             />
             <i
-              class="icofont icofont-star sc-be016b9b-3 dnUBbY"
+              class="icofont icofont-star sc-c92d385c-3 euxYsg"
             />
           </div>
         </div>
@@ -107,13 +115,13 @@ exports[`ProductCard: Render card 1`] = `
         </span>
       </div>
       <div
-        class="sc-23adcea0-2 eNKXkY"
+        class="sc-66a89e88-3 fnJQgH"
       >
         $49.99
       </div>
     </div>
     <button
-      class="sc-2f5681b9-0 iWtQNa"
+      class="sc-fe787f43-0 kgKDIJ"
     >
       В корзину
       <i

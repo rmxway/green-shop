@@ -1,15 +1,17 @@
 {
     "trash": 61697,
     "times-small": 61698,
-    "star": 61699,
-    "star-filled": 61700,
-    "nophoto": 61701,
-    "favorite": 61702,
-    "favorite-fill": 61703,
-    "compare": 61704,
-    "cart": 61705,
-    "arrow-up": 61706,
-    "arrow-right": 61707,
-    "arrow-left": 61708,
-    "arrow-down": 61709
+    "sun": 61699,
+    "star": 61700,
+    "star-filled": 61701,
+    "nophoto": 61702,
+    "moon": 61703,
+    "favorite": 61704,
+    "favorite-fill": 61705,
+    "compare": 61706,
+    "cart": 61707,
+    "arrow-up": 61708,
+    "arrow-right": 61709,
+    "arrow-left": 61710,
+    "arrow-down": 61711
 }

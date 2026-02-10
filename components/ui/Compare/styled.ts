@@ -23,13 +23,13 @@ export const WrapperCompare = styled.div<{ $active?: boolean }>`
 	}
 
 	&:hover {
-		color: ${({ theme }) => theme.colors.dark};
+		color: ${({ theme }) => theme.colors.gray.$8};
 	}
 
 	${({ $active, theme }) =>
 		$active &&
 		css`
-			color: ${theme.colors.dark};
+			color: ${theme.colors.gray.$8};
 			opacity: 1;
 		`}
 `;
