@@ -3,13 +3,13 @@
 exports[`ProductCard: Render card 1`] = `
 <div>
   <div
-    class="sc-6be2c059-0 fqHPwr"
+    class="sc-66a89e88-0 ihTQhj"
   >
     <div
-      class="sc-6be2c059-2 dsyWpz"
+      class="sc-66a89e88-2 fmPrTi"
     >
       <div
-        class="sc-7d6be7a8-0 cAcidU"
+        class="sc-8cdc8530-0 dRjqRC"
       >
         -
         0
@@ -19,7 +19,7 @@ exports[`ProductCard: Render card 1`] = `
         class="sc-4ce1df50-0 cBGBhv"
       >
         <div
-          class="sc-31c9585c-0 dGkCJJ"
+          class="sc-7ffc078c-0 lgBlnU"
           title="Сравнить"
         >
           <i
@@ -49,7 +49,7 @@ exports[`ProductCard: Render card 1`] = `
       </div>
     </a>
     <a
-      class="sc-6be2c059-1 kqmJsH"
+      class="sc-66a89e88-1 ixDzHQ"
       href="/product/6"
     >
       <div>
@@ -63,50 +63,50 @@ exports[`ProductCard: Render card 1`] = `
       class="sc-a1f6370b-0 iVxPvN"
     />
     <div
-      class="sc-6be2c059-4 gidrZe"
+      class="sc-66a89e88-4 XuvAr"
     >
       <div
-        class="sc-be016b9b-0 fChJE"
+        class="sc-c92d385c-0 jcgrtG"
       >
         <div
-          class="sc-be016b9b-1 eUxXgn"
+          class="sc-c92d385c-1 eYhnmn"
         >
           <div
-            class="sc-be016b9b-2 fMeTbJ"
+            class="sc-c92d385c-2 eBrAFB"
           >
             <i
-              class="icofont icofont-star sc-be016b9b-3 ijouPp"
+              class="icofont icofont-star sc-c92d385c-3 kYpCjw"
             />
             <i
-              class="icofont icofont-star sc-be016b9b-3 ijouPp"
+              class="icofont icofont-star sc-c92d385c-3 kYpCjw"
             />
             <i
-              class="icofont icofont-star sc-be016b9b-3 ijouPp"
+              class="icofont icofont-star sc-c92d385c-3 kYpCjw"
             />
             <i
-              class="icofont icofont-star sc-be016b9b-3 ijouPp"
+              class="icofont icofont-star sc-c92d385c-3 kYpCjw"
             />
             <i
-              class="icofont icofont-star sc-be016b9b-3 ijouPp"
+              class="icofont icofont-star sc-c92d385c-3 kYpCjw"
             />
           </div>
           <div
-            class="sc-be016b9b-2 fQvyIM"
+            class="sc-c92d385c-2 fzPWHA"
           >
             <i
-              class="icofont icofont-star sc-be016b9b-3 dnUBbY"
+              class="icofont icofont-star sc-c92d385c-3 euxYsg"
             />
             <i
-              class="icofont icofont-star sc-be016b9b-3 dnUBbY"
+              class="icofont icofont-star sc-c92d385c-3 euxYsg"
             />
             <i
-              class="icofont icofont-star sc-be016b9b-3 dnUBbY"
+              class="icofont icofont-star sc-c92d385c-3 euxYsg"
             />
             <i
-              class="icofont icofont-star sc-be016b9b-3 dnUBbY"
+              class="icofont icofont-star sc-c92d385c-3 euxYsg"
             />
             <i
-              class="icofont icofont-star sc-be016b9b-3 dnUBbY"
+              class="icofont icofont-star sc-c92d385c-3 euxYsg"
             />
           </div>
         </div>
@@ -115,13 +115,13 @@ exports[`ProductCard: Render card 1`] = `
         </span>
       </div>
       <div
-        class="sc-6be2c059-3 kMyHWW"
+        class="sc-66a89e88-3 fnJQgH"
       >
         $49.99
       </div>
     </div>
     <button
-      class="sc-2f5681b9-0 iWtQNa"
+      class="sc-fe787f43-0 kgKDIJ"
     >
       В корзину
       <i
