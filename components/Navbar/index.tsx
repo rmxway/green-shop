@@ -7,7 +7,7 @@ import { RenderNavbar } from './RenderNavbar';
 import { Logo, StyledNavbar } from './styled';
 
 export const Navbar = () => (
-	<StyledNavbar layoutRoot>
+	<StyledNavbar layoutRoot className="scroll-lock-compensate">
 		<Container>
 			<Flexbox $align="center" $nowrap $gap={10}>
 				<Logo>

@@ -8595,6 +8595,7 @@ __metadata:
     framer-motion: "npm:^12.29.2"
     jest: "npm:^30.2.0"
     jest-environment-jsdom: "npm:^30.2.0"
+    lenis: "npm:^1.3.17"
     lodash.debounce: "npm:^4.0.8"
     next: "npm:^16.1.6"
     next-redux-wrapper: "npm:^8.1.0"
@@ -10324,6 +10325,24 @@ __metadata:
   dependencies:
     language-subtag-registry: "npm:^0.3.20"
   checksum: 10/d3a7c14b694e67f519153d6df6cb200681648d38d623c3bfa9d6a66a5ec5493628acb88e9df5aceef3cf1902ab263a205e7d59ee4cf1d6bb67e707b83538bd6d
+  languageName: node
+  linkType: hard
+
+"lenis@npm:^1.3.17":
+  version: 1.3.17
+  resolution: "lenis@npm:1.3.17"
+  peerDependencies:
+    "@nuxt/kit": ">=3.0.0"
+    react: ">=17.0.0"
+    vue: ">=3.0.0"
+  peerDependenciesMeta:
+    "@nuxt/kit":
+      optional: true
+    react:
+      optional: true
+    vue:
+      optional: true
+  checksum: 10/897f1f85ef3e8e5d210004ac9b9b320d85cf5ff154ecba250209ac76ccbb606be5d4990210b704a5824ed61dcbceadffeaea39de87ac5cf87e7cefe8e4ba3ed0
   languageName: node
   linkType: hard
 

@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import { FC, UIEvent, useRef } from 'react';
 
 import { LinkIcon } from '@/components/ui/LinkIcon';
+import { useScrollLock } from '@/services';
 
 import { ModalBody, ModalHeader, ModalWindow, ModalWrapper, windowVariants, wrapperVariants } from './styled';
 
@@ -16,6 +17,8 @@ interface ModalProps {
 
 export const Modal: FC<ModalProps> = ({ open, onClose, title, children }) => {
 	const wrapperRef = useRef(null);
+
+	useScrollLock(open);
 
 	const handleClose = (e: UIEvent) => {
 		if (e.target === wrapperRef.current) onClose();

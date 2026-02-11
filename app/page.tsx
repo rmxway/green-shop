@@ -1,5 +1,6 @@
 'use client';
 
+import { motion, Transition } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -34,6 +35,23 @@ import {
 	SectionTitle,
 } from './styled';
 
+const fadeInUpVariants = {
+	hidden: { opacity: 0, y: 70 },
+	visible: { opacity: 1, y: 0 },
+};
+
+const fadeInUpTransition: Transition = {
+	duration: 0.8,
+	ease: 'backOut',
+};
+
+const viewportConfig = {
+	once: true,
+	amount: 0.2,
+	// margin — сдвиг зоны срабатывания (top right bottom left):
+	margin: '0px 0px -100px 0px',
+};
+
 export default function MainPage() {
 	return (
 		<main>
@@ -54,7 +72,13 @@ export default function MainPage() {
 			<Section $background>
 				<Container>
 					<FirstBlock>
-						<div>
+						<motion.div
+							initial="hidden"
+							whileInView="visible"
+							viewport={viewportConfig}
+							variants={fadeInUpVariants}
+							transition={fadeInUpTransition}
+						>
 							<AboutTitle>Современная платформа</AboutTitle>
 							<AboutText>
 								Создано с использованием Next.js и современных технологий для обеспечения лучшего
@@ -66,13 +90,12 @@ export default function MainPage() {
 									dummyjson.com API
 								</a>
 							</AboutTechText>
-						</div>
+						</motion.div>
 						<ImageLogos>
 							<Image
 								src={logos.src}
 								width={logos.width}
 								height={logos.height}
-								priority
 								quality={80}
 								alt="Технологии"
 							/>
@@ -82,12 +105,20 @@ export default function MainPage() {
 			</Section>
 			<Section>
 				<Container>
-					<SectionTitle>Вдохновлено природой</SectionTitle>
-					<SectionSubtitle>
-						Мы тщательно отбираем натуральные продукты, которые помогают вам жить в гармонии с природой.
-						Каждый товар создан с заботой об окружающей среде и вашем благополучии, предлагая только лучшее
-						из природы для вашего здоровья и красоты.
-					</SectionSubtitle>
+					<motion.div
+						initial="hidden"
+						whileInView="visible"
+						viewport={viewportConfig}
+						variants={fadeInUpVariants}
+						transition={fadeInUpTransition}
+					>
+						<SectionTitle>Вдохновлено природой</SectionTitle>
+						<SectionSubtitle>
+							Мы тщательно отбираем натуральные продукты, которые помогают вам жить в гармонии с природой.
+							Каждый товар создан с заботой об окружающей среде и вашем благополучии, предлагая только
+							лучшее из природы для вашего здоровья и красоты.
+						</SectionSubtitle>
+					</motion.div>
 				</Container>
 			</Section>
 
@@ -95,62 +126,86 @@ export default function MainPage() {
 			<Section $background>
 				<Container>
 					<NatureGallery>
-						<NatureBlock $reverse>
-							<NatureBlockContent>
-								<NatureBlockTitle>Лесная гармония</NatureBlockTitle>
-								<NatureBlockText>
-									Вдохновляясь величественными лесами, мы создаем продукты, которые несут в себе силу
-									и спокойствие природы. Наши натуральные ингредиенты собираются бережно, сохраняя
-									баланс экосистемы и предлагая вам чистоту первозданной природы.
-								</NatureBlockText>
-							</NatureBlockContent>
-							<NatureBlockImage>
-								<Image
-									src="/assets/img/nature/forest.jpg"
-									width={800}
-									height={600}
-									alt="Лесная природа"
-								/>
-							</NatureBlockImage>
-						</NatureBlock>
+						<motion.div
+							initial="hidden"
+							whileInView="visible"
+							viewport={viewportConfig}
+							variants={fadeInUpVariants}
+							transition={{ ...fadeInUpTransition, delay: 0 }}
+						>
+							<NatureBlock $reverse>
+								<NatureBlockContent>
+									<NatureBlockTitle>Лесная гармония</NatureBlockTitle>
+									<NatureBlockText>
+										Вдохновляясь величественными лесами, мы создаем продукты, которые несут в себе
+										силу и спокойствие природы. Наши натуральные ингредиенты собираются бережно,
+										сохраняя баланс экосистемы и предлагая вам чистоту первозданной природы.
+									</NatureBlockText>
+								</NatureBlockContent>
+								<NatureBlockImage>
+									<Image
+										src="/assets/img/nature/forest.jpg"
+										width={800}
+										height={600}
+										alt="Лесная природа"
+									/>
+								</NatureBlockImage>
+							</NatureBlock>
+						</motion.div>
 
-						<NatureBlock>
-							<NatureBlockContent>
-								<NatureBlockTitle>Горная чистота</NatureBlockTitle>
-								<NatureBlockText>
-									Высокогорные растения, растущие в чистейшем воздухе, становятся основой наших
-									премиальных продуктов. Мы заботимся о сохранении горных экосистем, выбирая только те
-									ингредиенты, которые не нарушают природный баланс.
-								</NatureBlockText>
-							</NatureBlockContent>
-							<NatureBlockImage>
-								<Image
-									src="/assets/img/nature/mountains.jpg"
-									width={600}
-									height={400}
-									alt="Горные пейзажи"
-								/>
-							</NatureBlockImage>
-						</NatureBlock>
+						<motion.div
+							initial="hidden"
+							whileInView="visible"
+							viewport={viewportConfig}
+							variants={fadeInUpVariants}
+							transition={{ ...fadeInUpTransition, delay: 0.1 }}
+						>
+							<NatureBlock>
+								<NatureBlockContent>
+									<NatureBlockTitle>Горная чистота</NatureBlockTitle>
+									<NatureBlockText>
+										Высокогорные растения, растущие в чистейшем воздухе, становятся основой наших
+										премиальных продуктов. Мы заботимся о сохранении горных экосистем, выбирая
+										только те ингредиенты, которые не нарушают природный баланс.
+									</NatureBlockText>
+								</NatureBlockContent>
+								<NatureBlockImage>
+									<Image
+										src="/assets/img/nature/mountains.jpg"
+										width={600}
+										height={400}
+										alt="Горные пейзажи"
+									/>
+								</NatureBlockImage>
+							</NatureBlock>
+						</motion.div>
 
-						<NatureBlock $reverse>
-							<NatureBlockContent>
-								<NatureBlockTitle>Цветущие луга</NatureBlockTitle>
-								<NatureBlockText>
-									Богатство цветущих лугов отражается в наших продуктах. Мы поддерживаем местных
-									производителей, которые выращивают растения традиционными методами, сохраняя
-									биоразнообразие и природную красоту наших полей.
-								</NatureBlockText>
-							</NatureBlockContent>
-							<NatureBlockImage>
-								<Image
-									src="/assets/img/nature/meadow.jpg"
-									width={600}
-									height={400}
-									alt="Цветущий луг"
-								/>
-							</NatureBlockImage>
-						</NatureBlock>
+						<motion.div
+							initial="hidden"
+							whileInView="visible"
+							viewport={viewportConfig}
+							variants={fadeInUpVariants}
+							transition={{ ...fadeInUpTransition, delay: 0.2 }}
+						>
+							<NatureBlock $reverse>
+								<NatureBlockContent>
+									<NatureBlockTitle>Цветущие луга</NatureBlockTitle>
+									<NatureBlockText>
+										Богатство цветущих лугов отражается в наших продуктах. Мы поддерживаем местных
+										производителей, которые выращивают растения традиционными методами, сохраняя
+										биоразнообразие и природную красоту наших полей.
+									</NatureBlockText>
+								</NatureBlockContent>
+								<NatureBlockImage>
+									<Image
+										src="/assets/img/nature/meadow.jpg"
+										width={600}
+										height={400}
+										alt="Цветущий луг"
+									/>
+								</NatureBlockImage>
+							</NatureBlock>
+						</motion.div>
 					</NatureGallery>
 				</Container>
 			</Section>
@@ -158,91 +213,116 @@ export default function MainPage() {
 			{/* Features Section */}
 			<Section>
 				<Container>
-					<SectionTitle>Возможности платформы</SectionTitle>
-					<FeaturesGrid>
-						<FeatureCardClean>
-							<h3>Поиск и фильтрация</h3>
-							<p>
-								Поиск по товарам с множеством фильтров и сортировкой по цене, популярности и категориям
-							</p>
-						</FeatureCardClean>
-						<FeatureCardClean>
-							<h3>Корзина и оформление</h3>
-							<p>Удобная корзина покупок с формой заказа и поддержкой избранных товаров</p>
-						</FeatureCardClean>
-						<FeatureCardClean>
-							<h3>Сравнение товаров</h3>
-							<p>Сравнение характеристик товаров в одной таблице для удобного выбора</p>
-						</FeatureCardClean>
-						<FeatureCardClean>
-							<h3>Светлая и тёмная тема</h3>
-							<p>
-								Переключение темы интерфейса с сохранением выбора. Storybook, Redux Toolkit, ESLint,
-								Prettier, Framer Motion
-							</p>
-						</FeatureCardClean>
-					</FeaturesGrid>
+					<motion.div
+						initial="hidden"
+						whileInView="visible"
+						viewport={viewportConfig}
+						variants={fadeInUpVariants}
+						transition={fadeInUpTransition}
+					>
+						<SectionTitle>Возможности платформы</SectionTitle>
+					</motion.div>
+					<motion.div
+						initial="hidden"
+						whileInView="visible"
+						viewport={viewportConfig}
+						variants={fadeInUpVariants}
+						transition={{ ...fadeInUpTransition, delay: 0.1 }}
+					>
+						<FeaturesGrid>
+							<FeatureCardClean>
+								<h3>Поиск и фильтрация</h3>
+								<p>
+									Поиск по товарам с множеством фильтров и сортировкой по цене, популярности и
+									категориям
+								</p>
+							</FeatureCardClean>
+							<FeatureCardClean>
+								<h3>Корзина и оформление</h3>
+								<p>Удобная корзина покупок с формой заказа и поддержкой избранных товаров</p>
+							</FeatureCardClean>
+							<FeatureCardClean>
+								<h3>Сравнение товаров</h3>
+								<p>Сравнение характеристик товаров в одной таблице для удобного выбора</p>
+							</FeatureCardClean>
+							<FeatureCardClean>
+								<h3>Светлая и тёмная тема</h3>
+								<p>
+									Переключение темы интерфейса с сохранением выбора. Storybook, Redux Toolkit, ESLint,
+									Prettier, Framer Motion
+								</p>
+							</FeatureCardClean>
+						</FeaturesGrid>
+					</motion.div>
 
-					<FeaturesGrid>
-						<FeatureCardClean>
-							<FeatureTitle>🌟 Основные функции:</FeatureTitle>
-							<FeatureList>
-								<FeatureItem>
-									<FeatureIcon>🔍</FeatureIcon> Поиск товаров
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>📊</FeatureIcon> Сортировка по цене и популярности
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>🏷️</FeatureIcon> Фильтрация по категориям
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>🛒</FeatureIcon> Корзина покупок
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>❤️</FeatureIcon> Система избранных товаров
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>⚖️</FeatureIcon> Сравнение товаров по характеристикам
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>🌗</FeatureIcon> Светлая и тёмная тема
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>📄</FeatureIcon> Пагинация для удобной навигации
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>📝</FeatureIcon> Форма оформления заказа
-								</FeatureItem>
-							</FeatureList>
-						</FeatureCardClean>
-						<FeatureCardClean>
-							<FeatureTitle>🛠️ Технический стек:</FeatureTitle>
-							<FeatureList>
-								<FeatureItem>
-									<FeatureIcon>⚛️</FeatureIcon> Next.js 14 с App Router
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>📦</FeatureIcon> Redux Toolkit (RTK) для состояния
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>📏</FeatureIcon> ESLint для качества кода
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>✨</FeatureIcon> Prettier для форматирования
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>🎭</FeatureIcon> Framer Motion для анимаций
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>📚</FeatureIcon> Storybook для разработки компонентов
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>🔗</FeatureIcon> Интеграция с dummyjson.com API
-								</FeatureItem>
-							</FeatureList>
-						</FeatureCardClean>
-					</FeaturesGrid>
+					<motion.div
+						initial="hidden"
+						whileInView="visible"
+						viewport={viewportConfig}
+						variants={fadeInUpVariants}
+						transition={{ ...fadeInUpTransition, delay: 0.2 }}
+					>
+						<FeaturesGrid>
+							<FeatureCardClean>
+								<FeatureTitle>🌟 Основные функции:</FeatureTitle>
+								<FeatureList>
+									<FeatureItem>
+										<FeatureIcon>🔍</FeatureIcon> Поиск товаров
+									</FeatureItem>
+									<FeatureItem>
+										<FeatureIcon>📊</FeatureIcon> Сортировка по цене и популярности
+									</FeatureItem>
+									<FeatureItem>
+										<FeatureIcon>🏷️</FeatureIcon> Фильтрация по категориям
+									</FeatureItem>
+									<FeatureItem>
+										<FeatureIcon>🛒</FeatureIcon> Корзина покупок
+									</FeatureItem>
+									<FeatureItem>
+										<FeatureIcon>❤️</FeatureIcon> Система избранных товаров
+									</FeatureItem>
+									<FeatureItem>
+										<FeatureIcon>⚖️</FeatureIcon> Сравнение товаров по характеристикам
+									</FeatureItem>
+									<FeatureItem>
+										<FeatureIcon>🌗</FeatureIcon> Светлая и тёмная тема
+									</FeatureItem>
+									<FeatureItem>
+										<FeatureIcon>📄</FeatureIcon> Пагинация для удобной навигации
+									</FeatureItem>
+									<FeatureItem>
+										<FeatureIcon>📝</FeatureIcon> Форма оформления заказа
+									</FeatureItem>
+								</FeatureList>
+							</FeatureCardClean>
+							<FeatureCardClean>
+								<FeatureTitle>🛠️ Технический стек:</FeatureTitle>
+								<FeatureList>
+									<FeatureItem>
+										<FeatureIcon>⚛️</FeatureIcon> Next.js 14 с App Router
+									</FeatureItem>
+									<FeatureItem>
+										<FeatureIcon>📦</FeatureIcon> Redux Toolkit (RTK) для состояния
+									</FeatureItem>
+									<FeatureItem>
+										<FeatureIcon>📏</FeatureIcon> ESLint для качества кода
+									</FeatureItem>
+									<FeatureItem>
+										<FeatureIcon>✨</FeatureIcon> Prettier для форматирования
+									</FeatureItem>
+									<FeatureItem>
+										<FeatureIcon>🎭</FeatureIcon> Framer Motion для анимаций
+									</FeatureItem>
+									<FeatureItem>
+										<FeatureIcon>📚</FeatureIcon> Storybook для разработки компонентов
+									</FeatureItem>
+									<FeatureItem>
+										<FeatureIcon>🔗</FeatureIcon> Интеграция с dummyjson.com API
+									</FeatureItem>
+								</FeatureList>
+							</FeatureCardClean>
+						</FeaturesGrid>
+					</motion.div>
 				</Container>
 			</Section>
 		</main>

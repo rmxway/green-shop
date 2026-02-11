@@ -132,10 +132,10 @@ export const WrapperNavbarItems = styled(motion.div)`
 	height: 0;
 	overflow: hidden;
 	overflow-y: auto;
+	scroll-behavior: smooth;
 	-webkit-overflow-scrolling: touch;
 	overscroll-behavior: contain;
 	touch-action: pan-y;
-	padding-bottom: 20px;
 	background-image: ${({ theme }) => theme.gradients.softDark('210deg')};
 	z-index: 99;
 
@@ -147,14 +147,14 @@ export const WrapperNavbarItems = styled(motion.div)`
 		opacity: 1;
 		background-image: none;
 		flex-direction: row;
+		align-items: flex-start;
 		justify-content: flex-end;
 	`}
 `;
 
 export const variantsWrapperNavbar: Variants = {
 	visible: {
-		height: 'calc(100vh - 70px)',
-		maxHeight: 'calc(100vh - 70px)',
+		height: '100%',
 		padding: '40px 20px',
 		opacity: 1,
 	},
@@ -162,5 +162,10 @@ export const variantsWrapperNavbar: Variants = {
 		height: 0,
 		padding: 0,
 		opacity: 0,
+	},
+	desktop: {
+		height: 'auto',
+		padding: 0,
+		opacity: 1,
 	},
 };
