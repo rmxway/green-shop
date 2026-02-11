@@ -8,7 +8,6 @@ import { fadeIn, media } from '@/theme';
 
 export const Wrapper = styled(Container)`
 	position: relative;
-
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 20px;
@@ -19,25 +18,27 @@ export const Wrapper = styled(Container)`
     `}
 
 	.swiper {
-		margin-bottom: 20px;
-		border-radius: 10px;
-		border: 1px solid ${({ theme }) => theme.colors.gray.$2};
-		min-width: 1%;
+		${({ theme }) => css`
+			margin-bottom: 20px;
+			border-radius: 10px;
+			border: 1px solid ${theme.colors.gray.$2};
+			min-width: 1%;
 
-		.swiper-slide {
-			height: 75vw;
-		}
+			.swiper-slide {
+				height: 75vw;
+			}
 
-		.swiper-pagination-bullet-active {
-			background-color: ${({ theme }) => theme.colors.dark};
-		}
+			.swiper-pagination-bullet-active {
+				background-color: ${theme.colors.dark};
+			}
 
-		${media.greaterThan('sm')`
-            .swiper-slide {
-                min-height: 450px;
-                max-height: 550px;
-            }
-        `}
+			${media.greaterThan('sm')`
+				.swiper-slide {
+					min-height: 450px;
+					max-height: 550px;
+				}
+			`}
+		`}
 	}
 
 	img {
@@ -108,7 +109,7 @@ export const SideBlock = styled.div`
 
 			${LayerBlock} {
 				position: sticky;
-				top: 20px;
+				top: 90px;
 			}
 		`}
 	`}

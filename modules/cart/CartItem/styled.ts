@@ -103,47 +103,47 @@ export const Content = styled(motion.div)`
 `;
 
 export const WrapperText = styled.div`
-	display: grid;
-	grid-auto-flow: dense;
-	gap: 5px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	grid-template-columns: 1fr;
+	${({ theme }) => css`
+		display: grid;
+		grid-auto-flow: dense;
+		gap: 5px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		grid-template-columns: 1fr;
 
-	& button {
-		width: 20px;
-		height: 20px;
-		border: 1px solid ${({ theme }) => theme.colors.gray.$6};
-		border-radius: 20px;
-		font-size: 1rem;
+		& button {
+			width: 20px;
+			height: 20px;
+			border: 1px solid ${theme.colors.gray.$6};
+			border-radius: 20px;
+			font-size: 1rem;
+			text-align: center;
+			padding: 0;
+			padding-bottom: 2px;
+			line-height: 1;
+			cursor: pointer;
+			color: ${theme.colors.gray.$6};
+			transition: 0.2s;
 
-		text-align: center;
-		padding: 0;
-		padding-bottom: 2px;
-		line-height: 1;
-		cursor: pointer;
-		color: ${({ theme }) => theme.colors.gray.$6};
-		transition: 0.2s;
+			&:disabled {
+				cursor: default;
+				pointer-events: none;
+				opacity: 0.6;
+			}
 
-		&:disabled {
-			cursor: default;
-			pointer-events: none;
-			opacity: 0.6;
+			&:hover {
+				border: 1px solid ${theme.colors.gray.$6};
+				color: ${theme.colors.gray.$6};
+			}
 		}
 
-		&:hover {
-			border: 1px solid ${({ theme }) => theme.colors.gray.$6};
-			color: ${({ theme }) => theme.colors.gray.$6};
-		}
-	}
-
-	${media.greaterThan('xs')`
-        grid-auto-flow:column;
-
-        align-items: center;
-        gap: 10px;
-        padding: 0;
-    `}
+		${media.greaterThan('xs')`
+			grid-auto-flow: column;
+			align-items: center;
+			gap: 10px;
+			padding: 0;
+		`}
+	`}
 `;
 
 export const Title = styled(Link)`

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { media } from '@/theme/media';
 
@@ -31,28 +31,30 @@ export const IconsWrapper = styled.div`
 `;
 
 export const IconButton = styled.div`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 40px;
-	height: 40px;
-	cursor: pointer;
-	z-index: 2;
+	${({ theme }) => css`
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+		z-index: 2;
 
-	.icofont {
-		font-size: 1.3rem;
-		color: ${({ theme }) => theme.colors.gray.$6};
-		transition: 0.2s;
-	}
+		.icofont {
+			font-size: 1.3rem;
+			color: ${theme.colors.gray.$6};
+			transition: 0.2s;
+		}
 
-	&:active {
-		transition: all 0.1s;
-		transform: scale(1.4);
-	}
+		&:active {
+			transition: all 0.1s;
+			transform: scale(1.4);
+		}
 
-	&:hover .icofont {
-		color: ${({ theme }) => theme.colors.danger};
-	}
+		&:hover .icofont {
+			color: ${theme.colors.danger};
+		}
+	`}
 `;
 
 export const ImageWrapper = styled.div`

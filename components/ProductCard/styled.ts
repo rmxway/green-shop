@@ -8,67 +8,71 @@ import { fadeIn } from '@/theme';
 import { media } from '@/theme/media';
 
 export const ProductWrapper = styled(motion.div)`
-	position: relative;
-	display: flex;
-	align-items: flex-start;
-	flex-direction: column;
-	padding: 12px;
-	border-radius: ${({ theme }) => theme.radius.borderRadius};
-	transition: 0.3s box-shadow;
-	background-color: ${({ theme }) => theme.colors.light};
+	${({ theme }) => css`
+		position: relative;
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		padding: 12px;
+		border-radius: ${theme.radius.borderRadius};
+		transition: 0.3s box-shadow;
+		background-color: ${theme.colors.light};
 
-	a {
-		width: 100%;
-		text-decoration: none;
-	}
+		a {
+			width: 100%;
+			text-decoration: none;
+		}
 
-	&:hover {
-		box-shadow: ${({ theme }) => theme.layout.shadow};
-	}
+		&:hover {
+			box-shadow: ${theme.layout.shadow};
+		}
 
-	button {
-		width: 100%;
-		align-self: center;
-	}
+		button {
+			width: 100%;
+			align-self: center;
+		}
 
-	${media.greaterThan('sm')`
-        padding: 16px;
-    `}
+		${media.greaterThan('sm')`
+			padding: 16px;
+		`}
+	`}
 `;
 
 export const Title = styled(Link)`
-	text-decoration: none;
-	color: ${({ theme }) => theme.colors.gray.$9};
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
+	${({ theme }) => css`
+		text-decoration: none;
+		color: ${theme.colors.gray.$9};
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
 
-	div {
-		line-height: 1.15;
-		-webkit-line-clamp: 2;
-		-webkit-box-orient: vertical;
-		overflow: hidden;
+		div {
+			line-height: 1.15;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
 
-		&::first-letter {
-			text-transform: uppercase;
+			&::first-letter {
+				text-transform: uppercase;
+			}
 		}
-	}
 
-	span {
-		display: block;
-		color: ${({ theme }) => theme.colors.gray.$6};
-		font-size: 0.9rem;
-		font-weight: 400;
-	}
+		span {
+			display: block;
+			color: ${theme.colors.gray.$6};
+			font-size: 0.9rem;
+			font-weight: 400;
+		}
 
-	&:hover {
-		text-decoration: underline;
-	}
+		&:hover {
+			text-decoration: underline;
+		}
 
-	${media.greaterThan('xs')`
-        font-size: 1rem;
-        font-weight: 600;
-    `}
+		${media.greaterThan('xs')`
+			font-size: 1rem;
+			font-weight: 600;
+		`}
+	`}
 `;
 
 export const TopBlock = styled.div`

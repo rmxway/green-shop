@@ -510,13 +510,15 @@ export const NotFoundText = styled.p`
 `;
 
 export const NotFoundPath = styled.code`
-	display: inline-block;
-	font-size: 0.875rem;
-	color: ${({ theme }) => theme.colors.gray.$6};
-	background: ${({ theme }) => theme.colors.gray.$2};
-	padding: 0.35rem 0.75rem;
-	border-radius: 6px;
-	margin-bottom: 2rem;
-	word-break: break-all;
-	max-width: 90%;
+	${({ theme }) => css`
+		display: inline-block;
+		font-size: 0.875rem;
+		color: ${theme.colors.gray.$6};
+		background: ${theme.colors.gray.$2};
+		padding: 0.35rem 0.75rem;
+		border-radius: 6px;
+		margin-bottom: 2rem;
+		word-break: break-all;
+		max-width: 90%;
+	`}
 `;

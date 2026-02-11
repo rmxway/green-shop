@@ -41,6 +41,6 @@ export const BurgerButtonStyled = styled(ButtonStyle)<{ $isOpen: boolean }>`
 	}
 
 	${media.greaterThan('md')`
-        display: none;
-    `}
+		display: none;
+	`}
 `;

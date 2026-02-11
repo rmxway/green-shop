@@ -1,5 +1,5 @@
 import { motion, Variants } from 'framer-motion';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Wrapper as WrapperPagination } from '@/components/Pagination/styled';
 import { media } from '@/theme';
@@ -43,24 +43,26 @@ export const Wrapper = styled(motion.div)`
 `;
 
 export const Sidebar = styled(motion.div)`
-	position: relative;
-	margin-top: 30px;
-	flex-shrink: 0;
-	padding: 10px;
-	background-color: ${({ theme }) => theme.colors.light};
-	border-radius: ${({ theme }) => theme.radius.borderRadius};
+	${({ theme }) => css`
+		position: relative;
+		margin-top: 30px;
+		flex-shrink: 0;
+		padding: 10px;
+		background-color: ${theme.colors.light};
+		border-radius: ${theme.radius.borderRadius};
 
-	${media.greaterThan('sm')`
-        position: sticky;
-        top: 20px;
-        padding: 20px;
-        margin-top: 0;
+		${media.greaterThan('sm')`
+			position: sticky;
+			top: 20px;
+			padding: 20px;
+			margin-top: 0;
+		`}
+
+		button {
+			margin-bottom: 0;
+			width: 100%;
+		}
 	`}
-
-	button {
-		margin-bottom: 0;
-		width: 100%;
-	}
 `;
 
 export const Title = styled.div`
@@ -70,8 +72,8 @@ export const Title = styled.div`
 	text-transform: uppercase;
 
 	${media.lessThan('smD')`
-        font-size: 20px;
-    `}
+		font-size: 20px;
+	`}
 `;
 
 export const Total = styled.div`
@@ -89,12 +91,12 @@ export const Total = styled.div`
 	}
 
 	${media.lessThan('smD')`
-        font-size: 20px;
+		font-size: 20px;
 
-        span {
-            font-size: 1.8rem
-        }
-    `}
+		span {
+			font-size: 1.8rem;
+		}
+	`}
 `;
 
 export default Cart;
