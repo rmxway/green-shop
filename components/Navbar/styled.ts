@@ -22,37 +22,39 @@ export const StyledNavbar = styled(motion.div)`
 `;
 
 export const Logo = styled.div`
-	position: relative;
-	display: flex;
-	flex-shrink: 0;
-	border-radius: ${({ theme }) => theme.radius.borderRadius};
-	font-size: 2rem;
-	font-weight: 600;
-	color: ${({ theme }) => theme.colors.success};
-	line-height: 1;
-	padding: 0 0 0 10px;
-	border: 2px solid ${({ theme }) => theme.colors.success};
-	overflow: hidden;
-
-	a {
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-	}
-
-	span {
-		text-transform: uppercase;
-		font-size: 12px;
-		text-align: left;
-		background-color: ${({ theme }) => theme.colors.success};
+	${({ theme }) => css`
+		position: relative;
 		display: flex;
-		align-items: center;
-		padding: 2px 10px;
-		color: ${({ theme }) => theme.colors.dark};
-		margin-left: 10px;
-	}
+		flex-shrink: 0;
+		border-radius: ${theme.radius.borderRadius};
+		font-size: 2rem;
+		font-weight: 600;
+		color: ${theme.colors.success};
+		line-height: 1;
+		padding: 0 0 0 10px;
+		border: 2px solid ${theme.colors.success};
+		overflow: hidden;
+
+		a {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		span {
+			text-transform: uppercase;
+			font-size: 12px;
+			text-align: left;
+			background-color: ${theme.colors.success};
+			display: flex;
+			align-items: center;
+			padding: 2px 10px;
+			color: ${theme.colors.dark};
+			margin-left: 10px;
+		}
+	`}
 `;
 
 export const Line = styled(motion.div)`
@@ -129,23 +131,30 @@ export const WrapperNavbarItems = styled(motion.div)`
 	width: 100%;
 	height: 0;
 	overflow: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	overscroll-behavior: contain;
+	touch-action: pan-y;
+	padding-bottom: 20px;
 	background-image: ${({ theme }) => theme.gradients.softDark('210deg')};
+	z-index: 99;
 
 	${media.greaterThan('md')`
-        position: relative;
-        top: 0;
-        height: auto;
-        overflow: visible;
-        opacity: 1;
-        background-image: none;
-        flex-direction: row;
-        justify-content: flex-end;
-    `}
+		position: relative;
+		top: 0;
+		height: auto;
+		overflow: visible;
+		opacity: 1;
+		background-image: none;
+		flex-direction: row;
+		justify-content: flex-end;
+	`}
 `;
 
 export const variantsWrapperNavbar: Variants = {
 	visible: {
-		height: '100%',
+		height: 'calc(100vh - 70px)',
+		maxHeight: 'calc(100vh - 70px)',
 		padding: '40px 20px',
 		opacity: 1,
 	},

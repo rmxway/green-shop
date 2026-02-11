@@ -10,8 +10,8 @@ export const Info = styled.div`
 	font-size: 0.9rem;
 
 	${media.greaterThan('xs')`
-        font-size: 1rem;
-    `}
+		font-size: 1rem;
+	`}
 `;
 
 export const Wrapper = styled(motion.div)<{ $isItems: boolean }>`
