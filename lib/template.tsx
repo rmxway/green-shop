@@ -4,6 +4,7 @@ import { memo, ReactNode } from 'react';
 
 import { Navbar } from '@/components';
 import { TopBlock } from '@/components/ui';
+import { SmoothScroll } from '@/lib/SmoothScroll';
 import { checkVersion } from '@/services/localStore';
 import { store } from '@/store';
 import { ReduxProvider } from '@/store/provider';
@@ -18,9 +19,11 @@ checkVersion(store);
 export const Template = memo(({ children }: TemplateProps) => (
 	<ReduxProvider>
 		<ThemeModeProvider>
-			<Navbar />
-			<TopBlock />
-			{children}
+			<SmoothScroll>
+				<Navbar />
+				<TopBlock />
+				{children}
+			</SmoothScroll>
 		</ThemeModeProvider>
 	</ReduxProvider>
 ));
