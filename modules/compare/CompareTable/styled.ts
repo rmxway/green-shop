@@ -41,7 +41,7 @@ export const HeaderCell = styled.th`
 		top: 0;
 		background: ${theme.colors.light};
 		border-right: 1px solid ${theme.colors.gray.$2};
-		width: 750px;
+		width: 1000px;
 		min-width: 250px;
 
 		${media.greaterThan('sm')`
