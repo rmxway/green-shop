@@ -8,6 +8,11 @@ export const base = css`
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
 	body {
 		overflow-y: scroll;
 		background-color: ${({ theme }) => theme.colors.gray.$2};
@@ -61,6 +66,19 @@ export const base = css`
 	ul {
 		list-style: disc;
 		padding: 5px 0 5px 25px;
+	}
+
+	html.scroll-lock {
+		overflow: hidden;
+	}
+
+	body.scroll-lock {
+		overflow: hidden;
+		padding-right: var(--scrollbar-width, 0);
+	}
+
+	body.scroll-lock .scroll-lock-compensate {
+		padding-right: var(--scrollbar-width, 0);
 	}
 `;
 

@@ -7,13 +7,15 @@ import { FavoriteNavItem } from '@/components/Navbar/FavoriteNavItem';
 import { NavLink } from '@/components/Navbar/NavLink';
 import { Line, variantsWrapperNavbar, WrapperNavbarItems } from '@/components/Navbar/styled';
 import { navbarItems } from '@/mock/navbar';
-import { useMediaQuery } from '@/services';
+import { useMediaQuery, useScrollLock } from '@/services';
 import { breakpoints } from '@/theme';
 
 export const RenderNavbar: FC = () => {
 	const [open, setOpen] = useState(false);
 
 	const match = useMediaQuery(breakpoints.md);
+	const isMenuOpen = Boolean(open && match);
+	useScrollLock(isMenuOpen);
 
 	const closeMenu = () => {
 		setOpen(false);
@@ -25,7 +27,7 @@ export const RenderNavbar: FC = () => {
 
 	const animatedMobileMenu = () => {
 		if (match) return open ? 'visible' : 'hidden';
-		return undefined;
+		return 'desktop';
 	};
 
 	const handleClickBurger = () => {
@@ -38,7 +40,7 @@ export const RenderNavbar: FC = () => {
 			<WrapperNavbarItems
 				variants={variantsWrapperNavbar}
 				animate={animatedMobileMenu()}
-				transition={{ duration: 0.3, type: 'spring', stiffness: 250, damping: 20 }}
+				transition={{ duration: 0.2, type: 'tween' }}
 			>
 				{navbarItems.map(({ title, url }) => {
 					const lineElement = (
