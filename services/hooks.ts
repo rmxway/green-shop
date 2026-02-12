@@ -1,16 +1,47 @@
 'use client';
 
+import { usePathname, useRouter } from 'next/navigation';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { TypedUseSelectorHook, useDispatch, useSelector, useStore } from 'react-redux';
 
 import type { AppDispatch, RootState, RootStore } from '@/store/types';
 import { currencyStore } from '@/store/types';
 
+import { SCROLL_DELAY_MS } from './constants';
 import { currencyUtils, DEFAULT_EXCHANGE_RATE_USD_TO_RUB, getExchangeRate } from './currencyService';
 
 export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 export const useAppStore: () => RootStore = useStore;
+
+/**
+ * Навигация со скроллом вверх: при переходе на другую страницу сначала скроллит вверх,
+ * затем выполняет переход (с задержкой для анимации).
+ */
+export const useNavigateWithScroll = () => {
+	const pathname = usePathname();
+	const router = useRouter();
+
+	return useCallback(
+		(url: string) => {
+			if (typeof window === 'undefined') return;
+
+			if (window.scrollY === 0) {
+				router.push(url);
+				return;
+			}
+
+			if (pathname === url) {
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+				return;
+			}
+
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+			setTimeout(() => router.push(url), SCROLL_DELAY_MS);
+		},
+		[pathname, router],
+	);
+};
 
 /**
  * @param isLoading флаг загрузки

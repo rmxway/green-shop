@@ -39,15 +39,23 @@ jest.mock('./ProductImage', () => ({
 	),
 }));
 
+const mockPush = jest.fn();
 // Моки для Redux и сервисов
 jest.mock('@/services', () => ({
 	useAppDispatch: jest.fn(),
 	useAppSelector: jest.fn(),
 	useCurrency: jest.fn(),
+	useNavigateWithScroll: () => (url: string) => mockPush(url),
 }));
 
 jest.mock('@/store/reducers/combineActions', () => ({
 	moveToCart: jest.fn(),
+}));
+
+jest.mock('next/navigation', () => ({
+	useRouter: () => ({ push: jest.fn() }),
+	usePathname: () => '/',
+	useServerInsertedHTML: () => {},
 }));
 
 jest.mock('@/store/reducers/products', () => ({
@@ -168,28 +176,43 @@ describe('ProductCard:', () => {
 		expect(screen.getByText('$49.99')).toBeInTheDocument();
 	});
 
-	it('displays "Добавлено" button when product is checked', () => {
+	it('displays "Корзина" button when product is checked', () => {
 		render(
 			<StyledComponentsRegistry isJest>
 				<ProductCard product={mockProductChecked} />
 			</StyledComponentsRegistry>,
 		);
 
-		const button = screen.getByRole('button', { name: /добавлено/i });
-		expect(button).toBeDisabled();
-		expect(button).toHaveTextContent('Добавлено');
+		const button = screen.getByRole('button', { name: /К\s*о\s*р\s*з\s*и\s*н\s*а/ });
+		expect(button).not.toBeDisabled();
+		expect(button).toHaveTextContent('Корзина');
 	});
 
-	it('displays "В корзину" button when product is not checked', () => {
+	it('navigates to /cart when cart button is clicked for checked product', async () => {
+		const user = userEvent.setup();
+
+		render(
+			<StyledComponentsRegistry isJest>
+				<ProductCard product={mockProductChecked} />
+			</StyledComponentsRegistry>,
+		);
+
+		const button = screen.getByRole('button', { name: /К\s*о\s*р\s*з\s*и\s*н\s*а/ });
+		await user.click(button);
+
+		expect(mockPush).toHaveBeenCalledWith('/cart');
+	});
+
+	it('displays "Добавить" button when product is not checked', () => {
 		render(
 			<StyledComponentsRegistry isJest>
 				<ProductCard product={mockProduct} />
 			</StyledComponentsRegistry>,
 		);
 
-		const button = screen.getByRole('button', { name: /в корзину/i });
+		const button = screen.getByRole('button', { name: /добавить/i });
 		expect(button).not.toBeDisabled();
-		expect(button).toHaveTextContent('В корзину');
+		expect(button).toHaveTextContent('Добавить');
 	});
 
 	it('calls moveToCart when add to cart button is clicked', async () => {
@@ -202,7 +225,7 @@ describe('ProductCard:', () => {
 			</StyledComponentsRegistry>,
 		);
 
-		const button = screen.getByRole('button', { name: /в корзину/i });
+		const button = screen.getByRole('button', { name: /добавить/i });
 		await user.click(button);
 
 		expect(mockMoveToCart).toHaveBeenCalledWith(6);

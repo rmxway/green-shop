@@ -13,5 +13,6 @@ export const CART_COUNT_PER_PAGE = 8;
 
 // UI constants
 export const SCROLL_THRESHOLD = 100;
+export const SCROLL_DELAY_MS = 350;
 
 export default currency;

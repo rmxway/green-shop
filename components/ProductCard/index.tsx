@@ -4,7 +4,7 @@ import { FC, memo } from 'react';
 
 import { Flexbox, RatingStars, Space } from '@/components/Layout';
 import { Button, Compare, Favorite, Sticker } from '@/components/ui';
-import { useAppDispatch, useAppSelector, useCurrency } from '@/services';
+import { useAppDispatch, useAppSelector, useCurrency, useNavigateWithScroll } from '@/services';
 import { moveToCart } from '@/store/reducers/combineActions';
 import { isInCompareMemoized } from '@/store/reducers/commonSelectors';
 import { toggleCompare } from '@/store/reducers/compare';
@@ -22,12 +22,17 @@ interface ProductCardProps extends MotionProps {
 export const ProductCard: FC<ProductCardProps> = memo(
 	({ product, ...props }) => {
 		const link = `/product/${product.id}`;
+		const navigateTo = useNavigateWithScroll();
 		const dispatch = useAppDispatch();
 		const { formatPriceWithSymbol } = useCurrency();
 		const isInCompare = useAppSelector((state) => isInCompareMemoized(compareStore(state), product.id));
 
-		const handleChecked = () => {
-			moveToCart(Number(product.id));
+		const handleCartClick = () => {
+			if (product.checked) {
+				navigateTo('/cart');
+			} else {
+				moveToCart(Number(product.id));
+			}
 		};
 
 		const handleToggleCompare = () => {
@@ -60,8 +65,13 @@ export const ProductCard: FC<ProductCardProps> = memo(
 					<RatingStars rating={product.rating ? Number(product.rating) : 0} />
 					<Price>{formatPriceWithSymbol(product.price)}</Price>
 				</Tools>
-				<Button $primary icon="cart" onClick={handleChecked} disabled={product.checked}>
-					{product.checked ? 'Добавлено' : 'В корзину'}
+				<Button
+					$primary
+					animate={product.checked}
+					icon={product.checked ? 'arrow-right-line' : 'cart'}
+					onClick={handleCartClick}
+				>
+					{product.checked ? 'Корзина' : 'Добавить'}
 				</Button>
 			</ProductWrapper>
 		);

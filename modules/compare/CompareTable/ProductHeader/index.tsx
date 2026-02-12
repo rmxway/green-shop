@@ -3,7 +3,7 @@ import { FC, memo, useCallback, useEffect, useState } from 'react';
 
 import { Favorite, Icon, Loader } from '@/components/ui';
 import { Button } from '@/components/ui/Button';
-import { useAppDispatch, useAppSelector, useCurrency, useLoadTimeout } from '@/services';
+import { useAppDispatch, useAppSelector, useCurrency, useLoadTimeout, useNavigateWithScroll } from '@/services';
 import { moveToCart } from '@/store/reducers/combineActions';
 import { productMemoized } from '@/store/reducers/commonSelectors';
 import { removeFromCompare } from '@/store/reducers/compare';
@@ -35,9 +35,14 @@ export const ProductHeader: FC<ProductHeaderProps> = memo(({ product }) => {
 	// Получаем актуальное состояние товара из store
 	const actualProduct =
 		useAppSelector((state) => productMemoized(productsStore(state), String(product.id))) || product;
+	const navigateTo = useNavigateWithScroll();
 
-	const handleAddToCart = () => {
-		moveToCart(Number(product.id));
+	const handleCartClick = () => {
+		if (actualProduct.checked) {
+			navigateTo('/cart');
+		} else {
+			moveToCart(Number(product.id));
+		}
 	};
 
 	const handleToggleFavorite = () => {
@@ -104,8 +109,8 @@ export const ProductHeader: FC<ProductHeaderProps> = memo(({ product }) => {
 			<ProductPrice>{formatPriceWithSymbol(product.price)}</ProductPrice>
 
 			<ActionsWrapper>
-				<Button $primary icon="cart" onClick={handleAddToCart} disabled={actualProduct.checked}>
-					{actualProduct.checked ? 'Добавлено' : 'В корзину'}
+				<Button $primary icon={actualProduct.checked ? 'arrow-right-line' : 'cart'} onClick={handleCartClick}>
+					{actualProduct.checked ? 'Корзина' : 'В корзину'}
 				</Button>
 			</ActionsWrapper>
 		</ProductHeaderWrapper>
