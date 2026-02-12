@@ -123,7 +123,7 @@ exports[`ProductCard: Render card 1`] = `
     <button
       class="sc-fe787f43-0 kgKDIJ"
     >
-      В корзину
+      Добавить
       <i
         class="icofont icofont-cart "
       />

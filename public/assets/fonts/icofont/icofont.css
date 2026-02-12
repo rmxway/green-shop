@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'icofont';
-    src: url(".//icofont.ttf?e50d59240438c76eb637745eb4e65655") format("truetype"),
-url(".//icofont.woff?e50d59240438c76eb637745eb4e65655") format("woff"),
-url(".//icofont.woff2?e50d59240438c76eb637745eb4e65655") format("woff2");
+    src: url(".//icofont.ttf?029befe0fa230776e8790be3c323fd4b") format("truetype"),
+url(".//icofont.woff?029befe0fa230776e8790be3c323fd4b") format("woff"),
+url(".//icofont.woff2?029befe0fa230776e8790be3c323fd4b") format("woff2");
 }
 
 i[class^='icofont-']:before, i[class*=' icofont-']:before {
@@ -56,9 +56,12 @@ i[class^='icofont-']:before, i[class*=' icofont-']:before {
 .icofont-arrow-right:before {
     content: '\f10d';
 }
-.icofont-arrow-left:before {
+.icofont-arrow-right-line:before {
     content: '\f10e';
 }
-.icofont-arrow-down:before {
+.icofont-arrow-left:before {
     content: '\f10f';
+}
+.icofont-arrow-down:before {
+    content: '\f110';
 }

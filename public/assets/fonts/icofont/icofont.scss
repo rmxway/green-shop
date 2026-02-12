@@ -4,9 +4,9 @@ $icofont-font: 'icofont';
 
 @font-face {
     font-family: $icofont-font;
-    src: url(".//icofont.ttf?e50d59240438c76eb637745eb4e65655") format("truetype"),
-url(".//icofont.woff?e50d59240438c76eb637745eb4e65655") format("woff"),
-url(".//icofont.woff2?e50d59240438c76eb637745eb4e65655") format("woff2");
+    src: url(".//icofont.ttf?029befe0fa230776e8790be3c323fd4b") format("truetype"),
+url(".//icofont.woff?029befe0fa230776e8790be3c323fd4b") format("woff"),
+url(".//icofont.woff2?029befe0fa230776e8790be3c323fd4b") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -38,8 +38,9 @@ $icofont-map: (
     'cart': '\f10b',
     'arrow-up': '\f10c',
     'arrow-right': '\f10d',
-    'arrow-left': '\f10e',
-    'arrow-down': '\f10f',
+    'arrow-right-line': '\f10e',
+    'arrow-left': '\f10f',
+    'arrow-down': '\f110',
 );
 
 .icofont-trash:before {
@@ -80,6 +81,9 @@ $icofont-map: (
 }
 .icofont-arrow-right:before {
     content: map.get($icofont-map, 'arrow-right');
+}
+.icofont-arrow-right-line:before {
+    content: map.get($icofont-map, 'arrow-right-line');
 }
 .icofont-arrow-left:before {
     content: map.get($icofont-map, 'arrow-left');
