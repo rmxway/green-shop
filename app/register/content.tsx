@@ -125,11 +125,11 @@ export const RegisterContent = () => {
 								{...fieldProps}
 							/>
 
-							{error && <ErrorMessage error={error} />}
-
 							<Button type="submit" $primary disabled={!isValid || isLoading} style={{ width: '100%' }}>
 								{isLoading ? 'Регистрация...' : 'Зарегистрироваться'}
 							</Button>
+
+							{error && <ErrorMessage error={error} />}
 
 							<p style={{ textAlign: 'center', marginTop: '10px' }}>
 								Уже есть аккаунт? <Link href="/login">Войти</Link>

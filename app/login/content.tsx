@@ -85,11 +85,11 @@ export const LoginContent = () => {
 								{...fieldProps}
 							/>
 
-							{error && <ErrorMessage error={error} />}
-
 							<Button type="submit" $primary disabled={!isValid || isLoading} style={{ width: '100%' }}>
 								{isLoading ? 'Вход...' : 'Войти'}
 							</Button>
+
+							{error && <ErrorMessage error={error} />}
 
 							<p style={{ textAlign: 'center', marginTop: '10px' }}>
 								Нет аккаунта? <Link href="/register">Зарегистрироваться</Link>
