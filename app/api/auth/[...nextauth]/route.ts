@@ -72,6 +72,7 @@ export const authOptions: AuthOptions = {
 	},
 	session: {
 		strategy: 'jwt',
+		maxAge: Number(process.env.SESSION_MAX_AGE_MINUTES ?? 10) * 60, // минуты неактивности → выход после закрытия вкладки
 	},
 	secret: process.env.NEXTAUTH_SECRET,
 };
