@@ -1,4 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useSession } from 'next-auth/react';
+import { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { Flexbox } from '@/components/Layout';
@@ -13,14 +15,28 @@ import { InputOrder, SwitchOrder } from './helpers';
 import { WrapperForm, WrapperStepForm } from './styled';
 
 export const StepForm = () => {
+	const { data: session } = useSession();
+
 	const {
 		register,
 		handleSubmit,
 		formState: { errors, isValid, dirtyFields },
+		setValue,
 	} = useForm<OrderFields>({
 		resolver: yupResolver(schemaOrder),
 		mode: 'all',
 	});
+
+	useEffect(() => {
+		if (session?.user) {
+			if (session.user.name) setValue('name', session.user.name, { shouldValidate: true });
+			if (session.user.surname) setValue('surname', session.user.surname, { shouldValidate: true });
+			if (session.user.email) setValue('email', session.user.email, { shouldValidate: true });
+			if (session.user.phone) setValue('phone', session.user.phone, { shouldValidate: true });
+			if (session.user.deliveryAddress)
+				setValue('deliveryAddress', session.user.deliveryAddress, { shouldValidate: true });
+		}
+	}, [session, setValue]);
 
 	const inputCommonProps = { errors, register, dirtyFields };
 
@@ -42,7 +58,10 @@ export const StepForm = () => {
 			<Button $margins icon="cart" onClick={prevStep} style={{ width: 'fit-content' }}>
 				Назад
 			</Button>
-			<h4>Проверьте свои товары и заполните обязательные поля.</h4>
+			<h4>
+				Проверьте свои товары и заполните обязательные поля.
+				{session?.user && ' (Данные заполнены из вашего профиля)'}
+			</h4>
 			<br />
 			<WrapperStepForm $gap={40} $templateColumns="1fr 1fr">
 				<WrapperForm>
@@ -69,7 +88,7 @@ export const StepForm = () => {
 								name="deliveryAddress"
 								{...inputCommonProps}
 							/>
-							<SwitchOrder label="До квартиры" name="toApartment" {...inputCommonProps} />
+							<SwitchOrder label="До квартиры" name="toApartment" noSuccess {...inputCommonProps} />
 							<Button type="submit" $primary disabled={!isValid}>
 								Отправить
 							</Button>

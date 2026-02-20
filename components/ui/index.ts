@@ -3,6 +3,7 @@ export * from './Compare';
 export * from './CurrencySwitcher';
 export * from './ErrorMessage';
 export * from './Favorite';
+export * from './FormField';
 export * from './GradientText';
 export * from './Icon';
 export * from './Input';

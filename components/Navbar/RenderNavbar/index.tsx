@@ -1,5 +1,6 @@
 import { FC, useMemo, useState } from 'react';
 
+import { AccountNavItem } from '@/components/Navbar/AccountNavItem';
 import { BurgerButton } from '@/components/Navbar/BurgerButton';
 import { CartNavItem } from '@/components/Navbar/CartNavItem';
 import { CompareNavItem } from '@/components/Navbar/CompareNavItem';
@@ -81,6 +82,12 @@ export const RenderNavbar: FC = () => {
 						</NavLink>
 					);
 				})}
+				<AccountNavItem onClose={closeMenu}>
+					<Line
+						layoutId="underline"
+						transition={{ duration: 0.2, type: 'spring', stiffness: 200, damping: 22 }}
+					/>
+				</AccountNavItem>
 			</WrapperNavbarItems>
 		</>
 	);

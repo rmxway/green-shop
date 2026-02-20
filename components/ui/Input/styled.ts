@@ -11,8 +11,9 @@ const InputWrapper = styled.div<InputWrapperProps>`
 		position: relative;
 		padding-bottom: ${$noPaddings ? 0 : '10px'};
 		background-color: none;
+		width: 100%;
 
-		input[type='text'] {
+		input {
 			padding: 11px 16px 10px;
 			border-radius: ${theme.radius.borderRadius};
 			width: 100%;

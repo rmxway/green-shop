@@ -84,16 +84,17 @@ export const ButtonStyle = styled.button<Props>`
 			if ($primary) return mixinButton(theme.colors.primary, '#6d410a');
 			if ($white) return mixinButton('#fff', theme.colors.dark);
 			if ($dark) return mixinButton(theme.colors.dark, theme.colors.success);
-			if ($w100)
-				return css`
-					width: 100%;
-				`;
-			if ($inactive)
-				return css`
-					pointer-events: none;
-				`;
 			return null;
 		}}
+
+		${$w100 &&
+		css`
+			width: 100%;
+		`}
+		${$inactive &&
+		css`
+			pointer-events: none;
+		`}
 
 		i {
 			position: relative;

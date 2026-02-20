@@ -5,6 +5,7 @@ import { memo, ReactNode } from 'react';
 
 import { Navbar } from '@/components';
 import { TopBlock } from '@/components/ui';
+import { SessionProvider } from '@/lib/SessionProvider';
 import { SmoothScroll } from '@/lib/SmoothScroll';
 import { checkVersion } from '@/services/localStore';
 import { store } from '@/store';
@@ -21,18 +22,16 @@ export const Template = memo(({ children }: TemplateProps) => {
 	const pathname = usePathname();
 	const isHomePage = pathname === '/';
 
-	const content = (
-		<>
-			<Navbar />
-			<TopBlock />
-			{children}
-		</>
-	);
-
 	return (
-		<ReduxProvider>
-			<ThemeModeProvider>{isHomePage ? <SmoothScroll>{content}</SmoothScroll> : content}</ThemeModeProvider>
-		</ReduxProvider>
+		<SessionProvider>
+			<ReduxProvider>
+				<ThemeModeProvider>
+					<Navbar />
+					<TopBlock />
+					{isHomePage ? <SmoothScroll>{children}</SmoothScroll> : children}
+				</ThemeModeProvider>
+			</ReduxProvider>
+		</SessionProvider>
 	);
 });
 
