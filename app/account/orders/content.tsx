@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 
 import { Container } from '@/components/Layout';
 import { Button, ErrorMessage, Loader } from '@/components/ui';
+import { useCurrency } from '@/services';
 import { Order } from '@/types/auth';
 
 import {
@@ -39,6 +40,7 @@ const statusLabels: Record<Order['status'], string> = {
 export const OrdersContent = () => {
 	const { data: session, status } = useSession();
 	const router = useRouter();
+	const { formatPriceWithSymbol } = useCurrency();
 	const [orders, setOrders] = useState<Order[]>([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState('');
@@ -125,16 +127,16 @@ export const OrdersContent = () => {
 									<OrderItemDetails>
 										<OrderItemTitle>{item.title}</OrderItemTitle>
 										<p>
-											{item.count} шт. × ${item.price / item.count}
+											{item.count} шт. × {formatPriceWithSymbol(item.price / item.count)}
 										</p>
 									</OrderItemDetails>
-									<OrderItemPrice>${item.price}</OrderItemPrice>
+									<OrderItemPrice>{formatPriceWithSymbol(item.price)}</OrderItemPrice>
 								</OrderItem>
 							))}
 						</OrderItems>
 
 						<OrderTotal>
-							<strong>Итого:</strong> ${order.totalPrice.toFixed(2)}
+							<strong>Итого:</strong> {formatPriceWithSymbol(order.totalPrice)}
 						</OrderTotal>
 
 						<OrderDetails>

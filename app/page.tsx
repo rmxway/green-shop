@@ -24,6 +24,7 @@ import {
 	HeroSubtitle,
 	HeroTitle,
 	ImageLogos,
+	MotionInView,
 	NatureBlock,
 	NatureBlockContent,
 	NatureBlockImage,
@@ -48,31 +49,51 @@ const fadeInUpTransition: Transition = {
 const viewportConfig = {
 	once: true,
 	amount: 0.2,
-	// margin — сдвиг зоны срабатывания (top right bottom left):
 	margin: '0px 0px -100px 0px',
 };
+
+const staggerDelay = 0.1;
 
 export default function MainPage() {
 	return (
 		<main>
 			{/* Hero Section */}
 			<HeroSection>
-				<HeroTitle>Природа в каждом продукте</HeroTitle>
-				<HeroSubtitle>
-					Современный интернет-магазин натуральной продукции с широким ассортиментом органических товаров для
-					здорового образа жизни
-				</HeroSubtitle>
-				<br />
-				<Link href="/products">
-					<Button $white>Посмотреть товары</Button>
-				</Link>
+				<motion.div
+					initial="hidden"
+					animate="visible"
+					variants={{
+						visible: {
+							transition: {
+								staggerChildren: staggerDelay,
+								delayChildren: 0.1,
+							},
+						},
+					}}
+				>
+					<motion.div variants={fadeInUpVariants} transition={fadeInUpTransition}>
+						<HeroTitle>Природа в каждом продукте</HeroTitle>
+					</motion.div>
+					<motion.div variants={fadeInUpVariants} transition={fadeInUpTransition}>
+						<HeroSubtitle>
+							Современный интернет-магазин натуральной продукции с широким ассортиментом органических
+							товаров для здорового образа жизни
+						</HeroSubtitle>
+					</motion.div>
+					<br />
+					<motion.div variants={fadeInUpVariants} transition={fadeInUpTransition}>
+						<Link href="/products">
+							<Button $white>Посмотреть товары</Button>
+						</Link>
+					</motion.div>
+				</motion.div>
 			</HeroSection>
 
 			{/* About Section */}
 			<Section $background>
 				<Container>
 					<FirstBlock>
-						<motion.div
+						<MotionInView
 							initial="hidden"
 							whileInView="visible"
 							viewport={viewportConfig}
@@ -90,7 +111,7 @@ export default function MainPage() {
 									dummyjson.com API
 								</a>
 							</AboutTechText>
-						</motion.div>
+						</MotionInView>
 						<ImageLogos>
 							<Image
 								src={logos.src}
@@ -105,7 +126,7 @@ export default function MainPage() {
 			</Section>
 			<Section>
 				<Container>
-					<motion.div
+					<MotionInView
 						initial="hidden"
 						whileInView="visible"
 						viewport={viewportConfig}
@@ -118,7 +139,7 @@ export default function MainPage() {
 							Каждый товар создан с заботой об окружающей среде и вашем благополучии, предлагая только
 							лучшее из природы для вашего здоровья и красоты.
 						</SectionSubtitle>
-					</motion.div>
+					</MotionInView>
 				</Container>
 			</Section>
 
@@ -126,7 +147,7 @@ export default function MainPage() {
 			<Section $background>
 				<Container>
 					<NatureGallery>
-						<motion.div
+						<MotionInView
 							initial="hidden"
 							whileInView="visible"
 							viewport={viewportConfig}
@@ -151,14 +172,14 @@ export default function MainPage() {
 									/>
 								</NatureBlockImage>
 							</NatureBlock>
-						</motion.div>
+						</MotionInView>
 
-						<motion.div
+						<MotionInView
 							initial="hidden"
 							whileInView="visible"
 							viewport={viewportConfig}
 							variants={fadeInUpVariants}
-							transition={{ ...fadeInUpTransition, delay: 0.1 }}
+							transition={{ ...fadeInUpTransition, delay: staggerDelay * 2 }}
 						>
 							<NatureBlock>
 								<NatureBlockContent>
@@ -178,14 +199,14 @@ export default function MainPage() {
 									/>
 								</NatureBlockImage>
 							</NatureBlock>
-						</motion.div>
+						</MotionInView>
 
-						<motion.div
+						<MotionInView
 							initial="hidden"
 							whileInView="visible"
 							viewport={viewportConfig}
 							variants={fadeInUpVariants}
-							transition={{ ...fadeInUpTransition, delay: 0.2 }}
+							transition={{ ...fadeInUpTransition, delay: staggerDelay * 4 }}
 						>
 							<NatureBlock $reverse>
 								<NatureBlockContent>
@@ -205,7 +226,7 @@ export default function MainPage() {
 									/>
 								</NatureBlockImage>
 							</NatureBlock>
-						</motion.div>
+						</MotionInView>
 					</NatureGallery>
 				</Container>
 			</Section>
@@ -213,7 +234,7 @@ export default function MainPage() {
 			{/* Features Section */}
 			<Section>
 				<Container>
-					<motion.div
+					<MotionInView
 						initial="hidden"
 						whileInView="visible"
 						viewport={viewportConfig}
@@ -221,108 +242,126 @@ export default function MainPage() {
 						transition={fadeInUpTransition}
 					>
 						<SectionTitle>Возможности платформы</SectionTitle>
-					</motion.div>
-					<motion.div
-						initial="hidden"
-						whileInView="visible"
-						viewport={viewportConfig}
-						variants={fadeInUpVariants}
-						transition={{ ...fadeInUpTransition, delay: 0.1 }}
-					>
-						<FeaturesGrid>
-							<FeatureCardClean>
-								<h3>Поиск и фильтрация</h3>
-								<p>
-									Поиск по товарам с множеством фильтров и сортировкой по цене, популярности и
-									категориям
-								</p>
-							</FeatureCardClean>
-							<FeatureCardClean>
-								<h3>Корзина и оформление</h3>
-								<p>Удобная корзина покупок с формой заказа и поддержкой избранных товаров</p>
-							</FeatureCardClean>
-							<FeatureCardClean>
-								<h3>Сравнение товаров</h3>
-								<p>Сравнение характеристик товаров в одной таблице для удобного выбора</p>
-							</FeatureCardClean>
-							<FeatureCardClean>
-								<h3>Светлая и тёмная тема</h3>
-								<p>
-									Переключение темы интерфейса с сохранением выбора. Storybook, Redux Toolkit, ESLint,
-									Prettier, Framer Motion
-								</p>
-							</FeatureCardClean>
-						</FeaturesGrid>
-					</motion.div>
-
-					<motion.div
-						initial="hidden"
-						whileInView="visible"
-						viewport={viewportConfig}
-						variants={fadeInUpVariants}
-						transition={{ ...fadeInUpTransition, delay: 0.2 }}
-					>
-						<FeaturesGrid>
-							<FeatureCardClean>
-								<FeatureTitle>🌟 Основные функции:</FeatureTitle>
-								<FeatureList>
-									<FeatureItem>
-										<FeatureIcon>🔍</FeatureIcon> Поиск товаров
-									</FeatureItem>
-									<FeatureItem>
-										<FeatureIcon>📊</FeatureIcon> Сортировка по цене и популярности
-									</FeatureItem>
-									<FeatureItem>
-										<FeatureIcon>🏷️</FeatureIcon> Фильтрация по категориям
-									</FeatureItem>
-									<FeatureItem>
-										<FeatureIcon>🛒</FeatureIcon> Корзина покупок
-									</FeatureItem>
-									<FeatureItem>
-										<FeatureIcon>❤️</FeatureIcon> Система избранных товаров
-									</FeatureItem>
-									<FeatureItem>
-										<FeatureIcon>⚖️</FeatureIcon> Сравнение товаров по характеристикам
-									</FeatureItem>
-									<FeatureItem>
-										<FeatureIcon>🌗</FeatureIcon> Светлая и тёмная тема
-									</FeatureItem>
-									<FeatureItem>
-										<FeatureIcon>📄</FeatureIcon> Пагинация для удобной навигации
-									</FeatureItem>
-									<FeatureItem>
-										<FeatureIcon>📝</FeatureIcon> Форма оформления заказа
-									</FeatureItem>
-								</FeatureList>
-							</FeatureCardClean>
-							<FeatureCardClean>
-								<FeatureTitle>🛠️ Технический стек:</FeatureTitle>
-								<FeatureList>
-									<FeatureItem>
-										<FeatureIcon>⚛️</FeatureIcon> Next.js 14 с App Router
-									</FeatureItem>
-									<FeatureItem>
-										<FeatureIcon>📦</FeatureIcon> Redux Toolkit (RTK) для состояния
-									</FeatureItem>
-									<FeatureItem>
-										<FeatureIcon>📏</FeatureIcon> ESLint для качества кода
-									</FeatureItem>
-									<FeatureItem>
-										<FeatureIcon>✨</FeatureIcon> Prettier для форматирования
-									</FeatureItem>
-									<FeatureItem>
-										<FeatureIcon>🎭</FeatureIcon> Framer Motion для анимаций
-									</FeatureItem>
-									<FeatureItem>
-										<FeatureIcon>📚</FeatureIcon> Storybook для разработки компонентов
-									</FeatureItem>
-									<FeatureItem>
-										<FeatureIcon>🔗</FeatureIcon> Интеграция с dummyjson.com API
-									</FeatureItem>
-								</FeatureList>
-							</FeatureCardClean>
-						</FeaturesGrid>
-					</motion.div>
+					</MotionInView>
+					<FeaturesGrid>
+						<FeatureCardClean
+							initial="hidden"
+							whileInView="visible"
+							viewport={viewportConfig}
+							variants={fadeInUpVariants}
+							transition={{ ...fadeInUpTransition, delay: 0 }}
+						>
+							<h3>Поиск и фильтрация</h3>
+							<p>
+								Поиск по товарам с множеством фильтров и сортировкой по цене, популярности и категориям
+							</p>
+						</FeatureCardClean>
+						<FeatureCardClean
+							initial="hidden"
+							whileInView="visible"
+							viewport={viewportConfig}
+							variants={fadeInUpVariants}
+							transition={fadeInUpTransition}
+						>
+							<h3>Корзина и оформление</h3>
+							<p>Удобная корзина покупок с формой заказа и поддержкой избранных товаров</p>
+						</FeatureCardClean>
+						<FeatureCardClean
+							initial="hidden"
+							whileInView="visible"
+							viewport={viewportConfig}
+							variants={fadeInUpVariants}
+							transition={fadeInUpTransition}
+						>
+							<h3>Сравнение товаров</h3>
+							<p>Сравнение характеристик товаров в одной таблице для удобного выбора</p>
+						</FeatureCardClean>
+						<FeatureCardClean
+							initial="hidden"
+							whileInView="visible"
+							viewport={viewportConfig}
+							variants={fadeInUpVariants}
+							transition={fadeInUpTransition}
+						>
+							<h3>Светлая и тёмная тема</h3>
+							<p>
+								Переключение темы интерфейса с сохранением выбора. Storybook, Redux Toolkit, ESLint,
+								Prettier, Framer Motion
+							</p>
+						</FeatureCardClean>
+					</FeaturesGrid>
+					<FeaturesGrid>
+						<FeatureCardClean
+							initial="hidden"
+							whileInView="visible"
+							viewport={viewportConfig}
+							variants={fadeInUpVariants}
+							transition={fadeInUpTransition}
+						>
+							<FeatureTitle>🌟 Основные функции:</FeatureTitle>
+							<FeatureList>
+								<FeatureItem>
+									<FeatureIcon>🔍</FeatureIcon> Поиск товаров
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>📊</FeatureIcon> Сортировка по цене и популярности
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>🏷️</FeatureIcon> Фильтрация по категориям
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>🛒</FeatureIcon> Корзина покупок
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>❤️</FeatureIcon> Система избранных товаров
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>⚖️</FeatureIcon> Сравнение товаров по характеристикам
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>🌗</FeatureIcon> Светлая и тёмная тема
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>📄</FeatureIcon> Пагинация для удобной навигации
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>📝</FeatureIcon> Форма оформления заказа
+								</FeatureItem>
+							</FeatureList>
+						</FeatureCardClean>
+						<FeatureCardClean
+							initial="hidden"
+							whileInView="visible"
+							viewport={viewportConfig}
+							variants={fadeInUpVariants}
+							transition={fadeInUpTransition}
+						>
+							<FeatureTitle>🛠️ Технический стек:</FeatureTitle>
+							<FeatureList>
+								<FeatureItem>
+									<FeatureIcon>⚛️</FeatureIcon> Next.js 14 с App Router
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>📦</FeatureIcon> Redux Toolkit (RTK) для состояния
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>📏</FeatureIcon> ESLint для качества кода
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>✨</FeatureIcon> Prettier для форматирования
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>🎭</FeatureIcon> Framer Motion для анимаций
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>📚</FeatureIcon> Storybook для разработки компонентов
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>🔗</FeatureIcon> Интеграция с dummyjson.com API
+								</FeatureItem>
+							</FeatureList>
+						</FeatureCardClean>
+					</FeaturesGrid>
 				</Container>
 			</Section>
 		</main>

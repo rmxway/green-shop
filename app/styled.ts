@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { darken } from 'polished';
 import styled, { css } from 'styled-components';
 
@@ -407,6 +408,11 @@ export const SectionSubtitle = styled.p`
 	`}
 `;
 
+export const MotionInView = styled(motion.div)`
+	opacity: 0;
+	transform: translateY(70px);
+`;
+
 export const FeaturesGrid = styled.div`
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -422,7 +428,10 @@ export const FeaturesGrid = styled.div`
 	`}
 `;
 
-export const FeatureCardClean = styled.div`
+export const FeatureCardClean = styled(motion.div)`
+	opacity: 0;
+	transform: translateY(70px);
+
 	${({ theme }) => {
 		const { colors } = theme;
 		return css`

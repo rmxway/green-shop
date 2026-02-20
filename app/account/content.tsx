@@ -85,7 +85,7 @@ export const AccountContent = () => {
 				<AccountGrid>
 					<AccountCard>
 						<h3>Информация о профиле</h3>
-						<Flexbox $gap={15} style={{ marginTop: '20px' }}>
+						<Flexbox $gap={15} $direction="column" style={{ marginTop: '20px' }}>
 							<InfoItem>
 								<InfoLabel>Email:</InfoLabel>
 								<InfoValue>{session.user.email}</InfoValue>
@@ -114,16 +114,18 @@ export const AccountContent = () => {
 									<InfoValue>{session.user.deliveryAddress}</InfoValue>
 								</InfoItem>
 							)}
-						</Flexbox>
-					</AccountCard>
-
-					<AccountCard>
-						<h3>Быстрые действия</h3>
-						<Flexbox $gap={15} style={{ marginTop: '20px' }}>
-							{ordersButton}
-							<Button $w100 onClick={handleLogout}>
-								Выйти
-							</Button>
+							<Flexbox
+								$gap={15}
+								$align="flex-start"
+								className="btns"
+								$nowrap
+								style={{ marginTop: '20px' }}
+							>
+								{ordersButton}
+								<Button $w100 onClick={handleLogout}>
+									Выйти
+								</Button>
+							</Flexbox>
 						</Flexbox>
 					</AccountCard>
 				</AccountGrid>

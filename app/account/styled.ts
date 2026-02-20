@@ -17,10 +17,10 @@ export const AccountTitle = styled.h1`
 
 export const WelcomeCard = styled.div`
 	padding: 30px;
-	background: ${({ theme }) => theme.gradients.dark()};
+	background: ${({ theme }) => theme.gradients.main()};
 	border-radius: 12px;
 	margin-bottom: 30px;
-	color: ${({ theme }) => theme.colors.light};
+	color: ${({ theme }) => theme.colors.dark};
 
 	h2 {
 		font-size: 24px;
@@ -54,6 +54,12 @@ export const AccountCard = styled.div`
 		margin-bottom: 10px;
 		color: ${({ theme }) => theme.colors.gray.$9};
 	}
+
+	${media.lessThan('medium')`	
+		.btns {
+			flex-wrap: wrap;
+		}
+	`}
 `;
 
 export const InfoItem = styled.div`
