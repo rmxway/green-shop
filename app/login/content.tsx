@@ -3,8 +3,8 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { signIn } from 'next-auth/react';
-import { useState } from 'react';
+import { signIn, useSession } from 'next-auth/react';
+import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { InferType, object, string } from 'yup';
 
@@ -28,12 +28,14 @@ const InputLogin = createFormField<LoginFields>(Input);
 
 export const LoginContent = () => {
 	const router = useRouter();
+	const { status } = useSession();
 	const [error, setError] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
 
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors, isValid, dirtyFields },
 	} = useForm<LoginFields>({
 		resolver: yupResolver(loginSchema),
@@ -41,6 +43,12 @@ export const LoginContent = () => {
 	});
 
 	const fieldProps = { errors, register, dirtyFields };
+
+	useEffect(() => {
+		if (status === 'unauthenticated') {
+			reset();
+		}
+	}, [status, reset]);
 
 	const onSubmit: SubmitHandler<LoginFields> = async (data) => {
 		try {
