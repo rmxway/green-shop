@@ -6,10 +6,37 @@ export const OrdersSection = styled.section`
 	min-height: 70vh;
 `;
 
-export const OrdersTitle = styled.h1`
-	font-size: 36px;
-	font-weight: 700;
-	color: ${({ theme }) => theme.colors.gray.$9};
+export const OrdersLoaderWrapper = styled.div`
+	min-height: 70vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
+
+export const OrdersHeader = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 30px;
+`;
+
+export const OrderEmptyState = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	padding: 60px 0;
+`;
+
+export const OrderDetails = styled.div`
+	margin-top: 15px;
+	font-size: 14px;
+	color: ${({ theme }) => theme.colors.gray.$6};
+
+	p {
+		margin: 0 0 4px;
+	}
 `;
 
 export const OrderCard = styled.div`

@@ -12,7 +12,7 @@ import { Container, Flexbox } from '@/components/Layout';
 import { Button, createFormField, ErrorMessage, Input } from '@/components/ui';
 import { emailRegex } from '@/services/regexes';
 
-import { AuthCard, AuthForm, AuthTitle } from './styled';
+import { AuthCard, AuthForm, AuthLinkText, AuthWrapper } from './styled';
 
 const loginSchema = object({
 	email: string()
@@ -71,9 +71,8 @@ export const LoginContent = () => {
 
 	return (
 		<Container>
-			<Flexbox $justify="center" $align="center" style={{ minHeight: '70vh', padding: '40px 0' }}>
+			<AuthWrapper>
 				<AuthCard>
-					<AuthTitle>Вход в аккаунт</AuthTitle>
 					<AuthForm onSubmit={handleSubmit(onSubmit)}>
 						<Flexbox $gap={20}>
 							<InputLogin label="Email" placeholder="example@mail.com" name="email" {...fieldProps} />
@@ -85,19 +84,19 @@ export const LoginContent = () => {
 								{...fieldProps}
 							/>
 
-							<Button type="submit" $primary disabled={!isValid || isLoading} style={{ width: '100%' }}>
+							<Button type="submit" $primary $w100 disabled={!isValid || isLoading}>
 								{isLoading ? 'Вход...' : 'Войти'}
 							</Button>
 
 							{error && <ErrorMessage error={error} />}
 
-							<p style={{ textAlign: 'center', marginTop: '10px' }}>
+							<AuthLinkText>
 								Нет аккаунта? <Link href="/register">Зарегистрироваться</Link>
-							</p>
+							</AuthLinkText>
 						</Flexbox>
 					</AuthForm>
 				</AuthCard>
-			</Flexbox>
+			</AuthWrapper>
 		</Container>
 	);
 };

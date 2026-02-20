@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { InferType, object, string } from 'yup';
 
-import { AuthCard, AuthForm, AuthTitle } from '@/app/login/styled';
+import { AuthCard, AuthForm, AuthLinkText, AuthWrapper } from '@/app/login/styled';
 import { Container, Flexbox } from '@/components/Layout';
 import { Button, createFormField, ErrorMessage, Input } from '@/components/ui';
 import { emailRegex, phoneRegex } from '@/services/regexes';
@@ -91,9 +91,8 @@ export const RegisterContent = () => {
 
 	return (
 		<Container>
-			<Flexbox $justify="center" $align="center" style={{ minHeight: '70vh', padding: '40px 0' }}>
+			<AuthWrapper>
 				<AuthCard>
-					<AuthTitle>Регистрация</AuthTitle>
 					<AuthForm onSubmit={handleSubmit(onSubmit)}>
 						<Flexbox $gap={10}>
 							<InputRegister
@@ -125,19 +124,19 @@ export const RegisterContent = () => {
 								{...fieldProps}
 							/>
 
-							<Button type="submit" $primary disabled={!isValid || isLoading} style={{ width: '100%' }}>
+							<Button type="submit" $primary $w100 disabled={!isValid || isLoading}>
 								{isLoading ? 'Регистрация...' : 'Зарегистрироваться'}
 							</Button>
 
 							{error && <ErrorMessage error={error} />}
 
-							<p style={{ textAlign: 'center', marginTop: '10px' }}>
+							<AuthLinkText>
 								Уже есть аккаунт? <Link href="/login">Войти</Link>
-							</p>
+							</AuthLinkText>
 						</Flexbox>
 					</AuthForm>
 				</AuthCard>
-			</Flexbox>
+			</AuthWrapper>
 		</Container>
 	);
 };

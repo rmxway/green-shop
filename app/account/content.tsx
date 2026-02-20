@@ -13,7 +13,6 @@ import {
 	AccountCard,
 	AccountGrid,
 	AccountSection,
-	AccountTitle,
 	InfoItem,
 	InfoLabel,
 	InfoValue,
@@ -78,8 +77,6 @@ export const AccountContent = () => {
 	return (
 		<Container>
 			<AccountSection>
-				<AccountTitle>Личный кабинет</AccountTitle>
-
 				<WelcomeCard>
 					<h2>Добро пожаловать, {session.user.name || session.user.email}! 👋</h2>
 					<p>Управляйте своим профилем и просматривайте историю заказов</p>

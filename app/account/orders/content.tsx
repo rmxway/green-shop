@@ -5,13 +5,15 @@ import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 
-import { Container, Flexbox } from '@/components/Layout';
+import { Container } from '@/components/Layout';
 import { Button, ErrorMessage, Loader } from '@/components/ui';
 import { Order } from '@/types/auth';
 
 import {
 	OrderCard,
 	OrderDate,
+	OrderDetails,
+	OrderEmptyState,
 	OrderHeader,
 	OrderId,
 	OrderItem,
@@ -20,9 +22,10 @@ import {
 	OrderItemPrice,
 	OrderItems,
 	OrderItemTitle,
+	OrdersHeader,
+	OrdersLoaderWrapper,
 	OrdersSection,
 	OrderStatus,
-	OrdersTitle,
 	OrderTotal,
 } from './styled';
 
@@ -72,9 +75,9 @@ export const OrdersContent = () => {
 	if (status === 'loading' || loading) {
 		return (
 			<Container>
-				<Flexbox $justify="center" $align="center" style={{ minHeight: '70vh' }}>
+				<OrdersLoaderWrapper>
 					<Loader loading />
-				</Flexbox>
+				</OrdersLoaderWrapper>
 			</Container>
 		);
 	}
@@ -86,28 +89,21 @@ export const OrdersContent = () => {
 	return (
 		<Container>
 			<OrdersSection>
-				<Flexbox $justify="space-between" $align="center" style={{ marginBottom: '30px' }}>
-					<OrdersTitle>Мои заказы</OrdersTitle>
+				<OrdersHeader>
 					<Link href="/account">
 						<Button>Назад в профиль</Button>
 					</Link>
-				</Flexbox>
+				</OrdersHeader>
 
 				{error && <ErrorMessage error={error} />}
 
 				{!loading && orders.length === 0 && !error && (
-					<Flexbox
-						$justify="center"
-						$align="center"
-						$direction="column"
-						$gap={20}
-						style={{ padding: '60px 0' }}
-					>
+					<OrderEmptyState>
 						<h3>У вас пока нет заказов</h3>
 						<Link href="/products">
 							<Button $primary>Перейти к покупкам</Button>
 						</Link>
-					</Flexbox>
+					</OrderEmptyState>
 				)}
 
 				{orders.map((order) => (
@@ -141,7 +137,7 @@ export const OrdersContent = () => {
 							<strong>Итого:</strong> ${order.totalPrice.toFixed(2)}
 						</OrderTotal>
 
-						<div style={{ marginTop: '15px', fontSize: '14px', color: '#666' }}>
+						<OrderDetails>
 							<p>
 								<strong>Получатель:</strong> {order.name} {order.surname}
 							</p>
@@ -152,7 +148,7 @@ export const OrdersContent = () => {
 								<strong>Адрес доставки:</strong> {order.deliveryAddress}
 								{order.toApartment && ' (до квартиры)'}
 							</p>
-						</div>
+						</OrderDetails>
 					</OrderCard>
 				))}
 			</OrdersSection>
