@@ -82,12 +82,10 @@ export const RegisterContent = () => {
 
 			if (signInResult?.error) {
 				setError('Регистрация прошла успешно, но вход не выполнен. Попробуйте войти вручную.');
-				reset();
 				setTimeout(() => router.push('/login'), 2000);
 				return;
 			}
 
-			reset();
 			router.push('/account');
 			router.refresh();
 		} catch (err) {

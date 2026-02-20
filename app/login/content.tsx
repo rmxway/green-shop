@@ -66,7 +66,6 @@ export const LoginContent = () => {
 				return;
 			}
 
-			reset();
 			router.push('/account');
 			router.refresh();
 		} catch (err) {
