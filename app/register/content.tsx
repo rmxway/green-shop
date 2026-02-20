@@ -3,8 +3,8 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { signIn } from 'next-auth/react';
-import { useState } from 'react';
+import { signIn, useSession } from 'next-auth/react';
+import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { InferType, object, string } from 'yup';
 
@@ -34,12 +34,14 @@ const InputRegister = createFormField<RegisterFields>(Input);
 
 export const RegisterContent = () => {
 	const router = useRouter();
+	const { status } = useSession();
 	const [error, setError] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
 
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors, isValid, dirtyFields },
 	} = useForm<RegisterFields>({
 		resolver: yupResolver(registerSchema),
@@ -47,6 +49,12 @@ export const RegisterContent = () => {
 	});
 
 	const fieldProps = { errors, register, dirtyFields };
+
+	useEffect(() => {
+		if (status === 'unauthenticated') {
+			reset();
+		}
+	}, [status, reset]);
 
 	const onSubmit: SubmitHandler<RegisterFields> = async (data) => {
 		try {
@@ -74,10 +82,12 @@ export const RegisterContent = () => {
 
 			if (signInResult?.error) {
 				setError('Регистрация прошла успешно, но вход не выполнен. Попробуйте войти вручную.');
+				reset();
 				setTimeout(() => router.push('/login'), 2000);
 				return;
 			}
 
+			reset();
 			router.push('/account');
 			router.refresh();
 		} catch (err) {
