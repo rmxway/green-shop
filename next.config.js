@@ -3,6 +3,9 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
+	env: {
+		NEXTAUTH_URL: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000',
+	},
 	reactStrictMode: process.env.NODE_ENV === 'production',
 	images: {
 		unoptimized: true,

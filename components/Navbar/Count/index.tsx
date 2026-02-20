@@ -31,7 +31,13 @@ export const Count = memo(({ count }: CountProps) => {
 	return (
 		<AnimatePresence>
 			{count && (
-				<CountStyled layout animate={controls} variants={countVariants} initial="hidden" exit="hidden">
+				<CountStyled
+					layout
+					animate={controls}
+					variants={countVariants}
+					initial={count ? 'visible' : 'hidden'}
+					exit="hidden"
+				>
 					{count}
 				</CountStyled>
 			)}

@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 
 import { Container } from '@/components/Layout';
 import { GradientText } from '@/components/ui/GradientText';
-import { navbarItems } from '@/mock/navbar';
+import { navbarItems, pageTitles } from '@/mock/navbar';
 import { useAppSelector } from '@/services';
 import { productsStore } from '@/store/types';
 
@@ -18,7 +18,10 @@ export const TopBlock = () => {
 	const $isFont = isMain;
 
 	const getTitle = useMemo(
-		() => titleStore || navbarItems.find((item) => item.url === pathname)?.title,
+		() =>
+			titleStore ||
+			navbarItems.find((item) => item.url === pathname)?.title ||
+			pageTitles[pathname],
 		[pathname, titleStore],
 	);
 

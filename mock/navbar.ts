@@ -27,4 +27,12 @@ export const navbarItems: NavbarItemType[] = [
 	},
 ];
 
+/** Заголовки для страниц без пункта в Navbar (аккаунт, авторизация). Используется в TopBlock. */
+export const pageTitles: Record<string, string> = {
+	'/account': 'Личный кабинет',
+	'/account/orders': 'Мои заказы',
+	'/login': 'Вход',
+	'/register': 'Регистрация',
+};
+
 export default navbarItems;
