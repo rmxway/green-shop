@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const AuthWrapper = styled.div`
@@ -8,7 +9,7 @@ export const AuthWrapper = styled.div`
 	align-items: center;
 `;
 
-export const AuthCard = styled.div`
+export const AuthCard = styled(motion.div)`
 	width: 100%;
 	max-width: 450px;
 	padding: 40px;

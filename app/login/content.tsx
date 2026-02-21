@@ -10,6 +10,7 @@ import { InferType, object, string } from 'yup';
 
 import { Container, Flexbox } from '@/components/Layout';
 import { Button, createFormField, ErrorMessage, Input } from '@/components/ui';
+import { fadeVariant } from '@/lib/pageAnimations';
 import { emailRegex } from '@/services/regexes';
 
 import { AuthCard, AuthForm, AuthLinkText, AuthWrapper } from './styled';
@@ -80,7 +81,11 @@ export const LoginContent = () => {
 	return (
 		<Container>
 			<AuthWrapper>
-				<AuthCard>
+				<AuthCard
+					initial="hidden"
+					animate="visible"
+					variants={fadeVariant(0)}
+				>
 					<AuthForm onSubmit={handleSubmit(onSubmit)}>
 						<Flexbox $gap={20}>
 							<InputLogin label="Email" placeholder="example@mail.com" name="email" {...fieldProps} />

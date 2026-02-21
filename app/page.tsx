@@ -1,11 +1,12 @@
 'use client';
 
-import { motion, Transition } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { Container } from '@/components/Layout';
 import { Button } from '@/components/ui';
+import { fadeInUpTransition, fadeInUpVariants } from '@/lib/pageAnimations';
 import logos from '@/public/assets/img/logos.jpg';
 
 import {
@@ -35,16 +36,6 @@ import {
 	SectionSubtitle,
 	SectionTitle,
 } from './styled';
-
-const fadeInUpVariants = {
-	hidden: { opacity: 0, y: 70 },
-	visible: { opacity: 1, y: 0 },
-};
-
-const fadeInUpTransition: Transition = {
-	duration: 0.8,
-	ease: 'backOut',
-};
 
 const viewportConfig = {
 	once: true,
@@ -102,11 +93,12 @@ export default function MainPage() {
 						>
 							<AboutTitle>Современная платформа</AboutTitle>
 							<AboutText>
-								Создано с использованием Next.js и современных технологий для обеспечения лучшего
-								пользовательского опыта. Интеграция с dummyjson.com для демонстрации функциональности.
+								Создано на Next.js 16, React 19 и современном стеке: авторизация (NextAuth), состояние
+								(Redux Toolkit), формы (react-hook-form + Yup), стили (styled-components), анимации
+								(Framer Motion). Данные товаров — dummyjson.com API.
 							</AboutText>
 							<AboutTechText>
-								<CodeSnippet>create-next-app</CodeSnippet> +{' '}
+								<CodeSnippet>create-next-app</CodeSnippet> · NextAuth · Redux ·{' '}
 								<a href="https://dummyjson.com" target="_blank" rel="noreferrer">
 									dummyjson.com API
 								</a>
@@ -284,10 +276,7 @@ export default function MainPage() {
 							transition={fadeInUpTransition}
 						>
 							<h3>Светлая и тёмная тема</h3>
-							<p>
-								Переключение темы интерфейса с сохранением выбора. Storybook, Redux Toolkit, ESLint,
-								Prettier, Framer Motion
-							</p>
+							<p>Переключение темы интерфейса с сохранением выбора в настройках</p>
 						</FeatureCardClean>
 					</FeaturesGrid>
 					<FeaturesGrid>
@@ -339,25 +328,31 @@ export default function MainPage() {
 							<FeatureTitle>🛠️ Технический стек:</FeatureTitle>
 							<FeatureList>
 								<FeatureItem>
-									<FeatureIcon>⚛️</FeatureIcon> Next.js 14 с App Router
+									<FeatureIcon>⚛️</FeatureIcon> Next.js 16, React 19, App Router
 								</FeatureItem>
 								<FeatureItem>
-									<FeatureIcon>📦</FeatureIcon> Redux Toolkit (RTK) для состояния
+									<FeatureIcon>🎨</FeatureIcon> styled-components, SASS
 								</FeatureItem>
 								<FeatureItem>
-									<FeatureIcon>📏</FeatureIcon> ESLint для качества кода
+									<FeatureIcon>📦</FeatureIcon> Redux Toolkit, redux-persist
 								</FeatureItem>
 								<FeatureItem>
-									<FeatureIcon>✨</FeatureIcon> Prettier для форматирования
+									<FeatureIcon>🔐</FeatureIcon> NextAuth — вход и регистрация
 								</FeatureItem>
 								<FeatureItem>
-									<FeatureIcon>🎭</FeatureIcon> Framer Motion для анимаций
+									<FeatureIcon>🔥</FeatureIcon> Firebase (опционально)
 								</FeatureItem>
 								<FeatureItem>
-									<FeatureIcon>📚</FeatureIcon> Storybook для разработки компонентов
+									<FeatureIcon>📝</FeatureIcon> react-hook-form, Yup, IMask
 								</FeatureItem>
 								<FeatureItem>
-									<FeatureIcon>🔗</FeatureIcon> Интеграция с dummyjson.com API
+									<FeatureIcon>🎭</FeatureIcon> Framer Motion, Lenis (скролл)
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>📚</FeatureIcon> Storybook, Jest, ESLint, Prettier
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>🔗</FeatureIcon> dummyjson.com API
 								</FeatureItem>
 							</FeatureList>
 						</FeatureCardClean>

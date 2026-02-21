@@ -11,6 +11,7 @@ import { InferType, object, string } from 'yup';
 import { AuthCard, AuthForm, AuthLinkText, AuthWrapper } from '@/app/login/styled';
 import { Container, Flexbox } from '@/components/Layout';
 import { Button, createFormField, ErrorMessage, Input } from '@/components/ui';
+import { fadeVariant } from '@/lib/pageAnimations';
 import { emailRegex, phoneRegex } from '@/services/regexes';
 
 const registerSchema = object({
@@ -100,7 +101,11 @@ export const RegisterContent = () => {
 	return (
 		<Container>
 			<AuthWrapper>
-				<AuthCard>
+				<AuthCard
+					initial="hidden"
+					animate="visible"
+					variants={fadeVariant(0)}
+				>
 					<AuthForm onSubmit={handleSubmit(onSubmit)}>
 						<Flexbox $gap={10}>
 							<InputRegister
