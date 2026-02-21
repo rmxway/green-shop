@@ -18,6 +18,8 @@ export interface OrderItem {
 
 export interface Order {
 	id: string;
+	/** Последовательный номер заказа (уникальный, выдаётся при создании) */
+	orderNumber?: number;
 	userId?: string;
 	name: string;
 	surname: string;

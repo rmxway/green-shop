@@ -44,7 +44,7 @@ export const authOptions: AuthOptions = {
 		}),
 	],
 	callbacks: {
-		async jwt({ token, user }) {
+		async jwt({ token, user, trigger }) {
 			if (user) {
 				token.id = user.id;
 				token.email = user.email;
@@ -53,6 +53,27 @@ export const authOptions: AuthOptions = {
 				token.phone = (user as { phone?: string }).phone;
 				token.deliveryAddress = (user as { deliveryAddress?: string }).deliveryAddress;
 			}
+
+			// При вызове update() подгружаем свежие данные из БД
+			if (trigger === 'update' && token.id) {
+				try {
+					const userDoc = await adminDb
+						.collection('users')
+						.doc(token.id as string)
+						.get();
+					if (userDoc.exists) {
+						const userData = userDoc.data()!;
+						token.name = userData.name;
+						token.surname = userData.surname;
+						token.phone = userData.phone;
+						token.deliveryAddress = userData.deliveryAddress;
+					}
+				} catch (error) {
+					// eslint-disable-next-line no-console
+					console.error('JWT update error:', error);
+				}
+			}
+
 			return token;
 		},
 		async session({ session, token }) {

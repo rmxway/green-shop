@@ -1,22 +1,26 @@
 'use client';
 
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { signOut, useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 
 import { Container, Flexbox } from '@/components/Layout';
-import { Count } from '@/components/Navbar/Count';
-import { Button, Loader } from '@/components/ui';
+import { ErrorMessage, Loader } from '@/components/ui';
 
+import { ProfileActions } from './components/ProfileActions';
+import { ProfileEditForm } from './components/ProfileEditForm';
+import { ProfileView } from './components/ProfileView';
+import { useProfileEdit } from './hooks/useProfileEdit';
 import {
+	AccountButtonsRow,
 	AccountCard,
+	AccountCardContent,
 	AccountGrid,
+	AccountLoaderWrap,
 	AccountSection,
 	InfoItem,
 	InfoLabel,
 	InfoValue,
-	OrderButtonWrapper,
 	WelcomeCard,
 } from './styled';
 
@@ -24,6 +28,19 @@ export const AccountContent = () => {
 	const { data: session, status } = useSession();
 	const router = useRouter();
 	const [ordersCount, setOrdersCount] = useState<number | null>(null);
+
+	const {
+		isEditing,
+		form,
+		saveError,
+		saving,
+		displayUser,
+		profileSnapshot,
+		handleEdit,
+		handleCancelEdit,
+		handleFormChange,
+		handleSave,
+	} = useProfileEdit();
 
 	useEffect(() => {
 		if (status === 'unauthenticated') {
@@ -48,9 +65,9 @@ export const AccountContent = () => {
 	if (status === 'loading') {
 		return (
 			<Container>
-				<Flexbox $justify="center" $align="center" style={{ minHeight: '70vh' }}>
+				<AccountLoaderWrap>
 					<Loader loading />
-				</Flexbox>
+				</AccountLoaderWrap>
 			</Container>
 		);
 	}
@@ -59,74 +76,53 @@ export const AccountContent = () => {
 		return null;
 	}
 
-	const hasOrders = ordersCount !== null && ordersCount > 0;
-
-	const btn = (
-		<Button $primary $w100 disabled={!hasOrders} icon="cart">
-			Мои заказы
-		</Button>
-	);
-
-	const ordersButton = (
-		<OrderButtonWrapper>
-			{hasOrders ? <Link href="/account/orders">{btn}</Link> : btn}
-			<Count count={ordersCount ?? 0} />
-		</OrderButtonWrapper>
-	);
-
 	return (
 		<Container>
 			<AccountSection>
 				<WelcomeCard>
-					<h2>Добро пожаловать, {session.user.name || session.user.email}! 👋</h2>
+					<h2>Добро пожаловать, {displayUser?.name || session.user.email}! 👋</h2>
 					<p>Управляйте своим профилем и просматривайте историю заказов</p>
 				</WelcomeCard>
 
 				<AccountGrid>
-					<AccountCard>
+					<AccountCard key={profileSnapshot ? 'profile-updated' : 'profile-initial'}>
 						<h3>Информация о профиле</h3>
-						<Flexbox $gap={15} $direction="column" style={{ marginTop: '20px' }}>
-							<InfoItem>
-								<InfoLabel>Email:</InfoLabel>
-								<InfoValue>{session.user.email}</InfoValue>
-							</InfoItem>
-							{session.user.name && (
+						<AccountCardContent>
+							<Flexbox $gap={15} $direction="column">
 								<InfoItem>
-									<InfoLabel>Имя:</InfoLabel>
-									<InfoValue>{session.user.name}</InfoValue>
+									<InfoLabel>Email:</InfoLabel>
+									<InfoValue>{session.user.email}</InfoValue>
 								</InfoItem>
-							)}
-							{session.user.surname && (
-								<InfoItem>
-									<InfoLabel>Фамилия:</InfoLabel>
-									<InfoValue>{session.user.surname}</InfoValue>
-								</InfoItem>
-							)}
-							{session.user.phone && (
-								<InfoItem>
-									<InfoLabel>Телефон:</InfoLabel>
-									<InfoValue>{session.user.phone}</InfoValue>
-								</InfoItem>
-							)}
-							{session.user.deliveryAddress && (
-								<InfoItem>
-									<InfoLabel>Адрес доставки:</InfoLabel>
-									<InfoValue>{session.user.deliveryAddress}</InfoValue>
-								</InfoItem>
-							)}
-							<Flexbox
-								$gap={15}
-								$align="flex-start"
-								className="btns"
-								$nowrap
-								style={{ marginTop: '20px' }}
-							>
-								{ordersButton}
-								<Button $w100 onClick={handleLogout}>
-									Выйти
-								</Button>
+
+								{isEditing ? (
+									<>
+										<ProfileEditForm form={form} onChange={handleFormChange} />
+										{saveError && <ErrorMessage error={saveError} />}
+									</>
+								) : (
+									<ProfileView
+										name={displayUser?.name}
+										surname={displayUser?.surname}
+										phone={displayUser?.phone}
+										deliveryAddress={displayUser?.deliveryAddress}
+									/>
+								)}
+
+								<AccountButtonsRow>
+									<Flexbox $gap={15} $align="flex-start" className="btns" $nowrap>
+										<ProfileActions
+											isEditing={isEditing}
+											saving={saving}
+											ordersCount={ordersCount}
+											onEdit={handleEdit}
+											onCancelEdit={handleCancelEdit}
+											onSave={handleSave}
+											onLogout={handleLogout}
+										/>
+									</Flexbox>
+								</AccountButtonsRow>
 							</Flexbox>
-						</Flexbox>
+						</AccountCardContent>
 					</AccountCard>
 				</AccountGrid>
 			</AccountSection>
