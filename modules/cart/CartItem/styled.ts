@@ -6,25 +6,6 @@ import styled, { css } from 'styled-components';
 import { media } from '@/theme';
 import { fadeIn } from '@/theme/styles/animations';
 
-export const fadeVariant = (i: number = 1): Variants => ({
-	hidden: {
-		y: 20,
-		opacity: 0,
-	},
-	visible: {
-		y: 0,
-		opacity: 1,
-		transition: {
-			duration: 0.35,
-			damping: 30,
-			delay: i * 0.075,
-		},
-	},
-});
-
-// Предвычисленные варианты для оптимизации (до 20 элементов на страницу)
-export const precomputedFadeVariants = Array.from({ length: 20 }, (_, i) => fadeVariant(i));
-
 export const elementsVars: Variants = {
 	hidden: {
 		y: -5,

@@ -18,10 +18,7 @@ export const TopBlock = () => {
 	const $isFont = isMain;
 
 	const getTitle = useMemo(
-		() =>
-			titleStore ||
-			navbarItems.find((item) => item.url === pathname)?.title ||
-			pageTitles[pathname],
+		() => titleStore || navbarItems.find((item) => item.url === pathname)?.title || pageTitles[pathname],
 		[pathname, titleStore],
 	);
 

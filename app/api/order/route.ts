@@ -26,12 +26,22 @@ export async function POST(req: Request) {
 			createdAt: new Date().toISOString(),
 		};
 
-		const docRef = await adminDb.collection('orders').add(orderData);
+		const counterRef = adminDb.collection('_counters').doc('orders');
+		const orderRef = adminDb.collection('orders').doc();
+
+		await adminDb.runTransaction(async (transaction) => {
+			const counterSnap = await transaction.get(counterRef);
+			const lastNumber = counterSnap.exists ? (counterSnap.data()?.lastOrderNumber ?? 0) : 0;
+			const newNumber = lastNumber + 1;
+
+			transaction.set(orderRef, { ...orderData, orderNumber: newNumber });
+			transaction.set(counterRef, { lastOrderNumber: newNumber }, { merge: true });
+		});
 
 		return NextResponse.json(
 			{
 				success: true,
-				orderId: docRef.id,
+				orderId: orderRef.id,
 				message: 'Заказ успешно оформлен',
 			},
 			{ status: 200 },

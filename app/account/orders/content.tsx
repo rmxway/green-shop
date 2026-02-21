@@ -112,7 +112,7 @@ export const OrdersContent = () => {
 					<OrderCard key={order.id}>
 						<OrderHeader>
 							<div>
-								<OrderId>Заказ #{order.id.slice(0, 8)}</OrderId>
+								<OrderId>Заказ #{order.orderNumber ?? order.id.slice(0, 8)}</OrderId>
 								<OrderDate>{new Date(order.createdAt).toLocaleString('ru-RU')}</OrderDate>
 							</div>
 							<OrderStatus $status={order.status}>{statusLabels[order.status]}</OrderStatus>

@@ -53,7 +53,6 @@ export const OrderHeader = styled.div`
 	align-items: flex-start;
 	margin-bottom: 20px;
 	padding-bottom: 15px;
-	border-bottom: 1px solid ${({ theme }) => theme.colors.gray.$3};
 `;
 
 export const OrderId = styled.h3`
@@ -158,7 +157,6 @@ export const OrderTotal = styled.div`
 	gap: 10px;
 	font-size: 20px;
 	padding-top: 15px;
-	border-top: 1px solid ${({ theme }) => theme.colors.gray.$3};
 	color: ${({ theme }) => theme.colors.gray.$9};
 
 	strong {

@@ -94,3 +94,33 @@ export const OrderButtonWrapper = styled.div`
 		border-color: ${({ theme }) => theme.colors.light};
 	}
 `;
+
+export const ProfileForm = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin-top: 20px;
+	max-width: 300px;
+`;
+
+export const ProfileFormActions = styled.div`
+	display: flex;
+	width: 100%;
+	gap: 12px;
+	flex-wrap: nowrap;
+`;
+
+export const AccountCardContent = styled.div`
+	margin-top: 20px;
+`;
+
+export const AccountButtonsRow = styled.div`
+	margin-top: 20px;
+`;
+
+export const AccountLoaderWrap = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 70vh;
+`;

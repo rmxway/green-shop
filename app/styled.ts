@@ -428,8 +428,7 @@ export const FeaturesGrid = styled.div`
 	`}
 `;
 
-export const FeatureCardClean = styled(motion.div)`
-	opacity: 0;
+export const FeatureCardClean = styled(motion.div)`	
 	transform: translateY(70px);
 
 	${({ theme }) => {
