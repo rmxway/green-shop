@@ -255,8 +255,11 @@ export default function MainPage() {
 							variants={fadeInUpVariants}
 							transition={fadeInUpTransition}
 						>
-							<h3>Корзина и оформление</h3>
-							<p>Удобная корзина покупок с формой заказа и поддержкой избранных товаров</p>
+							<h3>Корзина, оформление и личный кабинет</h3>
+							<p>
+								Корзина покупок, форма заказа и избранное. Редактирование профиля и просмотр истории
+								заказов в личном кабинете.
+							</p>
 						</FeatureCardClean>
 						<FeatureCardClean
 							initial="hidden"
@@ -315,6 +318,12 @@ export default function MainPage() {
 								</FeatureItem>
 								<FeatureItem>
 									<FeatureIcon>📝</FeatureIcon> Форма оформления заказа
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>👤</FeatureIcon> Личный кабинет и редактирование профиля
+								</FeatureItem>
+								<FeatureItem>
+									<FeatureIcon>📦</FeatureIcon> История заказов
 								</FeatureItem>
 							</FeatureList>
 						</FeatureCardClean>
