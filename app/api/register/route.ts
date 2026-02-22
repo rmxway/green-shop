@@ -54,6 +54,26 @@ export async function POST(req: Request) {
 		};
 
 		const docRef = await usersRef.add(newUser);
+		const newUserId = docRef.id;
+
+		// Привязываем гостевые заказы с тем же email к новому пользователю
+		const guestOrdersSnap = await adminDb
+			.collection('orders')
+			.where('userId', '==', null)
+			.where('email', '==', email.trim())
+			.get();
+
+		if (!guestOrdersSnap.empty) {
+			const BATCH_SIZE = 500;
+			const { docs } = guestOrdersSnap;
+			for (let i = 0; i < docs.length; i += BATCH_SIZE) {
+				const batch = adminDb.batch();
+				docs.slice(i, i + BATCH_SIZE).forEach((doc) => {
+					batch.update(doc.ref, { userId: newUserId });
+				});
+				await batch.commit();
+			}
+		}
 
 		return NextResponse.json(
 			{

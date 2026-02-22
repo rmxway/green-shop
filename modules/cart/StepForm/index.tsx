@@ -1,31 +1,61 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useSession } from 'next-auth/react';
-import { useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { Flexbox } from '@/components/Layout';
-import { Button } from '@/components/ui';
+import { Button, ErrorMessage } from '@/components/ui';
 import { OrderFields, schemaOrder } from '@/modules/cart/services/schemaOrder';
 import { submitOrder } from '@/modules/cart/services/submitOrder';
 import { TableProducts } from '@/modules/cart/StepForm/TableProducts';
 import { useAppDispatch } from '@/services';
 import { changeStep } from '@/store/reducers/cart';
 
-import { InputOrder, SwitchOrder } from './helpers';
+import { EmailInputWithCheck, InputOrder, SwitchOrder } from './helpers';
 import { WrapperForm, WrapperStepForm } from './styled';
 
 export const StepForm = () => {
 	const { data: session } = useSession();
+	const [submitError, setSubmitError] = useState('');
+	const [emailIsRegistered, setEmailIsRegistered] = useState(false);
 
 	const {
+		control,
 		register,
 		handleSubmit,
+		setError,
+		clearErrors,
 		formState: { errors, isValid, dirtyFields },
 		setValue,
 	} = useForm<OrderFields>({
 		resolver: yupResolver(schemaOrder),
 		mode: 'all',
 	});
+
+	const checkEmailRegistered = useCallback(
+		async (email: string) => {
+			if (!email.trim()) {
+				setEmailIsRegistered(false);
+				return;
+			}
+			try {
+				const res = await fetch(`/api/check-email?email=${encodeURIComponent(email.trim())}`);
+				const data = (await res.json()) as { registered?: boolean };
+				if (data.registered) {
+					setEmailIsRegistered(true);
+					setError('email', {
+						message: 'Такой email уже используется. Войдите в аккаунт.',
+						type: 'manual',
+					});
+				} else {
+					setEmailIsRegistered(false);
+				}
+			} catch {
+				setEmailIsRegistered(false);
+			}
+		},
+		[setError],
+	);
 
 	useEffect(() => {
 		if (session?.user) {
@@ -46,16 +76,19 @@ export const StepForm = () => {
 		dispatch(changeStep(1));
 	};
 
-	const onSubmit: SubmitHandler<OrderFields> = (data) => {
-		if (data && isValid) {
-			submitOrder(data);
+	const onSubmit: SubmitHandler<OrderFields> = async (data) => {
+		setSubmitError('');
+		try {
+			await submitOrder(data);
 			dispatch(changeStep(3));
+		} catch (err) {
+			setSubmitError(err instanceof Error ? err.message : 'Не удалось оформить заказ');
 		}
 	};
 
 	return (
 		<>
-			<Button $margins icon="cart" onClick={prevStep} style={{ width: 'fit-content' }}>
+			<Button $margins $fitContent icon="cart" onClick={prevStep}>
 				Назад
 			</Button>
 			<h4>
@@ -69,12 +102,23 @@ export const StepForm = () => {
 						<Flexbox $gap={10}>
 							<InputOrder label="Имя *" placeholder="Мария" name="name" {...inputCommonProps} />
 							<InputOrder label="Фамилия *" placeholder="Клаймбер" name="surname" {...inputCommonProps} />
-							<InputOrder
-								label="Email *"
-								placeholder="mary-climber@gmail.com"
-								name="email"
-								{...inputCommonProps}
-							/>
+							{session?.user ? (
+								<InputOrder
+									label="Email *"
+									placeholder="mary-climber@gmail.com"
+									name="email"
+									{...inputCommonProps}
+								/>
+							) : (
+								<EmailInputWithCheck
+									control={control}
+									errors={errors}
+									dirtyFields={dirtyFields}
+									clearErrors={clearErrors}
+									checkEmailRegistered={checkEmailRegistered}
+									onEmailChange={() => setEmailIsRegistered(false)}
+								/>
+							)}
 							<InputOrder
 								label="Мобильный телефон *"
 								placeholder="+7 (999) 999-99-99"
@@ -89,10 +133,15 @@ export const StepForm = () => {
 								{...inputCommonProps}
 							/>
 							<SwitchOrder label="До квартиры" name="toApartment" noSuccess {...inputCommonProps} />
-							<Button type="submit" $primary disabled={!isValid}>
-								Отправить
-							</Button>
 						</Flexbox>
+						<Button type="submit" $w100 $primary disabled={!isValid || emailIsRegistered}>
+							Отправить
+						</Button>
+						{submitError && (
+							<Flexbox $direction="column" $gap={4}>
+								<ErrorMessage error={submitError} />
+							</Flexbox>
+						)}
 					</form>
 				</WrapperForm>
 				<TableProducts fGrow />
