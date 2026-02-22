@@ -11,6 +11,21 @@ export async function POST(req: Request) {
 		const validatedData = await schemaOrder.validate(body, { abortEarly: false });
 
 		const session = await getServerSession(authOptions);
+		const isGuest = !session?.user?.id;
+
+		if (isGuest) {
+			const emailTrimmed = (validatedData.email as string).trim();
+			const existingUser = await adminDb.collection('users').where('email', '==', emailTrimmed).limit(1).get();
+			if (!existingUser.empty) {
+				return NextResponse.json(
+					{
+						success: false,
+						error: 'Такой email уже используется. Войдите в аккаунт.',
+					},
+					{ status: 400 },
+				);
+			}
+		}
 
 		const orderData = {
 			userId: session?.user?.id || null,

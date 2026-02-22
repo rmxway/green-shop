@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 
 interface CommonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	$w100?: boolean;
+	$fitContent?: boolean;
 	$inactive?: boolean;
 	$margins?: boolean;
 }
@@ -39,7 +40,7 @@ const mixinButton = ($background = '#fff', $color = '#fff') => css`
 `;
 
 export const ButtonStyle = styled.button<Props>`
-	${({ theme, $margins, $dark, $danger, $inactive, $primary, $success, $w100, $white }) => css`
+	${({ theme, $margins, $dark, $danger, $inactive, $primary, $success, $w100, $fitContent, $white }) => css`
 		appearance: none;
 		border: 1px solid #aaa;
 		background: none;
@@ -90,6 +91,10 @@ export const ButtonStyle = styled.button<Props>`
 		${$w100 &&
 		css`
 			width: 100%;
+		`}
+		${$fitContent &&
+		css`
+			width: fit-content;
 		`}
 		${$inactive &&
 		css`
