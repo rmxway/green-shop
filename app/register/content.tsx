@@ -101,11 +101,7 @@ export const RegisterContent = () => {
 	return (
 		<Container>
 			<AuthWrapper>
-				<AuthCard
-					initial="hidden"
-					animate="visible"
-					variants={fadeVariant(0)}
-				>
+				<AuthCard initial="hidden" animate="visible" variants={fadeVariant(0)}>
 					<AuthForm onSubmit={handleSubmit(onSubmit)}>
 						<Flexbox $gap={10}>
 							<InputRegister

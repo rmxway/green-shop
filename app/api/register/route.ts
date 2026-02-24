@@ -1,44 +1,36 @@
 import bcrypt from 'bcryptjs';
-import { NextResponse } from 'next/server';
 
+import { apiError, apiSuccess } from '@/app/api/utils/apiResponse';
+import { handleApiError } from '@/app/api/utils/errorHandler';
+import { linkGuestOrdersByEmailBatch } from '@/app/api/utils/orders';
+import { checkEmailExists } from '@/app/api/utils/users';
+import { parseRequestBody } from '@/app/api/utils/validation';
 import { adminDb } from '@/lib/firebase-admin';
 
 export async function POST(req: Request) {
 	try {
-		const body: unknown = await req.json();
-
-		if (typeof body !== 'object' || body === null) {
-			return NextResponse.json({ success: false, error: 'Неверный формат данных' }, { status: 400 });
-		}
-
-		const { email, password, name, surname, phone, deliveryAddress } = body as {
+		const body = await req.json();
+		const { email, password, name, surname, phone, deliveryAddress } = parseRequestBody<{
 			email?: string;
 			password?: string;
 			name?: string;
 			surname?: string;
 			phone?: string;
 			deliveryAddress?: string;
-		};
+		}>(body);
 
 		if (!email || !password) {
-			return NextResponse.json({ success: false, error: 'Email и пароль обязательны' }, { status: 400 });
+			return apiError('Email и пароль обязательны');
 		}
 
 		if (password.length < 6) {
-			return NextResponse.json(
-				{ success: false, error: 'Пароль должен быть не менее 6 символов' },
-				{ status: 400 },
-			);
+			return apiError('Пароль должен быть не менее 6 символов');
 		}
 
-		const usersRef = adminDb.collection('users');
-		const existingUsers = await usersRef.where('email', '==', email).get();
+		const emailExists = await checkEmailExists(email);
 
-		if (!existingUsers.empty) {
-			return NextResponse.json(
-				{ success: false, error: 'Пользователь с таким email уже существует' },
-				{ status: 400 },
-			);
+		if (emailExists) {
+			return apiError('Пользователь с таким email уже существует');
 		}
 
 		const passwordHash = await bcrypt.hash(password, 10);
@@ -53,31 +45,14 @@ export async function POST(req: Request) {
 			createdAt: new Date().toISOString(),
 		};
 
+		const usersRef = adminDb.collection('users');
 		const docRef = await usersRef.add(newUser);
 		const newUserId = docRef.id;
 
-		// Привязываем гостевые заказы с тем же email к новому пользователю
-		const guestOrdersSnap = await adminDb
-			.collection('orders')
-			.where('userId', '==', null)
-			.where('email', '==', email.trim())
-			.get();
+		await linkGuestOrdersByEmailBatch(newUserId, email);
 
-		if (!guestOrdersSnap.empty) {
-			const BATCH_SIZE = 500;
-			const { docs } = guestOrdersSnap;
-			for (let i = 0; i < docs.length; i += BATCH_SIZE) {
-				const batch = adminDb.batch();
-				docs.slice(i, i + BATCH_SIZE).forEach((doc) => {
-					batch.update(doc.ref, { userId: newUserId });
-				});
-				await batch.commit();
-			}
-		}
-
-		return NextResponse.json(
+		return apiSuccess(
 			{
-				success: true,
 				user: {
 					id: docRef.id,
 					email: newUser.email,
@@ -87,11 +62,9 @@ export async function POST(req: Request) {
 					deliveryAddress: newUser.deliveryAddress,
 				},
 			},
-			{ status: 201 },
+			201,
 		);
 	} catch (error) {
-		// eslint-disable-next-line no-console
-		console.error('Registration error:', error);
-		return NextResponse.json({ success: false, error: 'Произошла ошибка при регистрации' }, { status: 500 });
+		return handleApiError(error, 'Произошла ошибка при регистрации');
 	}
 }

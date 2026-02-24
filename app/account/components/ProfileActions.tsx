@@ -8,6 +8,7 @@ import { OrderButtonWrapper, ProfileFormActions } from '../styled';
 type ProfileActionsProps = {
 	isEditing: boolean;
 	saving: boolean;
+	hasChanges: boolean;
 	ordersCount: number | null;
 	onEdit: () => void;
 	onCancelEdit: () => void;
@@ -18,6 +19,7 @@ type ProfileActionsProps = {
 export const ProfileActions = ({
 	isEditing,
 	saving,
+	hasChanges,
 	ordersCount,
 	onEdit,
 	onCancelEdit,
@@ -38,7 +40,7 @@ export const ProfileActions = ({
 					<Button $w100 onClick={onCancelEdit} disabled={saving}>
 						Отмена
 					</Button>
-					<Button $w100 $primary onClick={onSave} disabled={saving}>
+					<Button $w100 $primary onClick={onSave} disabled={saving || !hasChanges}>
 						{saving ? 'Сохранение…' : 'Сохранить'}
 					</Button>
 				</ProfileFormActions>

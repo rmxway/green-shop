@@ -5,6 +5,7 @@ import { useSession } from 'next-auth/react';
 import { FC, ReactNode } from 'react';
 
 import { NavLink } from '@/components/Navbar/NavLink';
+import { NavbarItemDisabled } from '@/components/Navbar/styled';
 
 interface AccountNavItemProps {
 	onClose: () => void;
@@ -16,7 +17,11 @@ export const AccountNavItem: FC<AccountNavItemProps> = ({ onClose, children }) =
 	const pathname = usePathname();
 
 	if (status === 'loading') {
-		return null;
+		return (
+			<NavbarItemDisabled aria-busy="true" aria-label="Загрузка">
+				<span>Войти</span>
+			</NavbarItemDisabled>
+		);
 	}
 
 	if (!session?.user) {

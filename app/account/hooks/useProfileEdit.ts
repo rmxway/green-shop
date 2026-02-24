@@ -15,10 +15,17 @@ const emptyProfileForm: ProfileFormState = {
 	deliveryAddress: '',
 };
 
+const isFormChanged = (form: ProfileFormState, initial: ProfileFormState): boolean =>
+	form.name !== initial.name ||
+	form.surname !== initial.surname ||
+	form.phone !== initial.phone ||
+	form.deliveryAddress !== initial.deliveryAddress;
+
 export const useProfileEdit = () => {
 	const { data: session, update: updateSession } = useSession();
 	const [isEditing, setIsEditing] = useState(false);
 	const [form, setForm] = useState<ProfileFormState>(emptyProfileForm);
+	const [initialForm, setInitialForm] = useState<ProfileFormState>(emptyProfileForm);
 	const [saveError, setSaveError] = useState('');
 	const [saving, setSaving] = useState(false);
 	const [profileSnapshot, setProfileSnapshot] = useState<ProfileFormState | null>(null);
@@ -30,17 +37,21 @@ export const useProfileEdit = () => {
 
 	const fillFormFromDisplayUser = useCallback(() => {
 		if (!displayUser) return;
-		setForm({
+		const values = {
 			name: displayUser.name ?? '',
 			surname: displayUser.surname ?? '',
 			phone: displayUser.phone ?? '',
 			deliveryAddress: displayUser.deliveryAddress ?? '',
-		});
+		};
+		setForm(values);
+		setInitialForm(values);
 	}, [displayUser]);
 
 	useEffect(() => {
 		if (isEditing && displayUser) fillFormFromDisplayUser();
 	}, [isEditing, displayUser, fillFormFromDisplayUser]);
+
+	const hasChanges = isFormChanged(form, initialForm);
 
 	const handleEdit = () => {
 		setSaveError('');
@@ -90,6 +101,7 @@ export const useProfileEdit = () => {
 		form,
 		saveError,
 		saving,
+		hasChanges,
 		displayUser,
 		profileSnapshot,
 		handleEdit,

@@ -1,46 +1,26 @@
-import { NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { apiSuccess } from '@/app/api/utils/apiResponse';
+import { requireAuth } from '@/app/api/utils/auth';
+import { handleApiError } from '@/app/api/utils/errorHandler';
+import { linkGuestOrdersToUser } from '@/app/api/utils/orders';
 import { adminDb } from '@/lib/firebase-admin';
 
 export async function GET() {
 	try {
-		const session = await getServerSession(authOptions);
+		const { session, userId } = await requireAuth();
 
-		if (!session?.user?.id) {
-			return NextResponse.json({ success: false, error: 'Не авторизован' }, { status: 401 });
-		}
-
-		const userId = session.user.id;
 		const userEmail = session.user.email?.trim().toLowerCase();
 		const ordersRef = adminDb.collection('orders');
 
-		// Привязываем гостевые заказы с тем же email (если есть) — один раз при загрузке
 		if (userEmail) {
-			const guestOrdersSnap = await ordersRef.where('userId', '==', null).limit(500).get();
-
-			const guestDocs = guestOrdersSnap.docs.filter((doc) => {
-				const orderEmail = (doc.data().email as string)?.trim().toLowerCase();
-				return orderEmail === userEmail;
-			});
-
-			if (guestDocs.length > 0) {
-				const batch = adminDb.batch();
-				guestDocs.forEach((doc) => batch.update(doc.ref, { userId }));
-				await batch.commit();
-			}
+			await linkGuestOrdersToUser(userId, userEmail);
 		}
 
-		// Теперь все заказы пользователя привязаны — один запрос с сортировкой
 		const ordersSnap = await ordersRef.where('userId', '==', userId).orderBy('createdAt', 'desc').get();
 
 		const orders = ordersSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 
-		return NextResponse.json({ success: true, orders }, { status: 200 });
+		return apiSuccess({ orders });
 	} catch (error) {
-		// eslint-disable-next-line no-console
-		console.error('Orders fetch error:', error);
-		return NextResponse.json({ success: false, error: 'Произошла ошибка при загрузке заказов' }, { status: 500 });
+		return handleApiError(error, 'Произошла ошибка при загрузке заказов');
 	}
 }

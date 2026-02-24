@@ -121,6 +121,12 @@ export const NavbarItem = styled.div`
 	`}
 `;
 
+export const NavbarItemDisabled = styled(NavbarItem)`
+	opacity: 0.5;
+	pointer-events: none;
+	cursor: default;
+`;
+
 export const WrapperNavbarItems = styled(motion.div)`
 	position: fixed;
 	right: 0;
