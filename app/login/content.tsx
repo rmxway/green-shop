@@ -81,11 +81,7 @@ export const LoginContent = () => {
 	return (
 		<Container>
 			<AuthWrapper>
-				<AuthCard
-					initial="hidden"
-					animate="visible"
-					variants={fadeVariant(0)}
-				>
+				<AuthCard initial="hidden" animate="visible" variants={fadeVariant(0)}>
 					<AuthForm onSubmit={handleSubmit(onSubmit)}>
 						<Flexbox $gap={20}>
 							<InputLogin label="Email" placeholder="example@mail.com" name="email" {...fieldProps} />

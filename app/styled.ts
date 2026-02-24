@@ -428,17 +428,15 @@ export const FeaturesGrid = styled.div`
 	`}
 `;
 
-export const FeatureCardClean = styled(motion.div)`	
-	transform: translateY(70px);
-
+export const FeatureCardClean = styled(motion.div)`
 	${({ theme }) => {
 		const { colors } = theme;
 		return css`
-			background: ${colors.gray.$1};
+			background-color: ${colors.gray.$1};
 			border-radius: 16px;
 			padding: 2rem;
 			text-align: center;
-			transition: all 0.3s ease;
+			transition: box-shadow 0.3s;
 			border: 1px solid ${colors.gray.$3};
 
 			&:hover {

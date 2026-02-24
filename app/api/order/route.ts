@@ -1,7 +1,7 @@
-import { NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { apiError, apiSuccess } from '@/app/api/utils/apiResponse';
+import { getSession } from '@/app/api/utils/auth';
+import { handleApiError } from '@/app/api/utils/errorHandler';
+import { checkEmailExists } from '@/app/api/utils/users';
 import { adminDb } from '@/lib/firebase-admin';
 import { schemaOrder } from '@/modules/cart/services/schemaOrder';
 
@@ -10,20 +10,15 @@ export async function POST(req: Request) {
 		const body: unknown = await req.json();
 		const validatedData = await schemaOrder.validate(body, { abortEarly: false });
 
-		const session = await getServerSession(authOptions);
+		const session = await getSession();
 		const isGuest = !session?.user?.id;
 
 		if (isGuest) {
 			const emailTrimmed = (validatedData.email as string).trim();
-			const existingUser = await adminDb.collection('users').where('email', '==', emailTrimmed).limit(1).get();
-			if (!existingUser.empty) {
-				return NextResponse.json(
-					{
-						success: false,
-						error: 'Такой email уже используется. Войдите в аккаунт.',
-					},
-					{ status: 400 },
-				);
+			const emailExists = await checkEmailExists(emailTrimmed);
+
+			if (emailExists) {
+				return apiError('Такой email уже используется. Войдите в аккаунт.');
 			}
 		}
 
@@ -53,32 +48,11 @@ export async function POST(req: Request) {
 			transaction.set(counterRef, { lastOrderNumber: newNumber }, { merge: true });
 		});
 
-		return NextResponse.json(
-			{
-				success: true,
-				orderId: orderRef.id,
-				message: 'Заказ успешно оформлен',
-			},
-			{ status: 200 },
-		);
+		return apiSuccess({
+			orderId: orderRef.id,
+			message: 'Заказ успешно оформлен',
+		});
 	} catch (error) {
-		if (error instanceof Error && 'inner' in error) {
-			const validationErrors = (error as { inner?: Array<{ path?: string; message: string }> }).inner || [];
-			const errors = validationErrors.reduce(
-				(acc, err) => {
-					if (err.path) {
-						acc[err.path] = err.message;
-					}
-					return acc;
-				},
-				{} as Record<string, string>,
-			);
-
-			return NextResponse.json({ success: false, errors }, { status: 400 });
-		}
-
-		// eslint-disable-next-line no-console
-		console.error('Order creation error:', error);
-		return NextResponse.json({ success: false, error: 'Произошла ошибка при создании заказа' }, { status: 500 });
+		return handleApiError(error, 'Произошла ошибка при создании заказа');
 	}
 }

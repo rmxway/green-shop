@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server';
+import { checkEmailExists } from '@/app/api/utils/users';
 
-import { adminDb } from '@/lib/firebase-admin';
+import { apiSuccess } from '../utils/apiResponse';
 
 export async function GET(req: Request) {
 	try {
@@ -8,15 +8,15 @@ export async function GET(req: Request) {
 		const email = searchParams.get('email')?.trim();
 
 		if (!email) {
-			return NextResponse.json({ registered: false }, { status: 200 });
+			return apiSuccess({ registered: false });
 		}
 
-		const snapshot = await adminDb.collection('users').where('email', '==', email).limit(1).get();
+		const registered = await checkEmailExists(email);
 
-		return NextResponse.json({ registered: !snapshot.empty }, { status: 200 });
+		return apiSuccess({ registered });
 	} catch (error) {
 		// eslint-disable-next-line no-console
-		console.error('Check email error:', error);
-		return NextResponse.json({ registered: false }, { status: 200 });
+		console.error('Ошибка при проверке email:', error);
+		return apiSuccess({ registered: false });
 	}
 }

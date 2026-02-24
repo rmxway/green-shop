@@ -34,6 +34,7 @@ export const AccountContent = () => {
 		form,
 		saveError,
 		saving,
+		hasChanges,
 		displayUser,
 		profileSnapshot,
 		handleEdit,
@@ -113,6 +114,7 @@ export const AccountContent = () => {
 										<ProfileActions
 											isEditing={isEditing}
 											saving={saving}
+											hasChanges={hasChanges}
 											ordersCount={ordersCount}
 											onEdit={handleEdit}
 											onCancelEdit={handleCancelEdit}

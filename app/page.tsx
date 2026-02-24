@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import { Container } from '@/components/Layout';
 import { Button } from '@/components/ui';
-import { fadeInUpTransition, fadeInUpVariants } from '@/lib/pageAnimations';
+import { fadeInUpTransition, fadeInUpVariants, fadeInUpViewProps } from '@/lib/pageAnimations';
 import logos from '@/public/assets/img/logos.jpg';
 
 import {
@@ -36,12 +36,6 @@ import {
 	SectionSubtitle,
 	SectionTitle,
 } from './styled';
-
-const viewportConfig = {
-	once: true,
-	amount: 0.2,
-	margin: '0px 0px -100px 0px',
-};
 
 const staggerDelay = 0.1;
 
@@ -84,13 +78,7 @@ export default function MainPage() {
 			<Section $background>
 				<Container>
 					<FirstBlock>
-						<MotionInView
-							initial="hidden"
-							whileInView="visible"
-							viewport={viewportConfig}
-							variants={fadeInUpVariants}
-							transition={fadeInUpTransition}
-						>
+						<MotionInView {...fadeInUpViewProps}>
 							<AboutTitle>Современная платформа</AboutTitle>
 							<AboutText>
 								Создано на Next.js 16, React 19 и современном стеке: авторизация (NextAuth), состояние
@@ -118,13 +106,7 @@ export default function MainPage() {
 			</Section>
 			<Section>
 				<Container>
-					<MotionInView
-						initial="hidden"
-						whileInView="visible"
-						viewport={viewportConfig}
-						variants={fadeInUpVariants}
-						transition={fadeInUpTransition}
-					>
+					<MotionInView {...fadeInUpViewProps}>
 						<SectionTitle>Вдохновлено природой</SectionTitle>
 						<SectionSubtitle>
 							Мы тщательно отбираем натуральные продукты, которые помогают вам жить в гармонии с природой.
@@ -139,13 +121,7 @@ export default function MainPage() {
 			<Section $background>
 				<Container>
 					<NatureGallery>
-						<MotionInView
-							initial="hidden"
-							whileInView="visible"
-							viewport={viewportConfig}
-							variants={fadeInUpVariants}
-							transition={{ ...fadeInUpTransition, delay: 0 }}
-						>
+						<MotionInView {...fadeInUpViewProps}>
 							<NatureBlock $reverse>
 								<NatureBlockContent>
 									<NatureBlockTitle>Лесная гармония</NatureBlockTitle>
@@ -166,13 +142,7 @@ export default function MainPage() {
 							</NatureBlock>
 						</MotionInView>
 
-						<MotionInView
-							initial="hidden"
-							whileInView="visible"
-							viewport={viewportConfig}
-							variants={fadeInUpVariants}
-							transition={{ ...fadeInUpTransition, delay: staggerDelay * 2 }}
-						>
+						<MotionInView {...fadeInUpViewProps}>
 							<NatureBlock>
 								<NatureBlockContent>
 									<NatureBlockTitle>Горная чистота</NatureBlockTitle>
@@ -193,13 +163,7 @@ export default function MainPage() {
 							</NatureBlock>
 						</MotionInView>
 
-						<MotionInView
-							initial="hidden"
-							whileInView="visible"
-							viewport={viewportConfig}
-							variants={fadeInUpVariants}
-							transition={{ ...fadeInUpTransition, delay: staggerDelay * 4 }}
-						>
+						<MotionInView {...fadeInUpViewProps}>
 							<NatureBlock $reverse>
 								<NatureBlockContent>
 									<NatureBlockTitle>Цветущие луга</NatureBlockTitle>
@@ -226,70 +190,34 @@ export default function MainPage() {
 			{/* Features Section */}
 			<Section>
 				<Container>
-					<MotionInView
-						initial="hidden"
-						whileInView="visible"
-						viewport={viewportConfig}
-						variants={fadeInUpVariants}
-						transition={fadeInUpTransition}
-					>
+					<MotionInView {...fadeInUpViewProps}>
 						<SectionTitle>Возможности платформы</SectionTitle>
 					</MotionInView>
 					<FeaturesGrid>
-						<FeatureCardClean
-							initial="hidden"
-							whileInView="visible"
-							viewport={viewportConfig}
-							variants={fadeInUpVariants}
-							transition={{ ...fadeInUpTransition, delay: 0 }}
-						>
+						<FeatureCardClean {...fadeInUpViewProps}>
 							<h3>Поиск и фильтрация</h3>
 							<p>
 								Поиск по товарам с множеством фильтров и сортировкой по цене, популярности и категориям
 							</p>
 						</FeatureCardClean>
-						<FeatureCardClean
-							initial="hidden"
-							whileInView="visible"
-							viewport={viewportConfig}
-							variants={fadeInUpVariants}
-							transition={fadeInUpTransition}
-						>
+						<FeatureCardClean {...fadeInUpViewProps}>
 							<h3>Корзина, оформление и личный кабинет</h3>
 							<p>
 								Корзина покупок, форма заказа и избранное. Редактирование профиля и просмотр истории
 								заказов в личном кабинете.
 							</p>
 						</FeatureCardClean>
-						<FeatureCardClean
-							initial="hidden"
-							whileInView="visible"
-							viewport={viewportConfig}
-							variants={fadeInUpVariants}
-							transition={fadeInUpTransition}
-						>
+						<FeatureCardClean {...fadeInUpViewProps}>
 							<h3>Сравнение товаров</h3>
 							<p>Сравнение характеристик товаров в одной таблице для удобного выбора</p>
 						</FeatureCardClean>
-						<FeatureCardClean
-							initial="hidden"
-							whileInView="visible"
-							viewport={viewportConfig}
-							variants={fadeInUpVariants}
-							transition={fadeInUpTransition}
-						>
+						<FeatureCardClean {...fadeInUpViewProps}>
 							<h3>Светлая и тёмная тема</h3>
 							<p>Переключение темы интерфейса с сохранением выбора в настройках</p>
 						</FeatureCardClean>
 					</FeaturesGrid>
 					<FeaturesGrid>
-						<FeatureCardClean
-							initial="hidden"
-							whileInView="visible"
-							viewport={viewportConfig}
-							variants={fadeInUpVariants}
-							transition={fadeInUpTransition}
-						>
+						<FeatureCardClean {...fadeInUpViewProps}>
 							<FeatureTitle>🌟 Основные функции:</FeatureTitle>
 							<FeatureList>
 								<FeatureItem>
@@ -327,13 +255,7 @@ export default function MainPage() {
 								</FeatureItem>
 							</FeatureList>
 						</FeatureCardClean>
-						<FeatureCardClean
-							initial="hidden"
-							whileInView="visible"
-							viewport={viewportConfig}
-							variants={fadeInUpVariants}
-							transition={fadeInUpTransition}
-						>
+						<FeatureCardClean {...fadeInUpViewProps}>
 							<FeatureTitle>🛠️ Технический стек:</FeatureTitle>
 							<FeatureList>
 								<FeatureItem>

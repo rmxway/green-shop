@@ -10,6 +10,20 @@ export const fadeInUpTransition: Transition = {
 	ease: 'backOut',
 };
 
+export const fadeInUpViewport = {
+	once: true,
+	amount: 0.2,
+	margin: '0px 0px -100px 0px',
+} as const;
+
+export const fadeInUpViewProps = {
+	initial: 'hidden' as const,
+	whileInView: 'visible' as const,
+	viewport: fadeInUpViewport,
+	variants: fadeInUpVariants,
+	transition: fadeInUpTransition,
+};
+
 export const fadeVariant = (i: number = 1): Variants => ({
 	hidden: {
 		y: 20,
