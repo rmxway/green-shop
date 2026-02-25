@@ -44,7 +44,7 @@ export const AccountGrid = styled.div`
 
 export const AccountCard = styled.div`
 	padding: 30px;
-	background: ${({ theme }) => theme.colors.gray.$1};
+	background: ${({ theme }) => theme.colors.light};
 	border-radius: 12px;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 

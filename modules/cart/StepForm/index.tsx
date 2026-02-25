@@ -12,7 +12,7 @@ import { useAppDispatch } from '@/services';
 import { changeStep } from '@/store/reducers/cart';
 
 import { EmailInputWithCheck, InputOrder, SwitchOrder } from './helpers';
-import { WrapperForm, WrapperStepForm } from './styled';
+import { StepFormHeader, WrapperForm, WrapperStepForm } from './styled';
 
 export const StepForm = () => {
 	const { data: session } = useSession();
@@ -88,9 +88,11 @@ export const StepForm = () => {
 
 	return (
 		<>
-			<Button $margins $fitContent icon="cart" onClick={prevStep}>
-				Назад
-			</Button>
+			<StepFormHeader>
+				<Button $margins $fitContent icon="cart" onClick={prevStep}>
+					Назад
+				</Button>
+			</StepFormHeader>
 			<h4>
 				Проверьте свои товары и заполните обязательные поля.
 				{session?.user && ' (Данные заполнены из вашего профиля)'}

@@ -66,7 +66,8 @@ export const ProductCard: FC<ProductCardProps> = memo(
 					<Price>{formatPriceWithSymbol(product.price)}</Price>
 				</Tools>
 				<Button
-					$primary
+					$primary={!product.checked}
+					$dark={product.checked}
 					animate={product.checked}
 					icon={product.checked ? 'arrow-right-line' : 'cart'}
 					onClick={handleCartClick}

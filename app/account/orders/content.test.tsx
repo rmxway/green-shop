@@ -20,6 +20,7 @@ jest.mock('@/services', () => ({
 	useCurrency: () => ({
 		formatPriceWithSymbol: (price: number) => `$${price}`,
 	}),
+	useMediaQuery: () => false,
 }));
 
 global.fetch = jest.fn();
