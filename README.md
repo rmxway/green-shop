@@ -140,12 +140,24 @@ yarn build-storybook  # Сборка Storybook для деплоя
 
 ### API Endpoints
 
-- `POST /api/register` - Регистрация нового пользователя
-- `POST /api/auth/[...nextauth]` - NextAuth endpoints (логин, логаут, сессия)
-- `GET /api/profile` - Получение профиля текущего пользователя
-- `PUT /api/profile` - Обновление профиля
-- `POST /api/order` - Создание заказа (авторизованный или гость)
-- `GET /api/orders` - Получение списка заказов текущего пользователя
+**Товары:**
+
+- `GET /api/products` — Список товаров (query: `limit` — опционально, ограничение количества)
+- `GET /api/products/[id]` — Товар по ID
+
+**Аутентификация и профиль:**
+
+- `POST /api/register` — Регистрация нового пользователя
+- `POST /api/auth/[...nextauth]` — NextAuth endpoints (логин, логаут, сессия)
+- `GET /api/check-email` — Проверка, зарегистрирован ли email (query: `email`)
+- `GET /api/profile` — Получение профиля текущего пользователя
+- `PUT /api/profile` — Обновление профиля
+
+**Заказы:**
+
+- `POST /api/order` — Создание заказа (авторизованный или гость)
+- `GET /api/orders` — Получение списка заказов текущего пользователя
+- `PATCH /api/orders/[orderId]` — Отмена заказа (только статусы `pending` или `processing`, требуется авторизация)
 
 ### Маршруты приложения
 
