@@ -3,6 +3,11 @@ import styled, { css } from 'styled-components';
 import { Flexbox, Grid } from '@/components/Layout';
 import { media } from '@/theme';
 
+export const StepFormHeader = styled.div`
+	margin-top: -30px;
+	margin-bottom: 10px;
+`;
+
 export const WrapperStepForm = styled(Grid)`
 	${media.lessThan('md')`
         grid-template-columns: 1fr;

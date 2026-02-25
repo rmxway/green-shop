@@ -7,7 +7,8 @@ import { useEffect, useState } from 'react';
 
 import { Container } from '@/components/Layout';
 import { Button, ErrorMessage, Loader } from '@/components/ui';
-import { useCurrency } from '@/services';
+import { useCurrency, useMediaQuery } from '@/services';
+import { breakpoints } from '@/theme';
 import { Order } from '@/types/auth';
 
 import {
@@ -16,6 +17,8 @@ import {
 	OrderDetails,
 	OrderEmptyState,
 	OrderHeader,
+	OrderHeaderActions,
+	OrderHeaderInfo,
 	OrderId,
 	OrderItem,
 	OrderItemDetails,
@@ -41,9 +44,11 @@ export const OrdersContent = () => {
 	const { data: session, status } = useSession();
 	const router = useRouter();
 	const { formatPriceWithSymbol } = useCurrency();
+	const isMobile = useMediaQuery(breakpoints.xsD);
 	const [orders, setOrders] = useState<Order[]>([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState('');
+	const [cancellingOrderId, setCancellingOrderId] = useState<string | null>(null);
 
 	useEffect(() => {
 		if (status === 'unauthenticated') {
@@ -71,6 +76,29 @@ export const OrdersContent = () => {
 			setError(err instanceof Error ? err.message : 'Произошла ошибка');
 		} finally {
 			setLoading(false);
+		}
+	};
+
+	const handleCancelOrder = async (orderId: string) => {
+		try {
+			setCancellingOrderId(orderId);
+			setError('');
+			const response = await fetch(`/api/orders/${orderId}`, {
+				method: 'PATCH',
+			});
+			const data = await response.json();
+
+			if (!response.ok) {
+				throw new Error(data.error || 'Не удалось отменить заказ');
+			}
+
+			setOrders((prev) =>
+				prev.map((order) => (order.id === orderId ? { ...order, status: 'cancelled' as const } : order)),
+			);
+		} catch (err) {
+			setError(err instanceof Error ? err.message : 'Произошла ошибка');
+		} finally {
+			setCancellingOrderId(null);
 		}
 	};
 
@@ -111,11 +139,26 @@ export const OrdersContent = () => {
 				{orders.map((order) => (
 					<OrderCard key={order.id}>
 						<OrderHeader>
-							<div>
+							<OrderHeaderInfo>
 								<OrderId>Заказ #{order.orderNumber ?? order.id.slice(0, 8)}</OrderId>
 								<OrderDate>{new Date(order.createdAt).toLocaleString('ru-RU')}</OrderDate>
-							</div>
-							<OrderStatus $status={order.status}>{statusLabels[order.status]}</OrderStatus>
+							</OrderHeaderInfo>
+							<OrderHeaderActions>
+								{(order.status === 'pending' || order.status === 'processing') && (
+									<Button
+										$danger
+										disabled={cancellingOrderId === order.id}
+										onClick={() => handleCancelOrder(order.id)}
+									>
+										{cancellingOrderId === order.id
+											? 'Отмена...'
+											: isMobile
+												? 'Отменить'
+												: 'Отменить заказ'}
+									</Button>
+								)}
+								<OrderStatus $status={order.status}>{statusLabels[order.status]}</OrderStatus>
+							</OrderHeaderActions>
 						</OrderHeader>
 
 						<OrderItems>
