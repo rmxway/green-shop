@@ -18,7 +18,6 @@ const config: Config = {
 
 	moduleNameMapper: {
 		'^@/(.*)$': '<rootDir>/$1',
-		'^lenis/react$': '<rootDir>/__mocks__/lenis-react.tsx',
 	},
 
 	// Stop running tests after `n` failures

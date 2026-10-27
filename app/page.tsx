@@ -97,7 +97,7 @@ export default function MainPage() {
 								src={logos.src}
 								width={logos.width}
 								height={logos.height}
-								quality={80}
+								quality={75}
 								alt="Технологии"
 							/>
 						</ImageLogos>
@@ -252,38 +252,6 @@ export default function MainPage() {
 								</FeatureItem>
 								<FeatureItem>
 									<FeatureIcon>📦</FeatureIcon> История заказов
-								</FeatureItem>
-							</FeatureList>
-						</FeatureCardClean>
-						<FeatureCardClean {...fadeInUpViewProps}>
-							<FeatureTitle>🛠️ Технический стек:</FeatureTitle>
-							<FeatureList>
-								<FeatureItem>
-									<FeatureIcon>⚛️</FeatureIcon> Next.js 16, React 19, App Router
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>🎨</FeatureIcon> styled-components, SASS
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>📦</FeatureIcon> Redux Toolkit, redux-persist
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>🔐</FeatureIcon> NextAuth — вход и регистрация
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>🔥</FeatureIcon> Firebase (опционально)
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>📝</FeatureIcon> react-hook-form, Yup, IMask
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>🎭</FeatureIcon> Framer Motion, Lenis (скролл)
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>📚</FeatureIcon> Storybook, Jest, ESLint, Prettier
-								</FeatureItem>
-								<FeatureItem>
-									<FeatureIcon>🔗</FeatureIcon> dummyjson.com API
 								</FeatureItem>
 							</FeatureList>
 						</FeatureCardClean>

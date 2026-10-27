@@ -415,17 +415,9 @@ export const MotionInView = styled(motion.div)`
 
 export const FeaturesGrid = styled.div`
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	gap: 2rem;
 	margin-top: 2rem;
-
-	${media.greaterThan('sm')`
-		grid-template-columns: repeat(2, minmax(270px, 1fr));
-	`}
-
-	${media.greaterThan('lg')`
-		grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-	`}
 `;
 
 export const FeatureCardClean = styled(motion.div)`
