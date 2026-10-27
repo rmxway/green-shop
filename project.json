@@ -1,0 +1,26 @@
+{
+	"id": "green-shop",
+	"title": "Green Shop Brand",
+	"subtitle": "Интернет-магазин натуральной продукции",
+	"description": "Каталог с поиском и фильтрами, корзина, избранное, сравнение товаров, NextAuth, личный кабинет, заказы в Firestore, тёмная тема, Storybook и тесты. Jest + React Testing Library: тесты ключевых компонентов. Storybook: визуальная документация 12+ компонентов UI-кита. Тёмная тема через styled-components.",
+	"stack": [
+		"Next.js 16",
+		"React 19",
+		"TypeScript",
+		"styled-components",
+		"Redux Toolkit",
+		"RTK Query",
+		"Firebase",
+		"NextAuth",
+		"Storybook",
+		"React Testing Library",
+		"Jest",
+		"ESLint",
+		"Prettier"
+	],
+	"kind": "pet",
+	"githubUrl": "https://github.com/rmxway/green-shop",
+	"demoUrl": "https://green-shop-brand.vercel.app/",
+	"accent": "emerald",
+	"previewImage": "assets/img/preview.jpg"
+}
