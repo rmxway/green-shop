@@ -418,6 +418,10 @@ export const FeaturesGrid = styled.div`
 	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	gap: 2rem;
 	margin-top: 2rem;
+
+	${media.lessThan('xs')`
+		grid-template-columns: 1fr;
+	`}
 `;
 
 export const FeatureCardClean = styled(motion.div)`
