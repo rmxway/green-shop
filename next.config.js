@@ -4,7 +4,11 @@
 
 module.exports = {
 	env: {
-		NEXTAUTH_URL: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000',
+		NEXTAUTH_URL: process.env.VERCEL_URL
+			? `https://${process.env.VERCEL_URL}`
+			: process.env.DEPLOY_URL
+				? process.env.DEPLOY_URL // DEPLOY_URL уже содержит https://
+				: 'http://localhost:3000',
 	},
 	reactStrictMode: process.env.NODE_ENV === 'production',
 	images: {
@@ -21,9 +25,6 @@ module.exports = {
 	},
 	compiler: {
 		styledComponents: true,
-	},
-	experimental: {
-		turbopackFileSystemCacheForDev: false,
 	},
 	turbopack: {},
 	webpack(config) {
