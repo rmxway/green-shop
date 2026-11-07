@@ -6,10 +6,10 @@ import { Flexbox, RatingStars, Space } from '@/components/Layout';
 import { Button, Compare, Favorite, Sticker } from '@/components/ui';
 import { useAppDispatch, useAppSelector, useCurrency, useNavigateWithScroll } from '@/services';
 import { moveToCart } from '@/store/reducers/combineActions';
-import { isInCompareMemoized } from '@/store/reducers/commonSelectors';
+import { isInCompareMemoized, productByIdMemoized } from '@/store/reducers/commonSelectors';
 import { toggleCompare } from '@/store/reducers/compare';
 import { toggleFavorite } from '@/store/reducers/products';
-import { compareStore } from '@/store/types';
+import { compareStore, productsStore } from '@/store/types';
 import { IProduct } from '@/types';
 
 import { ProductImage } from './ProductImage';
@@ -26,6 +26,8 @@ export const ProductCard: FC<ProductCardProps> = memo(
 		const dispatch = useAppDispatch();
 		const { formatPriceWithSymbol } = useCurrency();
 		const isInCompare = useAppSelector((state) => isInCompareMemoized(compareStore(state), product.id));
+		// Получаем актуальное состояние товара из store
+		const actualProduct = productByIdMemoized(useAppSelector(productsStore), product.id) || product;
 
 		const handleCartClick = () => {
 			if (product.checked) {
@@ -39,6 +41,10 @@ export const ProductCard: FC<ProductCardProps> = memo(
 			dispatch(toggleCompare(product));
 		};
 
+		const handleToggleFavorite = () => {
+			dispatch(toggleFavorite(product.id));
+		};
+
 		return (
 			<ProductWrapper {...props}>
 				<TopBlock>
@@ -47,7 +53,7 @@ export const ProductCard: FC<ProductCardProps> = memo(
 					)}
 					<Flexbox>
 						<Compare onActive={handleToggleCompare} active={isInCompare} />
-						<Favorite onActive={() => dispatch(toggleFavorite(product.id))} active={product.favorite} />
+						<Favorite onActive={handleToggleFavorite} active={actualProduct?.favorite} />
 					</Flexbox>
 				</TopBlock>
 				<Link href={link}>
@@ -63,12 +69,12 @@ export const ProductCard: FC<ProductCardProps> = memo(
 					<Price>{formatPriceWithSymbol(product.price)}</Price>
 				</Tools>
 				<Button
-					$primary={!product.checked}
-					$dark={product.checked}
-					icon={product.checked ? 'arrow-right-line' : 'cart'}
+					$primary={!actualProduct?.checked}
+					$dark={actualProduct?.checked}
+					icon={actualProduct?.checked ? 'arrow-right-line' : 'cart'}
 					onClick={handleCartClick}
 				>
-					{product.checked ? 'Корзина' : 'Добавить'}
+					{actualProduct?.checked ? 'Корзина' : 'Добавить'}
 				</Button>
 			</ProductWrapper>
 		);

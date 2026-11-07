@@ -1,22 +1,19 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
 
+import { DialogModal } from '@/components';
 import { Container, LayerBlock } from '@/components/Layout';
-import { Button, LinkIcon, Modal } from '@/components/ui';
 import { CompareTable } from '@/modules/compare';
 import { useAppDispatch, useAppSelector } from '@/services';
 import { clearCompare } from '@/store/reducers/compare';
 
 export const ContentCompare = () => {
-	const [modalShow, setModalShow] = useState(false);
 	const items = useAppSelector((state) => state.compare.items);
 	const dispatch = useAppDispatch();
 
 	const handleClearCompare = () => {
 		dispatch(clearCompare());
-		setModalShow(false);
 	};
 
 	const isItems = items.length > 0;
@@ -24,17 +21,12 @@ export const ContentCompare = () => {
 	return (
 		<Container $pt>
 			{isItems && (
-				<LinkIcon icon="trash" onClick={() => setModalShow(true)} style={{ top: '10px', position: 'absolute' }}>
-					Очистить сравнение
-				</LinkIcon>
+				<DialogModal
+					title="Удалить сравнение"
+					text="Вы уверены, что хотите удалить все товары из сравнения?"
+					handleFn={handleClearCompare}
+				/>
 			)}
-			<Modal open={modalShow} onClose={() => setModalShow(false)} title="Очистить сравнение">
-				<div>Вы уверены, что хотите удалить все товары из сравнения?</div>
-				<br />
-				<Button $danger onClick={handleClearCompare}>
-					Очистить
-				</Button>
-			</Modal>
 
 			{!isItems ? (
 				<LayerBlock $fixedPadding>

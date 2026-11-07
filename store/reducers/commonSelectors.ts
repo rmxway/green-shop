@@ -25,7 +25,7 @@ export const currentItemsMemoized = createDraftSafeSelector.withTypes<CommonStat
  * @description Поиск продукта по id
  */
 export const productByIdMemoized = typedProductsCreateSelector(
-	[(state) => state.fetchedItems, (_, id: string) => id],
+	[(state) => state.fetchedItems, (_, id: number) => id],
 	(fetchedItems, id) => {
 		if (!Array.isArray(fetchedItems) || !id) return null;
 		return fetchedItems.find((item) => item.id === Number(id)) || null;

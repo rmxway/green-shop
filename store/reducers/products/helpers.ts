@@ -40,7 +40,7 @@ export const initialItems = (state: ProductsState, response: ResponseProducts) =
 	}
 
 	state.fetchedItems = [...data];
-	state.filteredItems = state.fetchedItems;
+	state.filteredItems = [...data];
 
 	// Восстанавливаем пользовательские состояния
 	state.fetchedItems.forEach((item) => {

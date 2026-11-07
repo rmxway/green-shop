@@ -33,7 +33,7 @@ export const ProductHeader: FC<ProductHeaderProps> = memo(({ product }) => {
 	const [hasError, setHasError] = useState(false);
 
 	// Получаем актуальное состояние товара из store
-	const actualProduct = productByIdMemoized(useAppSelector(productsStore), String(product.id)) || product;
+	const actualProduct = productByIdMemoized(useAppSelector(productsStore), product.id) || product;
 	const navigateTo = useNavigateWithScroll();
 
 	const handleCartClick = () => {

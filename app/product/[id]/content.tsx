@@ -25,7 +25,7 @@ export const ContentProduct = () => {
 	const { id } = useParams<{ id: string }>();
 	const { fetchedItems, error } = useAppSelector(productsStore);
 	useGetProductQuery(id, { skip: fetchedItems.length > 1 });
-	const product: IProduct = productByIdMemoized(useAppSelector(productsStore), id)!;
+	const product: IProduct = productByIdMemoized(useAppSelector(productsStore), +id)!;
 	const { formatPriceWithSymbol } = useCurrency();
 	const isInCompare = useAppSelector((state) => isInCompareMemoized(compareStore(state), product?.id));
 

@@ -22,7 +22,7 @@ export const ProductImage: FC<ProductImageProps> = ({ images, alt }) => {
 		setHasError(true);
 	}, []);
 
-	useLoadTimeout(isLoading, 10, handleLoadTimeout);
+	useLoadTimeout(isLoading, 0, handleLoadTimeout);
 
 	if (!imageSrc || hasError) {
 		return (

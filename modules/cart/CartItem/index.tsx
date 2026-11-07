@@ -46,7 +46,7 @@ export const CartItem: FC<Props> = memo(
 			setHasError(true);
 		}, []);
 
-		useLoadTimeout(isLoad, 10, handleLoadTimeout);
+		useLoadTimeout(isLoad, 0, handleLoadTimeout);
 
 		// Сброс состояний при изменении продукта
 		useEffect(() => {

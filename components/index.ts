@@ -1,4 +1,5 @@
 export * from './Categories';
+export * from './DialogModal';
 export * from './Filter';
 export * from './Navbar';
 export * from './Pagination';

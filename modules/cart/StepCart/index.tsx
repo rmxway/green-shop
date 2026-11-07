@@ -2,11 +2,10 @@
 
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import Link from 'next/link';
-import { FC, memo, useCallback, useMemo, useState } from 'react';
+import { FC, memo, useMemo } from 'react';
 
-import { Pagination } from '@/components';
+import { DialogModal, Pagination } from '@/components';
 import { LayerBlock } from '@/components/Layout';
-import { Button, LinkIcon, Modal } from '@/components/ui';
 import { fadeVariant, precomputedFadeVariants } from '@/lib/pageAnimations';
 import { CartItem } from '@/modules/cart/CartItem';
 import { useAppDispatch, useAppSelector } from '@/services';
@@ -19,20 +18,16 @@ import { CartSidebar } from './CartSidebar';
 import { Cart, contentVariant, Wrapper } from './styled';
 
 export const StepCart: FC = memo(() => {
-	const [modalShow, setModalShow] = useState(false);
 	const { countPerPage, page, items } = useAppSelector(cartStore);
 	const dispatch = useAppDispatch();
 
 	const isItems = !!items.length;
 
 	const currentItems = currentItemsMemoized(useAppSelector(cartStore), items);
-	const handleCloseModal = useCallback(() => setModalShow(false), []);
-	const handleOpenModal = useCallback(() => setModalShow(true), []);
 
-	const handleTrashAllProducts = useCallback(() => {
-		setModalShow(false);
+	const handleTrashAllProducts = () => {
 		removeAllProducts();
-	}, []);
+	};
 
 	const fnChangePage = (p: number) => {
 		dispatch(changePage(p));
@@ -42,18 +37,13 @@ export const StepCart: FC = memo(() => {
 
 	return (
 		<>
-			<Modal open={modalShow} onClose={handleCloseModal} title="Удалить все">
-				<div>Вы уверены, что хотите удалить все товары из корзины?</div>
-				<br />
-				<Button $danger onClick={handleTrashAllProducts}>
-					Удалить
-				</Button>
-			</Modal>
 			<div>
 				{isItems && (
-					<LinkIcon icon="trash" onClick={handleOpenModal} style={{ top: '10px', position: 'absolute' }}>
-						Удалить все
-					</LinkIcon>
+					<DialogModal
+						title="Удалить все"
+						text="Вы уверены, что хотите удалить все товары из корзины?"
+						handleFn={handleTrashAllProducts}
+					/>
 				)}
 			</div>
 			<Cart>
