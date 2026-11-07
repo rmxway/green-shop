@@ -11,4 +11,4 @@ export const ScrollToTop = (top: number = 0, smooth: boolean = true) => {
 	}
 };
 
-export const debounceFunction = debounce((fn: () => unknown) => fn(), 500);
+export const debounceFunction = debounce((fn: () => unknown) => fn(), 350);

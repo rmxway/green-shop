@@ -3,8 +3,7 @@ import Skeleton from 'react-loading-skeleton';
 
 import { Flexbox } from '@/components/Layout';
 import { Icon, Input } from '@/components/ui';
-import { useAppDispatch, useAppSelector } from '@/services';
-import { debounceFunction } from '@/services/helpers';
+import { debounceFunction, useAppDispatch, useAppSelector } from '@/services';
 import { searchProducts, searchValue } from '@/store/reducers/products';
 
 import { SearchClearButton, SearchFieldWrapper, StyledFilter } from './styled';

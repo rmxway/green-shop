@@ -2,6 +2,7 @@ import { FC, useState } from 'react';
 
 import { Grid } from '@/components/Layout';
 import { Button, LinkIcon, Modal } from '@/components/ui';
+import { debounceFunction } from '@/services';
 
 interface DialogModalProps {
 	title: string;
@@ -15,8 +16,8 @@ export const DialogModal: FC<DialogModalProps> = ({ title, text, handleFn }) => 
 	const onClose = () => setModalShow(false);
 
 	const handleAction = () => {
-		handleFn();
 		onClose();
+		debounceFunction(() => handleFn());
 	};
 
 	return (

@@ -25,7 +25,7 @@ export const Modal: FC<ModalProps> = ({ open, onClose, title, children }) => {
 	};
 
 	return (
-		<AnimatePresence mode="sync" key="modal">
+		<AnimatePresence mode="sync" key="modal" presenceAffectsLayout>
 			{open && (
 				<ModalWrapper
 					variants={wrapperVariants}
