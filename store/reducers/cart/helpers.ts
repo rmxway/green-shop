@@ -18,9 +18,3 @@ export const changeCount = ({ state, id, type }: StateAndProps & { type: 'increa
 		cur.count -= 1;
 	}
 };
-
-export const calculateTotalPrice = (state: CartState) => {
-	state.totalPrice = !state.items.length
-		? 0
-		: Number(state.items.reduce((acc: number, curr) => acc + curr.price * (curr.count || 1), 0));
-};

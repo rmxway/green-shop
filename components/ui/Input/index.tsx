@@ -29,7 +29,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps & InputHTMLAttribut
 			{mask ? (
 				<IMaskInput
 					{...{ name, mask, type }}
-					onAccept={(value) => {
+					onAccept={(value: string) => {
 						(onChange as ChangeType)?.({ target: { name, value } });
 					}}
 					inputRef={ref}

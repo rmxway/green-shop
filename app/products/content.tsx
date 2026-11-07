@@ -1,6 +1,6 @@
 'use client';
 
-import { memo, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Categories, Filter } from '@/components';
 import { Container, LayerBlock } from '@/components/Layout';
@@ -8,11 +8,10 @@ import { CurrencySwitcher, WarningMessage } from '@/components/ui';
 import { ProductsGrid } from '@/modules/products';
 import { useAppSelector } from '@/services';
 import { useGetProductsQuery } from '@/store/api';
-import { productsSelectorMemoized } from '@/store/reducers/commonSelectors';
 import { productsStore } from '@/store/types';
 
-export const ContentProducts = memo(() => {
-	const { fetchedItems, error } = productsSelectorMemoized(useAppSelector(productsStore));
+export const ContentProducts = () => {
+	const { fetchedItems, filteredItems, error } = useAppSelector(productsStore);
 	const [isTimeout, setIsTimeout] = useState(false);
 
 	const shouldFetch = fetchedItems.length === 0;
@@ -61,7 +60,7 @@ export const ContentProducts = memo(() => {
 			)}
 
 			<ProductsGrid
-				items={fetchedItems}
+				items={filteredItems}
 				isLoading={isReallyLoading}
 				pagination
 				keyPage="products"
@@ -69,6 +68,6 @@ export const ContentProducts = memo(() => {
 			/>
 		</Container>
 	);
-});
+};
 
 export default ContentProducts;

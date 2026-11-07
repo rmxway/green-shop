@@ -51,6 +51,13 @@ const rootReducer = (state: ReturnType<typeof appReducer>, action: Action) => {
 
 const persistedReducers = persistReducer(persistConfig, rootReducer as typeof appReducer);
 
+export function testCartStore() {
+	return configureStore({
+		reducer: CartReducer,
+		middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(...middlewares),
+	});
+}
+
 export const store = configureStore({
 	reducer: persistedReducers,
 	middleware: (getDefaultMiddleware) =>

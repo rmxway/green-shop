@@ -57,7 +57,7 @@ describe('POST /api/register', () => {
 		const req = new Request('http://localhost/api/register', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify('invalid'),
+			body: JSON.stringify('some text'),
 		});
 		const res = await POST(req);
 

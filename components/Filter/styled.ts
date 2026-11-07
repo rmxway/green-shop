@@ -6,6 +6,7 @@ import { media } from '@/theme';
 export const SearchFieldWrapper = styled.div`
 	position: relative;
 	width: 100%;
+	flex-grow: 1;
 
 	input {
 		padding-right: 36px;
@@ -68,10 +69,6 @@ export const StyledFilter = styled.div`
         ${SearchFieldWrapper} {
             margin-top: 0;
             width: auto;
-
-            &:has(input:focus) {
-                flex-grow: 1;
-            }
         }
 
         ${InputWrapper} {

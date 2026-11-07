@@ -3,8 +3,6 @@ import { FC, memo, ReactNode } from 'react';
 import { NavCountItem } from '@/components/Navbar/NavCountItem';
 import { NavLink } from '@/components/Navbar/NavLink';
 import { useAppSelector } from '@/services';
-import { compareCountMemoized } from '@/store/reducers/commonSelectors';
-import { compareStore } from '@/store/types';
 
 interface CompareNavItemProps {
 	onClose: () => void;
@@ -12,7 +10,7 @@ interface CompareNavItemProps {
 }
 
 export const CompareNavItem: FC<CompareNavItemProps> = memo(({ onClose, children }) => {
-	const compareCount = useAppSelector((state) => compareCountMemoized(compareStore(state)));
+	const compareCount = useAppSelector((state) => state.compare.items.length);
 
 	return (
 		<NavLink

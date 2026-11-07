@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { ContentCart } from '@/modules/cart';
+import { ContentCart } from './content';
 
 export const metadata: Metadata = {
 	title: 'Корзина',

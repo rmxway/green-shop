@@ -69,7 +69,7 @@ export interface CompareState {
 export interface ProductsState {
 	title: string;
 	fetchedItems: IProduct[];
-	reservedItems: IProduct[];
+	filteredItems: IProduct[];
 	total: number;
 	countPerPage: number;
 	countFavorites: number;

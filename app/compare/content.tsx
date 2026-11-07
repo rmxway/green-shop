@@ -7,13 +7,11 @@ import { Container, LayerBlock } from '@/components/Layout';
 import { Button, LinkIcon, Modal } from '@/components/ui';
 import { CompareTable } from '@/modules/compare';
 import { useAppDispatch, useAppSelector } from '@/services';
-import { compareItemsMemoized } from '@/store/reducers/commonSelectors';
 import { clearCompare } from '@/store/reducers/compare';
-import { compareStore } from '@/store/types';
 
 export const ContentCompare = () => {
 	const [modalShow, setModalShow] = useState(false);
-	const items = useAppSelector((state) => compareItemsMemoized(compareStore(state)));
+	const items = useAppSelector((state) => state.compare.items);
 	const dispatch = useAppDispatch();
 
 	const handleClearCompare = () => {

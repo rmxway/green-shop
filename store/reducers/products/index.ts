@@ -3,20 +3,20 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PRODUCTS_COUNT_PER_PAGE } from '@/services/constants';
 import { api, ResponseProducts } from '@/store/api';
 import {
-	anyTogglesInProduct,
 	applyCurrentSort,
 	calcCategory,
 	changeCurrentPage,
 	initialItems,
 	initialOneProduct,
 	resetItems,
+	togglesInProduct,
 } from '@/store/reducers/products/helpers';
 import { IProduct, ProductsState, SortTypes, TypePages } from '@/types';
 
 const initialState: ProductsState = {
 	title: '',
 	fetchedItems: [],
-	reservedItems: [],
+	filteredItems: [],
 	total: 0,
 	page: 1,
 	productsPage: 1,
@@ -49,13 +49,10 @@ const productsReducer = createSlice({
 			state.title = payload;
 		},
 		toggleProduct: (state, { payload }: PayloadAction<number>) => {
-			anyTogglesInProduct(state, payload, 'checked');
+			togglesInProduct(state, payload, 'checked');
 		},
 		removeAllToggledProducts: (state) => {
 			state.fetchedItems.forEach((item) => {
-				item.checked = false;
-			});
-			state.reservedItems.forEach((item) => {
 				item.checked = false;
 			});
 		},
@@ -77,14 +74,17 @@ const productsReducer = createSlice({
 		},
 		searchProducts: (state, { payload }: PayloadAction<string>) => {
 			const searchText = payload.toLowerCase().trim();
+
+			// TODO сделать поиск + категории
 			calcCategory(state, 'all');
-			state.fetchedItems = state.reservedItems.filter((item) => item.title.toLowerCase().includes(searchText));
+			state.filteredItems = state.fetchedItems.filter((item) => item.title.toLowerCase().includes(searchText));
 			applyCurrentSort(state);
 		},
 		toggleFavorite: (state, { payload }: PayloadAction<number>) => {
-			anyTogglesInProduct(state, payload, 'favorite');
+			togglesInProduct(state, payload, 'favorite');
 
-			state.countFavorites = state.reservedItems.filter((item) => item.favorite).length;
+			// TODO перенести
+			state.countFavorites = state.fetchedItems.filter((item) => item.favorite).length;
 
 			const isLastItemOnPage = state.countFavorites === state.countPerPage * state.page - state.countPerPage;
 			if (isLastItemOnPage && state.typePage === 'favorites' && state.page > 1) {
@@ -93,10 +93,9 @@ const productsReducer = createSlice({
 			}
 		},
 		removeAllFavorites: (state) => {
-			state.reservedItems.forEach((item) => {
+			state.fetchedItems.forEach((item) => {
 				item.favorite = false;
 			});
-			state.fetchedItems = [...state.reservedItems];
 			state.countFavorites = 0;
 		},
 		changeTypePage: (state, { payload }: PayloadAction<TypePages>) => {
@@ -161,9 +160,7 @@ const productsReducer = createSlice({
 			.addMatcher(api.endpoints.getProduct.matchRejected, (state) => {
 				state.error = 'Не удалось загрузить товар.';
 				state.fetching = false;
-				if (state.reservedItems.length === 0) {
-					state.fetchedItems = [];
-				}
+				state.fetchedItems = [];
 			});
 	},
 });

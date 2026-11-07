@@ -1,7 +1,8 @@
 import { Action, Middleware } from 'redux';
 
 import { ScrollToTop } from '@/services/helpers';
-import { changePage, changeTypePage, resetItemsAction } from '@/store/reducers/products';
+import { addToCart, calculateTotalPrice, decreaseCount, deleteFromCart, increaseCount } from '@/store/reducers/cart';
+import { changePage } from '@/store/reducers/products';
 
 const afterChangePageScrollTop: Middleware = () => (next) => (action) => {
 	if ((action as Action).type === changePage.type) {
@@ -11,12 +12,14 @@ const afterChangePageScrollTop: Middleware = () => (next) => (action) => {
 	return next(action);
 };
 
-const resetItemsAfterSwitchPage: Middleware = (state) => (next) => (action) => {
-	if ((action as Action).type === changeTypePage.type) {
-		state.dispatch({ type: resetItemsAction.type });
+const calculateCartTotalPrice: Middleware = (state) => (next) => (action) => {
+	const result = next(action);
+	const actionTypes = [addToCart.type, deleteFromCart.type, increaseCount.type, decreaseCount.type] as string[];
+	if (actionTypes.includes((action as Action).type)) {
+		state.dispatch({ type: calculateTotalPrice.type });
 	}
 
-	return next(action);
+	return result;
 };
 
-export const middlewares = [afterChangePageScrollTop, resetItemsAfterSwitchPage];
+export const middlewares = [afterChangePageScrollTop, calculateCartTotalPrice];

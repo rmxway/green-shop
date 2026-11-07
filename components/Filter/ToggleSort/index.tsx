@@ -4,7 +4,6 @@ import React, { FC, memo, useRef } from 'react';
 
 import { Icon } from '@/components/ui';
 import { useAppDispatch, useAppSelector } from '@/services';
-import { toggleSortSelectorMemoized } from '@/store/reducers/commonSelectors';
 import { sortProducts } from '@/store/reducers/products';
 
 import { Toggle } from './styled';
@@ -16,11 +15,7 @@ interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 const ToggleSort: FC<ToggleProps> = memo(({ sort, value, disabled, onClick, ...props }) => {
-	const {
-		sort: productsSort,
-		search,
-		categories,
-	} = useAppSelector((state) => toggleSortSelectorMemoized(state.products));
+	const { sort: productsSort, search, categories } = useAppSelector((state) => state.products);
 	const checked = useRef(false);
 	const idName = `sort-${sort}`;
 	const dispatch = useAppDispatch();

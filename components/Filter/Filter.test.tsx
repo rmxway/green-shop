@@ -35,21 +35,18 @@ const mockSortProducts = sortProducts as jest.MockedFunction<typeof sortProducts
 
 const mockDispatch = jest.fn();
 type MockProductsState = {
-	reservedItems: unknown[];
 	fetchedItems: unknown[];
 	sort: SortTypes;
 	search: string;
 	categories: { name: string; active: boolean }[];
 };
 const mockProductsStateWithItems: MockProductsState = {
-	reservedItems: [{}],
 	fetchedItems: [{}],
 	sort: { name: 'default', toggle: false },
 	search: '',
 	categories: [{ name: 'all', active: true }],
 };
 const mockProductsStateNoItems: MockProductsState = {
-	reservedItems: [],
 	fetchedItems: [],
 	sort: { name: 'default', toggle: false },
 	search: '',

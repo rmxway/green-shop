@@ -134,7 +134,7 @@ export const CartItem: FC<Props> = memo(
 			</Item>
 		);
 	},
-	(prevProps, nextProps) => prevProps.product === nextProps.product,
+	(prev, next) => prev.product.count == next.product.count,
 );
 
 CartItem.displayName = 'CartItem';

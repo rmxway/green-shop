@@ -9,7 +9,7 @@ import { LayerBlock } from '@/components/Layout';
 import { Button, LinkIcon, Modal } from '@/components/ui';
 import { fadeVariant, precomputedFadeVariants } from '@/lib/pageAnimations';
 import { CartItem } from '@/modules/cart/CartItem';
-import { useAppSelector } from '@/services';
+import { useAppDispatch, useAppSelector } from '@/services';
 import { changePage } from '@/store/reducers/cart';
 import { removeAllProducts } from '@/store/reducers/combineActions';
 import { currentItemsMemoized } from '@/store/reducers/commonSelectors';
@@ -20,11 +20,8 @@ import { Cart, contentVariant, Wrapper } from './styled';
 
 export const StepCart: FC = memo(() => {
 	const [modalShow, setModalShow] = useState(false);
-
-	// Точечные селекторы вместо получения всего стейта
-	const items = useAppSelector((state) => cartStore(state).items);
-	const page = useAppSelector((state) => cartStore(state).page);
-	const countPerPage = useAppSelector((state) => cartStore(state).countPerPage);
+	const { countPerPage, page, items } = useAppSelector(cartStore);
+	const dispatch = useAppDispatch();
 
 	const isItems = !!items.length;
 
@@ -36,6 +33,10 @@ export const StepCart: FC = memo(() => {
 		setModalShow(false);
 		removeAllProducts();
 	}, []);
+
+	const fnChangePage = (p: number) => {
+		dispatch(changePage(p));
+	};
 
 	const exitAnimation = useMemo(() => ({ opacity: 0, scale: isItems ? 0.9 : 1 }), [isItems]);
 
@@ -86,7 +87,7 @@ export const StepCart: FC = memo(() => {
 								<br />
 							</LayerBlock>
 						)}
-						<Pagination layout {...{ changePage, items, countPerPage, page }} />
+						<Pagination layout {...{ changePage, items, countPerPage, page, fnChangePage }} />
 					</Wrapper>
 
 					<CartSidebar />

@@ -1,11 +1,10 @@
-import { FC, memo, useCallback } from 'react';
+import { FC, memo, useCallback, useEffect, useRef } from 'react';
 import Skeleton from 'react-loading-skeleton';
 
 import { Flexbox } from '@/components/Layout';
 import { Icon, Input } from '@/components/ui';
 import { useAppDispatch, useAppSelector } from '@/services';
 import { debounceFunction } from '@/services/helpers';
-import { filterRelevantSelectorMemoized } from '@/store/reducers/commonSelectors';
 import { searchProducts, searchValue } from '@/store/reducers/products';
 
 import { SearchClearButton, SearchFieldWrapper, StyledFilter } from './styled';
@@ -13,17 +12,16 @@ import { ToggleSort } from './ToggleSort';
 
 export const Filter: FC<{ isLoading: boolean }> = memo(
 	({ isLoading }) => {
-		const { reservedItemsLength, fetchedItemsLength } = useAppSelector((state) =>
-			filterRelevantSelectorMemoized(state.products),
-		);
+		const inputRef = useRef<HTMLInputElement>(null);
 		const search = useAppSelector((state) => state.products.search);
+		const fetchedItemsLength = useAppSelector((state) => state.products.fetchedItems.length);
 		const dispatch = useAppDispatch();
 
 		const handleChange = useCallback(
 			(e: React.ChangeEvent<HTMLInputElement>) => {
 				const searchText = e.target.value;
-				dispatch(searchValue(searchText));
 				debounceFunction(() => {
+					dispatch(searchValue(searchText));
 					dispatch(searchProducts(searchText));
 				});
 			},
@@ -33,7 +31,12 @@ export const Filter: FC<{ isLoading: boolean }> = memo(
 		const handleClearSearch = useCallback(() => {
 			dispatch(searchValue(''));
 			dispatch(searchProducts(''));
+			if (inputRef.current) inputRef.current.value = '';
 		}, [dispatch]);
+
+		useEffect(() => {
+			if (inputRef.current) inputRef.current.value = search;
+		}, [search]);
 
 		return (
 			<StyledFilter>
@@ -42,12 +45,12 @@ export const Filter: FC<{ isLoading: boolean }> = memo(
 				) : (
 					<SearchFieldWrapper>
 						<Input
+							ref={inputRef}
 							name="search"
 							placeholder="Поиск"
-							value={search}
 							onChange={handleChange}
 							noPadding
-							disabled={reservedItemsLength === 0 && fetchedItemsLength === 0}
+							disabled={fetchedItemsLength === 0}
 						/>
 						{search.length > 0 && (
 							<SearchClearButton type="button" onClick={handleClearSearch} aria-label="Очистить поиск">

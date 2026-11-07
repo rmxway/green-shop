@@ -5,7 +5,7 @@ import { Favorite, Icon, Loader } from '@/components/ui';
 import { Button } from '@/components/ui/Button';
 import { useAppDispatch, useAppSelector, useCurrency, useLoadTimeout, useNavigateWithScroll } from '@/services';
 import { moveToCart } from '@/store/reducers/combineActions';
-import { productMemoized } from '@/store/reducers/commonSelectors';
+import { productByIdMemoized } from '@/store/reducers/commonSelectors';
 import { removeFromCompare } from '@/store/reducers/compare';
 import { toggleFavorite } from '@/store/reducers/products';
 import { productsStore } from '@/store/types';
@@ -33,24 +33,23 @@ export const ProductHeader: FC<ProductHeaderProps> = memo(({ product }) => {
 	const [hasError, setHasError] = useState(false);
 
 	// Получаем актуальное состояние товара из store
-	const actualProduct =
-		useAppSelector((state) => productMemoized(productsStore(state), String(product.id))) || product;
+	const actualProduct = productByIdMemoized(useAppSelector(productsStore), String(product.id)) || product;
 	const navigateTo = useNavigateWithScroll();
 
 	const handleCartClick = () => {
 		if (actualProduct.checked) {
 			navigateTo('/cart');
 		} else {
-			moveToCart(Number(product.id));
+			moveToCart(product.id);
 		}
 	};
 
 	const handleToggleFavorite = () => {
-		dispatch(toggleFavorite(Number(product.id)));
+		dispatch(toggleFavorite(product.id));
 	};
 
 	const handleRemoveFromCompare = () => {
-		dispatch(removeFromCompare(Number(product.id)));
+		dispatch(removeFromCompare(product.id));
 	};
 
 	const handleLoadTimeout = useCallback(() => {
@@ -109,7 +108,12 @@ export const ProductHeader: FC<ProductHeaderProps> = memo(({ product }) => {
 			<ProductPrice>{formatPriceWithSymbol(product.price)}</ProductPrice>
 
 			<ActionsWrapper>
-				<Button $primary icon={actualProduct.checked ? 'arrow-right-line' : 'cart'} onClick={handleCartClick}>
+				<Button
+					$primary
+					$dark={actualProduct.checked}
+					icon={actualProduct.checked ? 'arrow-right-line' : 'cart'}
+					onClick={handleCartClick}
+				>
 					{actualProduct.checked ? 'Корзина' : 'В корзину'}
 				</Button>
 			</ActionsWrapper>

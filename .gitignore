@@ -11,7 +11,10 @@
 
 # next.js
 /.next/
+/.swc/
 /out/
+
+/.vscode/
 
 # storybook
 storybook-static/

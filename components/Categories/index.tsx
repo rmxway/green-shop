@@ -4,7 +4,6 @@ import Skeleton from 'react-loading-skeleton';
 import { Flexbox } from '@/components/Layout';
 import { useAppSelector } from '@/services';
 import { changeCategoryWithSort } from '@/store/reducers/combineActions';
-import { toggleSortSelectorMemoized } from '@/store/reducers/commonSelectors';
 
 import { Category, WrapperCategory } from './styled';
 
@@ -12,7 +11,7 @@ const skeletonArray = [...new Set(new Array(15).fill('').map(() => Math.round(Ma
 
 export const Categories: FC<{ isLoading: boolean }> = memo(
 	({ isLoading }) => {
-		const { search, categories } = useAppSelector((state) => toggleSortSelectorMemoized(state.products));
+		const { search, categories } = useAppSelector((state) => state.products);
 
 		return (
 			<>

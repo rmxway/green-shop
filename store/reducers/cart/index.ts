@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CART_COUNT_PER_PAGE } from '@/services/constants';
 import { CartState, IProduct } from '@/types';
 
-import { calculateTotalPrice, changeCount } from './helpers';
+import { changeCount } from './helpers';
 
 export const initialState: CartState = {
 	items: [],
@@ -20,13 +20,11 @@ const cartReducer = createSlice({
 		addToCart: (state, { payload: item }: PayloadAction<IProduct>) => {
 			state.items.push({
 				...item,
-				count: 1,
+				count: item.count || 1,
 			});
-			calculateTotalPrice(state);
 		},
 		deleteFromCart: (state, { payload }: PayloadAction<number>) => {
 			state.items = state.items.filter((item) => item.id !== payload);
-			calculateTotalPrice(state);
 
 			const isLastItemOnPage = state.items.length === state.countPerPage * state.page - state.countPerPage;
 			if (isLastItemOnPage && state.page !== 1) {
@@ -35,11 +33,9 @@ const cartReducer = createSlice({
 		},
 		increaseCount: (state, { payload: id }: PayloadAction<number>) => {
 			changeCount({ state, id, type: 'increase' });
-			calculateTotalPrice(state);
 		},
 		decreaseCount: (state, { payload: id }: PayloadAction<number>) => {
 			changeCount({ state, id, type: 'decrease' });
-			calculateTotalPrice(state);
 		},
 		trashAll: (state) => {
 			state.items = [];
@@ -51,11 +47,25 @@ const cartReducer = createSlice({
 		changeStep: (state, { payload }: PayloadAction<number>) => {
 			state.step = payload;
 		},
+		calculateTotalPrice: (state) => {
+			state.totalPrice = !state.items.length
+				? 0
+				: state.items.reduce((acc: number, item) => acc + item.price * (item.count || 1), 0);
+		},
 	},
 });
 
 const { actions, reducer } = cartReducer;
 
-export const { addToCart, deleteFromCart, increaseCount, decreaseCount, trashAll, changePage, changeStep } = actions;
+export const {
+	addToCart,
+	deleteFromCart,
+	increaseCount,
+	decreaseCount,
+	trashAll,
+	changePage,
+	changeStep,
+	calculateTotalPrice,
+} = actions;
 
 export default reducer;

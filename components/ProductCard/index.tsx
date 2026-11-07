@@ -31,7 +31,7 @@ export const ProductCard: FC<ProductCardProps> = memo(
 			if (product.checked) {
 				navigateTo('/cart');
 			} else {
-				moveToCart(Number(product.id));
+				moveToCart(product.id);
 			}
 		};
 
@@ -47,10 +47,7 @@ export const ProductCard: FC<ProductCardProps> = memo(
 					)}
 					<Flexbox>
 						<Compare onActive={handleToggleCompare} active={isInCompare} />
-						<Favorite
-							onActive={() => dispatch(toggleFavorite(Number(product.id)))}
-							active={product.favorite}
-						/>
+						<Favorite onActive={() => dispatch(toggleFavorite(product.id))} active={product.favorite} />
 					</Flexbox>
 				</TopBlock>
 				<Link href={link}>
@@ -68,7 +65,6 @@ export const ProductCard: FC<ProductCardProps> = memo(
 				<Button
 					$primary={!product.checked}
 					$dark={product.checked}
-					animate={product.checked}
 					icon={product.checked ? 'arrow-right-line' : 'cart'}
 					onClick={handleCartClick}
 				>
@@ -77,9 +73,7 @@ export const ProductCard: FC<ProductCardProps> = memo(
 			</ProductWrapper>
 		);
 	},
-	(prevProps, nextProps) => {
-		return prevProps.product === nextProps.product;
-	},
+	(prev, next) => prev.product == next.product,
 );
 
 export default ProductCard;

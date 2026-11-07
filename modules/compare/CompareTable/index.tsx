@@ -1,5 +1,5 @@
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
-import { FC, memo } from 'react';
+import { FC } from 'react';
 
 import { IProduct } from '@/types';
 
@@ -11,7 +11,7 @@ interface CompareTableProps {
 	items: IProduct[];
 }
 
-export const CompareTable: FC<CompareTableProps> = memo(({ items }) => {
+export const CompareTable: FC<CompareTableProps> = ({ items }) => {
 	return (
 		<LayoutGroup>
 			<AnimatePresence mode="popLayout">
@@ -33,7 +33,7 @@ export const CompareTable: FC<CompareTableProps> = memo(({ items }) => {
 			</AnimatePresence>
 		</LayoutGroup>
 	);
-});
+};
 
 CompareTable.displayName = 'CompareTable';
 

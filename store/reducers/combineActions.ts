@@ -7,7 +7,7 @@ const { dispatch } = store;
 export const moveToCart = (id: number): void => {
 	const { products } = store.getState();
 	dispatch(toggleProduct(id));
-	const addedProduct = products.reservedItems.find((item) => item.id === id);
+	const addedProduct = products.fetchedItems.find((item) => item.id === id);
 
 	if (addedProduct) {
 		dispatch(addToCart(addedProduct));

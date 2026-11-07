@@ -40,7 +40,6 @@ export const initialItems = (state: ProductsState, response: ResponseProducts) =
 	}
 
 	state.fetchedItems = [...data];
-	state.reservedItems = [...state.fetchedItems];
 
 	// Восстанавливаем пользовательские состояния
 	state.fetchedItems.forEach((item) => {
@@ -55,28 +54,14 @@ export const initialItems = (state: ProductsState, response: ResponseProducts) =
 };
 
 export const initialOneProduct = (state: ProductsState, item: IProduct) => {
-	if (state.reservedItems.length === 0) {
-		state.fetchedItems = [item];
-		state.fetching = false;
-		state.reservedItems = [item];
-	}
+	state.fetchedItems = [item];
+	state.fetching = false;
 };
 
-export const anyTogglesInProduct = (
-	state: ProductsState,
-	id: number,
-	type: 'checked' | 'favorite',
-	value?: boolean,
-) => {
-	const toggleInArray = (array: IProduct[]) => {
-		const currentItem = array.find((item) => item.id === id);
-		if (currentItem) {
-			currentItem[type] = value ?? !currentItem[type];
-		}
-	};
-
-	toggleInArray(state.reservedItems);
-	toggleInArray(state.fetchedItems);
+export const togglesInProduct = (state: ProductsState, id: number, type: 'checked' | 'favorite', value?: boolean) => {
+	const index = state.fetchedItems.findIndex((el) => el.id == id);
+	const item = state.fetchedItems[index];
+	state.fetchedItems[index] = { ...item, [type]: value ?? !item[type] };
 };
 
 export const calcCategory = (state: ProductsState, name: string, reset?: boolean) => {
@@ -92,29 +77,21 @@ export const calcCategory = (state: ProductsState, name: string, reset?: boolean
 	state.page = state.productsPage;
 
 	if (name === 'all') {
-		state.fetchedItems = [...state.reservedItems];
+		state.filteredItems = [...state.fetchedItems];
 	} else {
-		state.fetchedItems = state.reservedItems.filter((item) => item.category === name);
+		state.filteredItems = state.fetchedItems.filter((item) => item.category === name);
 	}
 };
 
-export const resetItems = (state: ProductsState, category = true, page = false) => {
+export const resetItems = (state: ProductsState, category = true) => {
 	state.sort.name = 'default';
 	state.sort.toggle = false;
-	state.fetchedItems = [...state.reservedItems];
-	const searchTrimmed = state.search.trim().toLowerCase();
-	if (searchTrimmed) {
-		state.fetchedItems = state.fetchedItems.filter((item) => item.title.toLowerCase().includes(searchTrimmed));
-	}
+	state.filteredItems = state.fetchedItems;
 	state.fetching = false;
+	state.search = '';
 
 	if (category) {
 		calcCategory(state, 'all', true);
-	}
-
-	if (page) {
-		state.page = 1;
-		state.productsPage = 1;
 	}
 };
 
@@ -125,12 +102,12 @@ export const changeCurrentPage = (state: ProductsState) => {
 export const applyCurrentSort = (state: ProductsState) => {
 	if (state.sort.name === 'default') return;
 	const { name, toggle } = state.sort;
-	const sortedItems = [...state.fetchedItems].sort((a, b) => {
+	const sortedItems = [...state.filteredItems].sort((a, b) => {
 		const aValue = Number(a[name]) || 0;
 		const bValue = Number(b[name]) || 0;
 		if (aValue > bValue) return -1;
 		if (aValue < bValue) return 1;
 		return 0;
 	});
-	state.fetchedItems = toggle ? sortedItems.reverse() : sortedItems;
+	state.filteredItems = toggle ? sortedItems.reverse() : sortedItems;
 };

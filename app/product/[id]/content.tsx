@@ -1,7 +1,6 @@
 'use client';
 
-import 'swiper/css';
-import 'swiper/css/pagination';
+import 'swiper';
 
 import Image from 'next/image';
 import { useParams, useRouter } from 'next/navigation';
@@ -16,7 +15,7 @@ import { Info, NoPhotoContainer, PriceBlock, SideBlock, Wrapper } from '@/module
 import { useAppDispatch, useAppSelector, useCurrency, useLoadTimeout } from '@/services';
 import { useGetProductQuery } from '@/store/api';
 import { moveToCart } from '@/store/reducers/combineActions';
-import { isInCompareMemoized, productMemoized } from '@/store/reducers/commonSelectors';
+import { isInCompareMemoized, productByIdMemoized } from '@/store/reducers/commonSelectors';
 import { toggleCompare } from '@/store/reducers/compare';
 import { setTitle, toggleFavorite } from '@/store/reducers/products';
 import { compareStore, productsStore } from '@/store/types';
@@ -26,7 +25,7 @@ export const ContentProduct = () => {
 	const { id } = useParams<{ id: string }>();
 	const { fetchedItems, error } = useAppSelector(productsStore);
 	useGetProductQuery(id, { skip: fetchedItems.length > 1 });
-	const product: IProduct = productMemoized(useAppSelector(productsStore), id)!;
+	const product: IProduct = productByIdMemoized(useAppSelector(productsStore), id)!;
 	const { formatPriceWithSymbol } = useCurrency();
 	const isInCompare = useAppSelector((state) => isInCompareMemoized(compareStore(state), product?.id));
 
@@ -191,7 +190,7 @@ export const ContentProduct = () => {
 									<Grid $direction="column" $templateColumns="1fr 30px 30px" $gap={5} $align="center">
 										<Button
 											$primary
-											onClick={() => moveToCart(Number(product?.id))}
+											onClick={() => moveToCart(product.id)}
 											disabled={product.checked}
 											icon="cart"
 										>
@@ -203,7 +202,7 @@ export const ContentProduct = () => {
 										/>
 										<Favorite
 											active={product.favorite}
-											onActive={() => dispatch(toggleFavorite(Number(product.id)))}
+											onActive={() => dispatch(toggleFavorite(product.id))}
 										/>
 									</Grid>
 								</PriceBlock>

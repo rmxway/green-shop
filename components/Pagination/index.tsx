@@ -1,4 +1,3 @@
-import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 import { MotionProps } from 'framer-motion';
 import debounce from 'lodash.debounce';
 import { forwardRef } from 'react';
@@ -7,7 +6,7 @@ import Skeleton from 'react-loading-skeleton';
 import { Flexbox, Space } from '@/components/Layout';
 import { Icon } from '@/components/ui';
 import { containerVars } from '@/modules/products/ProductsGrid/styled';
-import { useAppDispatch, useAppSelector } from '@/services';
+import { useAppSelector } from '@/services';
 import { productsStore } from '@/store/types';
 import { IProduct } from '@/types';
 
@@ -19,20 +18,19 @@ interface PaginationProps extends MotionProps {
 	isLoading?: boolean;
 	countPerPage: number;
 	page: number;
-	changePage: ActionCreatorWithPayload<number, string>;
+	fnChangePage: (page: number) => void;
 }
 
 export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
-	({ items, isLoading, countPerPage, page, changePage, ...props }, ref) => {
+	({ items, isLoading, countPerPage, page, fnChangePage, ...props }, ref) => {
 		const { fetching } = useAppSelector(productsStore);
-		const dispatch = useAppDispatch();
 		const total = items.length;
 		const countPages = Math.ceil(total / countPerPage);
 		const maxButtonsCount = 4;
 		const countButtons = countPages >= maxButtonsCount ? maxButtonsCount : countPages;
 
 		const debounceChangePage = debounce((num: number) => {
-			dispatch(changePage(num));
+			fnChangePage(num);
 		}, 200);
 
 		const viewedItems = (): number => {
