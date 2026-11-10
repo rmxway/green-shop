@@ -23,7 +23,7 @@ export const ContentProducts = () => {
 		if (shouldFetch && isLoading) {
 			const timer = setTimeout(() => {
 				setIsTimeout(true);
-			}, 5000);
+			}, 15000);
 
 			return () => clearTimeout(timer);
 		}

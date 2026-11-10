@@ -1,3 +1,5 @@
+import 'react-loading-skeleton/dist/skeleton.css'
+
 import { FC, memo, useCallback, useEffect, useRef } from 'react';
 import Skeleton from 'react-loading-skeleton';
 

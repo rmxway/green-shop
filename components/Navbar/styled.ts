@@ -94,7 +94,7 @@ export const NavbarItem = styled.div`
 		display: flex;
 		margin-right: 10px;
 		font-size: 1.3rem;
-		color: ${theme.colors.dark};
+		color: ${theme.colors.gray.$8};
 		text-decoration: none;
 		margin-bottom: 10px;
 		border-bottom: 2px solid transparent;
@@ -110,7 +110,7 @@ export const NavbarItem = styled.div`
 		}
 
 		&:hover {
-			color: ${lighten(0.2, theme.colors.dark)};
+			color: ${lighten(0.2, theme.colors.gray.$8)};
 		}
 
 		&:last-child {
