@@ -30,7 +30,7 @@ export const ProductCard: FC<ProductCardProps> = memo(
 		const actualProduct = productByIdMemoized(useAppSelector(productsStore), product.id) || product;
 
 		const handleCartClick = () => {
-			if (product.checked) {
+			if (actualProduct.checked) {
 				navigateTo('/cart');
 			} else {
 				moveToCart(product.id);
