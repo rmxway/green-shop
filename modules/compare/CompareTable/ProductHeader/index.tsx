@@ -57,7 +57,7 @@ export const ProductHeader: FC<ProductHeaderProps> = memo(({ product }) => {
 		setHasError(true);
 	}, []);
 
-	useLoadTimeout(isLoad, 10, handleLoadTimeout);
+	useLoadTimeout(isLoad, 0, handleLoadTimeout);
 
 	// Сброс состояний при изменении продукта
 	useEffect(() => {
@@ -109,7 +109,7 @@ export const ProductHeader: FC<ProductHeaderProps> = memo(({ product }) => {
 
 			<ActionsWrapper>
 				<Button
-					$primary
+					$primary={!actualProduct.checked}
 					$dark={actualProduct.checked}
 					icon={actualProduct.checked ? 'arrow-right-line' : 'cart'}
 					onClick={handleCartClick}

@@ -6,6 +6,6 @@ export const LabelStyled = styled.label`
 		margin-bottom: 5px;
 		color: ${theme.colors.gray.$6};
 		text-transform: uppercase;
-		font-size: 10px;
+		font-size: 12px;
 	`}
 `;

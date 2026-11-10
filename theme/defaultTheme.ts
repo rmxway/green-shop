@@ -1,7 +1,7 @@
 import { darken, desaturate } from 'polished';
 import { DefaultTheme } from 'styled-components';
 
-import { Colors, Gradients } from '@/@types/styled';
+import { Colors } from '@/@types/styled';
 
 const primary = '#fdd01a';
 const success = '#00ff9d';
@@ -34,10 +34,11 @@ const colors: Colors = {
 export const createGradient = (deg: string, color1: string, long1: string, color2: string, long2: string) =>
 	`linear-gradient(${deg}, ${color1} ${long1}, ${color2} ${long2})`;
 
-const gradients: Gradients = {
+export const gradients = {
 	main: (deg = '150deg') => createGradient(deg, '#e8ffb3', '0%', success, '60%'),
 	dark: (deg = '150deg') => createGradient(deg, success, '0%', label, '60%'),
 	softDark: (deg = '150deg') => createGradient(deg, success, '0%', '#fff', '40%'),
+	banner: (deg = '150deg') => createGradient(deg, darken(0, colors.dark).toString(), '-120%', colors.success, '120%'),
 };
 
 export const defaultTheme: DefaultTheme = {

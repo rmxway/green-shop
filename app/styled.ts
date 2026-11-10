@@ -371,7 +371,7 @@ export const PrimaryButton = styled.button`
 
 export const Section = styled.section<{ $background?: boolean }>`
 	padding: 80px 0;
-	background: ${({ $background, theme }) => (!$background ? theme.colors.gray.$1 : theme.colors.light)};
+	background: ${({ $background, theme }) => (!$background ? theme.colors.gray.$2 : theme.colors.light)};
 
 	${media.lessThan('md')`
 		padding: 60px 0;

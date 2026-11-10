@@ -48,7 +48,7 @@ export const ContentProduct = () => {
 		setHasError(true);
 	}, []);
 
-	useLoadTimeout(isLoad, 10, handleLoadTimeout);
+	useLoadTimeout(isLoad, 0, handleLoadTimeout);
 
 	// Сброс состояний при изменении продукта
 	useEffect(() => {
@@ -84,6 +84,7 @@ export const ContentProduct = () => {
 								Назад
 							</LinkIcon>
 							<LayerBlock>
+								<h2>{product.title}</h2>
 								{product.images && product.images.length > 0 && !hasError ? (
 									<div style={{ position: 'relative', height: '300px' }}>
 										{!isLoad && (
@@ -132,18 +133,17 @@ export const ContentProduct = () => {
 								<br />
 								<span>
 									{product.brand && (
-										<Grid $gap={8} $direction="column">
-											<h5>Brand:</h5>
+										<Grid $gap={10} $direction="column" $align="center">
+											<h5>Company:</h5>
 											<p>{product.brand}</p>
 										</Grid>
 									)}
 									{product.returnPolicy && (
-										<Grid $gap={8} $direction="column">
-											<h5>Return Policy:</h5>
+										<Grid $gap={10} $direction="column" $align="center">
+											<h5>Return policy:</h5>
 											<p>{product.returnPolicy}</p>
 										</Grid>
 									)}
-
 									<h5>Description:</h5>
 									<TextToggle length={3}>
 										<p>{product.description}</p>
@@ -181,31 +181,29 @@ export const ContentProduct = () => {
 												</Sticker>
 											</span>
 										</Grid>
-										<Flexbox className="side-info">
+										<Flexbox className="side-tags">
 											{product.stock && <Sticker $success>In Stock: {product.stock}</Sticker>}
 											{product.tags &&
 												product.tags.map((tag) => <Sticker key={tag}>{tag}</Sticker>)}
 										</Flexbox>
+										<div className="side-info">sku code: {product.sku}</div>
 									</Flexbox>
-									<Grid $direction="column" $templateColumns="1fr 30px 30px" $gap={5} $align="center">
-										<Button
-											$primary
-											onClick={() => moveToCart(product.id)}
-											disabled={product.checked}
-											icon="cart"
-										>
-											{product.checked ? 'Добавлено' : 'В корзину'}
-										</Button>
-										<Compare
-											active={isInCompare}
-											onActive={() => dispatch(toggleCompare(product))}
-										/>
-										<Favorite
-											active={product.favorite}
-											onActive={() => dispatch(toggleFavorite(product.id))}
-										/>
-									</Grid>
 								</PriceBlock>
+								<Grid $direction="column" $templateColumns="1fr 30px 30px" $gap={5} $align="center">
+									<Button
+										$primary
+										onClick={() => moveToCart(product.id)}
+										disabled={product.checked}
+										icon="cart"
+									>
+										{product.checked ? 'Добавлено' : 'В корзину'}
+									</Button>
+									<Compare active={isInCompare} onActive={() => dispatch(toggleCompare(product))} />
+									<Favorite
+										active={product.favorite}
+										onActive={() => dispatch(toggleFavorite(product.id))}
+									/>
+								</Grid>
 							</LayerBlock>
 						</SideBlock>
 					</>

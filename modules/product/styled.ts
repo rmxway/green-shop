@@ -12,6 +12,13 @@ export const Wrapper = styled(Container)`
 	grid-template-columns: 1fr;
 	gap: 20px;
 
+	h2 {
+		font-size: 2rem;
+		margin-bottom: 20px;
+		line-height: 1;
+		font-weight: 400;
+	}
+
 	${media.greaterThan('md')`
         grid-template-columns: 1fr 25%;
         padding-bottom: 0;
@@ -120,6 +127,7 @@ export const PriceBlock = styled(Grid)`
 	align-items: center;
 	gap: 5px;
 	grid-auto-flow: dense;
+	margin-bottom: 10px;
 	grid-template-columns: 1fr;
 
 	${media.greaterThan('xs')`
@@ -134,7 +142,8 @@ export const PriceBlock = styled(Grid)`
 				display: inline-block;
 				align-self: center;
 				font-family: sans-serif;
-				font-size: 26px;
+				font-weight: 300;
+				font-size: 2rem;
 			}
 
 			${WrapperSticker} {
@@ -142,10 +151,15 @@ export const PriceBlock = styled(Grid)`
 			}
 		}
 
-		&-info {
+		&-tags {
 			${WrapperSticker} {
 				margin: 0 8px 8px 0;
 			}
+		}
+
+		&-info {
+			font-size: 14px;
+			opacity: 0.8;
 		}
 	}
 

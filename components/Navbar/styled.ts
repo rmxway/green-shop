@@ -27,13 +27,16 @@ export const Logo = styled.div`
 		display: flex;
 		flex-shrink: 0;
 		border-radius: ${theme.radius.borderRadius};
-		font-size: 2rem;
-		font-weight: 600;
+		font-size: 1.8rem;
+		letter-spacing: -2px;
+		font-weight: 800;
 		color: ${theme.colors.success};
 		line-height: 1;
 		padding: 0 0 0 10px;
 		border: 2px solid ${theme.colors.success};
 		overflow: hidden;
+		background-color: ${theme.colors.success};
+		color: ${theme.colors.dark};
 
 		a {
 			position: absolute;
@@ -46,13 +49,31 @@ export const Logo = styled.div`
 		span {
 			text-transform: uppercase;
 			font-size: 12px;
+			letter-spacing: 0.2px;
 			text-align: left;
-			background-color: ${theme.colors.success};
+			background-color: ${theme.colors.dark};
+			color: ${theme.colors.success};
+			border-left: 2px solid ${theme.colors.success};
+
 			display: flex;
 			align-items: center;
 			padding: 2px 10px;
-			color: ${theme.colors.dark};
 			margin-left: 10px;
+			z-index: 1;
+		}
+
+		svg, span {
+			pointer-events: none;
+			transition: all 0.2s;
+		}
+
+		&:hover {
+			span {
+				color: white;
+			}
+			svg {
+				transform: scale(3);
+			}
 		}
 	`}
 `;
@@ -138,7 +159,6 @@ export const WrapperNavbarItems = styled(motion.div)`
 	height: 0;
 	overflow: hidden;
 	overflow-y: auto;
-	scroll-behavior: smooth;
 	-webkit-overflow-scrolling: touch;
 	overscroll-behavior: contain;
 	touch-action: pan-y;

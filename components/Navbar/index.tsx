@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Container, Flexbox, Space } from '@/components/Layout';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
+import { LogoSVG } from './LogoSVG';
 import { RenderNavbar } from './RenderNavbar';
 import { Logo, StyledNavbar } from './styled';
 
@@ -12,7 +13,7 @@ export const Navbar = () => (
 			<Flexbox $align="center" $nowrap $gap={10}>
 				<Logo>
 					<Link href="/" />
-					GS
+					<LogoSVG />
 					<span>
 						Green Shop <br />
 						Brand

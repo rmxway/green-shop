@@ -1,9 +1,10 @@
 // import { darken, desaturate, lighten } from 'polished';
+import { darken } from 'polished';
 import { DefaultTheme } from 'styled-components';
 
 import { Colors, Gradients } from '@/@types/styled';
 
-import { createGradient, defaultTheme } from './defaultTheme';
+import { createGradient, defaultTheme, gradients } from './defaultTheme';
 
 const { primary, success, danger, label, dark } = defaultTheme.colors;
 
@@ -28,16 +29,16 @@ const colors: Colors = {
 	},
 };
 
-const gradients: Gradients = {
-	main: (deg = '150deg') => createGradient(deg, '#e8ffb3', '0%', success, '60%'),
-	dark: (deg = '150deg') => createGradient(deg, success, '0%', label, '60%'),
-	softDark: (deg = '150deg') => createGradient(deg, success, '0%', '#fff', '40%'),
-};
+const darkGradients: Gradients = Object.create(gradients);
+darkGradients.banner = (deg = '250deg') =>
+	createGradient(deg, darken(1, colors.dark), '-120%', colors.success, '120%');
+darkGradients.softDark = (deg = '150deg') =>
+	createGradient(deg, darken(.1, colors.dark), '-120%', colors.dark, '120%');
 
 export const darkTheme: DefaultTheme = {
 	name: 'dark',
 	colors,
-	gradients,
+	gradients: darkGradients,
 	layout: {
 		containerWidth: defaultTheme.layout.containerWidth,
 		shadow: '0 5px 40px rgba(0, 0, 0, 0.45)',

@@ -1,5 +1,7 @@
 import 'styled-components';
 
+import { gradients } from '@/theme';
+
 export interface Colors {
 	primary: string;
 	success: string;
@@ -20,8 +22,8 @@ export interface Colors {
 		$9: string;
 	};
 }
-type GradientsType = 'main' | 'dark' | 'softDark';
-export type Gradients = Record<GradientsType, (deg?: string) => string>;
+
+export type Gradients = Record<keyof typeof gradients, (deg?: string) => string>;
 
 interface Layout {
 	containerWidth: string;

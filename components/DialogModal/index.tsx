@@ -22,7 +22,7 @@ export const DialogModal: FC<DialogModalProps> = ({ title, text, handleFn }) => 
 
 	return (
 		<>
-			<LinkIcon icon="trash" onClick={() => setModalShow(true)} style={{ top: '10px', position: 'absolute' }}>
+			<LinkIcon icon="trash" onClick={() => setModalShow(true)} style={{ top: '14px', position: 'absolute' }}>
 				{title}
 			</LinkIcon>
 			<Modal open={modalShow} {...{ title, onClose }}>

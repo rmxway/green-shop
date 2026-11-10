@@ -9,10 +9,6 @@ export const base = css`
 		-moz-osx-font-smoothing: grayscale;
 	}
 
-	html {
-		scroll-behavior: smooth;
-	}
-
 	body {
 		overflow-y: scroll;
 		background-color: ${({ theme }) => theme.colors.gray.$2};
