@@ -2,9 +2,8 @@ import { motion, Variants } from 'framer-motion';
 import { lighten } from 'polished';
 import styled, { css } from 'styled-components';
 
+import { CountStyled } from '@/components/ui/Count/styled';
 import { media } from '@/theme';
-
-import { CountStyled } from './Count/styled';
 
 export const StyledNavbar = styled(motion.div)`
 	position: fixed;
@@ -62,7 +61,8 @@ export const Logo = styled.div`
 			z-index: 1;
 		}
 
-		svg, span {
+		svg,
+		span {
 			pointer-events: none;
 			transition: all 0.2s;
 		}

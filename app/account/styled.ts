@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
 
-import { CountStyled } from '@/components/Navbar/Count/styled';
+import { CountStyled } from '@/components/ui/Count/styled';
 
 export const AccountSection = styled.section`
 	padding: 40px 0;
@@ -55,7 +55,7 @@ export const AccountCard = styled.div`
 		color: ${({ theme }) => theme.colors.gray.$9};
 	}
 
-	${media.lessThan('medium')`	
+	${media.lessThan('medium')`
 		.btns {
 			flex-wrap: wrap;
 		}

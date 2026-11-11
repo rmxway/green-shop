@@ -25,7 +25,7 @@ const breakpoints: BreakpointsType = {
 	smD: '767px',
 	xs: '600px',
 	xsD: '599px',
-	xxs: '350px',
+	xxs: '420px',
 };
 
 const media = generateMedia(breakpoints);

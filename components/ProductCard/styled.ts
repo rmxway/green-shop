@@ -3,12 +3,14 @@ import Link from 'next/link';
 import styled, { css } from 'styled-components';
 
 import { Flexbox } from '@/components/Layout';
+import { CountStyled } from '@/components/ui/Count/styled';
+import { LinkIconStyle } from '@/components/ui/LinkIcon/styled';
 import { Wrapper as WrapperLoader } from '@/components/ui/Loader/styled';
 import { fadeIn } from '@/theme';
 import { media } from '@/theme/media';
 
-export const ProductWrapper = styled(motion.div)`
-	${({ theme }) => css`
+export const ProductWrapper = styled(motion.div)<{ $checked?: boolean }>`
+	${({ theme, $checked }) => css`
 		position: relative;
 		display: flex;
 		align-items: flex-start;
@@ -30,6 +32,26 @@ export const ProductWrapper = styled(motion.div)`
 		button {
 			width: 100%;
 			align-self: center;
+
+			${
+				$checked &&
+				css`
+					filter: sepia(.6);
+				`
+			}
+		}
+
+		${LinkIconStyle} {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+
+		${CountStyled} {
+			right: -10px;
+			background-color: ${theme.colors.gray.$7};
+			border-color: ${theme.colors.light};
+			color: ${theme.colors.light};
 		}
 
 		${media.greaterThan('sm')`
@@ -44,6 +66,7 @@ export const Title = styled(Link)`
 		color: ${theme.colors.gray.$9};
 		display: flex;
 		flex-direction: column;
+		font-weight: 600;
 		gap: 5px;
 
 		div {
@@ -70,7 +93,6 @@ export const Title = styled(Link)`
 
 		${media.greaterThan('xs')`
 			font-size: 1rem;
-			font-weight: 600;
 		`}
 	`}
 `;
@@ -110,6 +132,7 @@ export const Price = styled.div`
 `;
 
 export const Tools = styled.div`
+	position: relative;
 	font-weight: 500;
 	width: 100%;
 	margin: 20px 0;

@@ -1,15 +1,16 @@
-import { MotionProps } from 'framer-motion';
+import { AnimatePresence, MotionProps } from 'framer-motion';
 import Link from 'next/link';
 import { FC, memo } from 'react';
 
 import { Flexbox, RatingStars, Space } from '@/components/Layout';
-import { Button, Compare, Favorite, Sticker } from '@/components/ui';
-import { useAppDispatch, useAppSelector, useCurrency, useNavigateWithScroll } from '@/services';
-import { moveToCart } from '@/store/reducers/combineActions';
-import { isInCompareMemoized, productByIdMemoized } from '@/store/reducers/commonSelectors';
+import { Button, Compare, Count, Favorite, LinkIcon, Sticker } from '@/components/ui';
+import { useAppDispatch, useAppSelector, useCurrency } from '@/services';
+import { increaseCount } from '@/store/reducers/cart';
+import { moveToCart, removeFromCart } from '@/store/reducers/combineActions';
+import { countByIdMemoized, isInCompareMemoized, productByIdMemoized } from '@/store/reducers/commonSelectors';
 import { toggleCompare } from '@/store/reducers/compare';
 import { toggleFavorite } from '@/store/reducers/products';
-import { compareStore, productsStore } from '@/store/types';
+import { cartStore, compareStore, productsStore } from '@/store/types';
 import { IProduct } from '@/types';
 
 import { ProductImage } from './ProductImage';
@@ -22,16 +23,17 @@ interface ProductCardProps extends MotionProps {
 export const ProductCard: FC<ProductCardProps> = memo(
 	({ product, ...props }) => {
 		const link = `/product/${product.id}`;
-		const navigateTo = useNavigateWithScroll();
 		const dispatch = useAppDispatch();
 		const { formatPriceWithSymbol } = useCurrency();
 		const isInCompare = useAppSelector((state) => isInCompareMemoized(compareStore(state), product.id));
 		// Получаем актуальное состояние товара из store
 		const actualProduct = productByIdMemoized(useAppSelector(productsStore), product.id) || product;
+		const count = countByIdMemoized(useAppSelector(cartStore), product.id);
 
+		// TODO доработать оптимизацию, сделать так же как и Compare
 		const handleCartClick = () => {
 			if (actualProduct.checked) {
-				navigateTo('/cart');
+				dispatch(increaseCount(product.id));
 			} else {
 				moveToCart(product.id);
 			}
@@ -41,12 +43,13 @@ export const ProductCard: FC<ProductCardProps> = memo(
 			dispatch(toggleCompare(product));
 		};
 
+		// TODO доработать оптимизацию, сделать так же как и Compare
 		const handleToggleFavorite = () => {
 			dispatch(toggleFavorite(product.id));
 		};
 
 		return (
-			<ProductWrapper {...props}>
+			<ProductWrapper {...props} $checked={actualProduct.checked}>
 				<TopBlock>
 					{product.discountPercentage && (
 						<Sticker $danger>-{Math.round(product.discountPercentage)}%</Sticker>
@@ -67,14 +70,20 @@ export const ProductCard: FC<ProductCardProps> = memo(
 				<Tools>
 					<RatingStars rating={product.rating ? Number(product.rating) : 0} />
 					<Price>{formatPriceWithSymbol(product.price)}</Price>
+					<AnimatePresence>
+						{count && (
+							<LinkIcon
+								icon="trash"
+								initial
+								title="Удалить все из корзины"
+								onClick={() => removeFromCart(product.id)}
+							/>
+						)}
+					</AnimatePresence>
 				</Tools>
-				<Button
-					$primary={!actualProduct?.checked}
-					$dark={actualProduct?.checked}
-					icon={actualProduct?.checked ? 'arrow-right-line' : 'cart'}
-					onClick={handleCartClick}
-				>
-					{actualProduct?.checked ? 'Корзина' : 'Добавить'}
+				<Button $primary icon={actualProduct?.checked ? 'arrow-right-line' : 'cart'} onClick={handleCartClick}>
+					{actualProduct?.checked ? 'Ещё +1' : 'Добавить'}
+					<Count count={count || undefined} />
 				</Button>
 			</ProductWrapper>
 		);

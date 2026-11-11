@@ -28,7 +28,18 @@ export const productByIdMemoized = typedProductsCreateSelector(
 	[(state) => state.fetchedItems, (_, id: number) => id],
 	(fetchedItems, id) => {
 		if (!Array.isArray(fetchedItems) || !id) return null;
-		return fetchedItems.find((item) => item.id === Number(id)) || null;
+		return fetchedItems.find((item) => item.id === id) || null;
+	},
+);
+
+/**
+ * @description Кол-во count на опр. элементе
+ */
+export const countByIdMemoized = typedCartCreateSelector(
+	[(state) => state.items, (_, id: number) => id],
+	(items, id) => {
+		if (!Array.isArray(items) || !id) return null;
+		return items.find((item) => item.id === id)?.count || null;
 	},
 );
 

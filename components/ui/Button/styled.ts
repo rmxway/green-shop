@@ -41,6 +41,7 @@ const mixinButton = ($background = '#fff', $color = '#fff') => css`
 
 export const ButtonStyle = styled.button<Props>`
 	${({ theme, $margins, $dark, $danger, $inactive, $primary, $success, $w100, $fitContent, $white }) => css`
+		position: relative;
 		appearance: none;
 		border: 1px solid #aaa;
 		background: none;

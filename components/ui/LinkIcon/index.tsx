@@ -29,6 +29,7 @@ export const LinkIcon = forwardRef<HTMLDivElement, LinkIconType>(
 			initial={initial && 'initial'}
 			animate="visible"
 			exit="hidden"
+			transition={{ duration: 0.1 }}
 			{...{ onClick, ref }}
 			{...props}
 		>

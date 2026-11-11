@@ -3,10 +3,10 @@
 exports[`ProductCard: Render card 1`] = `
 <div>
   <div
-    class="sc-2a8edd9b-0 bRniQo"
+    class="sc-a4aced78-0 jmOQEn"
   >
     <div
-      class="sc-2a8edd9b-2 kaJdDn"
+      class="sc-a4aced78-2 bvvHUL"
     >
       <div
         class="sc-8cdc8530-0 jgYbXb"
@@ -49,7 +49,7 @@ exports[`ProductCard: Render card 1`] = `
       </div>
     </a>
     <a
-      class="sc-2a8edd9b-1 fyLdqb"
+      class="sc-a4aced78-1 bUowEM"
       href="/product/6"
     >
       <div>
@@ -63,7 +63,7 @@ exports[`ProductCard: Render card 1`] = `
       class="sc-a1f6370b-0 dGKLnc"
     />
     <div
-      class="sc-2a8edd9b-4 gvSCVi"
+      class="sc-a4aced78-4 caRGLW"
     >
       <div
         class="sc-c92d385c-0 fBnYbC"
@@ -115,13 +115,13 @@ exports[`ProductCard: Render card 1`] = `
         </span>
       </div>
       <div
-        class="sc-2a8edd9b-3 kaIMjq"
+        class="sc-a4aced78-3 MfBsq"
       >
         $49.99
       </div>
     </div>
     <button
-      class="sc-dce09074-0 ea-dxZy"
+      class="sc-9b833d80-0 jagmTB"
     >
       Добавить
       <i

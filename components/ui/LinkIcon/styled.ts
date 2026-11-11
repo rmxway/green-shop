@@ -24,7 +24,7 @@ export const LinkIconStyle = styled(motion.div)`
 `;
 
 export const linkIconVariant = {
-	initial: { opacity: 0, y: -10 },
+	initial: { opacity: 0, y: -6 },
 	visible: { opacity: 1, y: 0 },
 	hidden: { opacity: 0, scale: 0.5 },
 };

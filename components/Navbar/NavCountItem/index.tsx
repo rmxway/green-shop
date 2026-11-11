@@ -1,7 +1,6 @@
 import { FC, memo } from 'react';
 
-import { Count } from '@/components/Navbar/Count';
-import { Icon } from '@/components/ui';
+import { Count, Icon } from '@/components/ui';
 import { Icofont } from '@/types';
 
 import { NavCountItemStyled } from './styled';

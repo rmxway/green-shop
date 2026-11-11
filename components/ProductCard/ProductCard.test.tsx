@@ -176,31 +176,15 @@ describe('ProductCard:', () => {
 		expect(screen.getByText('$49.99')).toBeInTheDocument();
 	});
 
-	it('displays "Корзина" button when product is checked', () => {
+	it('displays "Еще +1" button when product is checked', () => {
 		render(
 			<StyledComponentsRegistry isJest>
 				<ProductCard product={mockProductChecked} />
 			</StyledComponentsRegistry>,
 		);
 
-		const button = screen.getByRole('button', { name: /К\s*о\s*р\s*з\s*и\s*н\s*а/ });
+		const button = screen.getByRole('button', { name: 'Ещё +1' });
 		expect(button).not.toBeDisabled();
-		expect(button).toHaveTextContent('Корзина');
-	});
-
-	it('navigates to /cart when cart button is clicked for checked product', async () => {
-		const user = userEvent.setup();
-
-		render(
-			<StyledComponentsRegistry isJest>
-				<ProductCard product={mockProductChecked} />
-			</StyledComponentsRegistry>,
-		);
-
-		const button = screen.getByRole('button', { name: /К\s*о\s*р\s*з\s*и\s*н\s*а/ });
-		await user.click(button);
-
-		expect(mockPush).toHaveBeenCalledWith('/cart');
 	});
 
 	it('displays "Добавить" button when product is not checked', () => {

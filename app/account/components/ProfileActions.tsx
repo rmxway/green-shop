@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
-import { Count } from '@/components/Navbar/Count';
-import { Button } from '@/components/ui';
+import { Button, Count } from '@/components/ui';
 
 import { OrderButtonWrapper, ProfileFormActions } from '../styled';
 

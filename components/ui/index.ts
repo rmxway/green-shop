@@ -1,5 +1,6 @@
 export * from './Button';
 export * from './Compare';
+export * from './Count';
 export * from './CurrencySwitcher';
 export * from './ErrorMessage';
 export * from './Favorite';
