@@ -1,0 +1,5766 @@
+[
+	{
+		"id": 1,
+		"index": 0,
+		"title": "Velvet Matte Lipstick",
+		"description": "The Velvet Matte Lipstick by GlamGlow delivers a professional finish with a skin-friendly, cruelty-free formula. Designed for everyday use, it combines long-lasting performance with a lightweight feel.",
+		"category": "beauty",
+		"price": 65.94,
+		"discountPercentage": 2.34,
+		"rating": 3.62,
+		"stock": 77,
+		"tags": ["lipstick", "beauty", "makeup"],
+		"brand": "GlamGlow",
+		"sku": "RAGFTS9",
+		"weight": 1,
+		"dimensions": {
+			"width": 35.87,
+			"height": 44.38,
+			"depth": 43.57
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-05-22T00:14:11.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-05-22T05:39:39.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-07-13T03:31:16.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "8759358685702",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/RAGFTS91/600/600"],
+		"thumbnail": "https://picsum.photos/seed/RAGFTS91/600/600"
+	},
+	{
+		"id": 2,
+		"index": 1,
+		"title": "Hydra Boost Face Serum",
+		"description": "The Hydra Boost Face Serum by GlowLab delivers a professional finish with a skin-friendly, cruelty-free formula. Designed for everyday use, it combines long-lasting performance with a lightweight feel.",
+		"category": "beauty",
+		"price": 420.77,
+		"discountPercentage": 6.67,
+		"rating": 4.89,
+		"stock": 82,
+		"tags": ["serum", "skincare", "beauty"],
+		"brand": "GlowLab",
+		"sku": "GBFCGR6",
+		"weight": 3,
+		"dimensions": {
+			"width": 38.5,
+			"height": 14.41,
+			"depth": 45.1
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-10-12T07:59:45.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Decent, but expected more.",
+				"date": "2024-04-27T01:10:07.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-04-18T20:39:01.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "3942252583295",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/GBFCGR61/600/600"],
+		"thumbnail": "https://picsum.photos/seed/GBFCGR61/600/600"
+	},
+	{
+		"id": 3,
+		"index": 2,
+		"title": "Silk Touch Foundation",
+		"description": "The Silk Touch Foundation by Lumiere delivers a professional finish with a skin-friendly, cruelty-free formula. Designed for everyday use, it combines long-lasting performance with a lightweight feel.",
+		"category": "beauty",
+		"price": 1991.26,
+		"discountPercentage": 13.23,
+		"rating": 4.95,
+		"stock": 110,
+		"tags": ["foundation", "makeup", "beauty"],
+		"brand": "Lumiere",
+		"sku": "CBCRVK2",
+		"weight": 1,
+		"dimensions": {
+			"width": 42.42,
+			"height": 11.3,
+			"depth": 53.66
+		},
+		"warrantyInformation": "6 months warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-08-10T05:45:30.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Broke after a week, disappointed.",
+				"date": "2024-05-14T18:13:32.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-09-16T22:10:18.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "5750309883089",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/CBCRVK21/600/600", "https://picsum.photos/seed/CBCRVK22/600/600"],
+		"thumbnail": "https://picsum.photos/seed/CBCRVK21/600/600"
+	},
+	{
+		"id": 4,
+		"index": 3,
+		"title": "Precision Liquid Eyeliner",
+		"description": "The Precision Liquid Eyeliner by InkBeauty delivers a professional finish with a skin-friendly, cruelty-free formula. Designed for everyday use, it combines long-lasting performance with a lightweight feel.",
+		"category": "beauty",
+		"price": 1056.0,
+		"discountPercentage": 15.16,
+		"rating": 4.94,
+		"stock": 118,
+		"tags": ["eyeliner", "makeup", "beauty"],
+		"brand": "InkBeauty",
+		"sku": "BMBUUC8",
+		"weight": 18,
+		"dimensions": {
+			"width": 46.54,
+			"height": 42.94,
+			"depth": 44.21
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-08-19T04:24:20.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-01-11T21:25:10.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-01-04T02:35:05.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "0035245785244",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/BMBUUC81/600/600",
+			"https://picsum.photos/seed/BMBUUC82/600/600",
+			"https://picsum.photos/seed/BMBUUC83/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/BMBUUC81/600/600"
+	},
+	{
+		"id": 5,
+		"index": 4,
+		"title": "Nourishing Argan Shampoo",
+		"description": "The Nourishing Argan Shampoo by PureHair delivers a professional finish with a skin-friendly, cruelty-free formula. Designed for everyday use, it combines long-lasting performance with a lightweight feel.",
+		"category": "beauty",
+		"price": 679.91,
+		"discountPercentage": 21.54,
+		"rating": 3.65,
+		"stock": 24,
+		"tags": ["shampoo", "haircare", "beauty"],
+		"brand": "PureHair",
+		"sku": "CSJKWB2",
+		"weight": 18,
+		"dimensions": {
+			"width": 29.67,
+			"height": 28.2,
+			"depth": 20.32
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-02-20T01:50:30.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Decent, but expected more.",
+				"date": "2024-02-17T08:36:22.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-04-19T14:36:05.618Z",
+				"reviewerName": "John Doe",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "9274499571295",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/CSJKWB21/600/600"],
+		"thumbnail": "https://picsum.photos/seed/CSJKWB21/600/600"
+	},
+	{
+		"id": 6,
+		"index": 5,
+		"title": "Translucent Setting Powder",
+		"description": "The Translucent Setting Powder by Velvet Veil delivers a professional finish with a skin-friendly, cruelty-free formula. Designed for everyday use, it combines long-lasting performance with a lightweight feel.",
+		"category": "beauty",
+		"price": 162.43,
+		"discountPercentage": 4.65,
+		"rating": 4.27,
+		"stock": 86,
+		"tags": ["powder", "makeup", "beauty"],
+		"brand": "Velvet Veil",
+		"sku": "NUBPMW3",
+		"weight": 8,
+		"dimensions": {
+			"width": 27.21,
+			"height": 56.79,
+			"depth": 36.33
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-08-02T21:15:03.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-04-14T11:26:20.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-06-02T16:38:49.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "6505513022453",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/NUBPMW31/600/600"],
+		"thumbnail": "https://picsum.photos/seed/NUBPMW31/600/600"
+	},
+	{
+		"id": 7,
+		"index": 6,
+		"title": "Coral Blush Palette",
+		"description": "The Coral Blush Palette by Rosy Cheeks delivers a professional finish with a skin-friendly, cruelty-free formula. Designed for everyday use, it combines long-lasting performance with a lightweight feel.",
+		"category": "beauty",
+		"price": 1778.81,
+		"discountPercentage": 18.56,
+		"rating": 3.48,
+		"stock": 36,
+		"tags": ["blush", "palette", "makeup"],
+		"brand": "Rosy Cheeks",
+		"sku": "ZVNSNY2",
+		"weight": 20,
+		"dimensions": {
+			"width": 16.58,
+			"height": 23.86,
+			"depth": 42.81
+		},
+		"warrantyInformation": "6 months warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-02-17T23:05:36.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-06-19T04:45:46.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-10-09T15:34:17.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "9610354039903",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/ZVNSNY21/600/600"],
+		"thumbnail": "https://picsum.photos/seed/ZVNSNY21/600/600"
+	},
+	{
+		"id": 8,
+		"index": 7,
+		"title": "Deep Hydration Face Mask",
+		"description": "The Deep Hydration Face Mask by AquaSkin delivers a professional finish with a skin-friendly, cruelty-free formula. Designed for everyday use, it combines long-lasting performance with a lightweight feel.",
+		"category": "beauty",
+		"price": 1951.5,
+		"discountPercentage": 20.27,
+		"rating": 4.79,
+		"stock": 3,
+		"tags": ["mask", "skincare", "beauty"],
+		"brand": "AquaSkin",
+		"sku": "SSJNXZ3",
+		"weight": 6,
+		"dimensions": {
+			"width": 45.51,
+			"height": 23.27,
+			"depth": 56.19
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-07-14T01:24:35.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-06-28T11:06:41.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-07-23T11:57:05.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "6395919192147",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/SSJNXZ31/600/600"],
+		"thumbnail": "https://picsum.photos/seed/SSJNXZ31/600/600"
+	},
+	{
+		"id": 9,
+		"index": 8,
+		"title": "Daily SPF 50 Sunscreen",
+		"description": "The Daily SPF 50 Sunscreen by SolarShield delivers a professional finish with a skin-friendly, cruelty-free formula. Designed for everyday use, it combines long-lasting performance with a lightweight feel.",
+		"category": "beauty",
+		"price": 1612.7,
+		"discountPercentage": 17.17,
+		"rating": 4.89,
+		"stock": 94,
+		"tags": ["sunscreen", "skincare", "spf"],
+		"brand": "SolarShield",
+		"sku": "HPMJPF7",
+		"weight": 7,
+		"dimensions": {
+			"width": 25.03,
+			"height": 8.85,
+			"depth": 41.53
+		},
+		"warrantyInformation": "6 months warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 2,
+				"comment": "Very unhappy with my purchase!",
+				"date": "2024-06-02T18:27:49.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-07-25T10:45:52.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-07-13T06:20:10.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "5024564424971",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/HPMJPF71/600/600"],
+		"thumbnail": "https://picsum.photos/seed/HPMJPF71/600/600"
+	},
+	{
+		"id": 10,
+		"index": 9,
+		"title": "Glossy Nail Polish Set",
+		"description": "The Glossy Nail Polish Set by Mani Magic delivers a professional finish with a skin-friendly, cruelty-free formula. Designed for everyday use, it combines long-lasting performance with a lightweight feel.",
+		"category": "beauty",
+		"price": 296.68,
+		"discountPercentage": 1.16,
+		"rating": 4.97,
+		"stock": 78,
+		"tags": ["nail polish", "manicure", "beauty"],
+		"brand": "Mani Magic",
+		"sku": "BMRHVU5",
+		"weight": 3,
+		"dimensions": {
+			"width": 30.05,
+			"height": 53.74,
+			"depth": 36.66
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-03-16T23:53:10.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Decent, but expected more.",
+				"date": "2024-08-05T07:58:03.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-01-26T20:17:40.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "8695986758587",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/BMRHVU51/600/600"],
+		"thumbnail": "https://picsum.photos/seed/BMRHVU51/600/600"
+	},
+	{
+		"id": 11,
+		"index": 10,
+		"title": "Amber Nights Eau de Parfum",
+		"description": "The Amber Nights Eau de Parfum by Maison Noir is an elegant fragrance with a balanced composition of top, heart and base notes. A long-lasting scent crafted for both daily wear and special occasions.",
+		"category": "fragrances",
+		"price": 1427.09,
+		"discountPercentage": 5.86,
+		"rating": 3.8,
+		"stock": 114,
+		"tags": ["perfume", "amber", "unisex"],
+		"brand": "Maison Noir",
+		"sku": "LFFRUM4",
+		"weight": 18,
+		"dimensions": {
+			"width": 9.43,
+			"height": 13.3,
+			"depth": 26.07
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-07-27T12:02:49.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-04-15T15:17:49.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Very unhappy with my purchase!",
+				"date": "2024-10-21T13:50:57.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "7894756224036",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/LFFRUM41/600/600", "https://picsum.photos/seed/LFFRUM42/600/600"],
+		"thumbnail": "https://picsum.photos/seed/LFFRUM41/600/600"
+	},
+	{
+		"id": 12,
+		"index": 11,
+		"title": "Citrus Bloom Eau de Toilette",
+		"description": "The Citrus Bloom Eau de Toilette by Fleur & Co is an elegant fragrance with a balanced composition of top, heart and base notes. A long-lasting scent crafted for both daily wear and special occasions.",
+		"category": "fragrances",
+		"price": 56.6,
+		"discountPercentage": 16.07,
+		"rating": 3.44,
+		"stock": 59,
+		"tags": ["perfume", "citrus", "unisex"],
+		"brand": "Fleur & Co",
+		"sku": "KDLCRA7",
+		"weight": 6,
+		"dimensions": {
+			"width": 7.77,
+			"height": 25.85,
+			"depth": 16.64
+		},
+		"warrantyInformation": "6 months warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 3,
+				"comment": "Satisfied with minor issues.",
+				"date": "2024-05-22T15:20:55.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-10-03T01:53:46.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Very unhappy with my purchase!",
+				"date": "2024-01-21T01:07:47.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "2419423697713",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/KDLCRA71/600/600",
+			"https://picsum.photos/seed/KDLCRA72/600/600",
+			"https://picsum.photos/seed/KDLCRA73/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/KDLCRA71/600/600"
+	},
+	{
+		"id": 13,
+		"index": 12,
+		"title": "Oud Royale Extrait",
+		"description": "The Oud Royale Extrait by Sultan Scents is an elegant fragrance with a balanced composition of top, heart and base notes. A long-lasting scent crafted for both daily wear and special occasions.",
+		"category": "fragrances",
+		"price": 1660.73,
+		"discountPercentage": 6.07,
+		"rating": 4.45,
+		"stock": 38,
+		"tags": ["perfume", "oud", "unisex"],
+		"brand": "Sultan Scents",
+		"sku": "PYPXJY4",
+		"weight": 20,
+		"dimensions": {
+			"width": 49.3,
+			"height": 48.79,
+			"depth": 36.13
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-07-08T02:30:38.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-08-03T17:50:51.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-03-19T15:51:20.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "6974853292475",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/PYPXJY41/600/600"],
+		"thumbnail": "https://picsum.photos/seed/PYPXJY41/600/600"
+	},
+	{
+		"id": 14,
+		"index": 13,
+		"title": "Fresh Marine Cologne",
+		"description": "The Fresh Marine Cologne by Azure Man is an elegant fragrance with a balanced composition of top, heart and base notes. A long-lasting scent crafted for both daily wear and special occasions.",
+		"category": "fragrances",
+		"price": 1192.72,
+		"discountPercentage": 22.0,
+		"rating": 4.2,
+		"stock": 66,
+		"tags": ["cologne", "marine", "men"],
+		"brand": "Azure Man",
+		"sku": "SHMHMJ5",
+		"weight": 7,
+		"dimensions": {
+			"width": 9.71,
+			"height": 44.6,
+			"depth": 31.87
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 2,
+				"comment": "Broke after a week, disappointed.",
+				"date": "2024-09-08T16:19:03.618Z",
+				"reviewerName": "John Doe",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-07-26T08:51:30.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-08-30T20:09:04.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "3432737961725",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/SHMHMJ51/600/600", "https://picsum.photos/seed/SHMHMJ52/600/600"],
+		"thumbnail": "https://picsum.photos/seed/SHMHMJ51/600/600"
+	},
+	{
+		"id": 15,
+		"index": 14,
+		"title": "Rose Petal Mist",
+		"description": "The Rose Petal Mist by Blossom House is an elegant fragrance with a balanced composition of top, heart and base notes. A long-lasting scent crafted for both daily wear and special occasions.",
+		"category": "fragrances",
+		"price": 255.21,
+		"discountPercentage": 1.14,
+		"rating": 3.3,
+		"stock": 37,
+		"tags": ["perfume", "rose", "women"],
+		"brand": "Blossom House",
+		"sku": "UPZWGJ5",
+		"weight": 5,
+		"dimensions": {
+			"width": 40.08,
+			"height": 46.4,
+			"depth": 10.64
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-08-13T12:24:17.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-02-28T02:22:44.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-01-28T05:31:27.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "9176725448936",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/UPZWGJ51/600/600"],
+		"thumbnail": "https://picsum.photos/seed/UPZWGJ51/600/600"
+	},
+	{
+		"id": 16,
+		"index": 15,
+		"title": "Sandalwood Intense",
+		"description": "The Sandalwood Intense by Woody Craft is an elegant fragrance with a balanced composition of top, heart and base notes. A long-lasting scent crafted for both daily wear and special occasions.",
+		"category": "fragrances",
+		"price": 152.36,
+		"discountPercentage": 0.07,
+		"rating": 4.01,
+		"stock": 76,
+		"tags": ["perfume", "sandalwood", "unisex"],
+		"brand": "Woody Craft",
+		"sku": "RUYEES3",
+		"weight": 16,
+		"dimensions": {
+			"width": 21.02,
+			"height": 17.73,
+			"depth": 43.88
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 2,
+				"comment": "Very unhappy with my purchase!",
+				"date": "2024-05-15T22:45:27.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Good, but packaging could be better.",
+				"date": "2024-08-05T04:10:43.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Very unhappy with my purchase!",
+				"date": "2024-05-16T05:10:43.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "5894434254587",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/RUYEES31/600/600"],
+		"thumbnail": "https://picsum.photos/seed/RUYEES31/600/600"
+	},
+	{
+		"id": 17,
+		"index": 16,
+		"title": "Vanilla Silk Body Spray",
+		"description": "The Vanilla Silk Body Spray by Sweet Aura is an elegant fragrance with a balanced composition of top, heart and base notes. A long-lasting scent crafted for both daily wear and special occasions.",
+		"category": "fragrances",
+		"price": 1152.97,
+		"discountPercentage": 19.08,
+		"rating": 3.52,
+		"stock": 66,
+		"tags": ["body spray", "vanilla", "women"],
+		"brand": "Sweet Aura",
+		"sku": "PAFSWP1",
+		"weight": 15,
+		"dimensions": {
+			"width": 55.38,
+			"height": 14.98,
+			"depth": 37.19
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-07-28T12:08:07.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-06-17T14:59:15.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-10-08T01:20:09.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "3945965413767",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/PAFSWP11/600/600",
+			"https://picsum.photos/seed/PAFSWP12/600/600",
+			"https://picsum.photos/seed/PAFSWP13/600/600",
+			"https://picsum.photos/seed/PAFSWP14/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/PAFSWP11/600/600"
+	},
+	{
+		"id": 18,
+		"index": 17,
+		"title": "Green Tea Splash",
+		"description": "The Green Tea Splash by Zen Aroma is an elegant fragrance with a balanced composition of top, heart and base notes. A long-lasting scent crafted for both daily wear and special occasions.",
+		"category": "fragrances",
+		"price": 1102.25,
+		"discountPercentage": 13.81,
+		"rating": 3.37,
+		"stock": 107,
+		"tags": ["perfume", "green tea", "unisex"],
+		"brand": "Zen Aroma",
+		"sku": "ENYLTC4",
+		"weight": 4,
+		"dimensions": {
+			"width": 30.38,
+			"height": 11.46,
+			"depth": 50.77
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-07-31T17:34:02.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-03-15T13:57:57.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-02-05T10:03:28.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "8225941535543",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/ENYLTC41/600/600",
+			"https://picsum.photos/seed/ENYLTC42/600/600",
+			"https://picsum.photos/seed/ENYLTC43/600/600",
+			"https://picsum.photos/seed/ENYLTC44/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/ENYLTC41/600/600"
+	},
+	{
+		"id": 19,
+		"index": 18,
+		"title": "Leather Accords Parfum",
+		"description": "The Leather Accords Parfum by Rue 21 Paris is an elegant fragrance with a balanced composition of top, heart and base notes. A long-lasting scent crafted for both daily wear and special occasions.",
+		"category": "fragrances",
+		"price": 763.62,
+		"discountPercentage": 24.71,
+		"rating": 4.63,
+		"stock": 83,
+		"tags": ["perfume", "leather", "men"],
+		"brand": "Rue 21 Paris",
+		"sku": "ETPFUB8",
+		"weight": 5,
+		"dimensions": {
+			"width": 32.24,
+			"height": 7.04,
+			"depth": 32.63
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 3,
+				"comment": "Decent, but expected more.",
+				"date": "2024-08-13T03:37:49.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-07-28T23:50:23.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-06-22T22:41:31.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "8883377800699",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/ETPFUB81/600/600",
+			"https://picsum.photos/seed/ETPFUB82/600/600",
+			"https://picsum.photos/seed/ETPFUB83/600/600",
+			"https://picsum.photos/seed/ETPFUB84/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/ETPFUB81/600/600"
+	},
+	{
+		"id": 20,
+		"index": 19,
+		"title": "Nordic Oak Dining Table",
+		"description": "The Nordic Oak Dining Table by WoodHaven combines durable materials with a timeless design. Built for everyday comfort and easy maintenance, it fits seamlessly into any modern interior.",
+		"category": "furniture",
+		"price": 1592.0,
+		"discountPercentage": 7.33,
+		"rating": 3.87,
+		"stock": 18,
+		"tags": ["table", "dining", "wood"],
+		"brand": "WoodHaven",
+		"sku": "UKCRXL5",
+		"weight": 8,
+		"dimensions": {
+			"width": 34.21,
+			"height": 36.13,
+			"depth": 48.59
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "Low Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-07-14T22:33:46.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-03-14T08:27:13.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-05-10T00:20:31.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "0992964398133",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/UKCRXL51/600/600"],
+		"thumbnail": "https://picsum.photos/seed/UKCRXL51/600/600"
+	},
+	{
+		"id": 21,
+		"index": 20,
+		"title": "Ergonomic Mesh Office Chair",
+		"description": "The Ergonomic Mesh Office Chair by SitWell combines durable materials with a timeless design. Built for everyday comfort and easy maintenance, it fits seamlessly into any modern interior.",
+		"category": "furniture",
+		"price": 1665.26,
+		"discountPercentage": 22.57,
+		"rating": 4.6,
+		"stock": 29,
+		"tags": ["chair", "office", "ergonomic"],
+		"brand": "SitWell",
+		"sku": "GTAWKA1",
+		"weight": 20,
+		"dimensions": {
+			"width": 49.11,
+			"height": 17.05,
+			"depth": 15.46
+		},
+		"warrantyInformation": "6 months warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 2,
+				"comment": "Very unhappy with my purchase!",
+				"date": "2024-01-21T11:14:52.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-03-08T03:16:53.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Not as described!",
+				"date": "2024-03-30T07:18:38.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "8284873191987",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/GTAWKA11/600/600",
+			"https://picsum.photos/seed/GTAWKA12/600/600",
+			"https://picsum.photos/seed/GTAWKA13/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/GTAWKA11/600/600"
+	},
+	{
+		"id": 22,
+		"index": 21,
+		"title": "3-Seater Linen Sofa",
+		"description": "The 3-Seater Linen Sofa by CozyNest combines durable materials with a timeless design. Built for everyday comfort and easy maintenance, it fits seamlessly into any modern interior.",
+		"category": "furniture",
+		"price": 1345.8,
+		"discountPercentage": 16.81,
+		"rating": 4.25,
+		"stock": 105,
+		"tags": ["sofa", "living room", "linen"],
+		"brand": "CozyNest",
+		"sku": "ZZVJVA9",
+		"weight": 12,
+		"dimensions": {
+			"width": 10.96,
+			"height": 17.86,
+			"depth": 6.38
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-02-02T23:08:03.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-02-29T05:05:20.618Z",
+				"reviewerName": "John Doe",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-02-29T03:32:19.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "4679471404490",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/ZZVJVA91/600/600"],
+		"thumbnail": "https://picsum.photos/seed/ZZVJVA91/600/600"
+	},
+	{
+		"id": 23,
+		"index": 22,
+		"title": "Industrial Bookshelf",
+		"description": "The Industrial Bookshelf by UrbanWood combines durable materials with a timeless design. Built for everyday comfort and easy maintenance, it fits seamlessly into any modern interior.",
+		"category": "furniture",
+		"price": 797.38,
+		"discountPercentage": 4.75,
+		"rating": 3.42,
+		"stock": 108,
+		"tags": ["bookshelf", "storage", "industrial"],
+		"brand": "UrbanWood",
+		"sku": "JLYWCS9",
+		"weight": 15,
+		"dimensions": {
+			"width": 10.04,
+			"height": 16.67,
+			"depth": 40.17
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 3,
+				"comment": "Works fine overall.",
+				"date": "2024-05-04T04:35:05.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-04-16T21:20:58.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-01-02T10:05:42.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "7181375021410",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/JLYWCS91/600/600",
+			"https://picsum.photos/seed/JLYWCS92/600/600",
+			"https://picsum.photos/seed/JLYWCS93/600/600",
+			"https://picsum.photos/seed/JLYWCS94/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/JLYWCS91/600/600"
+	},
+	{
+		"id": 24,
+		"index": 23,
+		"title": "Upholstered Bed Frame Queen",
+		"description": "The Upholstered Bed Frame Queen by DreamRest combines durable materials with a timeless design. Built for everyday comfort and easy maintenance, it fits seamlessly into any modern interior.",
+		"category": "furniture",
+		"price": 1927.18,
+		"discountPercentage": 1.52,
+		"rating": 4.06,
+		"stock": 51,
+		"tags": ["bed", "bedroom", "upholstered"],
+		"brand": "DreamRest",
+		"sku": "LJPLFR9",
+		"weight": 14,
+		"dimensions": {
+			"width": 42.74,
+			"height": 31.96,
+			"depth": 55.03
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-03-16T02:23:29.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-10-07T11:50:22.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-08-20T18:24:23.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "8677242344046",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/LJPLFR91/600/600", "https://picsum.photos/seed/LJPLFR92/600/600"],
+		"thumbnail": "https://picsum.photos/seed/LJPLFR91/600/600"
+	},
+	{
+		"id": 25,
+		"index": 24,
+		"title": "Standing Height Desk",
+		"description": "The Standing Height Desk by ErgoSpace combines durable materials with a timeless design. Built for everyday comfort and easy maintenance, it fits seamlessly into any modern interior.",
+		"category": "furniture",
+		"price": 1623.2,
+		"discountPercentage": 13.91,
+		"rating": 4.26,
+		"stock": 71,
+		"tags": ["desk", "office", "standing"],
+		"brand": "ErgoSpace",
+		"sku": "JDYBWC2",
+		"weight": 18,
+		"dimensions": {
+			"width": 23.13,
+			"height": 11.72,
+			"depth": 24.45
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-06-08T12:48:10.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-03-20T17:33:21.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-07-07T04:10:58.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "8986609821733",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/JDYBWC21/600/600",
+			"https://picsum.photos/seed/JDYBWC22/600/600",
+			"https://picsum.photos/seed/JDYBWC23/600/600",
+			"https://picsum.photos/seed/JDYBWC24/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/JDYBWC21/600/600"
+	},
+	{
+		"id": 26,
+		"index": 25,
+		"title": "Sliding Door Wardrobe",
+		"description": "The Sliding Door Wardrobe by WardrobeWorks combines durable materials with a timeless design. Built for everyday comfort and easy maintenance, it fits seamlessly into any modern interior.",
+		"category": "furniture",
+		"price": 432.0,
+		"discountPercentage": 10.5,
+		"rating": 3.81,
+		"stock": 47,
+		"tags": ["wardrobe", "storage", "bedroom"],
+		"brand": "WardrobeWorks",
+		"sku": "AXPKDR1",
+		"weight": 10,
+		"dimensions": {
+			"width": 44.69,
+			"height": 47.73,
+			"depth": 36.22
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-01-26T02:58:13.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Not as described!",
+				"date": "2024-09-05T22:06:10.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-09-19T04:08:38.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "6553290297721",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/AXPKDR11/600/600"],
+		"thumbnail": "https://picsum.photos/seed/AXPKDR11/600/600"
+	},
+	{
+		"id": 27,
+		"index": 26,
+		"title": "Mid-Century TV Stand",
+		"description": "The Mid-Century TV Stand by RetroLine combines durable materials with a timeless design. Built for everyday comfort and easy maintenance, it fits seamlessly into any modern interior.",
+		"category": "furniture",
+		"price": 1483.98,
+		"discountPercentage": 10.91,
+		"rating": 4.03,
+		"stock": 9,
+		"tags": ["tv stand", "living room", "retro"],
+		"brand": "RetroLine",
+		"sku": "MKCNFN6",
+		"weight": 11,
+		"dimensions": {
+			"width": 36.67,
+			"height": 36.54,
+			"depth": 44.02
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-01-11T11:49:28.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-02-15T15:54:00.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-07-24T19:04:36.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "2706517396112",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/MKCNFN61/600/600"],
+		"thumbnail": "https://picsum.photos/seed/MKCNFN61/600/600"
+	},
+	{
+		"id": 28,
+		"index": 27,
+		"title": "Wingback Velvet Armchair",
+		"description": "The Wingback Velvet Armchair by Maison Seats combines durable materials with a timeless design. Built for everyday comfort and easy maintenance, it fits seamlessly into any modern interior.",
+		"category": "furniture",
+		"price": 898.73,
+		"discountPercentage": 23.1,
+		"rating": 4.22,
+		"stock": 81,
+		"tags": ["armchair", "living room", "velvet"],
+		"brand": "Maison Seats",
+		"sku": "DDUBYR8",
+		"weight": 20,
+		"dimensions": {
+			"width": 22.78,
+			"height": 58.4,
+			"depth": 22.39
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-06-04T10:00:02.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-02-07T11:18:05.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-07-07T10:27:07.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "4578486341018",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/DDUBYR81/600/600",
+			"https://picsum.photos/seed/DDUBYR82/600/600",
+			"https://picsum.photos/seed/DDUBYR83/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/DDUBYR81/600/600"
+	},
+	{
+		"id": 29,
+		"index": 28,
+		"title": "Extra Virgin Olive Oil 1L",
+		"description": "The Extra Virgin Olive Oil 1L by Oleum Verde is sourced from trusted producers and packed to preserve freshness and flavor. A pantry staple for quality-conscious shoppers.",
+		"category": "groceries",
+		"price": 319.43,
+		"discountPercentage": 9.32,
+		"rating": 3.71,
+		"stock": 52,
+		"tags": ["oil", "olive", "cooking"],
+		"brand": "Oleum Verde",
+		"sku": "HTMDFL8",
+		"weight": 11,
+		"dimensions": {
+			"width": 42.34,
+			"height": 7.88,
+			"depth": 39.7
+		},
+		"warrantyInformation": "6 months warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-10-12T14:04:27.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Broke after a week, disappointed.",
+				"date": "2024-03-17T12:08:14.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Very unhappy with my purchase!",
+				"date": "2024-06-28T11:17:42.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "1705631799906",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/HTMDFL81/600/600",
+			"https://picsum.photos/seed/HTMDFL82/600/600",
+			"https://picsum.photos/seed/HTMDFL83/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/HTMDFL81/600/600"
+	},
+	{
+		"id": 30,
+		"index": 29,
+		"title": "Whole Wheat Spaghetti 500g",
+		"description": "The Whole Wheat Spaghetti 500g by Pasta Prima is sourced from trusted producers and packed to preserve freshness and flavor. A pantry staple for quality-conscious shoppers.",
+		"category": "groceries",
+		"price": 311.84,
+		"discountPercentage": 7.39,
+		"rating": 4.62,
+		"stock": 64,
+		"tags": ["pasta", "wheat", "italian"],
+		"brand": "Pasta Prima",
+		"sku": "MAHYHU4",
+		"weight": 18,
+		"dimensions": {
+			"width": 50.93,
+			"height": 53.6,
+			"depth": 7.08
+		},
+		"warrantyInformation": "6 months warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-03-19T05:54:26.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Good, but packaging could be better.",
+				"date": "2024-08-12T01:35:26.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Broke after a week, disappointed.",
+				"date": "2024-05-01T16:10:22.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "2297916547754",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/MAHYHU41/600/600"],
+		"thumbnail": "https://picsum.photos/seed/MAHYHU41/600/600"
+	},
+	{
+		"id": 31,
+		"index": 30,
+		"title": "Arabica Ground Coffee 250g",
+		"description": "The Arabica Ground Coffee 250g by Morning Roast is sourced from trusted producers and packed to preserve freshness and flavor. A pantry staple for quality-conscious shoppers.",
+		"category": "groceries",
+		"price": 1422.81,
+		"discountPercentage": 12.9,
+		"rating": 3.42,
+		"stock": 10,
+		"tags": ["coffee", "arabica", "beverage"],
+		"brand": "Morning Roast",
+		"sku": "DEPXBM6",
+		"weight": 6,
+		"dimensions": {
+			"width": 20.0,
+			"height": 54.79,
+			"depth": 13.1
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-06-27T00:58:15.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-07-10T08:35:03.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-01-15T11:36:10.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "7128617400285",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/DEPXBM61/600/600",
+			"https://picsum.photos/seed/DEPXBM62/600/600",
+			"https://picsum.photos/seed/DEPXBM63/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/DEPXBM61/600/600"
+	},
+	{
+		"id": 32,
+		"index": 31,
+		"title": "Wildflower Raw Honey 400g",
+		"description": "The Wildflower Raw Honey 400g by Bee Meadow is sourced from trusted producers and packed to preserve freshness and flavor. A pantry staple for quality-conscious shoppers.",
+		"category": "groceries",
+		"price": 915.12,
+		"discountPercentage": 2.77,
+		"rating": 4.83,
+		"stock": 76,
+		"tags": ["honey", "raw", "sweetener"],
+		"brand": "Bee Meadow",
+		"sku": "TNCGGB7",
+		"weight": 18,
+		"dimensions": {
+			"width": 5.9,
+			"height": 33.35,
+			"depth": 18.31
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-06-29T08:45:31.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-09-25T13:07:45.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-09-16T20:10:33.618Z",
+				"reviewerName": "John Doe",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "6920737677305",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/TNCGGB71/600/600",
+			"https://picsum.photos/seed/TNCGGB72/600/600",
+			"https://picsum.photos/seed/TNCGGB73/600/600",
+			"https://picsum.photos/seed/TNCGGB74/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/TNCGGB71/600/600"
+	},
+	{
+		"id": 33,
+		"index": 32,
+		"title": "Earl Grey Black Tea 100 bags",
+		"description": "The Earl Grey Black Tea 100 bags by Leaf & Steam is sourced from trusted producers and packed to preserve freshness and flavor. A pantry staple for quality-conscious shoppers.",
+		"category": "groceries",
+		"price": 1886.41,
+		"discountPercentage": 0.92,
+		"rating": 3.56,
+		"stock": 101,
+		"tags": ["tea", "black tea", "beverage"],
+		"brand": "Leaf & Steam",
+		"sku": "VEULSR3",
+		"weight": 7,
+		"dimensions": {
+			"width": 53.72,
+			"height": 22.36,
+			"depth": 22.05
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-04-07T10:25:01.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Works fine overall.",
+				"date": "2024-05-19T04:31:55.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-07-16T12:20:38.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "3720449121324",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/VEULSR31/600/600"],
+		"thumbnail": "https://picsum.photos/seed/VEULSR31/600/600"
+	},
+	{
+		"id": 34,
+		"index": 33,
+		"title": "Basmati Rice 2kg",
+		"description": "The Basmati Rice 2kg by Golden Grain is sourced from trusted producers and packed to preserve freshness and flavor. A pantry staple for quality-conscious shoppers.",
+		"category": "groceries",
+		"price": 1582.68,
+		"discountPercentage": 1.43,
+		"rating": 4.41,
+		"stock": 51,
+		"tags": ["rice", "basmati", "grain"],
+		"brand": "Golden Grain",
+		"sku": "TDLLTX7",
+		"weight": 12,
+		"dimensions": {
+			"width": 33.22,
+			"height": 46.24,
+			"depth": 13.8
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 3,
+				"comment": "Satisfied with minor issues.",
+				"date": "2024-01-18T04:35:45.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Works fine overall.",
+				"date": "2024-07-04T13:56:21.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-08-18T13:30:23.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "5362174352249",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/TDLLTX71/600/600", "https://picsum.photos/seed/TDLLTX72/600/600"],
+		"thumbnail": "https://picsum.photos/seed/TDLLTX71/600/600"
+	},
+	{
+		"id": 35,
+		"index": 34,
+		"title": "Mixed Berry Granola 350g",
+		"description": "The Mixed Berry Granola 350g by Crunch Bowl is sourced from trusted producers and packed to preserve freshness and flavor. A pantry staple for quality-conscious shoppers.",
+		"category": "groceries",
+		"price": 1934.24,
+		"discountPercentage": 24.66,
+		"rating": 4.4,
+		"stock": 90,
+		"tags": ["granola", "breakfast", "organic"],
+		"brand": "Crunch Bowl",
+		"sku": "GYMCWL8",
+		"weight": 3,
+		"dimensions": {
+			"width": 35.25,
+			"height": 20.97,
+			"depth": 21.5
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 3,
+				"comment": "Works fine overall.",
+				"date": "2024-09-17T08:09:51.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Good, but packaging could be better.",
+				"date": "2024-05-01T17:59:12.618Z",
+				"reviewerName": "John Doe",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-07-07T17:01:03.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "0374445130451",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/GYMCWL81/600/600"],
+		"thumbnail": "https://picsum.photos/seed/GYMCWL81/600/600"
+	},
+	{
+		"id": 36,
+		"index": 35,
+		"title": "Dark Chocolate 85% Bar",
+		"description": "The Dark Chocolate 85% Bar by Cacao Roja is sourced from trusted producers and packed to preserve freshness and flavor. A pantry staple for quality-conscious shoppers.",
+		"category": "groceries",
+		"price": 609.68,
+		"discountPercentage": 4.05,
+		"rating": 4.88,
+		"stock": 28,
+		"tags": ["chocolate", "dark", "snack"],
+		"brand": "Cacao Roja",
+		"sku": "WNPUCM1",
+		"weight": 12,
+		"dimensions": {
+			"width": 57.11,
+			"height": 33.54,
+			"depth": 20.62
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-05-20T04:33:26.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-02-17T18:17:53.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-03-19T06:13:59.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "8580065674646",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/WNPUCM11/600/600"],
+		"thumbnail": "https://picsum.photos/seed/WNPUCM11/600/600"
+	},
+	{
+		"id": 37,
+		"index": 36,
+		"title": "Cold-Pressed Orange Juice 1L",
+		"description": "The Cold-Pressed Orange Juice 1L by Citrus Press is sourced from trusted producers and packed to preserve freshness and flavor. A pantry staple for quality-conscious shoppers.",
+		"category": "groceries",
+		"price": 880.17,
+		"discountPercentage": 12.11,
+		"rating": 3.57,
+		"stock": 77,
+		"tags": ["juice", "orange", "beverage"],
+		"brand": "Citrus Press",
+		"sku": "GZMVSG2",
+		"weight": 5,
+		"dimensions": {
+			"width": 22.19,
+			"height": 44.51,
+			"depth": 45.38
+		},
+		"warrantyInformation": "6 months warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "Low Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-09-20T20:26:56.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-03-03T09:44:18.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-01-26T10:33:58.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "9989711948403",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/GZMVSG21/600/600",
+			"https://picsum.photos/seed/GZMVSG22/600/600",
+			"https://picsum.photos/seed/GZMVSG23/600/600",
+			"https://picsum.photos/seed/GZMVSG24/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/GZMVSG21/600/600"
+	},
+	{
+		"id": 38,
+		"index": 37,
+		"title": "Scented Soy Candle Trio",
+		"description": "The Scented Soy Candle Trio by Warm Glow adds a warm, personal touch to any room. Made with quality materials, it pairs easily with modern and classic interiors alike.",
+		"category": "home-decoration",
+		"price": 1693.88,
+		"discountPercentage": 10.77,
+		"rating": 4.79,
+		"stock": 93,
+		"tags": ["candle", "scented", "decor"],
+		"brand": "Warm Glow",
+		"sku": "LFPBGP8",
+		"weight": 12,
+		"dimensions": {
+			"width": 47.01,
+			"height": 25.13,
+			"depth": 27.03
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-05-27T02:40:37.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-05-23T22:41:29.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-02-19T14:20:29.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "7155013446536",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/LFPBGP81/600/600", "https://picsum.photos/seed/LFPBGP82/600/600"],
+		"thumbnail": "https://picsum.photos/seed/LFPBGP81/600/600"
+	},
+	{
+		"id": 39,
+		"index": 38,
+		"title": "Ceramic Matte Vase",
+		"description": "The Ceramic Matte Vase by Kiln Studio adds a warm, personal touch to any room. Made with quality materials, it pairs easily with modern and classic interiors alike.",
+		"category": "home-decoration",
+		"price": 601.02,
+		"discountPercentage": 20.39,
+		"rating": 3.86,
+		"stock": 86,
+		"tags": ["vase", "ceramic", "decor"],
+		"brand": "Kiln Studio",
+		"sku": "DZUGHW9",
+		"weight": 4,
+		"dimensions": {
+			"width": 58.89,
+			"height": 37.1,
+			"depth": 48.82
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-10-22T08:17:04.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-03-28T19:05:12.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-03-16T08:49:05.618Z",
+				"reviewerName": "John Doe",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "1444256487755",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/DZUGHW91/600/600", "https://picsum.photos/seed/DZUGHW92/600/600"],
+		"thumbnail": "https://picsum.photos/seed/DZUGHW91/600/600"
+	},
+	{
+		"id": 40,
+		"index": 39,
+		"title": "Abstract Wall Art Canvas",
+		"description": "The Abstract Wall Art Canvas by ArtNook adds a warm, personal touch to any room. Made with quality materials, it pairs easily with modern and classic interiors alike.",
+		"category": "home-decoration",
+		"price": 1734.77,
+		"discountPercentage": 17.02,
+		"rating": 4.65,
+		"stock": 33,
+		"tags": ["wall art", "canvas", "decor"],
+		"brand": "ArtNook",
+		"sku": "ZMJZLN9",
+		"weight": 20,
+		"dimensions": {
+			"width": 31.63,
+			"height": 57.65,
+			"depth": 20.35
+		},
+		"warrantyInformation": "6 months warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-04-16T17:48:14.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-05-20T10:28:41.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Broke after a week, disappointed.",
+				"date": "2024-07-13T14:21:52.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "2734242596165",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/ZMJZLN91/600/600", "https://picsum.photos/seed/ZMJZLN92/600/600"],
+		"thumbnail": "https://picsum.photos/seed/ZMJZLN91/600/600"
+	},
+	{
+		"id": 41,
+		"index": 40,
+		"title": "Corduroy Throw Cushion 2-pack",
+		"description": "The Corduroy Throw Cushion 2-pack by Soft Nest adds a warm, personal touch to any room. Made with quality materials, it pairs easily with modern and classic interiors alike.",
+		"category": "home-decoration",
+		"price": 276.94,
+		"discountPercentage": 24.11,
+		"rating": 4.96,
+		"stock": 20,
+		"tags": ["cushion", "throw", "decor"],
+		"brand": "Soft Nest",
+		"sku": "FSNRBK8",
+		"weight": 14,
+		"dimensions": {
+			"width": 40.91,
+			"height": 53.44,
+			"depth": 31.16
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-01-31T03:15:25.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-01-20T06:22:26.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-09-10T06:47:00.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "2693465815283",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/FSNRBK81/600/600"],
+		"thumbnail": "https://picsum.photos/seed/FSNRBK81/600/600"
+	},
+	{
+		"id": 42,
+		"index": 41,
+		"title": "Braided Jute Area Rug 160x230",
+		"description": "The Braided Jute Area Rug 160x230 by Weave Home adds a warm, personal touch to any room. Made with quality materials, it pairs easily with modern and classic interiors alike.",
+		"category": "home-decoration",
+		"price": 1277.71,
+		"discountPercentage": 10.14,
+		"rating": 3.97,
+		"stock": 41,
+		"tags": ["rug", "jute", "floor"],
+		"brand": "Weave Home",
+		"sku": "TRTAHG4",
+		"weight": 3,
+		"dimensions": {
+			"width": 27.05,
+			"height": 10.25,
+			"depth": 58.99
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-05-13T13:57:55.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Works fine overall.",
+				"date": "2024-06-17T10:59:36.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-05-13T23:47:59.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "6416987669329",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/TRTAHG41/600/600"],
+		"thumbnail": "https://picsum.photos/seed/TRTAHG41/600/600"
+	},
+	{
+		"id": 43,
+		"index": 42,
+		"title": "Arc Floor Lamp Brass",
+		"description": "The Arc Floor Lamp Brass by LightLane adds a warm, personal touch to any room. Made with quality materials, it pairs easily with modern and classic interiors alike.",
+		"category": "home-decoration",
+		"price": 1523.55,
+		"discountPercentage": 17.01,
+		"rating": 4.27,
+		"stock": 100,
+		"tags": ["lamp", "floor lamp", "lighting"],
+		"brand": "LightLane",
+		"sku": "LLZJTX9",
+		"weight": 3,
+		"dimensions": {
+			"width": 33.9,
+			"height": 34.05,
+			"depth": 24.9
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-09-15T07:21:37.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-06-16T18:56:42.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Very unhappy with my purchase!",
+				"date": "2024-10-25T17:47:51.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "4540487387503",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/LLZJTX91/600/600",
+			"https://picsum.photos/seed/LLZJTX92/600/600",
+			"https://picsum.photos/seed/LLZJTX93/600/600",
+			"https://picsum.photos/seed/LLZJTX94/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/LLZJTX91/600/600"
+	},
+	{
+		"id": 44,
+		"index": 43,
+		"title": "Arched Full-Length Mirror",
+		"description": "The Arched Full-Length Mirror by Reflecta adds a warm, personal touch to any room. Made with quality materials, it pairs easily with modern and classic interiors alike.",
+		"category": "home-decoration",
+		"price": 1531.47,
+		"discountPercentage": 24.46,
+		"rating": 4.36,
+		"stock": 53,
+		"tags": ["mirror", "decor", "bedroom"],
+		"brand": "Reflecta",
+		"sku": "BZYBYA7",
+		"weight": 12,
+		"dimensions": {
+			"width": 59.61,
+			"height": 26.04,
+			"depth": 52.83
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-03-09T23:47:40.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-07-20T19:15:16.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-01-12T10:51:47.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "5823297184780",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/BZYBYA71/600/600"],
+		"thumbnail": "https://picsum.photos/seed/BZYBYA71/600/600"
+	},
+	{
+		"id": 45,
+		"index": 44,
+		"title": "Gallery Photo Frame Set 7 pcs",
+		"description": "The Gallery Photo Frame Set 7 pcs by Frame & Co adds a warm, personal touch to any room. Made with quality materials, it pairs easily with modern and classic interiors alike.",
+		"category": "home-decoration",
+		"price": 1080.13,
+		"discountPercentage": 18.86,
+		"rating": 4.6,
+		"stock": 17,
+		"tags": ["frames", "gallery", "decor"],
+		"brand": "Frame & Co",
+		"sku": "ECAPTB1",
+		"weight": 17,
+		"dimensions": {
+			"width": 59.64,
+			"height": 17.88,
+			"depth": 55.4
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-06-13T08:37:31.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Broke after a week, disappointed.",
+				"date": "2024-04-23T15:03:26.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-03-30T22:47:30.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "0363564215228",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/ECAPTB11/600/600", "https://picsum.photos/seed/ECAPTB12/600/600"],
+		"thumbnail": "https://picsum.photos/seed/ECAPTB11/600/600"
+	},
+	{
+		"id": 46,
+		"index": 45,
+		"title": "Hanging Macrame Planter",
+		"description": "The Hanging Macrame Planter by GreenHang adds a warm, personal touch to any room. Made with quality materials, it pairs easily with modern and classic interiors alike.",
+		"category": "home-decoration",
+		"price": 661.86,
+		"discountPercentage": 1.98,
+		"rating": 4.01,
+		"stock": 47,
+		"tags": ["planter", "macrame", "plants"],
+		"brand": "GreenHang",
+		"sku": "DLBKKN7",
+		"weight": 3,
+		"dimensions": {
+			"width": 34.46,
+			"height": 50.62,
+			"depth": 7.83
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 3,
+				"comment": "Decent, but expected more.",
+				"date": "2024-04-06T21:23:35.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-09-02T07:36:19.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-04-07T04:16:16.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "3232463384877",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/DLBKKN71/600/600"],
+		"thumbnail": "https://picsum.photos/seed/DLBKKN71/600/600"
+	},
+	{
+		"id": 47,
+		"index": 46,
+		"title": "Chef Knife Set 5 pcs",
+		"description": "The Chef Knife Set 5 pcs by SharpEdge is built for daily cooking with durable, easy-to-clean materials. A practical addition that makes kitchen routines faster and tidier.",
+		"category": "kitchen-accessories",
+		"price": 1168.52,
+		"discountPercentage": 18.0,
+		"rating": 3.73,
+		"stock": 25,
+		"tags": ["knives", "chef", "cutting"],
+		"brand": "SharpEdge",
+		"sku": "HEHBWU1",
+		"weight": 11,
+		"dimensions": {
+			"width": 17.65,
+			"height": 36.34,
+			"depth": 18.52
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-09-08T16:46:41.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Works fine overall.",
+				"date": "2024-03-27T05:05:44.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-10-04T23:22:03.618Z",
+				"reviewerName": "John Doe",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "9674827053666",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/HEHBWU11/600/600", "https://picsum.photos/seed/HEHBWU12/600/600"],
+		"thumbnail": "https://picsum.photos/seed/HEHBWU11/600/600"
+	},
+	{
+		"id": 48,
+		"index": 47,
+		"title": "Bamboo Cutting Board Large",
+		"description": "The Bamboo Cutting Board Large by EcoKitchen is built for daily cooking with durable, easy-to-clean materials. A practical addition that makes kitchen routines faster and tidier.",
+		"category": "kitchen-accessories",
+		"price": 36.72,
+		"discountPercentage": 20.33,
+		"rating": 4.41,
+		"stock": 103,
+		"tags": ["cutting board", "bamboo", "eco"],
+		"brand": "EcoKitchen",
+		"sku": "MMANAN5",
+		"weight": 6,
+		"dimensions": {
+			"width": 10.89,
+			"height": 10.3,
+			"depth": 13.19
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 3,
+				"comment": "Works fine overall.",
+				"date": "2024-05-16T14:27:02.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-10-16T08:51:17.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-01-17T03:24:15.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "0014475805028",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/MMANAN51/600/600",
+			"https://picsum.photos/seed/MMANAN52/600/600",
+			"https://picsum.photos/seed/MMANAN53/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/MMANAN51/600/600"
+	},
+	{
+		"id": 49,
+		"index": 48,
+		"title": "Nesting Mixing Bowls 6 pcs",
+		"description": "The Nesting Mixing Bowls 6 pcs by MixMaster is built for daily cooking with durable, easy-to-clean materials. A practical addition that makes kitchen routines faster and tidier.",
+		"category": "kitchen-accessories",
+		"price": 630.36,
+		"discountPercentage": 24.04,
+		"rating": 4.26,
+		"stock": 96,
+		"tags": ["bowls", "mixing", "baking"],
+		"brand": "MixMaster",
+		"sku": "XLBBYX1",
+		"weight": 13,
+		"dimensions": {
+			"width": 56.09,
+			"height": 21.46,
+			"depth": 36.02
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 2,
+				"comment": "Broke after a week, disappointed.",
+				"date": "2024-06-18T13:58:31.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Decent, but expected more.",
+				"date": "2024-09-13T12:35:32.618Z",
+				"reviewerName": "John Doe",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-02-08T12:24:02.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "9367425315372",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/XLBBYX11/600/600"],
+		"thumbnail": "https://picsum.photos/seed/XLBBYX11/600/600"
+	},
+	{
+		"id": 50,
+		"index": 49,
+		"title": "Digital Kitchen Scale",
+		"description": "The Digital Kitchen Scale by PreciCook is built for daily cooking with durable, easy-to-clean materials. A practical addition that makes kitchen routines faster and tidier.",
+		"category": "kitchen-accessories",
+		"price": 185.21,
+		"discountPercentage": 23.57,
+		"rating": 4.0,
+		"stock": 97,
+		"tags": ["scale", "digital", "baking"],
+		"brand": "PreciCook",
+		"sku": "FBGJVD7",
+		"weight": 9,
+		"dimensions": {
+			"width": 10.62,
+			"height": 9.8,
+			"depth": 28.7
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-02-15T12:53:08.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-06-15T14:01:33.618Z",
+				"reviewerName": "John Doe",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-02-13T20:22:19.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "6122112273974",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/FBGJVD71/600/600", "https://picsum.photos/seed/FBGJVD72/600/600"],
+		"thumbnail": "https://picsum.photos/seed/FBGJVD71/600/600"
+	},
+	{
+		"id": 51,
+		"index": 50,
+		"title": "Gooseneck Pour-Over Kettle",
+		"description": "The Gooseneck Pour-Over Kettle by BrewCraft is built for daily cooking with durable, easy-to-clean materials. A practical addition that makes kitchen routines faster and tidier.",
+		"category": "kitchen-accessories",
+		"price": 862.22,
+		"discountPercentage": 20.59,
+		"rating": 4.37,
+		"stock": 76,
+		"tags": ["kettle", "coffee", "pourover"],
+		"brand": "BrewCraft",
+		"sku": "RLDAKW7",
+		"weight": 5,
+		"dimensions": {
+			"width": 21.52,
+			"height": 38.18,
+			"depth": 43.24
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-06-12T10:36:40.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Not as described!",
+				"date": "2024-10-21T08:49:35.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-07-05T04:08:47.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "6594742687446",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/RLDAKW71/600/600", "https://picsum.photos/seed/RLDAKW72/600/600"],
+		"thumbnail": "https://picsum.photos/seed/RLDAKW71/600/600"
+	},
+	{
+		"id": 52,
+		"index": 51,
+		"title": "4-Slice Toaster Stainless",
+		"description": "The 4-Slice Toaster Stainless by ToastPro is built for daily cooking with durable, easy-to-clean materials. A practical addition that makes kitchen routines faster and tidier.",
+		"category": "kitchen-accessories",
+		"price": 1013.95,
+		"discountPercentage": 23.01,
+		"rating": 4.45,
+		"stock": 69,
+		"tags": ["toaster", "breakfast", "kitchen"],
+		"brand": "ToastPro",
+		"sku": "FSTVBZ8",
+		"weight": 2,
+		"dimensions": {
+			"width": 48.49,
+			"height": 24.77,
+			"depth": 54.25
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-06-30T06:03:22.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-07-23T12:04:23.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-05-12T08:04:58.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "4375530149191",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/FSTVBZ81/600/600",
+			"https://picsum.photos/seed/FSTVBZ82/600/600",
+			"https://picsum.photos/seed/FSTVBZ83/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/FSTVBZ81/600/600"
+	},
+	{
+		"id": 53,
+		"index": 52,
+		"title": "Rotating Spice Rack 12 jars",
+		"description": "The Rotating Spice Rack 12 jars by SpiceVille is built for daily cooking with durable, easy-to-clean materials. A practical addition that makes kitchen routines faster and tidier.",
+		"category": "kitchen-accessories",
+		"price": 91.7,
+		"discountPercentage": 17.77,
+		"rating": 3.24,
+		"stock": 43,
+		"tags": ["spice rack", "seasoning", "kitchen"],
+		"brand": "SpiceVille",
+		"sku": "HLEMLL8",
+		"weight": 4,
+		"dimensions": {
+			"width": 42.24,
+			"height": 14.04,
+			"depth": 59.11
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "Low Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-06-18T20:23:00.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-04-04T06:47:10.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-01-15T22:21:32.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "3727801813428",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/HLEMLL81/600/600", "https://picsum.photos/seed/HLEMLL82/600/600"],
+		"thumbnail": "https://picsum.photos/seed/HLEMLL81/600/600"
+	},
+	{
+		"id": 54,
+		"index": 53,
+		"title": "Silicone Utensil Set 10 pcs",
+		"description": "The Silicone Utensil Set 10 pcs by GripGadget is built for daily cooking with durable, easy-to-clean materials. A practical addition that makes kitchen routines faster and tidier.",
+		"category": "kitchen-accessories",
+		"price": 1347.32,
+		"discountPercentage": 20.02,
+		"rating": 4.85,
+		"stock": 75,
+		"tags": ["utensils", "silicone", "cooking"],
+		"brand": "GripGadget",
+		"sku": "NRPRPJ8",
+		"weight": 3,
+		"dimensions": {
+			"width": 41.97,
+			"height": 22.23,
+			"depth": 18.12
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-09-18T14:08:36.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-07-15T15:24:08.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Broke after a week, disappointed.",
+				"date": "2024-03-29T20:12:13.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "1868941356447",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/NRPRPJ81/600/600",
+			"https://picsum.photos/seed/NRPRPJ82/600/600",
+			"https://picsum.photos/seed/NRPRPJ83/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/NRPRPJ81/600/600"
+	},
+	{
+		"id": 55,
+		"index": 54,
+		"title": "Airtight Storage Containers 8 pcs",
+		"description": "The Airtight Storage Containers 8 pcs by FreshLock is built for daily cooking with durable, easy-to-clean materials. A practical addition that makes kitchen routines faster and tidier.",
+		"category": "kitchen-accessories",
+		"price": 1561.25,
+		"discountPercentage": 14.14,
+		"rating": 4.59,
+		"stock": 63,
+		"tags": ["containers", "storage", "pantry"],
+		"brand": "FreshLock",
+		"sku": "LDPVFA4",
+		"weight": 18,
+		"dimensions": {
+			"width": 33.09,
+			"height": 36.5,
+			"depth": 19.73
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-08-13T19:53:31.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-06-01T01:10:24.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-08-12T04:16:26.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "8646788555192",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/LDPVFA41/600/600",
+			"https://picsum.photos/seed/LDPVFA42/600/600",
+			"https://picsum.photos/seed/LDPVFA43/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/LDPVFA41/600/600"
+	},
+	{
+		"id": 56,
+		"index": 55,
+		"title": "ZenBook 14 OLED Ultra 5",
+		"description": "The ZenBook 14 OLED Ultra 5 by Asus offers a powerful processor, a bright high-resolution display and all-day battery life in a slim, lightweight body — ideal for work, study and entertainment.",
+		"category": "laptops",
+		"price": 1733.56,
+		"discountPercentage": 3.17,
+		"rating": 4.76,
+		"stock": 31,
+		"tags": ["laptop", "oled", "ultrabook"],
+		"brand": "Asus",
+		"sku": "PYMXVD7",
+		"weight": 5,
+		"dimensions": {
+			"width": 44.13,
+			"height": 50.57,
+			"depth": 46.88
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-05-17T22:51:28.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-02-17T14:40:02.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-08-20T17:46:08.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "7463052422835",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/PYMXVD71/600/600"],
+		"thumbnail": "https://picsum.photos/seed/PYMXVD71/600/600"
+	},
+	{
+		"id": 57,
+		"index": 56,
+		"title": "IdeaPad Slim 5 Ryzen 7",
+		"description": "The IdeaPad Slim 5 Ryzen 7 by Lenovo offers a powerful processor, a bright high-resolution display and all-day battery life in a slim, lightweight body — ideal for work, study and entertainment.",
+		"category": "laptops",
+		"price": 1714.8,
+		"discountPercentage": 11.03,
+		"rating": 3.2,
+		"stock": 54,
+		"tags": ["laptop", "ryzen", "slim"],
+		"brand": "Lenovo",
+		"sku": "PMHSBC8",
+		"weight": 7,
+		"dimensions": {
+			"width": 59.76,
+			"height": 55.02,
+			"depth": 53.52
+		},
+		"warrantyInformation": "6 months warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "Low Stock",
+		"reviews": [
+			{
+				"rating": 3,
+				"comment": "Works fine overall.",
+				"date": "2024-02-17T23:49:58.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-03-25T01:53:07.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-08-07T23:51:55.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "2055403186420",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/PMHSBC81/600/600"],
+		"thumbnail": "https://picsum.photos/seed/PMHSBC81/600/600"
+	},
+	{
+		"id": 58,
+		"index": 57,
+		"title": "MacBook Air 13 M3 256GB",
+		"description": "The MacBook Air 13 M3 256GB by Apple offers a powerful processor, a bright high-resolution display and all-day battery life in a slim, lightweight body — ideal for work, study and entertainment.",
+		"category": "laptops",
+		"price": 287.7,
+		"discountPercentage": 13.26,
+		"rating": 3.22,
+		"stock": 83,
+		"tags": ["laptop", "m3", "ultrabook"],
+		"brand": "Apple",
+		"sku": "VCJGJV3",
+		"weight": 6,
+		"dimensions": {
+			"width": 29.21,
+			"height": 44.73,
+			"depth": 39.54
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-04-21T03:09:22.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Decent, but expected more.",
+				"date": "2024-07-15T12:47:56.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Good, but packaging could be better.",
+				"date": "2024-05-06T10:05:02.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "7686355720894",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/VCJGJV31/600/600",
+			"https://picsum.photos/seed/VCJGJV32/600/600",
+			"https://picsum.photos/seed/VCJGJV33/600/600",
+			"https://picsum.photos/seed/VCJGJV34/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/VCJGJV31/600/600"
+	},
+	{
+		"id": 59,
+		"index": 58,
+		"title": "XPS 14 Core Ultra 7",
+		"description": "The XPS 14 Core Ultra 7 by Dell offers a powerful processor, a bright high-resolution display and all-day battery life in a slim, lightweight body — ideal for work, study and entertainment.",
+		"category": "laptops",
+		"price": 1677.51,
+		"discountPercentage": 10.52,
+		"rating": 4.18,
+		"stock": 22,
+		"tags": ["laptop", "ultra", "premium"],
+		"brand": "Dell",
+		"sku": "CMPNZZ6",
+		"weight": 16,
+		"dimensions": {
+			"width": 57.49,
+			"height": 47.37,
+			"depth": 5.92
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-01-21T02:12:05.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-07-31T15:25:18.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-10-02T22:25:46.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "0991357663492",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/CMPNZZ61/600/600"],
+		"thumbnail": "https://picsum.photos/seed/CMPNZZ61/600/600"
+	},
+	{
+		"id": 60,
+		"index": 59,
+		"title": "Swift Go 14 Core i5",
+		"description": "The Swift Go 14 Core i5 by Acer offers a powerful processor, a bright high-resolution display and all-day battery life in a slim, lightweight body — ideal for work, study and entertainment.",
+		"category": "laptops",
+		"price": 276.43,
+		"discountPercentage": 0.28,
+		"rating": 4.09,
+		"stock": 44,
+		"tags": ["laptop", "i5", "slim"],
+		"brand": "Acer",
+		"sku": "FYCRBS3",
+		"weight": 17,
+		"dimensions": {
+			"width": 33.45,
+			"height": 50.24,
+			"depth": 19.26
+		},
+		"warrantyInformation": "6 months warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "Low Stock",
+		"reviews": [
+			{
+				"rating": 2,
+				"comment": "Not as described!",
+				"date": "2024-03-01T01:04:07.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-02-02T09:34:25.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Very unhappy with my purchase!",
+				"date": "2024-09-11T16:34:23.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "8117861708003",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/FYCRBS31/600/600"],
+		"thumbnail": "https://picsum.photos/seed/FYCRBS31/600/600"
+	},
+	{
+		"id": 61,
+		"index": 60,
+		"title": "Galaxy Book4 Pro 14",
+		"description": "The Galaxy Book4 Pro 14 by Samsung offers a powerful processor, a bright high-resolution display and all-day battery life in a slim, lightweight body — ideal for work, study and entertainment.",
+		"category": "laptops",
+		"price": 833.55,
+		"discountPercentage": 18.01,
+		"rating": 3.69,
+		"stock": 9,
+		"tags": ["laptop", "amoled", "pro"],
+		"brand": "Samsung",
+		"sku": "YEZAVT7",
+		"weight": 19,
+		"dimensions": {
+			"width": 25.5,
+			"height": 32.61,
+			"depth": 54.61
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 3,
+				"comment": "Decent, but expected more.",
+				"date": "2024-07-24T02:30:34.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Works fine overall.",
+				"date": "2024-06-16T03:08:42.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-04-12T10:36:59.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "4547197204238",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/YEZAVT71/600/600"],
+		"thumbnail": "https://picsum.photos/seed/YEZAVT71/600/600"
+	},
+	{
+		"id": 62,
+		"index": 61,
+		"title": "Victus 15 RTX 4050",
+		"description": "The Victus 15 RTX 4050 by HP offers a powerful processor, a bright high-resolution display and all-day battery life in a slim, lightweight body — ideal for work, study and entertainment.",
+		"category": "laptops",
+		"price": 477.99,
+		"discountPercentage": 12.3,
+		"rating": 3.31,
+		"stock": 18,
+		"tags": ["laptop", "gaming", "rtx"],
+		"brand": "HP",
+		"sku": "XYASWT2",
+		"weight": 9,
+		"dimensions": {
+			"width": 10.12,
+			"height": 55.67,
+			"depth": 54.35
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 2,
+				"comment": "Not as described!",
+				"date": "2024-08-22T03:05:28.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-07-20T02:43:28.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-03-07T08:37:14.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "7732027511445",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/XYASWT21/600/600"],
+		"thumbnail": "https://picsum.photos/seed/XYASWT21/600/600"
+	},
+	{
+		"id": 63,
+		"index": 62,
+		"title": "Katana 15 RTX 4060",
+		"description": "The Katana 15 RTX 4060 by MSI offers a powerful processor, a bright high-resolution display and all-day battery life in a slim, lightweight body — ideal for work, study and entertainment.",
+		"category": "laptops",
+		"price": 83.01,
+		"discountPercentage": 20.9,
+		"rating": 3.79,
+		"stock": 11,
+		"tags": ["laptop", "gaming", "rtx"],
+		"brand": "MSI",
+		"sku": "ZEHGCD5",
+		"weight": 8,
+		"dimensions": {
+			"width": 58.26,
+			"height": 26.79,
+			"depth": 7.69
+		},
+		"warrantyInformation": "6 months warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 3,
+				"comment": "Good, but packaging could be better.",
+				"date": "2024-01-16T14:43:24.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Broke after a week, disappointed.",
+				"date": "2024-05-07T03:26:55.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Good, but packaging could be better.",
+				"date": "2024-03-03T00:26:07.618Z",
+				"reviewerName": "John Doe",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "8366528009419",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/ZEHGCD51/600/600",
+			"https://picsum.photos/seed/ZEHGCD52/600/600",
+			"https://picsum.photos/seed/ZEHGCD53/600/600",
+			"https://picsum.photos/seed/ZEHGCD54/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/ZEHGCD51/600/600"
+	},
+	{
+		"id": 64,
+		"index": 63,
+		"title": "ProBook 450 Core i7",
+		"description": "The ProBook 450 Core i7 by HP offers a powerful processor, a bright high-resolution display and all-day battery life in a slim, lightweight body — ideal for work, study and entertainment.",
+		"category": "laptops",
+		"price": 1366.53,
+		"discountPercentage": 4.32,
+		"rating": 3.59,
+		"stock": 23,
+		"tags": ["laptop", "business", "i7"],
+		"brand": "HP",
+		"sku": "WHALDP7",
+		"weight": 9,
+		"dimensions": {
+			"width": 20.39,
+			"height": 53.59,
+			"depth": 6.91
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "Low Stock",
+		"reviews": [
+			{
+				"rating": 2,
+				"comment": "Not as described!",
+				"date": "2024-09-12T15:00:00.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-05-23T13:56:42.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-05-07T22:57:54.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "4735320508284",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/WHALDP71/600/600", "https://picsum.photos/seed/WHALDP72/600/600"],
+		"thumbnail": "https://picsum.photos/seed/WHALDP71/600/600"
+	},
+	{
+		"id": 65,
+		"index": 64,
+		"title": "Oxford Button-Down Shirt",
+		"description": "The Oxford Button-Down Shirt by Classic Line is made from breathable, premium fabric with a comfortable modern fit. Easy to care for and versatile enough for office and weekend looks.",
+		"category": "mens-shirts",
+		"price": 1991.8,
+		"discountPercentage": 5.49,
+		"rating": 4.72,
+		"stock": 102,
+		"tags": ["shirt", "oxford", "formal"],
+		"brand": "Classic Line",
+		"sku": "JPFDFF9",
+		"weight": 13,
+		"dimensions": {
+			"width": 24.51,
+			"height": 51.16,
+			"depth": 51.49
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "Low Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-07-02T21:32:17.618Z",
+				"reviewerName": "John Doe",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Not as described!",
+				"date": "2024-10-17T20:31:13.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-10-04T11:15:08.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "0604368318801",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/JPFDFF91/600/600",
+			"https://picsum.photos/seed/JPFDFF92/600/600",
+			"https://picsum.photos/seed/JPFDFF93/600/600",
+			"https://picsum.photos/seed/JPFDFF94/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/JPFDFF91/600/600"
+	},
+	{
+		"id": 66,
+		"index": 65,
+		"title": "Slim Fit Chambray Shirt",
+		"description": "The Slim Fit Chambray Shirt by UrbanTailor is made from breathable, premium fabric with a comfortable modern fit. Easy to care for and versatile enough for office and weekend looks.",
+		"category": "mens-shirts",
+		"price": 604.97,
+		"discountPercentage": 3.41,
+		"rating": 3.48,
+		"stock": 55,
+		"tags": ["shirt", "chambray", "casual"],
+		"brand": "UrbanTailor",
+		"sku": "TDCNJB7",
+		"weight": 16,
+		"dimensions": {
+			"width": 40.7,
+			"height": 14.58,
+			"depth": 58.28
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "Low Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-03-30T13:46:35.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Not as described!",
+				"date": "2024-03-06T06:28:12.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Broke after a week, disappointed.",
+				"date": "2024-07-19T20:39:41.618Z",
+				"reviewerName": "John Doe",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "9925917291807",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/TDCNJB71/600/600",
+			"https://picsum.photos/seed/TDCNJB72/600/600",
+			"https://picsum.photos/seed/TDCNJB73/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/TDCNJB71/600/600"
+	},
+	{
+		"id": 67,
+		"index": 66,
+		"title": "Performance Polo Black",
+		"description": "The Performance Polo Black by SportFlex is made from breathable, premium fabric with a comfortable modern fit. Easy to care for and versatile enough for office and weekend looks.",
+		"category": "mens-shirts",
+		"price": 98.62,
+		"discountPercentage": 10.96,
+		"rating": 3.96,
+		"stock": 21,
+		"tags": ["polo", "sport", "men"],
+		"brand": "SportFlex",
+		"sku": "RXLGFB5",
+		"weight": 14,
+		"dimensions": {
+			"width": 32.12,
+			"height": 25.83,
+			"depth": 35.03
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 3,
+				"comment": "Good, but packaging could be better.",
+				"date": "2024-03-24T16:25:51.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-06-12T09:30:26.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-07-11T05:51:30.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "3987466403945",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/RXLGFB51/600/600"],
+		"thumbnail": "https://picsum.photos/seed/RXLGFB51/600/600"
+	},
+	{
+		"id": 68,
+		"index": 67,
+		"title": "Flannel Check Overshirt",
+		"description": "The Flannel Check Overshirt by NorthWool is made from breathable, premium fabric with a comfortable modern fit. Easy to care for and versatile enough for office and weekend looks.",
+		"category": "mens-shirts",
+		"price": 722.89,
+		"discountPercentage": 10.69,
+		"rating": 3.73,
+		"stock": 84,
+		"tags": ["shirt", "flannel", "casual"],
+		"brand": "NorthWool",
+		"sku": "YNSGCK9",
+		"weight": 20,
+		"dimensions": {
+			"width": 31.42,
+			"height": 10.33,
+			"depth": 16.38
+		},
+		"warrantyInformation": "6 months warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-06-06T14:28:16.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Not as described!",
+				"date": "2024-02-16T23:22:10.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-07-14T13:26:58.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "4285160684720",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/YNSGCK91/600/600", "https://picsum.photos/seed/YNSGCK92/600/600"],
+		"thumbnail": "https://picsum.photos/seed/YNSGCK91/600/600"
+	},
+	{
+		"id": 69,
+		"index": 68,
+		"title": "Linen Cuban Collar Shirt",
+		"description": "The Linen Cuban Collar Shirt by Costa Vera is made from breathable, premium fabric with a comfortable modern fit. Easy to care for and versatile enough for office and weekend looks.",
+		"category": "mens-shirts",
+		"price": 790.72,
+		"discountPercentage": 21.35,
+		"rating": 3.26,
+		"stock": 73,
+		"tags": ["shirt", "linen", "summer"],
+		"brand": "Costa Vera",
+		"sku": "JNZSYP4",
+		"weight": 17,
+		"dimensions": {
+			"width": 49.02,
+			"height": 42.26,
+			"depth": 39.12
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-04-18T07:01:00.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-08-10T07:21:05.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Works fine overall.",
+				"date": "2024-06-12T02:26:23.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "5859075711559",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/JNZSYP41/600/600", "https://picsum.photos/seed/JNZSYP42/600/600"],
+		"thumbnail": "https://picsum.photos/seed/JNZSYP41/600/600"
+	},
+	{
+		"id": 70,
+		"index": 69,
+		"title": "Merino Wool Sweater Crew",
+		"description": "The Merino Wool Sweater Crew by AlpineKnit is made from breathable, premium fabric with a comfortable modern fit. Easy to care for and versatile enough for office and weekend looks.",
+		"category": "mens-shirts",
+		"price": 971.96,
+		"discountPercentage": 15.22,
+		"rating": 3.27,
+		"stock": 35,
+		"tags": ["sweater", "wool", "men"],
+		"brand": "AlpineKnit",
+		"sku": "CCUVWX7",
+		"weight": 13,
+		"dimensions": {
+			"width": 12.91,
+			"height": 38.48,
+			"depth": 43.15
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-01-26T17:18:07.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-06-04T11:19:16.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Decent, but expected more.",
+				"date": "2024-04-26T04:53:34.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "2461287788513",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/CCUVWX71/600/600", "https://picsum.photos/seed/CCUVWX72/600/600"],
+		"thumbnail": "https://picsum.photos/seed/CCUVWX71/600/600"
+	},
+	{
+		"id": 71,
+		"index": 70,
+		"title": "Graphic Cotton Tee 3-pack",
+		"description": "The Graphic Cotton Tee 3-pack by Basewear is made from breathable, premium fabric with a comfortable modern fit. Easy to care for and versatile enough for office and weekend looks.",
+		"category": "mens-shirts",
+		"price": 913.79,
+		"discountPercentage": 22.95,
+		"rating": 4.47,
+		"stock": 35,
+		"tags": ["t-shirt", "cotton", "casual"],
+		"brand": "Basewear",
+		"sku": "MDWXAE4",
+		"weight": 12,
+		"dimensions": {
+			"width": 50.29,
+			"height": 32.78,
+			"depth": 39.95
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-09-07T21:37:42.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Satisfied with minor issues.",
+				"date": "2024-10-27T20:04:24.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-02-16T10:22:44.618Z",
+				"reviewerName": "John Doe",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "8722226589641",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/MDWXAE41/600/600"],
+		"thumbnail": "https://picsum.photos/seed/MDWXAE41/600/600"
+	},
+	{
+		"id": 72,
+		"index": 71,
+		"title": "Navy Poplin Dress Shirt",
+		"description": "The Navy Poplin Dress Shirt by Sartoria Roma is made from breathable, premium fabric with a comfortable modern fit. Easy to care for and versatile enough for office and weekend looks.",
+		"category": "mens-shirts",
+		"price": 1702.69,
+		"discountPercentage": 11.47,
+		"rating": 3.59,
+		"stock": 38,
+		"tags": ["shirt", "poplin", "formal"],
+		"brand": "Sartoria Roma",
+		"sku": "DVFPYT5",
+		"weight": 17,
+		"dimensions": {
+			"width": 50.34,
+			"height": 26.84,
+			"depth": 10.63
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-05-24T10:52:01.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-06-21T10:03:59.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Works fine overall.",
+				"date": "2024-05-13T23:53:18.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "1788866676924",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/DVFPYT51/600/600", "https://picsum.photos/seed/DVFPYT52/600/600"],
+		"thumbnail": "https://picsum.photos/seed/DVFPYT51/600/600"
+	},
+	{
+		"id": 73,
+		"index": 72,
+		"title": "Hooded Fleece Sweatshirt",
+		"description": "The Hooded Fleece Sweatshirt by CozyCore is made from breathable, premium fabric with a comfortable modern fit. Easy to care for and versatile enough for office and weekend looks.",
+		"category": "mens-shirts",
+		"price": 1569.54,
+		"discountPercentage": 22.66,
+		"rating": 4.41,
+		"stock": 64,
+		"tags": ["sweatshirt", "hoodie", "casual"],
+		"brand": "CozyCore",
+		"sku": "JATPET4",
+		"weight": 10,
+		"dimensions": {
+			"width": 51.5,
+			"height": 51.24,
+			"depth": 53.21
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-03-06T09:25:02.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Good, but packaging could be better.",
+				"date": "2024-06-20T23:49:38.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-06-06T15:18:32.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "4106564116548",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/JATPET41/600/600",
+			"https://picsum.photos/seed/JATPET42/600/600",
+			"https://picsum.photos/seed/JATPET43/600/600",
+			"https://picsum.photos/seed/JATPET44/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/JATPET41/600/600"
+	},
+	{
+		"id": 74,
+		"index": 73,
+		"title": "Air Runner Sneakers",
+		"description": "The Air Runner Sneakers by Velocity features a cushioned insole, durable outsole and supportive fit for all-day comfort. Stylish enough for the city, tough enough for daily wear.",
+		"category": "mens-shoes",
+		"price": 362.57,
+		"discountPercentage": 2.02,
+		"rating": 3.8,
+		"stock": 22,
+		"tags": ["sneakers", "running", "men"],
+		"brand": "Velocity",
+		"sku": "DZHZXZ3",
+		"weight": 11,
+		"dimensions": {
+			"width": 39.9,
+			"height": 5.26,
+			"depth": 20.04
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-03-07T22:22:21.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-08-07T17:22:53.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-04-12T13:35:03.618Z",
+				"reviewerName": "John Doe",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "0072831530094",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/DZHZXZ31/600/600", "https://picsum.photos/seed/DZHZXZ32/600/600"],
+		"thumbnail": "https://picsum.photos/seed/DZHZXZ31/600/600"
+	},
+	{
+		"id": 75,
+		"index": 74,
+		"title": "Suede Chukka Boots",
+		"description": "The Suede Chukka Boots by StepWell features a cushioned insole, durable outsole and supportive fit for all-day comfort. Stylish enough for the city, tough enough for daily wear.",
+		"category": "mens-shoes",
+		"price": 331.68,
+		"discountPercentage": 22.67,
+		"rating": 4.66,
+		"stock": 2,
+		"tags": ["boots", "suede", "men"],
+		"brand": "StepWell",
+		"sku": "MNKSDZ8",
+		"weight": 8,
+		"dimensions": {
+			"width": 17.34,
+			"height": 59.17,
+			"depth": 16.62
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-01-20T13:39:37.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Decent, but expected more.",
+				"date": "2024-01-25T03:56:10.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-08-01T16:10:37.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "4166366261817",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/MNKSDZ81/600/600", "https://picsum.photos/seed/MNKSDZ82/600/600"],
+		"thumbnail": "https://picsum.photos/seed/MNKSDZ81/600/600"
+	},
+	{
+		"id": 76,
+		"index": 75,
+		"title": "Classic Leather Oxfords",
+		"description": "The Classic Leather Oxfords by Brogue & Sons features a cushioned insole, durable outsole and supportive fit for all-day comfort. Stylish enough for the city, tough enough for daily wear.",
+		"category": "mens-shoes",
+		"price": 820.57,
+		"discountPercentage": 4.01,
+		"rating": 4.19,
+		"stock": 116,
+		"tags": ["oxfords", "leather", "formal"],
+		"brand": "Brogue & Sons",
+		"sku": "CCCEEG9",
+		"weight": 7,
+		"dimensions": {
+			"width": 42.85,
+			"height": 31.44,
+			"depth": 17.9
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-09-09T05:25:48.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-05-11T23:27:34.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-08-25T01:49:24.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "3641880163892",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/CCCEEG91/600/600"],
+		"thumbnail": "https://picsum.photos/seed/CCCEEG91/600/600"
+	},
+	{
+		"id": 77,
+		"index": 76,
+		"title": "Canvas Low-Top Sneakers",
+		"description": "The Canvas Low-Top Sneakers by StreetFlex features a cushioned insole, durable outsole and supportive fit for all-day comfort. Stylish enough for the city, tough enough for daily wear.",
+		"category": "mens-shoes",
+		"price": 1599.5,
+		"discountPercentage": 16.22,
+		"rating": 4.63,
+		"stock": 14,
+		"tags": ["sneakers", "canvas", "casual"],
+		"brand": "StreetFlex",
+		"sku": "TJHCKL7",
+		"weight": 5,
+		"dimensions": {
+			"width": 43.29,
+			"height": 8.23,
+			"depth": 56.84
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-09-04T20:42:52.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-07-13T13:03:22.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Good, but packaging could be better.",
+				"date": "2024-09-04T17:46:19.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "0608577298566",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/TJHCKL71/600/600",
+			"https://picsum.photos/seed/TJHCKL72/600/600",
+			"https://picsum.photos/seed/TJHCKL73/600/600",
+			"https://picsum.photos/seed/TJHCKL74/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/TJHCKL71/600/600"
+	},
+	{
+		"id": 78,
+		"index": 77,
+		"title": "Trail Hiking Shoes GTX",
+		"description": "The Trail Hiking Shoes GTX by TerraTrek features a cushioned insole, durable outsole and supportive fit for all-day comfort. Stylish enough for the city, tough enough for daily wear.",
+		"category": "mens-shoes",
+		"price": 1287.04,
+		"discountPercentage": 3.92,
+		"rating": 4.73,
+		"stock": 109,
+		"tags": ["hiking", "trail", "outdoor"],
+		"brand": "TerraTrek",
+		"sku": "KTMSRD9",
+		"weight": 16,
+		"dimensions": {
+			"width": 52.82,
+			"height": 9.12,
+			"depth": 32.04
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "Low Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-09-16T08:06:30.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-04-30T02:52:12.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Satisfied with minor issues.",
+				"date": "2024-02-15T18:08:53.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "7040587968564",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/KTMSRD91/600/600",
+			"https://picsum.photos/seed/KTMSRD92/600/600",
+			"https://picsum.photos/seed/KTMSRD93/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/KTMSRD91/600/600"
+	},
+	{
+		"id": 79,
+		"index": 78,
+		"title": "Driving Loafers Tan",
+		"description": "The Driving Loafers Tan by Milano Paso features a cushioned insole, durable outsole and supportive fit for all-day comfort. Stylish enough for the city, tough enough for daily wear.",
+		"category": "mens-shoes",
+		"price": 1431.82,
+		"discountPercentage": 2.85,
+		"rating": 4.57,
+		"stock": 28,
+		"tags": ["loafers", "leather", "casual"],
+		"brand": "Milano Paso",
+		"sku": "HVVWHU8",
+		"weight": 1,
+		"dimensions": {
+			"width": 23.77,
+			"height": 50.64,
+			"depth": 58.04
+		},
+		"warrantyInformation": "6 months warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 2,
+				"comment": "Very unhappy with my purchase!",
+				"date": "2024-01-24T05:58:36.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Satisfied with minor issues.",
+				"date": "2024-02-24T09:15:30.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-07-20T07:50:57.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "1498574691450",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/HVVWHU81/600/600",
+			"https://picsum.photos/seed/HVVWHU82/600/600",
+			"https://picsum.photos/seed/HVVWHU83/600/600",
+			"https://picsum.photos/seed/HVVWHU84/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/HVVWHU81/600/600"
+	},
+	{
+		"id": 80,
+		"index": 79,
+		"title": "Training Cross-Trainers",
+		"description": "The Training Cross-Trainers by PowerGrip features a cushioned insole, durable outsole and supportive fit for all-day comfort. Stylish enough for the city, tough enough for daily wear.",
+		"category": "mens-shoes",
+		"price": 209.24,
+		"discountPercentage": 16.44,
+		"rating": 4.29,
+		"stock": 41,
+		"tags": ["trainers", "gym", "sport"],
+		"brand": "PowerGrip",
+		"sku": "YWMMYE3",
+		"weight": 17,
+		"dimensions": {
+			"width": 53.48,
+			"height": 28.03,
+			"depth": 38.49
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-05-30T16:29:15.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-09-19T10:52:59.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Works fine overall.",
+				"date": "2024-10-10T23:01:53.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "6917915677559",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/YWMMYE31/600/600",
+			"https://picsum.photos/seed/YWMMYE32/600/600",
+			"https://picsum.photos/seed/YWMMYE33/600/600",
+			"https://picsum.photos/seed/YWMMYE34/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/YWMMYE31/600/600"
+	},
+	{
+		"id": 81,
+		"index": 80,
+		"title": "Chelsea Boots Black",
+		"description": "The Chelsea Boots Black by Kensington Walk features a cushioned insole, durable outsole and supportive fit for all-day comfort. Stylish enough for the city, tough enough for daily wear.",
+		"category": "mens-shoes",
+		"price": 762.9,
+		"discountPercentage": 1.33,
+		"rating": 3.3,
+		"stock": 34,
+		"tags": ["boots", "chelsea", "men"],
+		"brand": "Kensington Walk",
+		"sku": "TSXNXK1",
+		"weight": 6,
+		"dimensions": {
+			"width": 59.09,
+			"height": 42.59,
+			"depth": 13.05
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "Low Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-01-17T13:03:33.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-04-24T23:33:39.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-05-27T01:42:37.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "9072884267357",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/TSXNXK11/600/600",
+			"https://picsum.photos/seed/TSXNXK12/600/600",
+			"https://picsum.photos/seed/TSXNXK13/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/TSXNXK11/600/600"
+	},
+	{
+		"id": 82,
+		"index": 81,
+		"title": "Barefoot Running Shoes",
+		"description": "The Barefoot Running Shoes by ZeroDrop features a cushioned insole, durable outsole and supportive fit for all-day comfort. Stylish enough for the city, tough enough for daily wear.",
+		"category": "mens-shoes",
+		"price": 755.57,
+		"discountPercentage": 10.71,
+		"rating": 4.2,
+		"stock": 16,
+		"tags": ["running", "minimalist", "sport"],
+		"brand": "ZeroDrop",
+		"sku": "ETELZB3",
+		"weight": 6,
+		"dimensions": {
+			"width": 37.12,
+			"height": 19.03,
+			"depth": 23.18
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-01-27T22:46:08.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-10-20T20:01:50.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Works fine overall.",
+				"date": "2024-09-26T08:00:30.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "4502233275989",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/ETELZB31/600/600",
+			"https://picsum.photos/seed/ETELZB32/600/600",
+			"https://picsum.photos/seed/ETELZB33/600/600",
+			"https://picsum.photos/seed/ETELZB34/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/ETELZB31/600/600"
+	},
+	{
+		"id": 83,
+		"index": 82,
+		"title": "Chronograph Steel 42mm",
+		"description": "The Chronograph Steel 42mm by Longines pairs a precise movement with a refined case and comfortable strap. A versatile timepiece for both business and casual outfits.",
+		"category": "mens-watches",
+		"price": 763.9,
+		"discountPercentage": 19.91,
+		"rating": 3.4,
+		"stock": 32,
+		"tags": ["watch", "chronograph", "steel"],
+		"brand": "Longines",
+		"sku": "ASLXRR1",
+		"weight": 18,
+		"dimensions": {
+			"width": 44.82,
+			"height": 6.36,
+			"depth": 33.43
+		},
+		"warrantyInformation": "6 months warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-05-31T23:43:17.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-02-19T06:05:40.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-04-17T22:55:11.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "2887480607001",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/ASLXRR11/600/600",
+			"https://picsum.photos/seed/ASLXRR12/600/600",
+			"https://picsum.photos/seed/ASLXRR13/600/600",
+			"https://picsum.photos/seed/ASLXRR14/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/ASLXRR11/600/600"
+	},
+	{
+		"id": 84,
+		"index": 83,
+		"title": "Automatic Diver 200m",
+		"description": "The Automatic Diver 200m by Seiko pairs a precise movement with a refined case and comfortable strap. A versatile timepiece for both business and casual outfits.",
+		"category": "mens-watches",
+		"price": 780.13,
+		"discountPercentage": 2.96,
+		"rating": 3.21,
+		"stock": 92,
+		"tags": ["watch", "diver", "automatic"],
+		"brand": "Seiko",
+		"sku": "FBVXKL7",
+		"weight": 20,
+		"dimensions": {
+			"width": 8.48,
+			"height": 46.03,
+			"depth": 7.5
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-05-28T10:58:18.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-07-14T14:23:08.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-09-30T08:00:18.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "9169773955105",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/FBVXKL71/600/600", "https://picsum.photos/seed/FBVXKL72/600/600"],
+		"thumbnail": "https://picsum.photos/seed/FBVXKL71/600/600"
+	},
+	{
+		"id": 85,
+		"index": 84,
+		"title": "Heritage Moonphase 40mm",
+		"description": "The Heritage Moonphase 40mm by Loraine pairs a precise movement with a refined case and comfortable strap. A versatile timepiece for both business and casual outfits.",
+		"category": "mens-watches",
+		"price": 286.9,
+		"discountPercentage": 4.6,
+		"rating": 4.31,
+		"stock": 32,
+		"tags": ["watch", "moonphase", "classic"],
+		"brand": "Loraine",
+		"sku": "NYHUXH7",
+		"weight": 7,
+		"dimensions": {
+			"width": 11.3,
+			"height": 41.9,
+			"depth": 36.2
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 2,
+				"comment": "Broke after a week, disappointed.",
+				"date": "2024-02-07T10:34:56.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-04-11T21:08:19.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-04-30T03:38:33.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "3463553340227",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/NYHUXH71/600/600",
+			"https://picsum.photos/seed/NYHUXH72/600/600",
+			"https://picsum.photos/seed/NYHUXH73/600/600",
+			"https://picsum.photos/seed/NYHUXH74/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/NYHUXH71/600/600"
+	},
+	{
+		"id": 86,
+		"index": 85,
+		"title": "Smart Watch AMOLED Gen 5",
+		"description": "The Smart Watch AMOLED Gen 5 by PulseTech pairs a precise movement with a refined case and comfortable strap. A versatile timepiece for both business and casual outfits.",
+		"category": "mens-watches",
+		"price": 219.78,
+		"discountPercentage": 16.14,
+		"rating": 3.35,
+		"stock": 35,
+		"tags": ["smartwatch", "fitness", "gps"],
+		"brand": "PulseTech",
+		"sku": "LWDTXL6",
+		"weight": 5,
+		"dimensions": {
+			"width": 54.02,
+			"height": 15.8,
+			"depth": 45.34
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-01-16T21:11:09.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Good, but packaging could be better.",
+				"date": "2024-01-19T20:04:58.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-03-17T13:19:08.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "1503029967115",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/LWDTXL61/600/600", "https://picsum.photos/seed/LWDTXL62/600/600"],
+		"thumbnail": "https://picsum.photos/seed/LWDTXL61/600/600"
+	},
+	{
+		"id": 87,
+		"index": 86,
+		"title": "Skeleton Automatic Red Gold",
+		"description": "The Skeleton Automatic Red Gold by Orleans pairs a precise movement with a refined case and comfortable strap. A versatile timepiece for both business and casual outfits.",
+		"category": "mens-watches",
+		"price": 740.07,
+		"discountPercentage": 1.07,
+		"rating": 3.57,
+		"stock": 116,
+		"tags": ["watch", "skeleton", "luxury"],
+		"brand": "Orleans",
+		"sku": "PXDTYA8",
+		"weight": 12,
+		"dimensions": {
+			"width": 26.35,
+			"height": 55.48,
+			"depth": 53.49
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "Low Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-05-20T09:35:13.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-07-11T23:47:58.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-09-21T09:09:35.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "3844651106213",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/PXDTYA81/600/600"],
+		"thumbnail": "https://picsum.photos/seed/PXDTYA81/600/600"
+	},
+	{
+		"id": 88,
+		"index": 87,
+		"title": "Field Watch Olive Canvas",
+		"description": "The Field Watch Olive Canvas by Ranger Co pairs a precise movement with a refined case and comfortable strap. A versatile timepiece for both business and casual outfits.",
+		"category": "mens-watches",
+		"price": 324.42,
+		"discountPercentage": 20.83,
+		"rating": 3.24,
+		"stock": 5,
+		"tags": ["watch", "field", "casual"],
+		"brand": "Ranger Co",
+		"sku": "TCFVTM8",
+		"weight": 5,
+		"dimensions": {
+			"width": 36.54,
+			"height": 13.86,
+			"depth": 39.62
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-05-12T06:33:17.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-01-10T10:19:12.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-08-29T17:32:13.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 5,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "7816273452312",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/TCFVTM81/600/600", "https://picsum.photos/seed/TCFVTM82/600/600"],
+		"thumbnail": "https://picsum.photos/seed/TCFVTM81/600/600"
+	},
+	{
+		"id": 89,
+		"index": 88,
+		"title": "GMT Traveler Blue Bezel",
+		"description": "The GMT Traveler Blue Bezel by Meridian pairs a precise movement with a refined case and comfortable strap. A versatile timepiece for both business and casual outfits.",
+		"category": "mens-watches",
+		"price": 237.11,
+		"discountPercentage": 12.06,
+		"rating": 3.43,
+		"stock": 77,
+		"tags": ["watch", "gmt", "travel"],
+		"brand": "Meridian",
+		"sku": "WMKDCL1",
+		"weight": 18,
+		"dimensions": {
+			"width": 50.51,
+			"height": 54.33,
+			"depth": 47.62
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-09-28T15:37:04.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Satisfied with minor issues.",
+				"date": "2024-06-28T21:26:47.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-08-05T04:52:28.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "2841775106633",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/WMKDCL11/600/600",
+			"https://picsum.photos/seed/WMKDCL12/600/600",
+			"https://picsum.photos/seed/WMKDCL13/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/WMKDCL11/600/600"
+	},
+	{
+		"id": 90,
+		"index": 89,
+		"title": "Minimalist Mesh 38mm",
+		"description": "The Minimalist Mesh 38mm by Nordic Time pairs a precise movement with a refined case and comfortable strap. A versatile timepiece for both business and casual outfits.",
+		"category": "mens-watches",
+		"price": 409.17,
+		"discountPercentage": 13.8,
+		"rating": 4.2,
+		"stock": 22,
+		"tags": ["watch", "minimalist", "mesh"],
+		"brand": "Nordic Time",
+		"sku": "DRFWKJ5",
+		"weight": 12,
+		"dimensions": {
+			"width": 35.75,
+			"height": 31.61,
+			"depth": 59.37
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 3,
+				"comment": "Satisfied with minor issues.",
+				"date": "2024-03-11T04:20:08.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-02-21T07:48:29.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "noah.brooks@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Works fine overall.",
+				"date": "2024-10-08T22:21:21.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "1900194020039",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/DRFWKJ51/600/600",
+			"https://picsum.photos/seed/DRFWKJ52/600/600",
+			"https://picsum.photos/seed/DRFWKJ53/600/600",
+			"https://picsum.photos/seed/DRFWKJ54/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/DRFWKJ51/600/600"
+	},
+	{
+		"id": 91,
+		"index": 90,
+		"title": "Titanium Pilot Chrono",
+		"description": "The Titanium Pilot Chrono by AeroDial pairs a precise movement with a refined case and comfortable strap. A versatile timepiece for both business and casual outfits.",
+		"category": "mens-watches",
+		"price": 1700.66,
+		"discountPercentage": 23.27,
+		"rating": 4.13,
+		"stock": 24,
+		"tags": ["watch", "titanium", "pilot"],
+		"brand": "AeroDial",
+		"sku": "RMTPYV8",
+		"weight": 2,
+		"dimensions": {
+			"width": 48.12,
+			"height": 33.08,
+			"depth": 43.41
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "Low Stock",
+		"reviews": [
+			{
+				"rating": 2,
+				"comment": "Very unhappy with my purchase!",
+				"date": "2024-07-03T08:42:39.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-05-21T14:32:34.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-10-27T07:17:35.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "9575538294401",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/RMTPYV81/600/600", "https://picsum.photos/seed/RMTPYV82/600/600"],
+		"thumbnail": "https://picsum.photos/seed/RMTPYV81/600/600"
+	},
+	{
+		"id": 92,
+		"index": 91,
+		"title": "MagSafe Wireless Charger 15W",
+		"description": "The MagSafe Wireless Charger 15W by ChargePad is designed for reliable everyday use with a compact, durable build. Keeps your devices powered, protected and always within reach.",
+		"category": "mobile-accessories",
+		"price": 1150.27,
+		"discountPercentage": 17.35,
+		"rating": 4.94,
+		"stock": 72,
+		"tags": ["charger", "wireless", "magsafe"],
+		"brand": "ChargePad",
+		"sku": "MNMHCM5",
+		"weight": 16,
+		"dimensions": {
+			"width": 47.35,
+			"height": 46.66,
+			"depth": 57.87
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-09-03T04:13:59.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-04-27T11:29:43.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-01-05T09:35:17.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "6809438296941",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/MNMHCM51/600/600",
+			"https://picsum.photos/seed/MNMHCM52/600/600",
+			"https://picsum.photos/seed/MNMHCM53/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/MNMHCM51/600/600"
+	},
+	{
+		"id": 93,
+		"index": 92,
+		"title": "Earbuds Pro ANC",
+		"description": "The Earbuds Pro ANC by SoundCore is designed for reliable everyday use with a compact, durable build. Keeps your devices powered, protected and always within reach.",
+		"category": "mobile-accessories",
+		"price": 159.19,
+		"discountPercentage": 23.89,
+		"rating": 4.09,
+		"stock": 0,
+		"tags": ["earbuds", "anc", "audio"],
+		"brand": "SoundCore",
+		"sku": "TXEEFR3",
+		"weight": 18,
+		"dimensions": {
+			"width": 57.69,
+			"height": 51.64,
+			"depth": 25.42
+		},
+		"warrantyInformation": "6 months warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "Low Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-09-08T06:39:29.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-10-22T04:40:09.618Z",
+				"reviewerName": "John Doe",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Satisfied with minor issues.",
+				"date": "2024-09-01T19:41:19.618Z",
+				"reviewerName": "John Doe",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "8741530631381",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/TXEEFR31/600/600"],
+		"thumbnail": "https://picsum.photos/seed/TXEEFR31/600/600"
+	},
+	{
+		"id": 94,
+		"index": 93,
+		"title": "20000mAh Power Bank PD",
+		"description": "The 20000mAh Power Bank PD by VoltMax is designed for reliable everyday use with a compact, durable build. Keeps your devices powered, protected and always within reach.",
+		"category": "mobile-accessories",
+		"price": 731.37,
+		"discountPercentage": 10.01,
+		"rating": 4.01,
+		"stock": 73,
+		"tags": ["power bank", "pd", "charging"],
+		"brand": "VoltMax",
+		"sku": "GGZHEK7",
+		"weight": 5,
+		"dimensions": {
+			"width": 58.86,
+			"height": 42.73,
+			"depth": 49.78
+		},
+		"warrantyInformation": "6 months warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-07-14T07:08:18.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-01-05T06:25:48.618Z",
+				"reviewerName": "Noah Brooks",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Excellent value for money.",
+				"date": "2024-09-30T11:29:43.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 1,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "3608464335920",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/GGZHEK71/600/600",
+			"https://picsum.photos/seed/GGZHEK72/600/600",
+			"https://picsum.photos/seed/GGZHEK73/600/600",
+			"https://picsum.photos/seed/GGZHEK74/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/GGZHEK71/600/600"
+	},
+	{
+		"id": 95,
+		"index": 94,
+		"title": "Shockproof Clear Phone Case",
+		"description": "The Shockproof Clear Phone Case by ArmorFit is designed for reliable everyday use with a compact, durable build. Keeps your devices powered, protected and always within reach.",
+		"category": "mobile-accessories",
+		"price": 1346.53,
+		"discountPercentage": 12.19,
+		"rating": 4.53,
+		"stock": 113,
+		"tags": ["case", "shockproof", "protection"],
+		"brand": "ArmorFit",
+		"sku": "CWZEPR3",
+		"weight": 3,
+		"dimensions": {
+			"width": 25.96,
+			"height": 20.76,
+			"depth": 39.74
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 2,
+				"comment": "Not as described!",
+				"date": "2024-08-03T22:59:02.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Very satisfied!",
+				"date": "2024-02-10T05:53:53.618Z",
+				"reviewerName": "Olivia Bennett",
+				"reviewerEmail": "emma.miller@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-05-29T09:44:18.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "8797541812277",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/CWZEPR31/600/600", "https://picsum.photos/seed/CWZEPR32/600/600"],
+		"thumbnail": "https://picsum.photos/seed/CWZEPR31/600/600"
+	},
+	{
+		"id": 96,
+		"index": 95,
+		"title": "Tempered Glass Screen Protector 2-pack",
+		"description": "The Tempered Glass Screen Protector 2-pack by ClearShield is designed for reliable everyday use with a compact, durable build. Keeps your devices powered, protected and always within reach.",
+		"category": "mobile-accessories",
+		"price": 168.7,
+		"discountPercentage": 6.56,
+		"rating": 3.48,
+		"stock": 83,
+		"tags": ["screen protector", "glass", "protection"],
+		"brand": "ClearShield",
+		"sku": "EKCYLB7",
+		"weight": 13,
+		"dimensions": {
+			"width": 22.02,
+			"height": 18.61,
+			"depth": 20.63
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-01-15T01:16:47.618Z",
+				"reviewerName": "Lucas Haynes",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			},
+			{
+				"rating": 3,
+				"comment": "Works fine overall.",
+				"date": "2024-08-31T17:00:35.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-03-10T19:38:05.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "mia.foster@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "14 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "6655633584323",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": [
+			"https://picsum.photos/seed/EKCYLB71/600/600",
+			"https://picsum.photos/seed/EKCYLB72/600/600",
+			"https://picsum.photos/seed/EKCYLB73/600/600"
+		],
+		"thumbnail": "https://picsum.photos/seed/EKCYLB71/600/600"
+	},
+	{
+		"id": 97,
+		"index": 96,
+		"title": "USB-C Braided Cable 2m",
+		"description": "The USB-C Braided Cable 2m by CableNest is designed for reliable everyday use with a compact, durable build. Keeps your devices powered, protected and always within reach.",
+		"category": "mobile-accessories",
+		"price": 1531.56,
+		"discountPercentage": 19.95,
+		"rating": 4.27,
+		"stock": 101,
+		"tags": ["cable", "usb-c", "charging"],
+		"brand": "CableNest",
+		"sku": "AVWHLA8",
+		"weight": 1,
+		"dimensions": {
+			"width": 35.15,
+			"height": 15.37,
+			"depth": 53.52
+		},
+		"warrantyInformation": "1 year warranty",
+		"shippingInformation": "Ships in 2 weeks",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-07-18T13:46:32.618Z",
+				"reviewerName": "Emma Miller",
+				"reviewerEmail": "liam.carter@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-05-02T18:48:33.618Z",
+				"reviewerName": "Mia Foster",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Not as described!",
+				"date": "2024-05-25T23:36:34.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "ethan.reed@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "1011447431909",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/AVWHLA81/600/600", "https://picsum.photos/seed/AVWHLA82/600/600"],
+		"thumbnail": "https://picsum.photos/seed/AVWHLA81/600/600"
+	},
+	{
+		"id": 98,
+		"index": 97,
+		"title": "Adjustable Phone Stand Aluminum",
+		"description": "The Adjustable Phone Stand Aluminum by DeskGrip is designed for reliable everyday use with a compact, durable build. Keeps your devices powered, protected and always within reach.",
+		"category": "mobile-accessories",
+		"price": 1571.2,
+		"discountPercentage": 12.46,
+		"rating": 3.87,
+		"stock": 89,
+		"tags": ["stand", "aluminum", "desk"],
+		"brand": "DeskGrip",
+		"sku": "GCLACA4",
+		"weight": 2,
+		"dimensions": {
+			"width": 23.16,
+			"height": 51.4,
+			"depth": 57.34
+		},
+		"warrantyInformation": "1 month warranty",
+		"shippingInformation": "Ships overnight",
+		"availabilityStatus": "In Stock",
+		"reviews": [
+			{
+				"rating": 3,
+				"comment": "Satisfied with minor issues.",
+				"date": "2024-02-06T19:46:37.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "scarlett.wright@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-07-14T00:27:33.618Z",
+				"reviewerName": "Nolan Gonzalez",
+				"reviewerEmail": "sophie.turner@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Fast delivery, product as described.",
+				"date": "2024-08-14T08:59:56.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 24,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "7062399177514",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/GCLACA41/600/600", "https://picsum.photos/seed/GCLACA42/600/600"],
+		"thumbnail": "https://picsum.photos/seed/GCLACA41/600/600"
+	},
+	{
+		"id": 99,
+		"index": 98,
+		"title": "Car Mount Magnetic Vent",
+		"description": "The Car Mount Magnetic Vent by RoadGrip is designed for reliable everyday use with a compact, durable build. Keeps your devices powered, protected and always within reach.",
+		"category": "mobile-accessories",
+		"price": 1588.5,
+		"discountPercentage": 14.62,
+		"rating": 3.91,
+		"stock": 31,
+		"tags": ["car mount", "magnetic", "vent"],
+		"brand": "RoadGrip",
+		"sku": "GJBSZF7",
+		"weight": 1,
+		"dimensions": {
+			"width": 58.29,
+			"height": 36.96,
+			"depth": 42.99
+		},
+		"warrantyInformation": "2 years warranty",
+		"shippingInformation": "Ships in 3-5 business days",
+		"availabilityStatus": "Low Stock",
+		"reviews": [
+			{
+				"rating": 5,
+				"comment": "Very satisfied!",
+				"date": "2024-05-07T05:44:29.618Z",
+				"reviewerName": "Ava Sullivan",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Broke after a week, disappointed.",
+				"date": "2024-06-22T22:45:37.618Z",
+				"reviewerName": "John Doe",
+				"reviewerEmail": "john.doe@x.dummyjson.com"
+			},
+			{
+				"rating": 5,
+				"comment": "Great quality, would buy again.",
+				"date": "2024-10-01T03:54:36.618Z",
+				"reviewerName": "Scarlett Wright",
+				"reviewerEmail": "ava.sullivan@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "30 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "9778416318442",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/GJBSZF71/600/600", "https://picsum.photos/seed/GJBSZF72/600/600"],
+		"thumbnail": "https://picsum.photos/seed/GJBSZF71/600/600"
+	},
+	{
+		"id": 100,
+		"index": 99,
+		"title": "Bluetooth Speaker Waterproof 20W",
+		"description": "The Bluetooth Speaker Waterproof 20W by BoomBox is designed for reliable everyday use with a compact, durable build. Keeps your devices powered, protected and always within reach.",
+		"category": "mobile-accessories",
+		"price": 312.0,
+		"discountPercentage": 7.39,
+		"rating": 3.67,
+		"stock": 46,
+		"tags": ["speaker", "bluetooth", "waterproof"],
+		"brand": "BoomBox",
+		"sku": "TEEHTG9",
+		"weight": 15,
+		"dimensions": {
+			"width": 5.04,
+			"height": 40.09,
+			"depth": 25.85
+		},
+		"warrantyInformation": "3 months warranty",
+		"shippingInformation": "Ships in 1 week",
+		"availabilityStatus": "Low Stock",
+		"reviews": [
+			{
+				"rating": 4,
+				"comment": "Exceeded my expectations!",
+				"date": "2024-05-02T11:40:34.618Z",
+				"reviewerName": "Sophie Turner",
+				"reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+			},
+			{
+				"rating": 2,
+				"comment": "Broke after a week, disappointed.",
+				"date": "2024-07-17T06:54:46.618Z",
+				"reviewerName": "Ethan Reed",
+				"reviewerEmail": "lucas.haynes@x.dummyjson.com"
+			},
+			{
+				"rating": 4,
+				"comment": "Excellent value for money.",
+				"date": "2024-03-19T22:19:12.618Z",
+				"reviewerName": "Liam Carter",
+				"reviewerEmail": "olivia.bennett@x.dummyjson.com"
+			}
+		],
+		"returnPolicy": "60 days return policy",
+		"minimumOrderQuantity": 12,
+		"meta": {
+			"createdAt": "2024-05-23T08:56:21.618Z",
+			"updatedAt": "2024-05-23T08:56:21.618Z",
+			"barcode": "1508182405865",
+			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+		},
+		"images": ["https://picsum.photos/seed/TEEHTG91/600/600"],
+		"thumbnail": "https://picsum.photos/seed/TEEHTG91/600/600"
+	}
+]

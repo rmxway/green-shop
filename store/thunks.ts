@@ -1,11 +1,14 @@
 import { Action, Middleware } from 'redux';
 
 import { ScrollToTop } from '@/services/helpers';
-import { addToCart, calculateTotalPrice, decreaseCount, deleteFromCart, increaseCount } from '@/store/reducers/cart';
-import { changePage } from '@/store/reducers/products';
+import { addToCart, calculateTotalPrice, decreaseCount, increaseCount, removeFromCart } from '@/store/reducers/cart';
+import { changePage } from '@/store/reducers/favorite';
+import { changePage as favoriteChangePage } from '@/store/reducers/products';
 
 const afterChangePageScrollTop: Middleware = () => (next) => (action) => {
-	if ((action as Action).type === changePage.type) {
+	const condition =
+		(action as Action).type === changePage.type || (action as Action).type === favoriteChangePage.type;
+	if (condition) {
 		ScrollToTop();
 	}
 
@@ -14,7 +17,7 @@ const afterChangePageScrollTop: Middleware = () => (next) => (action) => {
 
 const calculateCartTotalPrice: Middleware = (state) => (next) => (action) => {
 	const result = next(action);
-	const actionTypes = [addToCart.type, deleteFromCart.type, increaseCount.type, decreaseCount.type] as string[];
+	const actionTypes = [addToCart.type, removeFromCart.type, increaseCount.type, decreaseCount.type] as string[];
 	if (actionTypes.includes((action as Action).type)) {
 		state.dispatch({ type: calculateTotalPrice.type });
 	}

@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { ContentCompare } from './content';
 
 export const metadata: Metadata = {
-	title: 'Сравнение товаров',
+	title: 'Сравнение',
 	description: 'Сравните характеристики товаров',
 };
 

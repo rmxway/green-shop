@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { ContentFavorites } from './content';
 
 export const metadata: Metadata = {
-	title: 'Favorites',
+	title: 'Избранное',
 };
 
 export default function FavoritesPage() {

@@ -5,11 +5,11 @@ import cartReducer, {
 	addToCart,
 	changePage,
 	changeStep,
+	clearAll,
 	decreaseCount,
-	deleteFromCart,
 	increaseCount,
 	initialState,
-	trashAll,
+	removeFromCart,
 } from './index';
 
 const createProduct = (overrides: Partial<IProduct> = {}): IProduct => ({
@@ -33,7 +33,7 @@ describe('cartReducer', () => {
 
 	describe('addToCart', () => {
 		beforeEach(() => {
-			dispatch(trashAll());
+			dispatch(clearAll());
 		});
 		it('should add a product with count 1', () => {
 			const product = createProduct();
@@ -61,7 +61,7 @@ describe('cartReducer', () => {
 
 	describe('deleteFromCart', () => {
 		beforeEach(() => {
-			dispatch(trashAll());
+			dispatch(clearAll());
 		});
 		it('should remove a product by id', () => {
 			const p1 = createProduct({ id: 1, price: 100 });
@@ -69,7 +69,7 @@ describe('cartReducer', () => {
 
 			dispatch(addToCart(p1));
 			dispatch(addToCart(p2));
-			dispatch(deleteFromCart(1));
+			dispatch(removeFromCart(1));
 			const state = store.getState();
 
 			expect(state.items).toHaveLength(1);
@@ -84,7 +84,7 @@ describe('cartReducer', () => {
 
 			dispatch(addToCart(p1));
 			dispatch(addToCart(p2));
-			dispatch(deleteFromCart(2));
+			dispatch(removeFromCart(2));
 
 			state = store.getState();
 
@@ -94,7 +94,7 @@ describe('cartReducer', () => {
 
 	describe('increaseCount / decreaseCount', () => {
 		beforeEach(() => {
-			dispatch(trashAll());
+			dispatch(clearAll());
 		});
 		it('should increase item count', () => {
 			const product = createProduct({ id: 1, price: 50 });
@@ -145,7 +145,7 @@ describe('cartReducer', () => {
 
 			dispatch(addToCart(p1));
 			dispatch(addToCart(p2));
-			dispatch(trashAll());
+			dispatch(clearAll());
 
 			const state = store.getState();
 

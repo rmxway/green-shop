@@ -1,34 +1,24 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { ThemeProvider } from 'styled-components';
 
-import { StyledComponentsRegistry } from '@/lib/registry';
 import { useAppDispatch, useAppSelector, useCurrency } from '@/services';
-import { moveToCart } from '@/store/reducers/combineActions';
+import { addToCart } from '@/store/reducers/cart';
+import { toggleCompare } from '@/store/reducers/compare';
+import { toggleToFavorite } from '@/store/reducers/favorite';
+import { defaultTheme, GlobalStyles } from '@/theme';
+import { IProduct } from '@/types';
 
 import { ProductCard } from '.';
 import { mockProduct } from './mockProduct';
 
-// Мокаем store перед всеми остальными импортами
-jest.mock('@/store', () => ({
-	store: {
-		dispatch: jest.fn(),
-		getState: jest.fn(() => ({
-			products: {
-				reservedItems: [{ id: 6, title: 'Test Product' }],
-			},
-		})),
-		subscribe: jest.fn(() => jest.fn()),
-	},
-}));
-
-jest.mock('@/store/provider', () => ({
-	ReduxProvider: ({ children }: { children: React.ReactNode }) => children,
-}));
-
-// Мокаем localStore чтобы избежать проблем с checkVersion
-jest.mock('@/services/localStore', () => ({
-	checkVersion: jest.fn(),
-}));
+// Создаем тестовый wrapper без Redux
+const TestWrapper = ({ children }: { children: React.ReactNode }) => (
+	<ThemeProvider theme={defaultTheme}>
+		<GlobalStyles />
+		{children}
+	</ThemeProvider>
+);
 
 // Мокаем ProductImage компонент чтобы избежать проблем с изображениями в тестах
 jest.mock('./ProductImage', () => ({
@@ -40,40 +30,34 @@ jest.mock('./ProductImage', () => ({
 }));
 
 const mockPush = jest.fn();
+
 // Моки для Redux и сервисов
 jest.mock('@/services', () => ({
 	useAppDispatch: jest.fn(),
 	useAppSelector: jest.fn(),
 	useCurrency: jest.fn(),
+	useLoadTimeout: jest.fn(),
 	useNavigateWithScroll: () => (url: string) => mockPush(url),
 }));
 
-jest.mock('@/store/reducers/combineActions', () => ({
-	moveToCart: jest.fn(),
+jest.mock('@/store/reducers/favorite', () => ({
+	toggleToFavorite: jest.fn(),
 }));
 
-jest.mock('next/navigation', () => ({
-	useRouter: () => ({ push: jest.fn() }),
-	usePathname: () => '/',
-	useServerInsertedHTML: () => {},
+jest.mock('@/store/reducers/compare', () => ({
+	toggleCompare: jest.fn(),
 }));
 
-jest.mock('@/store/reducers/products', () => ({
-	toggleFavorite: jest.fn(() => ({ type: 'toggleFavorite' })),
-}));
-
-// Мокаем весь store чтобы избежать проблем с RTK Query
-jest.mock('@/store', () => ({
-	productsStore: jest.fn(),
-}));
-
-jest.mock('@/store/types', () => ({
-	productsStore: jest.fn(),
+jest.mock('@/store/reducers/cart', () => ({
+	addToCart: jest.fn(),
 }));
 
 const mockUseAppDispatch = useAppDispatch as jest.MockedFunction<typeof useAppDispatch>;
 const mockUseAppSelector = useAppSelector as jest.MockedFunction<typeof useAppSelector>;
 const mockUseCurrency = useCurrency as jest.MockedFunction<typeof useCurrency>;
+const mockToggleToFavorite = toggleToFavorite as jest.MockedFunction<typeof toggleToFavorite>;
+const mockToggleCompare = toggleCompare as jest.MockedFunction<typeof toggleCompare>;
+const mockAddToCart = addToCart as jest.MockedFunction<typeof addToCart>;
 const mockDispatch = jest.fn();
 
 const mockFormatPriceWithSymbol = jest.fn();
@@ -89,20 +73,45 @@ const mockProductWithoutDiscount = {
 	discountPercentage: undefined,
 };
 
-const mockProductChecked = {
-	...mockProduct,
-	checked: true,
-};
-
-const mockProductFavorite = {
-	...mockProduct,
-	favorite: true,
-};
-
 const mockProductWithoutRating = {
 	...mockProduct,
 	rating: undefined,
 };
+
+type MockCartState = {
+	items: IProduct[];
+	countPerPage: number;
+	page: number;
+	step: number;
+	totalPrice: number;
+};
+
+const mockCart: MockCartState = {
+	items: [
+		{
+			...mockProduct,
+			id: 6,
+			count: 1,
+		},
+	],
+	countPerPage: 8,
+	page: 1,
+	step: 1,
+	totalPrice: mockProduct.price,
+};
+
+// const mockFavorite: FavoriteState = {
+// 	items: [
+// 		{
+// 			...mockProduct,
+// 			id: 6,
+// 		},
+// 	],
+// 	countPerPage: 8,
+// 	page: 1,
+// };
+
+// const createMockState = (favorite: FavoriteState = mockFavorite): RootState => ({ favorite }) as RootState;
 
 describe('ProductCard:', () => {
 	beforeEach(() => {
@@ -125,9 +134,9 @@ describe('ProductCard:', () => {
 
 	it('Render card', () => {
 		const { container, getByText } = render(
-			<StyledComponentsRegistry isJest>
+			<TestWrapper>
 				<ProductCard product={mockProduct} />
-			</StyledComponentsRegistry>,
+			</TestWrapper>,
 		);
 
 		const text = getByText(/Calvin Klein CK One/i);
@@ -137,9 +146,9 @@ describe('ProductCard:', () => {
 
 	it('displays discount sticker when discountPercentage exists', () => {
 		render(
-			<StyledComponentsRegistry isJest>
+			<TestWrapper>
 				<ProductCard product={mockProductWithDiscount} />
-			</StyledComponentsRegistry>,
+			</TestWrapper>,
 		);
 
 		expect(screen.getByText('-25%')).toBeInTheDocument();
@@ -147,9 +156,9 @@ describe('ProductCard:', () => {
 
 	it('does not display discount sticker when discountPercentage is undefined', () => {
 		render(
-			<StyledComponentsRegistry isJest>
+			<TestWrapper>
 				<ProductCard product={mockProductWithoutDiscount} />
-			</StyledComponentsRegistry>,
+			</TestWrapper>,
 		);
 
 		expect(screen.queryByText(/-25%/)).not.toBeInTheDocument();
@@ -157,9 +166,9 @@ describe('ProductCard:', () => {
 
 	it('displays brand name', () => {
 		render(
-			<StyledComponentsRegistry isJest>
+			<TestWrapper>
 				<ProductCard product={mockProduct} />
-			</StyledComponentsRegistry>,
+			</TestWrapper>,
 		);
 
 		expect(screen.getByText('Calvin Klein')).toBeInTheDocument();
@@ -167,9 +176,9 @@ describe('ProductCard:', () => {
 
 	it('displays formatted price', () => {
 		render(
-			<StyledComponentsRegistry isJest>
+			<TestWrapper>
 				<ProductCard product={mockProduct} />
-			</StyledComponentsRegistry>,
+			</TestWrapper>,
 		);
 
 		expect(mockFormatPriceWithSymbol).toHaveBeenCalledWith(49.99);
@@ -177,10 +186,11 @@ describe('ProductCard:', () => {
 	});
 
 	it('displays "Еще +1" button when product is checked', () => {
+		mockUseAppSelector.mockReturnValue(() => mockCart);
 		render(
-			<StyledComponentsRegistry isJest>
-				<ProductCard product={mockProductChecked} />
-			</StyledComponentsRegistry>,
+			<TestWrapper>
+				<ProductCard product={mockProduct} />
+			</TestWrapper>,
 		);
 
 		const button = screen.getByRole('button', { name: 'Ещё +1' });
@@ -189,61 +199,58 @@ describe('ProductCard:', () => {
 
 	it('displays "Добавить" button when product is not checked', () => {
 		render(
-			<StyledComponentsRegistry isJest>
+			<TestWrapper>
 				<ProductCard product={mockProduct} />
-			</StyledComponentsRegistry>,
+			</TestWrapper>,
 		);
 
-		const button = screen.getByRole('button', { name: /добавить/i });
+		const button = screen.getByRole('button', { name: /Добавить/i });
 		expect(button).not.toBeDisabled();
 		expect(button).toHaveTextContent('Добавить');
 	});
 
 	it('calls moveToCart when add to cart button is clicked', async () => {
 		const user = userEvent.setup();
-		const mockMoveToCart = jest.mocked(moveToCart);
 
 		render(
-			<StyledComponentsRegistry isJest>
+			<TestWrapper>
 				<ProductCard product={mockProduct} />
-			</StyledComponentsRegistry>,
+			</TestWrapper>,
 		);
 
-		const button = screen.getByRole('button', { name: /добавить/i });
+		const button = screen.getByRole('button', { name: /Добавить/i });
 		await user.click(button);
 
-		expect(mockMoveToCart).toHaveBeenCalledWith(6);
+		expect(mockAddToCart).toHaveBeenCalledWith(mockProduct);
 	});
 
-	it('displays favorite icon as active when product is favorite', () => {
-		render(
-			<StyledComponentsRegistry isJest>
-				<ProductCard product={mockProductFavorite} />
-			</StyledComponentsRegistry>,
-		);
+	// it('displays favorite icon as active when product is favorite', async () => {
+	// 	const user = userEvent.setup();
+	// 	mockUseAppSelector.mockImplementation((selector) => selector(createMockState()));
 
-		// Проверяем что компонент Favorite получает правильные props
-		// Более детальная проверка будет зависеть от реализации Favorite компонента
-		expect(screen.getByRole('button')).toBeInTheDocument(); // Favorite icon
-	});
+	// 	render(
+	// 		<TestWrapper>
+	// 			<ProductCard product={mockProduct} />
+	// 		</TestWrapper>,
+	// 	);
 
-	it('displays favorite icon as inactive when product is not favorite', () => {
-		render(
-			<StyledComponentsRegistry isJest>
-				<ProductCard product={mockProduct} />
-			</StyledComponentsRegistry>,
-		);
+	// 	const button = screen.getByTestId('favorite');
 
-		expect(screen.getByRole('button')).toBeInTheDocument(); // Favorite icon
-	});
+	// 	// Проверяем что компонент Favorite получает правильные props
+	// 	// Более детальная проверка будет зависеть от реализации Favorite компонента
+	// 	// expect(screen.getByRole('button')).toBeInTheDocument(); // Favorite icon
+	// 	await user.click(button);
+	// 	expect(mockToggleToFavorite).toHaveBeenCalledWith(mockProduct);
+	// 	expect(button).toHaveAttribute('data-test', 'true');
+	// });
 
 	it('calls toggleFavorite when favorite icon is clicked', async () => {
 		const user = userEvent.setup();
 
 		render(
-			<StyledComponentsRegistry isJest>
+			<TestWrapper>
 				<ProductCard product={mockProduct} />
-			</StyledComponentsRegistry>,
+			</TestWrapper>,
 		);
 
 		const favoriteElement = screen.getByTitle('В избранное');
@@ -253,9 +260,9 @@ describe('ProductCard:', () => {
 
 	it('contains link to product page', () => {
 		render(
-			<StyledComponentsRegistry isJest>
+			<TestWrapper>
 				<ProductCard product={mockProduct} />
-			</StyledComponentsRegistry>,
+			</TestWrapper>,
 		);
 
 		// Найдем ссылку по тексту заголовка товара
@@ -265,9 +272,9 @@ describe('ProductCard:', () => {
 
 	it('displays rating stars when rating exists', () => {
 		render(
-			<StyledComponentsRegistry isJest>
+			<TestWrapper>
 				<ProductCard product={mockProduct} />
-			</StyledComponentsRegistry>,
+			</TestWrapper>,
 		);
 
 		// RatingStars компонент должен отображать рейтинг как текст
@@ -276,38 +283,20 @@ describe('ProductCard:', () => {
 
 	it('handles product without rating gracefully', () => {
 		render(
-			<StyledComponentsRegistry isJest>
+			<TestWrapper>
 				<ProductCard product={mockProductWithoutRating} />
-			</StyledComponentsRegistry>,
+			</TestWrapper>,
 		);
 
 		// Компонент должен рендериться без ошибки даже без рейтинга
 		expect(screen.getByText('Calvin Klein CK One')).toBeInTheDocument();
 	});
 
-	it('applies motion props correctly', () => {
-		const motionProps = {
-			initial: { opacity: 0 },
-			animate: { opacity: 1 },
-			transition: { duration: 0.3 },
-		};
-
-		const { container } = render(
-			<StyledComponentsRegistry isJest>
-				<ProductCard product={mockProduct} {...motionProps} />
-			</StyledComponentsRegistry>,
-		);
-
-		// Проверяем что motion props применяются (через наличие стилей или data атрибутов)
-		const productWrapper = container.firstChild;
-		expect(productWrapper).toBeInTheDocument();
-	});
-
 	it('displays product title and brand correctly', () => {
 		render(
-			<StyledComponentsRegistry isJest>
+			<TestWrapper>
 				<ProductCard product={mockProduct} />
-			</StyledComponentsRegistry>,
+			</TestWrapper>,
 		);
 
 		expect(screen.getByText('Calvin Klein CK One')).toBeInTheDocument();
@@ -316,9 +305,9 @@ describe('ProductCard:', () => {
 
 	it('has correct accessibility attributes', () => {
 		render(
-			<StyledComponentsRegistry isJest>
+			<TestWrapper>
 				<ProductCard product={mockProduct} />
-			</StyledComponentsRegistry>,
+			</TestWrapper>,
 		);
 
 		// Проверяем что кнопки имеют правильные роли

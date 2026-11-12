@@ -4,8 +4,7 @@ import { FC, memo, useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Icon, Loader } from '@/components/ui';
 import { useAppDispatch, useCurrency, useLoadTimeout } from '@/services';
-import { decreaseCount, increaseCount } from '@/store/reducers/cart';
-import { removeFromCart } from '@/store/reducers/combineActions';
+import { decreaseCount, increaseCount, removeFromCart } from '@/store/reducers/cart';
 import { IProduct } from '@/types';
 
 import {
@@ -63,17 +62,17 @@ export const CartItem: FC<Props> = memo(
 			setHasError(true);
 		};
 
-		const handleDecrease = useCallback(() => {
-			dispatch(decreaseCount(Number(id)));
-		}, [dispatch, id]);
+		const handleDecrease = () => {
+			dispatch(decreaseCount(id));
+		};
 
-		const handleIncrease = useCallback(() => {
-			dispatch(increaseCount(Number(id)));
-		}, [dispatch, id]);
+		const handleIncrease = () => {
+			dispatch(increaseCount(id));
+		};
 
-		const handleRemove = useCallback(() => {
-			removeFromCart(Number(id));
-		}, [id]);
+		const handleRemove = () => {
+			dispatch(removeFromCart(id));
+		};
 
 		return (
 			<Item {...props}>

@@ -1,12 +1,11 @@
 import { createDraftSafeSelector } from '@reduxjs/toolkit';
 
-import { CartState, CompareState, IProduct, ProductsState } from '@/types';
+import { CartState, FavoriteState, IProduct, ProductsState } from '@/types';
 
 const typedProductsCreateSelector = createDraftSafeSelector.withTypes<ProductsState>();
 const typedCartCreateSelector = createDraftSafeSelector.withTypes<CartState>();
-const typedCompareCreateSelector = createDraftSafeSelector.withTypes<CompareState>();
 
-type CommonState = ProductsState | CartState;
+type CommonState = ProductsState | CartState | FavoriteState;
 
 /**
  * @description Текущие элементы на выбранной странице. Универсальный селектор для товаров и корзины
@@ -44,14 +43,6 @@ export const countByIdMemoized = typedCartCreateSelector(
 );
 
 /**
- * @description Текущие элементы на выбранной странице избранных товаров
- */
-export const favoritesItemsMemoized = typedProductsCreateSelector([(state) => state.fetchedItems], (fetchedItems) => {
-	if (!Array.isArray(fetchedItems)) return [];
-	return fetchedItems.filter((item) => item?.favorite);
-});
-
-/**
  * @description общее кол-во товаров учитывая кол-во позиций каждого товара
  */
 export const cartItemsCountMemoized = typedCartCreateSelector([(state) => state.items], (items) => {
@@ -59,7 +50,7 @@ export const cartItemsCountMemoized = typedCartCreateSelector([(state) => state.
 	return items.reduce((acc, cur) => acc + (cur.count || 1), 0);
 });
 
-export const isInCompareMemoized = typedCompareCreateSelector(
+export const isItemMemoized = createDraftSafeSelector(
 	[(state) => state.items, (_, id: number) => id],
 	(items, id) => {
 		if (!Array.isArray(items) || !id) return false;

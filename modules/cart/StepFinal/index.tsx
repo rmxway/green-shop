@@ -3,12 +3,14 @@ import { useEffect } from 'react';
 
 import { Button, GradientText, Icon } from '@/components/ui';
 import { TableProducts } from '@/modules/cart/StepForm/TableProducts';
-import { removeAllProducts } from '@/store/reducers/combineActions';
+import { useAppDispatch } from '@/services';
+import { clearAll } from '@/store/reducers/cart';
 
 import { WrapperFinal } from './styled';
 
 export const StepFinal = () => {
 	const router = useRouter();
+	const dispatch = useAppDispatch();
 
 	const handleBackToProducts = () => {
 		router.push('/products');
@@ -16,9 +18,9 @@ export const StepFinal = () => {
 
 	useEffect(
 		() => () => {
-			removeAllProducts();
+			dispatch(clearAll());
 		},
-		[],
+		[dispatch],
 	);
 
 	return (

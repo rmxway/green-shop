@@ -19,7 +19,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/1/4.jpg',
 			'https://i.dummyjson.com/data/products/1/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 2,
@@ -39,7 +38,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/2/3.jpg',
 			'https://i.dummyjson.com/data/products/2/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 3,
@@ -53,7 +51,6 @@ export const productsJSON: IProduct[] = [
 		category: 'smartphones',
 		thumbnail: 'https://i.dummyjson.com/data/products/3/thumbnail.jpg',
 		images: ['https://i.dummyjson.com/data/products/3/1.jpg'],
-		checked: false,
 	},
 	{
 		id: 4,
@@ -73,7 +70,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/4/4.jpg',
 			'https://i.dummyjson.com/data/products/4/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 5,
@@ -92,7 +88,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/5/2.jpg',
 			'https://i.dummyjson.com/data/products/5/3.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 6,
@@ -111,7 +106,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/6/3.png',
 			'https://i.dummyjson.com/data/products/6/4.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 7,
@@ -130,7 +124,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/7/3.jpg',
 			'https://i.dummyjson.com/data/products/7/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 8,
@@ -151,7 +144,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/8/4.jpg',
 			'https://i.dummyjson.com/data/products/8/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 9,
@@ -171,7 +163,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/9/4.jpg',
 			'https://i.dummyjson.com/data/products/9/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 10,
@@ -190,7 +181,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/10/3.jpg',
 			'https://i.dummyjson.com/data/products/10/thumbnail.jpeg',
 		],
-		checked: false,
 	},
 	{
 		id: 11,
@@ -209,7 +199,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/11/3.jpg',
 			'https://i.dummyjson.com/data/products/11/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 12,
@@ -229,7 +218,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/12/4.jpg',
 			'https://i.dummyjson.com/data/products/12/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 13,
@@ -250,7 +238,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/13/4.jpg',
 			'https://i.dummyjson.com/data/products/13/thumbnail.webp',
 		],
-		checked: false,
 	},
 	{
 		id: 14,
@@ -270,7 +257,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/14/3.jpg',
 			'https://i.dummyjson.com/data/products/14/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 15,
@@ -290,7 +276,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/15/4.jpg',
 			'https://i.dummyjson.com/data/products/15/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 16,
@@ -310,7 +295,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/16/4.jpg',
 			'https://i.dummyjson.com/data/products/16/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 17,
@@ -330,7 +314,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/17/3.jpg',
 			'https://i.dummyjson.com/data/products/17/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 18,
@@ -351,7 +334,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/18/4.jpg',
 			'https://i.dummyjson.com/data/products/18/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 19,
@@ -370,7 +352,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/19/3.png',
 			'https://i.dummyjson.com/data/products/19/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 20,
@@ -391,7 +372,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/20/4.jpg',
 			'https://i.dummyjson.com/data/products/20/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 21,
@@ -409,7 +389,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/21/2.jpg',
 			'https://i.dummyjson.com/data/products/21/3.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 22,
@@ -427,7 +406,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/22/2.jpg',
 			'https://i.dummyjson.com/data/products/22/3.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 23,
@@ -447,7 +425,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/23/4.jpg',
 			'https://i.dummyjson.com/data/products/23/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 24,
@@ -468,7 +445,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/24/4.jpg',
 			'https://i.dummyjson.com/data/products/24/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 25,
@@ -488,7 +464,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/25/4.jpg',
 			'https://i.dummyjson.com/data/products/25/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 26,
@@ -509,7 +484,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/26/5.jpg',
 			'https://i.dummyjson.com/data/products/26/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 27,
@@ -530,7 +504,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/27/4.jpg',
 			'https://i.dummyjson.com/data/products/27/thumbnail.webp',
 		],
-		checked: false,
 	},
 	{
 		id: 28,
@@ -550,7 +523,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/28/4.jpg',
 			'https://i.dummyjson.com/data/products/28/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 29,
@@ -571,7 +543,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/29/4.webp',
 			'https://i.dummyjson.com/data/products/29/thumbnail.webp',
 		],
-		checked: false,
 	},
 	{
 		id: 30,
@@ -590,7 +561,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/30/3.jpg',
 			'https://i.dummyjson.com/data/products/30/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 31,
@@ -610,7 +580,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/31/4.jpg',
 			'https://i.dummyjson.com/data/products/31/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 32,
@@ -629,7 +598,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/32/3.jpg',
 			'https://i.dummyjson.com/data/products/32/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 33,
@@ -649,7 +617,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/33/4.jpg',
 			'https://i.dummyjson.com/data/products/33/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 34,
@@ -669,7 +636,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/34/4.jpg',
 			'https://i.dummyjson.com/data/products/34/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 35,
@@ -690,7 +656,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/35/4.jpg',
 			'https://i.dummyjson.com/data/products/35/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 36,
@@ -711,7 +676,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/36/4.jpg',
 			'https://i.dummyjson.com/data/products/36/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 37,
@@ -731,7 +695,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/37/4.jpg',
 			'https://i.dummyjson.com/data/products/37/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 38,
@@ -750,7 +713,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/38/3.jpg',
 			'https://i.dummyjson.com/data/products/38/4.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 39,
@@ -771,7 +733,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/39/4.jpg',
 			'https://i.dummyjson.com/data/products/39/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 40,
@@ -786,7 +747,6 @@ export const productsJSON: IProduct[] = [
 		category: 'tops',
 		thumbnail: 'https://i.dummyjson.com/data/products/40/thumbnail.jpg',
 		images: ['https://i.dummyjson.com/data/products/40/1.jpg', 'https://i.dummyjson.com/data/products/40/2.jpg'],
-		checked: false,
 	},
 	{
 		id: 41,
@@ -806,7 +766,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/41/4.jpg',
 			'https://i.dummyjson.com/data/products/41/thumbnail.webp',
 		],
-		checked: false,
 	},
 	{
 		id: 42,
@@ -826,7 +785,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/42/4.jpg',
 			'https://i.dummyjson.com/data/products/42/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 43,
@@ -846,7 +804,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/43/4.jpg',
 			'https://i.dummyjson.com/data/products/43/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 44,
@@ -867,7 +824,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/44/4.jpg',
 			'https://i.dummyjson.com/data/products/44/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 45,
@@ -887,7 +843,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/45/4.jpg',
 			'https://i.dummyjson.com/data/products/45/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 46,
@@ -907,7 +862,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/46/4.jpg',
 			'https://i.dummyjson.com/data/products/46/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 47,
@@ -926,7 +880,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/47/3.jpg',
 			'https://i.dummyjson.com/data/products/47/thumbnail.jpeg',
 		],
-		checked: false,
 	},
 	{
 		id: 48,
@@ -946,7 +899,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/48/4.jpg',
 			'https://i.dummyjson.com/data/products/48/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 49,
@@ -965,7 +917,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/49/3.webp',
 			'https://i.dummyjson.com/data/products/49/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 50,
@@ -983,7 +934,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/50/2.jpg',
 			'https://i.dummyjson.com/data/products/50/3.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 51,
@@ -1003,7 +953,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/51/3.jpg',
 			'https://i.dummyjson.com/data/products/51/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 52,
@@ -1023,7 +972,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/52/4.jpg',
 			'https://i.dummyjson.com/data/products/52/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 53,
@@ -1043,7 +991,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/53/4.jpg',
 			'https://i.dummyjson.com/data/products/53/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 54,
@@ -1064,7 +1011,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/54/4.jpg',
 			'https://i.dummyjson.com/data/products/54/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 55,
@@ -1084,7 +1030,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/55/4.jpg',
 			'https://i.dummyjson.com/data/products/55/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 56,
@@ -1105,7 +1050,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/56/5.jpg',
 			'https://i.dummyjson.com/data/products/56/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 57,
@@ -1126,7 +1070,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/57/4.jpg',
 			'https://i.dummyjson.com/data/products/57/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 58,
@@ -1146,7 +1089,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/58/4.jpg',
 			'https://i.dummyjson.com/data/products/58/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 59,
@@ -1166,7 +1108,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/59/4.jpg',
 			'https://i.dummyjson.com/data/products/59/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 60,
@@ -1185,7 +1126,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/60/3.jpg',
 			'https://i.dummyjson.com/data/products/60/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 61,
@@ -1203,7 +1143,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/61/2.png',
 			'https://i.dummyjson.com/data/products/61/3.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 62,
@@ -1217,7 +1156,6 @@ export const productsJSON: IProduct[] = [
 		category: 'mens-watches',
 		thumbnail: 'https://i.dummyjson.com/data/products/62/thumbnail.jpg',
 		images: ['https://i.dummyjson.com/data/products/62/1.jpg', 'https://i.dummyjson.com/data/products/62/2.jpg'],
-		checked: false,
 	},
 	{
 		id: 63,
@@ -1236,7 +1174,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/63/3.png',
 			'https://i.dummyjson.com/data/products/63/4.jpeg',
 		],
-		checked: false,
 	},
 	{
 		id: 64,
@@ -1255,7 +1192,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/64/3.jpg',
 			'https://i.dummyjson.com/data/products/64/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 65,
@@ -1275,7 +1211,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/65/4.webp',
 			'https://i.dummyjson.com/data/products/65/thumbnail.webp',
 		],
-		checked: false,
 	},
 	{
 		id: 66,
@@ -1295,7 +1230,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/66/4.JPG',
 			'https://i.dummyjson.com/data/products/66/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 67,
@@ -1316,7 +1250,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/67/4.jpg',
 			'https://i.dummyjson.com/data/products/67/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 68,
@@ -1330,7 +1263,6 @@ export const productsJSON: IProduct[] = [
 		category: 'womens-watches',
 		thumbnail: 'https://i.dummyjson.com/data/products/68/thumbnail.webp',
 		images: ['https://i.dummyjson.com/data/products/68/1.jpg', 'https://i.dummyjson.com/data/products/68/2.jpg'],
-		checked: false,
 	},
 	{
 		id: 69,
@@ -1351,7 +1283,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/69/4.jpg',
 			'https://i.dummyjson.com/data/products/69/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 70,
@@ -1370,7 +1301,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/70/2.jpg',
 			'https://i.dummyjson.com/data/products/70/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 71,
@@ -1390,7 +1320,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/71/3.webp',
 			'https://i.dummyjson.com/data/products/71/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 72,
@@ -1411,7 +1340,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/72/4.jpg',
 			'https://i.dummyjson.com/data/products/72/thumbnail.webp',
 		],
-		checked: false,
 	},
 	{
 		id: 73,
@@ -1431,7 +1359,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/73/3.jpg',
 			'https://i.dummyjson.com/data/products/73/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 74,
@@ -1452,7 +1379,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/74/4.jpg',
 			'https://i.dummyjson.com/data/products/74/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 75,
@@ -1471,7 +1397,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/75/3.jpg',
 			'https://i.dummyjson.com/data/products/75/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 76,
@@ -1490,7 +1415,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/76/2.jpg',
 			'https://i.dummyjson.com/data/products/76/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 77,
@@ -1509,7 +1433,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/77/3.jpg',
 			'https://i.dummyjson.com/data/products/77/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 78,
@@ -1523,7 +1446,6 @@ export const productsJSON: IProduct[] = [
 		category: 'womens-jewellery',
 		thumbnail: 'https://i.dummyjson.com/data/products/78/thumbnail.jpg',
 		images: ['https://i.dummyjson.com/data/products/78/thumbnail.jpg'],
-		checked: false,
 	},
 	{
 		id: 79,
@@ -1537,7 +1459,6 @@ export const productsJSON: IProduct[] = [
 		category: 'womens-jewellery',
 		thumbnail: 'https://i.dummyjson.com/data/products/79/thumbnail.jpg',
 		images: ['https://i.dummyjson.com/data/products/79/1.jpg'],
-		checked: false,
 	},
 	{
 		id: 80,
@@ -1557,7 +1478,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/80/4.jpg',
 			'https://i.dummyjson.com/data/products/80/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 81,
@@ -1578,7 +1498,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/81/4.webp',
 			'https://i.dummyjson.com/data/products/81/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 82,
@@ -1599,7 +1518,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/82/4.jpg',
 			'https://i.dummyjson.com/data/products/82/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 83,
@@ -1620,7 +1538,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/83/4.jpg',
 			'https://i.dummyjson.com/data/products/83/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 84,
@@ -1639,7 +1556,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/84/2.jpg',
 			'https://i.dummyjson.com/data/products/84/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 85,
@@ -1658,7 +1574,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/85/2.jpg',
 			'https://i.dummyjson.com/data/products/85/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 86,
@@ -1679,7 +1594,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/86/4.jpg',
 			'https://i.dummyjson.com/data/products/86/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 87,
@@ -1700,7 +1614,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/87/4.jpg',
 			'https://i.dummyjson.com/data/products/87/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 88,
@@ -1721,7 +1634,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/88/4.webp',
 			'https://i.dummyjson.com/data/products/88/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 89,
@@ -1742,7 +1654,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/89/4.jpg',
 			'https://i.dummyjson.com/data/products/89/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 90,
@@ -1763,7 +1674,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/90/4.jpg',
 			'https://i.dummyjson.com/data/products/90/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 91,
@@ -1784,7 +1694,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/91/4.jpg',
 			'https://i.dummyjson.com/data/products/91/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 92,
@@ -1804,7 +1713,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/92/3.jpg',
 			'https://i.dummyjson.com/data/products/92/4.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 93,
@@ -1824,7 +1732,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/93/4.jpg',
 			'https://i.dummyjson.com/data/products/93/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 94,
@@ -1843,7 +1750,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/94/3.jpg',
 			'https://i.dummyjson.com/data/products/94/thumbnail.webp',
 		],
-		checked: false,
 	},
 	{
 		id: 95,
@@ -1864,7 +1770,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/95/4.jpg',
 			'https://i.dummyjson.com/data/products/95/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 96,
@@ -1885,7 +1790,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/96/4.jpg',
 			'https://i.dummyjson.com/data/products/96/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 97,
@@ -1905,7 +1809,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/97/4.webp',
 			'https://i.dummyjson.com/data/products/97/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 98,
@@ -1926,7 +1829,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/98/4.jpg',
 			'https://i.dummyjson.com/data/products/98/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 99,
@@ -1946,7 +1848,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/99/4.jpg',
 			'https://i.dummyjson.com/data/products/99/thumbnail.jpg',
 		],
-		checked: false,
 	},
 	{
 		id: 100,
@@ -1965,7 +1866,6 @@ export const productsJSON: IProduct[] = [
 			'https://i.dummyjson.com/data/products/100/3.jpg',
 			'https://i.dummyjson.com/data/products/100/thumbnail.jpg',
 		],
-		checked: false,
 	},
 ];
 

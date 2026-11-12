@@ -5,13 +5,11 @@ import { api, ResponseProducts } from '@/store/api';
 import {
 	applyCurrentSort,
 	calcCategory,
-	changeCurrentPage,
 	initialItems,
 	initialOneProduct,
 	resetItems,
-	togglesInProduct,
 } from '@/store/reducers/products/helpers';
-import { IProduct, ProductsState, SortTypes, TypePages } from '@/types';
+import { IProduct, ProductsState, SortTypes } from '@/types';
 
 const initialState: ProductsState = {
 	title: '',
@@ -19,11 +17,7 @@ const initialState: ProductsState = {
 	filteredItems: [],
 	total: 0,
 	page: 1,
-	productsPage: 1,
-	favoritesPage: 1,
-	typePage: 'products',
 	countPerPage: PRODUCTS_COUNT_PER_PAGE,
-	countFavorites: 0,
 	categories: [],
 	error: '',
 	fetching: true,
@@ -44,17 +38,6 @@ const productsReducer = createSlice({
 		},
 		setError: (state, { payload }: PayloadAction<string>) => {
 			state.error = payload;
-		},
-		setTitle: (state, { payload }: PayloadAction<string>) => {
-			state.title = payload;
-		},
-		toggleProduct: (state, { payload }: PayloadAction<number>) => {
-			togglesInProduct(state, payload, 'checked');
-		},
-		removeAllToggledProducts: (state) => {
-			state.fetchedItems.forEach((item) => {
-				item.checked = false;
-			});
 		},
 		sortProducts: (state, { payload }: PayloadAction<SortTypes>) => {
 			const { name, toggle } = payload;
@@ -80,37 +63,8 @@ const productsReducer = createSlice({
 			state.filteredItems = state.fetchedItems.filter((item) => item.title.toLowerCase().includes(searchText));
 			applyCurrentSort(state);
 		},
-		toggleFavorite: (state, { payload }: PayloadAction<number>) => {
-			togglesInProduct(state, payload, 'favorite');
-
-			// TODO перенести
-			state.countFavorites = state.fetchedItems.filter((item) => item.favorite).length;
-
-			const isLastItemOnPage = state.countFavorites === state.countPerPage * state.page - state.countPerPage;
-			if (isLastItemOnPage && state.typePage === 'favorites' && state.page > 1) {
-				state.page -= 1;
-				state.favoritesPage = state.page;
-			}
-		},
-		removeAllFavorites: (state) => {
-			state.fetchedItems.forEach((item) => {
-				item.favorite = false;
-			});
-			state.countFavorites = 0;
-		},
-		changeTypePage: (state, { payload }: PayloadAction<TypePages>) => {
-			if (state.typePage === payload) return;
-			state.typePage = payload;
-			changeCurrentPage(state);
-		},
 		changePage: (state, { payload }: PayloadAction<number>) => {
-			if (state.typePage === 'favorites') {
-				state.favoritesPage = payload;
-			}
-			if (state.typePage === 'products') {
-				state.productsPage = payload;
-			}
-			changeCurrentPage(state);
+			state.page = payload;
 		},
 		changeCategory: (state, { payload: name }: PayloadAction<string>) => {
 			calcCategory(state, name);
@@ -170,17 +124,11 @@ const { actions, reducer } = productsReducer;
 export const {
 	fetching,
 	setError,
-	setTitle,
-	toggleProduct,
-	removeAllToggledProducts,
 	sortProducts,
 	searchValue,
 	searchProducts,
-	toggleFavorite,
-	removeAllFavorites,
 	resetItemsAction,
 	changePage,
-	changeTypePage,
 	changeCategory,
 	toggleCurrency,
 } = actions;

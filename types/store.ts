@@ -1,5 +1,6 @@
 export interface IProduct {
 	id: number;
+	index?: number;
 	title: string;
 	description: string;
 	category?: string;
@@ -36,8 +37,6 @@ export interface IProduct {
 	};
 	images: string[];
 	thumbnail?: string;
-	checked?: boolean;
-	favorite?: boolean;
 	count?: number;
 }
 
@@ -53,14 +52,6 @@ export interface Category {
 	active: boolean;
 }
 
-export interface CartState {
-	items: IProduct[];
-	totalPrice: number;
-	countPerPage: number;
-	page: number;
-	step: number;
-}
-
 export interface CompareState {
 	items: IProduct[];
 	limit: number;
@@ -71,19 +62,25 @@ export interface ProductsState {
 	fetchedItems: IProduct[];
 	filteredItems: IProduct[];
 	total: number;
-	countPerPage: number;
-	countFavorites: number;
 	categories: Category[];
 	page: number;
-	productsPage: number;
-	favoritesPage: number;
-	typePage: TypePages;
+	countPerPage: number;
 	error: string;
 	fetching: boolean;
 	sort: SortTypes;
 	search: string;
 	currency: 'USD' | 'RUB';
 	lastUpdated?: number;
+}
+
+export interface CartState extends Pick<ProductsState, 'page' | 'countPerPage'> {
+	items: IProduct[];
+	totalPrice: number;
+	step: number;
+}
+
+export interface FavoriteState extends Pick<ProductsState, 'page' | 'countPerPage'> {
+	items: IProduct[];
 }
 
 export interface DataFetch {

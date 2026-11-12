@@ -8,17 +8,6 @@ export const initialItems = (state: ProductsState, response: ResponseProducts) =
 	state.fetching = false;
 	state.lastUpdated = Date.now();
 
-	// Сохраняем пользовательские состояния (избранное, выбранные товары)
-	const userStates = new Map<number, { favorite?: boolean; checked?: boolean }>();
-	state.fetchedItems.forEach((item) => {
-		if (item.favorite || item.checked) {
-			userStates.set(item.id, {
-				favorite: item.favorite,
-				checked: item.checked,
-			});
-		}
-	});
-
 	// there is some product on the first page
 	if (state.fetchedItems.length === 1) {
 		const index = data.findIndex((product) => product.id === state.fetchedItems[0].id);
@@ -42,27 +31,12 @@ export const initialItems = (state: ProductsState, response: ResponseProducts) =
 	state.fetchedItems = [...data];
 	state.filteredItems = [...data];
 
-	// Восстанавливаем пользовательские состояния
-	state.fetchedItems.forEach((item) => {
-		const preserved = userStates.get(item.id);
-		if (preserved) {
-			item.favorite = preserved.favorite;
-			item.checked = preserved.checked;
-		}
-	});
-
 	state.error = '';
 };
 
 export const initialOneProduct = (state: ProductsState, item: IProduct) => {
 	state.fetchedItems = [item];
 	state.fetching = false;
-};
-
-export const togglesInProduct = (state: ProductsState, id: number, type: 'checked' | 'favorite', value?: boolean) => {
-	const index = state.fetchedItems.findIndex((el) => el.id == id);
-	const item = state.fetchedItems[index];
-	state.fetchedItems[index] = { ...item, [type]: value ?? !item[type] };
 };
 
 export const calcCategory = (state: ProductsState, name: string, reset?: boolean) => {
@@ -74,8 +48,7 @@ export const calcCategory = (state: ProductsState, name: string, reset?: boolean
 		return;
 	}
 
-	state.productsPage = 1;
-	state.page = state.productsPage;
+	state.page = 1;
 
 	if (name === 'all') {
 		state.filteredItems = [...state.fetchedItems];
@@ -94,10 +67,6 @@ export const resetItems = (state: ProductsState, category = true) => {
 	if (category) {
 		calcCategory(state, 'all', true);
 	}
-};
-
-export const changeCurrentPage = (state: ProductsState) => {
-	state.page = state.typePage === 'products' ? state.productsPage : state.favoritesPage;
 };
 
 export const applyCurrentSort = (state: ProductsState) => {

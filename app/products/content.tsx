@@ -1,21 +1,27 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 import { Categories, Filter } from '@/components';
 import { Container, LayerBlock } from '@/components/Layout';
 import { CurrencySwitcher, WarningMessage } from '@/components/ui';
 import { ProductsGrid } from '@/modules/products';
-import { useAppSelector } from '@/services';
+import { containerVars } from '@/modules/products/ProductsGrid/styled';
+import { useAppDispatch, useAppSelector } from '@/services';
 import { useGetProductsQuery } from '@/store/api';
+import { currentItemsMemoized } from '@/store/reducers/commonSelectors';
+import { changePage } from '@/store/reducers/products';
 import { productsStore } from '@/store/types';
 
 export const ContentProducts = () => {
-	const { fetchedItems, filteredItems, error } = useAppSelector(productsStore);
+	const { fetchedItems, filteredItems, error, page, countPerPage } = useAppSelector(productsStore);
+	const currentItems = useAppSelector((state) => currentItemsMemoized(productsStore(state), filteredItems));
 	const [isTimeout, setIsTimeout] = useState(false);
 
 	const shouldFetch = fetchedItems.length === 0;
 	const { isLoading, isError } = useGetProductsQuery(null, { skip: !shouldFetch });
+	const dispatch = useAppDispatch();
 
 	const isReallyLoading = isLoading && !isTimeout;
 
@@ -39,6 +45,10 @@ export const ContentProducts = () => {
 	const isCriticalError = fetchedItems.length === 0 && (error || isError || isTimeout);
 	const isWarning = fetchedItems.length > 0 && (error || isError || isTimeout);
 
+	const fnChangePage = (p: number) => {
+		dispatch(changePage(p));
+	};
+
 	return (
 		<Container>
 			<Filter isLoading={isReallyLoading} />
@@ -60,12 +70,19 @@ export const ContentProducts = () => {
 			)}
 
 			<ProductsGrid
-				items={filteredItems}
 				isLoading={isReallyLoading}
 				pagination
-				keyPage="products"
-				hasError={!!isCriticalError}
+				items={filteredItems}
+				{...{ currentItems, page, countPerPage, fnChangePage }}
 			/>
+			{!currentItems.length && !isLoading && !isCriticalError && (
+				<motion.div variants={containerVars} initial="hidden" animate="visible" exit="hidden">
+					<LayerBlock $fixedPadding>
+						{currentItems.length > 0 && 'По вашему запросу ничего не найдено'}
+						{currentItems.length === 0 && 'Товары не найдены.'}
+					</LayerBlock>
+				</motion.div>
+			)}
 		</Container>
 	);
 };

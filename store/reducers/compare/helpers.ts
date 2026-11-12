@@ -1,12 +1,4 @@
-import { CompareState, IProduct } from '@/types';
-
-interface StateAndProps {
-	state: CompareState;
-	id: number;
-}
-
-export const findCompareItem = ({ state, id }: StateAndProps): IProduct | undefined =>
-	state.items.find((item) => item.id === id);
+import { IProduct } from '@/types';
 
 export const updateCompareItems = (items: IProduct[], product: IProduct, limit: number): IProduct[] => {
 	const existingIndex = items.findIndex((item) => item.id === product.id);

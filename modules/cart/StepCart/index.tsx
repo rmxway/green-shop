@@ -9,8 +9,7 @@ import { LayerBlock } from '@/components/Layout';
 import { fadeVariant, precomputedFadeVariants } from '@/lib/pageAnimations';
 import { CartItem } from '@/modules/cart/CartItem';
 import { useAppDispatch, useAppSelector } from '@/services';
-import { changePage } from '@/store/reducers/cart';
-import { removeAllProducts } from '@/store/reducers/combineActions';
+import { changePage, clearAll } from '@/store/reducers/cart';
 import { currentItemsMemoized } from '@/store/reducers/commonSelectors';
 import { cartStore } from '@/store/types';
 
@@ -26,7 +25,7 @@ export const StepCart: FC = memo(() => {
 	const currentItems = currentItemsMemoized(useAppSelector(cartStore), items);
 
 	const handleTrashAllProducts = () => {
-		removeAllProducts();
+		dispatch(clearAll());
 	};
 
 	const fnChangePage = (p: number) => {

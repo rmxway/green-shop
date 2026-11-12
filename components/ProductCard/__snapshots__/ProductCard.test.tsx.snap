@@ -29,6 +29,8 @@ exports[`ProductCard: Render card 1`] = `
         </div>
         <div
           class="sc-9441d6f7-0 ebLyiI"
+          data-test="false"
+          data-testid="favorite"
           title="В избранное"
         >
           <i

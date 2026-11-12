@@ -4,11 +4,11 @@ import { FC, memo, useCallback, useEffect, useState } from 'react';
 import { Favorite, Icon, Loader } from '@/components/ui';
 import { Button } from '@/components/ui/Button';
 import { useAppDispatch, useAppSelector, useCurrency, useLoadTimeout, useNavigateWithScroll } from '@/services';
-import { moveToCart } from '@/store/reducers/combineActions';
-import { productByIdMemoized } from '@/store/reducers/commonSelectors';
+import { addToCart } from '@/store/reducers/cart';
+import { isItemMemoized } from '@/store/reducers/commonSelectors';
 import { removeFromCompare } from '@/store/reducers/compare';
-import { toggleFavorite } from '@/store/reducers/products';
-import { productsStore } from '@/store/types';
+import { toggleToFavorite } from '@/store/reducers/favorite';
+import { cartStore, favoriteStore } from '@/store/types';
 import { IProduct } from '@/types';
 
 import {
@@ -32,20 +32,20 @@ export const ProductHeader: FC<ProductHeaderProps> = memo(({ product }) => {
 	const [isLoad, setIsLoad] = useState(true);
 	const [hasError, setHasError] = useState(false);
 
-	// Получаем актуальное состояние товара из store
-	const actualProduct = productByIdMemoized(useAppSelector(productsStore), product.id) || product;
+	const isItFavorite = useAppSelector((state) => isItemMemoized(favoriteStore(state), product.id));
+	const isItCart = useAppSelector((state) => isItemMemoized(cartStore(state), product.id));
 	const navigateTo = useNavigateWithScroll();
 
 	const handleCartClick = () => {
-		if (actualProduct.checked) {
+		if (isItCart) {
 			navigateTo('/cart');
 		} else {
-			moveToCart(product.id);
+			dispatch(addToCart(product));
 		}
 	};
 
 	const handleToggleFavorite = () => {
-		dispatch(toggleFavorite(product.id));
+		dispatch(toggleToFavorite(product));
 	};
 
 	const handleRemoveFromCompare = () => {
@@ -77,7 +77,7 @@ export const ProductHeader: FC<ProductHeaderProps> = memo(({ product }) => {
 	return (
 		<ProductHeaderWrapper>
 			<IconsWrapper>
-				<Favorite active={actualProduct.favorite} onActive={handleToggleFavorite} />
+				<Favorite active={isItFavorite} onActive={handleToggleFavorite} />
 				<IconButton onClick={handleRemoveFromCompare}>
 					<Icon icon="trash" size={20} />
 				</IconButton>
@@ -109,12 +109,12 @@ export const ProductHeader: FC<ProductHeaderProps> = memo(({ product }) => {
 
 			<ActionsWrapper>
 				<Button
-					$primary={!actualProduct.checked}
-					$dark={actualProduct.checked}
-					icon={actualProduct.checked ? 'arrow-right-line' : 'cart'}
+					$primary={!isItCart}
+					$dark={isItCart}
+					icon={isItCart ? 'arrow-right-line' : 'cart'}
 					onClick={handleCartClick}
 				>
-					{actualProduct.checked ? 'Корзина' : 'В корзину'}
+					{isItCart ? 'Корзина' : 'В корзину'}
 				</Button>
 			</ActionsWrapper>
 		</ProductHeaderWrapper>

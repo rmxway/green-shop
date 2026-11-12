@@ -47,11 +47,11 @@ describe('Favorite:', () => {
 	it('Applies custom props', () => {
 		render(
 			<StyledComponentsRegistry isJest>
-				<Favorite active data-testid="custom-favorite" />
+				<Favorite active data-testid="favorite" />
 			</StyledComponentsRegistry>,
 		);
 
-		expect(screen.getByTestId('custom-favorite')).toBeInTheDocument();
+		expect(screen.getByTestId('favorite')).toBeInTheDocument();
 	});
 
 	it('Defaults to inactive state', () => {

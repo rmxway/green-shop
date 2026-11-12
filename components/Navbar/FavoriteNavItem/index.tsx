@@ -3,7 +3,7 @@ import { FC, memo, ReactNode } from 'react';
 import { NavCountItem } from '@/components/Navbar/NavCountItem';
 import { NavLink } from '@/components/Navbar/NavLink';
 import { useAppSelector } from '@/services';
-import { productsStore } from '@/store/types';
+import { favoriteStore } from '@/store/types';
 
 interface FavoriteNavItemProps {
 	onClose: () => void;
@@ -11,14 +11,14 @@ interface FavoriteNavItemProps {
 }
 
 export const FavoriteNavItem: FC<FavoriteNavItemProps> = memo(({ onClose, children }) => {
-	const { countFavorites } = useAppSelector(productsStore);
+	const { items } = useAppSelector(favoriteStore);
 
 	return (
 		<NavLink
 			url="/favorites"
 			title="Избранное"
 			onClick={onClose}
-			component={<NavCountItem title="favorite-fill" count={countFavorites} />}
+			component={<NavCountItem title="favorite-fill" count={items.length} />}
 		>
 			{children}
 		</NavLink>

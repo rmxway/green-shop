@@ -23,7 +23,7 @@ const cartReducer = createSlice({
 				count: item.count || 1,
 			});
 		},
-		deleteFromCart: (state, { payload }: PayloadAction<number>) => {
+		removeFromCart: (state, { payload }: PayloadAction<number>) => {
 			state.items = state.items.filter((item) => item.id !== payload);
 
 			const isLastItemOnPage = state.items.length === state.countPerPage * state.page - state.countPerPage;
@@ -37,7 +37,7 @@ const cartReducer = createSlice({
 		decreaseCount: (state, { payload: id }: PayloadAction<number>) => {
 			changeCount({ state, id, type: 'decrease' });
 		},
-		trashAll: (state) => {
+		clearAll: (state) => {
 			state.items = [];
 			state.totalPrice = 0;
 		},
@@ -59,10 +59,10 @@ const { actions, reducer } = cartReducer;
 
 export const {
 	addToCart,
-	deleteFromCart,
+	removeFromCart,
 	increaseCount,
 	decreaseCount,
-	trashAll,
+	clearAll,
 	changePage,
 	changeStep,
 	calculateTotalPrice,

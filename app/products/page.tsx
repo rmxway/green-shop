@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { ContentProducts } from './content';
 
 export const metadata: Metadata = {
-	title: 'Products',
+	title: 'Товары',
 };
 
 export default function ProductsPage() {

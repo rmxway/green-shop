@@ -14,11 +14,11 @@ import { Button, Compare, Favorite, Icon, LinkIcon, Loader, Sticker } from '@/co
 import { Info, NoPhotoContainer, PriceBlock, SideBlock, Wrapper } from '@/modules/product/styled';
 import { useAppDispatch, useAppSelector, useCurrency, useLoadTimeout } from '@/services';
 import { useGetProductQuery } from '@/store/api';
-import { moveToCart } from '@/store/reducers/combineActions';
-import { isInCompareMemoized, productByIdMemoized } from '@/store/reducers/commonSelectors';
+import { addToCart } from '@/store/reducers/cart';
+import { isItemMemoized, productByIdMemoized } from '@/store/reducers/commonSelectors';
 import { toggleCompare } from '@/store/reducers/compare';
-import { setTitle, toggleFavorite } from '@/store/reducers/products';
-import { compareStore, productsStore } from '@/store/types';
+import { toggleToFavorite } from '@/store/reducers/favorite';
+import { cartStore, compareStore, favoriteStore, productsStore } from '@/store/types';
 import { IProduct } from '@/types';
 
 export const ContentProduct = () => {
@@ -27,20 +27,15 @@ export const ContentProduct = () => {
 	useGetProductQuery(id, { skip: fetchedItems.length > 1 });
 	const product: IProduct = productByIdMemoized(useAppSelector(productsStore), +id)!;
 	const { formatPriceWithSymbol } = useCurrency();
-	const isInCompare = useAppSelector((state) => isInCompareMemoized(compareStore(state), product?.id));
+	const isInCompare = useAppSelector((state) => isItemMemoized(compareStore(state), product.id));
+	const isInFavorite = useAppSelector((state) => isItemMemoized(favoriteStore(state), product.id));
+	const isInCart = useAppSelector((state) => isItemMemoized(cartStore(state), product.id));
 
 	const dispatch = useAppDispatch();
 	const [isLoad, setIsLoad] = useState(true);
 	const [hasError, setHasError] = useState(false);
 
 	const router = useRouter();
-
-	useEffect(() => {
-		dispatch(setTitle(product?.title || 'Error'));
-		return () => {
-			dispatch(setTitle(''));
-		};
-	}, [dispatch, product]);
 
 	// Таймер на 5 секунд для прерывания загрузки изображений
 	const handleLoadTimeout = useCallback(() => {
@@ -192,16 +187,16 @@ export const ContentProduct = () => {
 								<Grid $direction="column" $templateColumns="1fr 30px 30px" $gap={5} $align="center">
 									<Button
 										$primary
-										onClick={() => moveToCart(product.id)}
-										disabled={product.checked}
+										onClick={() => dispatch(addToCart(product))}
+										disabled={isInCart}
 										icon="cart"
 									>
-										{product.checked ? 'Добавлено' : 'В корзину'}
+										{isInCart ? 'Добавлено' : 'В корзину'}
 									</Button>
 									<Compare active={isInCompare} onActive={() => dispatch(toggleCompare(product))} />
 									<Favorite
-										active={product.favorite}
-										onActive={() => dispatch(toggleFavorite(product.id))}
+										active={isInFavorite}
+										onActive={() => dispatch(toggleToFavorite(product))}
 									/>
 								</Grid>
 							</LayerBlock>
