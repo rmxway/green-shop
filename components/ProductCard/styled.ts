@@ -226,6 +226,6 @@ export const NoPhotoWrapper = styled.div<{ $isLoading: boolean }>`
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-	color: ${({ theme }) => theme.colors.gray.$3};
+	color: ${({ theme }) => theme.colors.gray.$4};
 	${fadeIn}
 `;

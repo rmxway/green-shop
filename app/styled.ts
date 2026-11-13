@@ -45,16 +45,15 @@ export const HeroSection = styled.section`
 
 	&::before {
 		content: '';
-		position: absolute;
+		position: fixed;
 		left: 0;
 		top: 0;
 		width: 100%;
 		height: 100%;
 		background-image: url('/assets/img/nature/mountains.jpg');
 		background-size: cover;
-		background-position: center 30%;
 		background-repeat: no-repeat;
-		opacity: 0.14;
+		opacity: 0.2;
 		z-index: -1;
 	}
 

@@ -4,8 +4,8 @@ import { forwardRef } from 'react';
 import Skeleton from 'react-loading-skeleton';
 
 import { Flexbox, Space } from '@/components/Layout';
+import { containerVars } from '@/components/ProductsGrid/styled';
 import { Icon } from '@/components/ui';
-import { containerVars } from '@/modules/products/ProductsGrid/styled';
 import { useAppSelector } from '@/services';
 import { productsStore } from '@/store/types';
 import { IProduct } from '@/types';

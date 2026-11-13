@@ -3,5 +3,7 @@ export * from './DialogModal';
 export * from './Filter';
 export * from './Navbar';
 export * from './Pagination';
+export * from './ProductCard';
+export * from './ProductsGrid';
 export * from './TextToggle';
 export * from './ThemeToggle';

@@ -10,7 +10,7 @@ export const TopBlockStyle = styled.div<TopBlockProps>`
 		background-image: ${theme.gradients.banner()};
 		background-color: ${theme.colors.success};
 		margin-top: 0;
-		height: ${$isFont ? '500px' : '40px'};
+		height: ${$isFont ? '300px' : '40px'};
 		display: flex;
 		align-items: center;
 		padding: 26px 0;
@@ -18,19 +18,14 @@ export const TopBlockStyle = styled.div<TopBlockProps>`
 		z-index: 1;
 		overflow: hidden;
 
-		h1 {
+		h1,
+		h2 {
 			font-size: 24px;
 			margin: 0;
-
-			${
-				!$isFont &&
-				css`
-					white-space: nowrap;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					max-width: 100%;
-				`
-			}
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			max-width: 100%;
 
 			${
 				$isFont &&
@@ -69,31 +64,16 @@ export const TopBlockStyle = styled.div<TopBlockProps>`
 			font-weight: 300;
 		}
 
-		${
-			$isFont &&
-			css`
-				& h1 {
-					font-size: 2.5rem;
-					line-height: 0.9;
-					letter-spacing: -2px;
-					text-transform: uppercase;
-				}
-			`
+		p {
+			font-size: 1.2rem;
 		}
 
 		${media.greaterThan('md')`
-            h1 {
-                font-size: 22px;
-            }
+			height: ${$isFont ? '500px' : '40px'};
 
-            ${
-				$isFont &&
-				css`
-					& h1 {
-						font-size: 4rem;
-					}
-				`
-			}
+            h1, h2 {
+                font-size: ${$isFont ? '4rem' : '22px'};
+            }
         `}
 	`}
 `;

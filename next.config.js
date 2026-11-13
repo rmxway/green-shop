@@ -10,6 +10,7 @@ module.exports = {
 				? process.env.DEPLOY_URL // DEPLOY_URL уже содержит https://
 				: 'http://localhost:3000',
 	},
+	allowedDevOrigins: ['192.168.0.65'],
 	reactStrictMode: process.env.NODE_ENV === 'production',
 	images: {
 		unoptimized: true,

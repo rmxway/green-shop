@@ -1,31 +1,27 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { darken } from 'polished';
 import styled, { css } from 'styled-components';
 
 import { Container, Grid, LayerBlock } from '@/components/Layout';
+import { ProductWrapper } from '@/components/ProductCard/styled';
 import { WrapperSticker } from '@/components/ui/Sticker/styled';
 import { fadeIn, media } from '@/theme';
 
 export const Wrapper = styled(Container)`
-	position: relative;
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 20px;
-
-	h2 {
-		font-size: 2rem;
+	${({ theme }) => css`
+		position: relative;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 20px;
 		margin-bottom: 20px;
-		line-height: 1;
-		font-weight: 400;
-	}
 
-	${media.greaterThan('md')`
+		${media.greaterThan('md')`
         grid-template-columns: 1fr 25%;
         padding-bottom: 0;
     `}
 
-	.swiper {
-		${({ theme }) => css`
+		.swiper {
 			margin-bottom: 20px;
 			border-radius: 10px;
 			border: 1px solid ${theme.colors.gray.$2};
@@ -45,23 +41,54 @@ export const Wrapper = styled(Container)`
 					max-height: 550px;
 				}
 			`}
-		`}
-	}
+		}
 
-	img {
-		height: 100%;
-		width: 100%;
-		display: block;
-		object-position: center;
-		object-fit: contain;
-	}
+		img {
+			height: 100%;
+			width: 100%;
+			display: block;
+			object-position: center;
+			object-fit: contain;
+		}
+
+		${ProductWrapper} {
+			background-color: ${darken(0.04, theme.colors.light)};
+		}
+
+		.category-items {
+			overflow: hidden;
+			overflow-x: scroll;
+			position: relative;
+			margin-left: -20px;
+			margin-right: -20px;
+			margin-bottom: -14px;
+			padding: 20px;
+			overflow-y: auto;
+			scrollbar-width: none;
+
+			/* &::-webkit-scrollbar {
+				display: none;
+			} */
+
+			${Grid} {
+				min-width: 800px;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 20px;
+			}
+		}
+	`}
 `;
 
 export const Title = styled.h1`
-	text-transform: uppercase;
-	line-height: 1.2;
+	line-height: 1;
+	font-size: 2.2rem;
 	margin: 0;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
+	font-weight: 400;
+`;
+
+export const Title2 = styled(Title)`
+	font-size: 1.6rem;
 `;
 
 export const ProductImage = styled(Image)`
@@ -91,7 +118,7 @@ export const Info = styled.div`
 
 export const SideBlock = styled.div`
 	${({ theme }) => css`
-		z-index: 1;
+		z-index: 10;
 		position: fixed;
 		left: 0;
 		bottom: 0;
@@ -124,15 +151,11 @@ export const SideBlock = styled.div`
 
 export const PriceBlock = styled(Grid)`
 	position: relative;
+	justify-content: start;
 	align-items: center;
-	gap: 5px;
-	grid-auto-flow: dense;
+	grid-template-columns: minmax(135px, auto) auto 1fr;
+	gap: 10px;
 	margin-bottom: 10px;
-	grid-template-columns: 1fr;
-
-	${media.greaterThan('xs')`
-		grid-template-columns: minmax(135px, 1fr) 220px;
-	`}
 
 	.side {
 		&-price {
@@ -144,10 +167,10 @@ export const PriceBlock = styled(Grid)`
 				font-family: sans-serif;
 				font-weight: 300;
 				font-size: 2rem;
-			}
 
-			${WrapperSticker} {
-				bottom: 18px;
+				${WrapperSticker} {
+					bottom: 18px;
+				}
 			}
 		}
 
@@ -158,15 +181,21 @@ export const PriceBlock = styled(Grid)`
 		}
 
 		&-info {
+			position: absolute;
+			top: 0;
+			right: 0;
 			font-size: 14px;
 			opacity: 0.8;
 		}
 	}
 
-	.price-stickers {
-		flex-direction: row;
-		align-items: flex-end;
-	}
+	${media.greaterThan('md')`
+		.side-info {
+			position: relative;
+			top: initial;
+			right: initial;
+		}
+	`}
 
 	${media.greaterThan('md')`
         grid-template-columns: 1fr;

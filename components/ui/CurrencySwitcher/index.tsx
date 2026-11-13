@@ -48,7 +48,7 @@ export const CurrencySwitcher: FC = memo(() => {
 						рубль
 					</button>
 				</CurrencyLabel>
-				<RateText>1$ = {exchangeRate.toFixed(2)} ₽</RateText>
+				<RateText>1$ = {exchangeRate.toFixed(2)} ₽ по курсу ЦБ</RateText>
 			</CurrencySwitcherWrapper>
 		</>
 	);

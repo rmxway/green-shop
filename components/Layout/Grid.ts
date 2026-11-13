@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { media } from '@/theme';
+
 type GridTypes = {
 	$templateColumns?: string;
 	$templateRows?: string;
@@ -7,6 +9,7 @@ type GridTypes = {
 	$align?: 'center' | 'flex-start' | 'flex-end' | 'stretch';
 	$direction?: 'column' | 'row' | 'dense';
 	$gap?: number;
+	$mobile?: boolean;
 };
 
 /**
@@ -17,10 +20,11 @@ type GridTypes = {
  * @param {?string} $align - 'center' | 'flex-start' | 'flex-end' | 'stretch'
  * @param {?string} $direction - 'column' | 'row'
  * @param {?number} $gap - example: 30
+ * @param {?boolean} $mobile
  */
 
 export const Grid = styled.div<GridTypes>`
-	${({ $templateColumns, $templateRows, $direction, $align, $justify, $gap }) => css`
+	${({ $templateColumns, $templateRows, $direction, $align, $justify, $gap, $mobile }) => css`
 		display: grid;
 		grid-template-columns: ${$templateColumns || 'auto'};
 		grid-template-rows: ${$templateRows || 'auto'};
@@ -28,6 +32,14 @@ export const Grid = styled.div<GridTypes>`
 		justify-content: ${$justify || 'flex-start'};
 		align-items: ${$align || 'stretch'};
 		gap: ${$gap ? `${$gap}px` : 0};
+
+		${media.lessThan('xs')`
+			${$mobile && css`
+				grid-template-columns: 1fr;
+			`}
+		`}
+
+
 	`}
 `;
 

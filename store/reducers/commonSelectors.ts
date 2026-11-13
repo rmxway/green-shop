@@ -21,6 +21,21 @@ export const currentItemsMemoized = createDraftSafeSelector.withTypes<CommonStat
 );
 
 /**
+ * @description Выбрать случайные 3 товара той же категории
+ */
+export const threeProductsByCategoryMemoized = typedProductsCreateSelector(
+	[(state) => state.fetchedItems, (_, category: string) => category, (_, __, id: number) => id],
+	(items, category, id) => {
+		const filtered = items.filter((item) => item.category == category && item.id !== id);
+		for (let i = filtered.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[filtered[i], filtered[j]] = [filtered[j], filtered[i]];
+		}
+		return filtered.slice(0, 3);
+	},
+);
+
+/**
  * @description Поиск продукта по id
  */
 export const productByIdMemoized = typedProductsCreateSelector(
@@ -50,10 +65,7 @@ export const cartItemsCountMemoized = typedCartCreateSelector([(state) => state.
 	return items.reduce((acc, cur) => acc + (cur.count || 1), 0);
 });
 
-export const isItemMemoized = createDraftSafeSelector(
-	[(state) => state.items, (_, id: number) => id],
-	(items, id) => {
-		if (!Array.isArray(items) || !id) return false;
-		return items.some((item) => item.id === id);
-	},
-);
+export const isItemMemoized = createDraftSafeSelector([(state) => state.items, (_, id: number) => id], (items, id) => {
+	if (!Array.isArray(items) || !id) return false;
+	return items.some((item) => item.id === id);
+});

@@ -3,11 +3,10 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-import { Categories, Filter } from '@/components';
+import { Categories, Filter, ProductsGrid } from '@/components';
 import { Container, LayerBlock } from '@/components/Layout';
+import { containerVars } from '@/components/ProductsGrid/styled';
 import { CurrencySwitcher, WarningMessage } from '@/components/ui';
-import { ProductsGrid } from '@/modules/products';
-import { containerVars } from '@/modules/products/ProductsGrid/styled';
 import { useAppDispatch, useAppSelector } from '@/services';
 import { useGetProductsQuery } from '@/store/api';
 import { currentItemsMemoized } from '@/store/reducers/commonSelectors';

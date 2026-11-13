@@ -3,10 +3,9 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-import { DialogModal } from '@/components';
+import { DialogModal, ProductsGrid } from '@/components';
 import { Container, LayerBlock } from '@/components/Layout';
-import { ProductsGrid } from '@/modules/products';
-import { containerVars } from '@/modules/products/ProductsGrid/styled';
+import { containerVars } from '@/components/ProductsGrid/styled';
 import { useAppDispatch, useAppSelector } from '@/services';
 import { currentItemsMemoized } from '@/store/reducers/commonSelectors';
 import { changePage, clearFavorites } from '@/store/reducers/favorite';

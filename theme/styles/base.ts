@@ -1,5 +1,7 @@
 import { css } from 'styled-components';
 
+import media from '@/theme/media';
+
 export const base = css`
 	*,
 	*::after,
@@ -23,6 +25,10 @@ export const base = css`
 		transition:
 			background-color 0.3s ease,
 			color 0.3s ease;
+
+		${media.lessThan('mdD')`
+			padding-top: 0;
+		`}
 	}
 	code {
 		font-family: 'source-code-pro', 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;

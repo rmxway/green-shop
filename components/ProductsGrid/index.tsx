@@ -5,8 +5,7 @@ import 'react-loading-skeleton';
 import { LayoutGroup } from 'framer-motion';
 import { memo, useCallback } from 'react';
 
-import { Pagination } from '@/components';
-import { ProductCard } from '@/components/ProductCard';
+import { Pagination, ProductCard } from '@/components';
 import { SkeletonCard } from '@/components/ProductCard/SkeletonCard';
 import { IProduct } from '@/types';
 

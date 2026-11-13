@@ -38,6 +38,8 @@ export const CartItem: FC<Props> = memo(
 			return formatPrice(count * price);
 		}, [count, price, formatPrice]);
 
+		const formattedOnePiecePrice = formatPrice(price);
+
 		const currencySymbol = useMemo(() => getCurrencySymbol(), [getCurrencySymbol]);
 
 		const handleLoadTimeout = useCallback(() => {
@@ -109,6 +111,9 @@ export const CartItem: FC<Props> = memo(
 							<Price>
 								<div>
 									{formattedPrice} {currencySymbol}
+								</div>
+								<div className="small">
+									{formattedOnePiecePrice} {currencySymbol}
 								</div>
 								<div>
 									{count && (

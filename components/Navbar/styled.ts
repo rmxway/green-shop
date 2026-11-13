@@ -18,6 +18,10 @@ export const StyledNavbar = styled(motion.div)`
 	transition:
 		background-color 0.3s ease,
 		border-color 0.3s ease;
+
+	${media.lessThan('mdD')`
+		position: relative;
+	`}
 `;
 
 export const Logo = styled.div`
@@ -25,17 +29,9 @@ export const Logo = styled.div`
 		position: relative;
 		display: flex;
 		flex-shrink: 0;
-		border-radius: ${theme.radius.borderRadius};
-		font-size: 1.8rem;
 		letter-spacing: -2px;
 		font-weight: 800;
-		color: ${theme.colors.success};
 		line-height: 1;
-		padding: 0 0 0 10px;
-		border: 2px solid ${theme.colors.success};
-		overflow: hidden;
-		background-color: ${theme.colors.success};
-		color: ${theme.colors.dark};
 
 		a {
 			position: absolute;
@@ -49,15 +45,14 @@ export const Logo = styled.div`
 			text-transform: uppercase;
 			font-size: 12px;
 			letter-spacing: 0.2px;
+			line-height: 1.2;
 			text-align: left;
 			background-color: ${theme.colors.dark};
 			color: ${theme.colors.success};
-			border-left: 2px solid ${theme.colors.success};
 
 			display: flex;
 			align-items: center;
 			padding: 2px 10px;
-			margin-left: 10px;
 			z-index: 1;
 		}
 
@@ -67,12 +62,18 @@ export const Logo = styled.div`
 			transition: all 0.2s;
 		}
 
+		svg {
+			background-color: ${theme.colors.success};
+			padding: 2px;
+			border-radius: 50px;
+		}
+
 		&:hover {
 			span {
 				color: white;
 			}
 			svg {
-				transform: scale(3);
+				background-color: #fff;
 			}
 		}
 	`}
@@ -85,7 +86,7 @@ export const Line = styled(motion.div)`
 	right: 0;
 	height: 2px;
 	border-radius: 3px;
-	background-color: ${({ theme }) => theme.colors.dark};
+	background-color: ${({ theme }) => (theme.name == 'dark' ? theme.colors.success : theme.colors.dark)};
 `;
 
 export const NavbarItem = styled.div`
@@ -94,7 +95,7 @@ export const NavbarItem = styled.div`
 		display: flex;
 		margin-right: 10px;
 		font-size: 1.3rem;
-		color: ${theme.colors.gray.$8};
+		color: ${theme.name == 'dark' ? theme.colors.success : theme.colors.dark};
 		text-decoration: none;
 		margin-bottom: 10px;
 		border-bottom: 2px solid transparent;
@@ -119,9 +120,10 @@ export const NavbarItem = styled.div`
 
 		${media.lessThan('mdD')`
 			${CountStyled} {
-				background-color: ${theme.colors.dark};
-				border-color: ${lighten(0.28, theme.colors.success)};
-				color: #fff;
+				background-color: ${theme.name == 'dark' ? theme.colors.success : theme.colors.dark};
+				border-color: ${theme.name == 'dark' ? theme.colors.dark : lighten(0.3, theme.colors.success)};
+				color: ${theme.colors.gray.$2};
+				padding-right: 1px;
 			}
 		`}
 
@@ -171,6 +173,7 @@ export const WrapperNavbarItems = styled(motion.div)`
 		height: auto;
 		overflow: visible;
 		opacity: 1;
+		width: auto;
 		background-image: none;
 		flex-direction: row;
 		align-items: flex-start;

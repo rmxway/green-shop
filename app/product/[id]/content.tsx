@@ -8,30 +8,28 @@ import { useCallback, useEffect, useState } from 'react';
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { TextToggle } from '@/components';
-import { Flexbox, Grid, LayerBlock, MobileWhiteBackground, RatingStars } from '@/components/Layout';
-import { Button, Compare, Favorite, Icon, LinkIcon, Loader, Sticker } from '@/components/ui';
-import { Info, NoPhotoContainer, PriceBlock, SideBlock, Wrapper } from '@/modules/product/styled';
-import { useAppDispatch, useAppSelector, useCurrency, useLoadTimeout } from '@/services';
+import { Info, NoPhotoContainer, Title, Title2, Wrapper } from '@/app/product/[id]/styled';
+import { ProductCard, TextToggle } from '@/components';
+import { Grid, LayerBlock, MobileWhiteBackground, RatingStars } from '@/components/Layout';
+import { Icon, LinkIcon, Loader, Sticker } from '@/components/ui';
+import { useAppSelector, useLoadTimeout } from '@/services';
 import { useGetProductQuery } from '@/store/api';
-import { addToCart } from '@/store/reducers/cart';
-import { isItemMemoized, productByIdMemoized } from '@/store/reducers/commonSelectors';
-import { toggleCompare } from '@/store/reducers/compare';
-import { toggleToFavorite } from '@/store/reducers/favorite';
-import { cartStore, compareStore, favoriteStore, productsStore } from '@/store/types';
+import { productByIdMemoized, threeProductsByCategoryMemoized } from '@/store/reducers/commonSelectors';
+import { productsStore } from '@/store/types';
 import { IProduct } from '@/types';
+
+import { SideBlockContent } from './SideBlock';
 
 export const ContentProduct = () => {
 	const { id } = useParams<{ id: string }>();
 	const { fetchedItems, error } = useAppSelector(productsStore);
 	useGetProductQuery(id, { skip: fetchedItems.length > 1 });
-	const product: IProduct = productByIdMemoized(useAppSelector(productsStore), +id)!;
-	const { formatPriceWithSymbol } = useCurrency();
-	const isInCompare = useAppSelector((state) => isItemMemoized(compareStore(state), product.id));
-	const isInFavorite = useAppSelector((state) => isItemMemoized(favoriteStore(state), product.id));
-	const isInCart = useAppSelector((state) => isItemMemoized(cartStore(state), product.id));
+	const product: IProduct = useAppSelector((state) => productByIdMemoized(productsStore(state), +id))!;
 
-	const dispatch = useAppDispatch();
+	const categoryItems = useAppSelector((state) =>
+		threeProductsByCategoryMemoized(productsStore(state), product.category!, product.id),
+	);
+
 	const [isLoad, setIsLoad] = useState(true);
 	const [hasError, setHasError] = useState(false);
 
@@ -79,7 +77,10 @@ export const ContentProduct = () => {
 								Назад
 							</LinkIcon>
 							<LayerBlock>
-								<h2>{product.title}</h2>
+								<Title>{product.title}</Title>
+								<Grid className="side-tags" $direction="column" $gap={6}>
+									{product.tags && product.tags.map((tag) => <Sticker key={tag}>{tag}</Sticker>)}
+								</Grid>
 								{product.images && product.images.length > 0 && !hasError ? (
 									<div style={{ position: 'relative', height: '300px' }}>
 										{!isLoad && (
@@ -116,11 +117,7 @@ export const ContentProduct = () => {
 										<Loader loading={isLoad} />
 									</div>
 								) : (
-									<NoPhotoContainer
-										initial={{ opacity: 0 }}
-										animate={{ opacity: 1 }}
-										transition={{ duration: 0.2, ease: 'easeInOut' }}
-									>
+									<NoPhotoContainer>
 										<Icon icon="nophoto" size={38} />
 									</NoPhotoContainer>
 								)}
@@ -158,49 +155,24 @@ export const ContentProduct = () => {
 									</TextToggle>
 								</span>
 							</LayerBlock>
-						</Info>
-						<SideBlock>
-							<LayerBlock $fixedPadding>
-								<PriceBlock>
-									<Flexbox
-										$gap={10}
-										$align="flex-start"
-										$direction="column"
-										className="price-stickers"
-									>
-										<Grid className="side-price" $direction="column" $align="flex-start">
-											<span>
-												{formatPriceWithSymbol(product.price)}{' '}
-												<Sticker $danger>
-													-{Math.round(Number(product.discountPercentage))} %
-												</Sticker>
-											</span>
+							{categoryItems?.length && (
+								<LayerBlock>
+									<Title2>Рекомендуем</Title2>
+									<p>Подобрали для вас несколько подходящих товаров</p>
+									<div className="category-items">
+										<Grid>
+											{categoryItems?.map((item) => (
+												<ProductCard product={item} key={item.id} />
+											))}
 										</Grid>
-										<Flexbox className="side-tags">
-											{product.stock && <Sticker $success>In Stock: {product.stock}</Sticker>}
-											{product.tags &&
-												product.tags.map((tag) => <Sticker key={tag}>{tag}</Sticker>)}
-										</Flexbox>
-										<div className="side-info">sku code: {product.sku}</div>
-									</Flexbox>
-								</PriceBlock>
-								<Grid $direction="column" $templateColumns="1fr 30px 30px" $gap={5} $align="center">
-									<Button
-										$primary
-										onClick={() => dispatch(addToCart(product))}
-										disabled={isInCart}
-										icon="cart"
-									>
-										{isInCart ? 'Добавлено' : 'В корзину'}
-									</Button>
-									<Compare active={isInCompare} onActive={() => dispatch(toggleCompare(product))} />
-									<Favorite
-										active={isInFavorite}
-										onActive={() => dispatch(toggleToFavorite(product))}
-									/>
-								</Grid>
-							</LayerBlock>
-						</SideBlock>
+									</div>
+								</LayerBlock>
+							)}
+							{/* <LayerBlock>
+								<Title2>Отзывы</Title2>
+							</LayerBlock> */}
+						</Info>
+						<SideBlockContent product={product} />
 					</>
 				)}
 			</Wrapper>

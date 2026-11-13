@@ -1,4 +1,4 @@
-import { LayoutGroup, motion } from 'framer-motion';
+import { LayoutGroup } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { useMemo } from 'react';
 
@@ -28,19 +28,16 @@ export const TopBlock = () => {
 			<Container>
 				<LayoutGroup>
 					<GradientText gradient="softDark">
-						<motion.h1
-							initial={{ y: -10, opacity: 0 }}
-							animate={{ y: 0, opacity: 1 }}
-							transition={{ duration: 0.3 }}
-						>
-							{isMain ? (
-								<>
-									Green Shop <span>| Brand</span>
-								</>
-							) : (
-								getTitle
-							)}
-						</motion.h1>
+						{isMain ? (
+							<><h1>
+								Green Shop <span>| Brand</span>
+							</h1>
+							<br />
+							<p>Магазин в котором можно найти полезные и качественные продукты.</p>
+							</>
+						) : (
+							<h2>{getTitle}</h2>
+						)}
 					</GradientText>
 				</LayoutGroup>
 				<LogoSVG />

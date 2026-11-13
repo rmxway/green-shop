@@ -180,9 +180,17 @@ export const Price = styled.div`
 	flex-direction: column;
 	align-items: end;
 	flex-shrink: 0;
+	line-height: 1;
+
+	.small {
+		font-size: 14px;
+		color: ${({theme}) => theme.colors.gray.$6};
+		margin-top: 4px;
+		margin-bottom: -2px;
+	}
 
 	${media.greaterThan('xs')`
-        min-width: 70px;    
+        min-width: 70px;
     `}
 `;
 
