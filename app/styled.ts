@@ -52,6 +52,7 @@ export const HeroSection = styled.section`
 		height: 100%;
 		background-image: url('/assets/img/nature/mountains.jpg');
 		background-size: cover;
+		background-position: center;
 		background-repeat: no-repeat;
 		opacity: 0.2;
 		z-index: -1;

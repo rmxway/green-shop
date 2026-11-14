@@ -29,11 +29,12 @@ export const TopBlock = () => {
 				<LayoutGroup>
 					<GradientText gradient="softDark">
 						{isMain ? (
-							<><h1>
-								Green Shop <span>| Brand</span>
-							</h1>
-							<br />
-							<p>Магазин в котором можно найти полезные и качественные продукты.</p>
+							<>
+								<h1>
+									Green Shop <span>| Brand</span>
+								</h1>
+								<br />
+								<p>Магазин в котором можно найти полезные и качественные продукты.</p>
 							</>
 						) : (
 							<h2>{getTitle}</h2>

@@ -22,7 +22,6 @@ export const TopBlockStyle = styled.div<TopBlockProps>`
 		h2 {
 			font-size: 24px;
 			margin: 0;
-			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
 			max-width: 100%;
@@ -51,9 +50,9 @@ export const TopBlockStyle = styled.div<TopBlockProps>`
 
 		.logo-svg {
 			position: absolute;
-			right: 0;
+			right: 50%;
 			top: 0;
-			transform: translate(0%, -50%) scale(30);
+			transform: scale(30) translate(50%, 0);
 			transform-origin: 100%;
 			opacity: 0.2;
 			mix-blend-mode: luminosity;

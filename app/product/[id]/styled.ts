@@ -102,16 +102,13 @@ export const Info = styled.div`
 	min-width: 1px;
 	padding-bottom: 70px;
 
-	span {
+	p {
+		margin-bottom: 20px;
 		line-height: 1.5;
-		font-size: 20px;
+		font-size: 1.1rem;
 
-		p {
-			margin-bottom: 20px;
-
-			&:last-child {
-				margin-bottom: 0;
-			}
+		&:last-child {
+			margin-bottom: 0;
 		}
 	}
 `;
@@ -234,4 +231,49 @@ export const NoPhotoContainer = styled(motion.div)`
 		text-decoration: none;
 		${fadeIn}
 	}
+`;
+
+export const ReviewItem = styled.div`
+	${({ theme }) => css`
+		width: 100%;
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: 20px;
+		justify-content: start;
+		align-items: start;
+		margin-bottom: 20px;
+		padding: 20px;
+		border-radius: ${theme.radius.borderRadius};
+		background-color: ${darken(0.055, theme.colors.light)};
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		strong {
+			margin: 5px 0;
+			font-size: 1.1rem;
+			display: block;
+		}
+
+		.review-date {
+			font-size: 0.9rem;
+			color: ${theme.colors.gray.$6};
+		}
+
+		.review-comment {
+			font-size: 1.1rem;
+			background-color: ${theme.colors.light};
+			display: inline-block;
+			padding: 10px;
+			border-radius: 20px;
+			border-top-left-radius: 0;
+			justify-self: start;
+			border: 1px solid ${theme.colors.gray.$2};
+		}
+
+		${media.lessThan('sm')`
+			grid-template-columns: 1fr;
+		`}
+	`}
 `;

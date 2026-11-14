@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
 
-import productsJSON from '@/mock/items.json';
+import productsJSON from '@/mock/items2.json';
 
 export function GET(req: Request) {
 	try {
-		const { products } = productsJSON;
+		const products = productsJSON;
 		const { pathname } = new URL(req.url);
 		const el = pathname.split('/');
 		const id = Number(el[el.length - 1]);

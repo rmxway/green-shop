@@ -18,7 +18,7 @@ export const ContentProducts = () => {
 	const currentItems = useAppSelector((state) => currentItemsMemoized(productsStore(state), filteredItems));
 	const [isTimeout, setIsTimeout] = useState(false);
 
-	const shouldFetch = fetchedItems.length === 0;
+	const shouldFetch = fetchedItems.length <= 1;
 	const { isLoading, isError } = useGetProductsQuery(null, { skip: !shouldFetch });
 	const dispatch = useAppDispatch();
 

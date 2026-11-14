@@ -8,7 +8,6 @@ export const WrapperTextToggle = styled.div<{ $isOpen?: boolean }>`
 
 	& > div {
 		position: relative;
-		font-size: 1.1rem;
 		display: block;
 		overflow: hidden;
 		margin-bottom: 12px;

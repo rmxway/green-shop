@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
 
-import productsJSON from '@/mock/items.json';
+import productsJSON from '@/mock/items2.json';
 
 export function GET(req: Request) {
 	try {
-		const { products } = productsJSON;
+		const products = productsJSON;
 		const { searchParams } = new URL(req.url);
 		const limitParam = searchParams.get('limit');
 
